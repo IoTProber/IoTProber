@@ -1,0 +1,222 @@
+2026-03-12 11:19:07,180 [INFO] Load pretrained SentenceTransformer: /root/iot-classification/ecs_code/qwen3_embedding_06b
+2026-03-12 11:19:08,879 [INFO] 1 prompt is loaded, with the key: query
+2026-03-12 11:19:09,131 [INFO] Service analysis for hfavicons_embedding started at 2026-03-12 11:19:09
+2026-03-12 11:19:09,334 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS running...
+2026-03-12 11:36:23,987 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS running... 10000/74878
+2026-03-12 11:36:40,359 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 10000 for Device NAS
+2026-03-12 11:53:26,940 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS running... 20000/74878
+2026-03-12 11:53:59,932 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 20000 for Device NAS
+2026-03-12 12:10:30,915 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS running... 30000/74878
+2026-03-12 12:11:20,686 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 30000 for Device NAS
+2026-03-12 12:28:18,877 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS running... 40000/74878
+2026-03-12 12:29:26,105 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 40000 for Device NAS
+2026-03-12 12:46:04,937 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS running... 50000/74878
+2026-03-12 12:47:28,232 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 50000 for Device NAS
+2026-03-12 13:04:11,502 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS running... 60000/74878
+2026-03-12 13:05:51,937 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 60000 for Device NAS
+2026-03-12 13:22:34,836 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS running... 70000/74878
+2026-03-12 13:24:36,077 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 70000 for Device NAS
+2026-03-12 13:32:38,850 [INFO] Embedding Length: 74878
+2026-03-12 13:34:49,022 [INFO] [**] Qwen3 embedding done!
+2026-03-12 13:34:49,022 [INFO] [PCA] PCA for Device NAS running...
+2026-03-12 13:36:10,388 [INFO] [PCA] PCA for Device NAS done!
+2026-03-12 13:36:10,388 [INFO] [HDBSCAN] HDBSCAN for Device NAS running...
+2026-03-12 14:23:21,814 [INFO] [HDBSCAN] Cluster Result of Device NAS: 11 clusters, 2876 noise points
+2026-03-12 14:23:21,815 [INFO] [HDBSCAN] Clustering done for Device NAS
+2026-03-12 14:23:58,224 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/ipraw_NAS_embedding_hfavicons_pca.csv
+2026-03-12 14:23:59,369 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NVR running...
+2026-03-12 14:41:33,067 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NVR running... 10000/17898
+2026-03-12 14:41:50,612 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 10000 for Device NVR
+2026-03-12 14:55:31,349 [INFO] Embedding Length: 17898
+2026-03-12 14:56:02,137 [INFO] [**] Qwen3 embedding done!
+2026-03-12 14:56:02,138 [INFO] [PCA] PCA for Device NVR running...
+2026-03-12 14:56:18,831 [INFO] [PCA] PCA for Device NVR done!
+2026-03-12 14:56:18,831 [INFO] [HDBSCAN] HDBSCAN for Device NVR running...
+2026-03-12 14:57:36,593 [INFO] [HDBSCAN] Cluster Result of Device NVR: 53 clusters, 3261 noise points
+2026-03-12 14:57:36,593 [INFO] [HDBSCAN] Clustering done for Device NVR
+2026-03-12 14:57:45,187 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/ipraw_NVR_embedding_hfavicons_pca.csv
+2026-03-12 14:57:45,592 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device POWER_METER running...
+2026-03-12 15:40:48,334 [INFO] Embedding Length: 3984
+2026-03-12 15:40:54,759 [INFO] [**] Qwen3 embedding done!
+2026-03-12 15:40:54,759 [INFO] [PCA] PCA for Device POWER_METER running...
+2026-03-12 15:41:03,937 [INFO] [PCA] PCA for Device POWER_METER done!
+2026-03-12 15:41:03,937 [INFO] [HDBSCAN] HDBSCAN for Device POWER_METER running...
+2026-03-12 15:41:11,811 [INFO] [HDBSCAN] Cluster Result of Device POWER_METER: 3 clusters, 48 noise points
+2026-03-12 15:41:11,811 [INFO] [HDBSCAN] Clustering done for Device POWER_METER
+2026-03-12 15:41:13,655 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/ipraw_POWER_METER_embedding_hfavicons_pca.csv
+2026-03-12 15:41:13,920 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION running...
+2026-03-12 16:27:28,668 [INFO] Embedding Length: 7124
+2026-03-12 16:27:41,331 [INFO] [**] Qwen3 embedding done!
+2026-03-12 16:27:41,331 [INFO] [PCA] PCA for Device BUILDING_AUTOMATION running...
+2026-03-12 16:27:57,705 [INFO] [PCA] PCA for Device BUILDING_AUTOMATION done!
+2026-03-12 16:27:57,705 [INFO] [HDBSCAN] HDBSCAN for Device BUILDING_AUTOMATION running...
+2026-03-12 16:28:18,151 [INFO] [HDBSCAN] Cluster Result of Device BUILDING_AUTOMATION: 6 clusters, 663 noise points
+2026-03-12 16:28:18,151 [INFO] [HDBSCAN] Clustering done for Device BUILDING_AUTOMATION
+2026-03-12 16:28:21,532 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/ipraw_BUILDING_AUTOMATION_embedding_hfavicons_pca.csv
+2026-03-12 16:28:21,843 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device MEDICAL running...
+2026-03-12 17:11:37,124 [INFO] Embedding Length: 5975
+2026-03-12 17:11:47,027 [INFO] [**] Qwen3 embedding done!
+2026-03-12 17:11:47,028 [INFO] [PCA] PCA for Device MEDICAL running...
+2026-03-12 17:12:02,686 [INFO] [PCA] PCA for Device MEDICAL done!
+2026-03-12 17:12:02,686 [INFO] [HDBSCAN] HDBSCAN for Device MEDICAL running...
+2026-03-12 17:12:16,157 [INFO] [HDBSCAN] Cluster Result of Device MEDICAL: 8 clusters, 435 noise points
+2026-03-12 17:12:16,157 [INFO] [HDBSCAN] Clustering done for Device MEDICAL
+2026-03-12 17:12:18,977 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/ipraw_MEDICAL_embedding_hfavicons_pca.csv
+2026-03-12 17:12:19,263 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running...
+2026-03-12 17:27:11,644 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 10000/92770
+2026-03-12 17:27:28,542 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 10000 for Device ROUTER
+2026-03-12 17:41:58,409 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 20000/92770
+2026-03-12 17:42:31,996 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 20000 for Device ROUTER
+2026-03-12 17:57:21,930 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 30000/92770
+2026-03-12 17:58:12,928 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 30000 for Device ROUTER
+2026-03-12 18:12:30,359 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 40000/92770
+2026-03-12 18:13:36,649 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 40000 for Device ROUTER
+2026-03-12 18:28:19,791 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 50000/92770
+2026-03-12 18:29:42,912 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 50000 for Device ROUTER
+2026-03-12 18:44:17,310 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 60000/92770
+2026-03-12 18:45:58,624 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 60000 for Device ROUTER
+2026-03-12 19:00:36,115 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 70000/92770
+2026-03-12 19:02:33,743 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 70000 for Device ROUTER
+2026-03-12 19:16:52,237 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 80000/92770
+2026-03-12 19:19:06,830 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 80000 for Device ROUTER
+2026-03-12 19:33:34,015 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER running... 90000/92770
+2026-03-12 19:36:07,524 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 90000 for Device ROUTER
+2026-03-12 19:40:02,756 [INFO] Embedding Length: 92770
+2026-03-12 19:42:40,404 [INFO] [**] Qwen3 embedding done!
+2026-03-12 19:42:40,404 [INFO] [PCA] PCA for Device ROUTER running...
+2026-03-12 19:43:10,451 [INFO] [PCA] PCA for Device ROUTER done!
+2026-03-12 19:43:10,451 [INFO] [HDBSCAN] HDBSCAN for Device ROUTER running...
+2026-03-12 20:29:41,845 [INFO] [HDBSCAN] Cluster Result of Device ROUTER: 184 clusters, 46900 noise points
+2026-03-12 20:29:41,845 [INFO] [HDBSCAN] Clustering done for Device ROUTER
+2026-03-12 20:30:25,626 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/ipraw_ROUTER_embedding_hfavicons_pca.csv
+2026-03-12 20:30:26,732 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device PRINTER running...
+2026-03-12 20:59:09,024 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device PRINTER running... 10000/17330
+2026-03-12 20:59:26,080 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 10000 for Device PRINTER
+2026-03-12 21:19:57,875 [INFO] Embedding Length: 17330
+2026-03-12 21:20:27,729 [INFO] [**] Qwen3 embedding done!
+2026-03-12 21:20:27,729 [INFO] [PCA] PCA for Device PRINTER running...
+2026-03-12 21:20:41,434 [INFO] [PCA] PCA for Device PRINTER done!
+2026-03-12 21:20:41,434 [INFO] [HDBSCAN] HDBSCAN for Device PRINTER running...
+2026-03-12 21:22:33,669 [INFO] [HDBSCAN] Cluster Result of Device PRINTER: 26 clusters, 2123 noise points
+2026-03-12 21:22:33,669 [INFO] [HDBSCAN] Clustering done for Device PRINTER
+2026-03-12 21:22:41,889 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/ipraw_PRINTER_embedding_hfavicons_pca.csv
+2026-03-12 21:22:42,289 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device SCADA running...
+2026-03-12 21:33:58,965 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device SCADA running... 10000/11800
+2026-03-12 21:34:16,202 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 10000 for Device SCADA
+2026-03-12 21:36:14,032 [INFO] Embedding Length: 11800
+2026-03-12 21:36:34,328 [INFO] [**] Qwen3 embedding done!
+2026-03-12 21:36:34,328 [INFO] [PCA] PCA for Device SCADA running...
+2026-03-12 21:36:53,379 [INFO] [PCA] PCA for Device SCADA done!
+2026-03-12 21:36:53,379 [INFO] [HDBSCAN] HDBSCAN for Device SCADA running...
+2026-03-12 21:37:59,979 [INFO] [HDBSCAN] Cluster Result of Device SCADA: 24 clusters, 8754 noise points
+2026-03-12 21:37:59,979 [INFO] [HDBSCAN] Clustering done for Device SCADA
+2026-03-12 21:38:05,540 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/ipraw_SCADA_embedding_hfavicons_pca.csv
+2026-03-12 21:38:05,540 [INFO] [*] Drawing 2D cluster plot for device NAS
+2026-03-12 21:38:13,177 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/cluster_2d_NAS_pca1_pca2_dbscan(pca).png
+2026-03-12 21:38:13,177 [INFO] [*] Drawing 2D cluster plot for device NVR
+2026-03-12 21:38:17,492 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/cluster_2d_NVR_pca1_pca2_dbscan(pca).png
+2026-03-12 21:38:17,493 [INFO] [*] Drawing 2D cluster plot for device POWER_METER
+2026-03-12 21:38:19,641 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/cluster_2d_POWER_METER_pca1_pca2_dbscan(pca).png
+2026-03-12 21:38:19,642 [INFO] [*] Drawing 2D cluster plot for device BUILDING_AUTOMATION
+2026-03-12 21:38:22,084 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/cluster_2d_BUILDING_AUTOMATION_pca1_pca2_dbscan(pca).png
+2026-03-12 21:38:22,085 [INFO] [*] Drawing 2D cluster plot for device MEDICAL
+2026-03-12 21:38:24,461 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/cluster_2d_MEDICAL_pca1_pca2_dbscan(pca).png
+2026-03-12 21:38:24,461 [INFO] [*] Drawing 2D cluster plot for device ROUTER
+2026-03-12 21:38:37,572 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/cluster_2d_ROUTER_pca1_pca2_dbscan(pca).png
+2026-03-12 21:38:37,573 [INFO] [*] Drawing 2D cluster plot for device PRINTER
+2026-03-12 21:38:41,345 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/cluster_2d_PRINTER_pca1_pca2_dbscan(pca).png
+2026-03-12 21:38:41,346 [INFO] [*] Drawing 2D cluster plot for device SCADA
+2026-03-12 21:38:44,751 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/cluster_2d_SCADA_pca1_pca2_dbscan(pca).png
+2026-03-12 21:38:44,915 [INFO] Service analysis for hfavicons_embedding finished at 2026-03-12 21:38:44
+2026-03-12 21:38:44,921 [INFO] ['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA']
+2026-03-12 21:38:44,942 [INFO] Analyzing embedding_hfavicons distribution for device NAS
+2026-03-12 21:39:09,594 [INFO] embedding_hfavicons distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/json/embedding_hfavicons_distribution_NAS.json
+2026-03-12 21:39:09,594 [INFO]   - Unique http-favicon-urls: 74274
+2026-03-12 21:39:09,594 [INFO] Drawing embedding_hfavicons combination bar chart for NAS...
+2026-03-12 21:39:10,255 [INFO] embedding_hfavicons combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/embedding_hfavicons_combination_bar_NAS.png
+2026-03-12 21:39:10,255 [INFO] Analyzing embedding_hfavicons distribution for device NVR
+2026-03-12 21:39:13,875 [INFO] embedding_hfavicons distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/json/embedding_hfavicons_distribution_NVR.json
+2026-03-12 21:39:13,875 [INFO]   - Unique http-favicon-urls: 5073
+2026-03-12 21:39:13,876 [INFO] Drawing embedding_hfavicons combination bar chart for NVR...
+2026-03-12 21:39:14,524 [INFO] embedding_hfavicons combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/embedding_hfavicons_combination_bar_NVR.png
+2026-03-12 21:39:14,525 [INFO] Analyzing embedding_hfavicons distribution for device POWER_METER
+2026-03-12 21:39:23,561 [INFO] embedding_hfavicons distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/json/embedding_hfavicons_distribution_POWER_METER.json
+2026-03-12 21:39:23,561 [INFO]   - Unique http-favicon-urls: 3924
+2026-03-12 21:39:23,561 [INFO] Drawing embedding_hfavicons combination bar chart for POWER_METER...
+2026-03-12 21:39:37,133 [INFO] embedding_hfavicons combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/embedding_hfavicons_combination_bar_POWER_METER.png
+2026-03-12 21:39:37,134 [INFO] Analyzing embedding_hfavicons distribution for device BUILDING_AUTOMATION
+2026-03-12 21:39:43,194 [INFO] embedding_hfavicons distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/json/embedding_hfavicons_distribution_BUILDING_AUTOMATION.json
+2026-03-12 21:39:43,194 [INFO]   - Unique http-favicon-urls: 5821
+2026-03-12 21:39:43,194 [INFO] Drawing embedding_hfavicons combination bar chart for BUILDING_AUTOMATION...
+2026-03-12 21:39:50,815 [INFO] embedding_hfavicons combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/embedding_hfavicons_combination_bar_BUILDING_AUTOMATION.png
+2026-03-12 21:39:50,816 [INFO] Analyzing embedding_hfavicons distribution for device MEDICAL
+2026-03-12 21:39:59,036 [INFO] embedding_hfavicons distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/json/embedding_hfavicons_distribution_MEDICAL.json
+2026-03-12 21:39:59,036 [INFO]   - Unique http-favicon-urls: 4930
+2026-03-12 21:39:59,036 [INFO] Drawing embedding_hfavicons combination bar chart for MEDICAL...
+2026-03-12 21:39:59,742 [INFO] embedding_hfavicons combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/embedding_hfavicons_combination_bar_MEDICAL.png
+2026-03-12 21:39:59,742 [INFO] Analyzing embedding_hfavicons distribution for device ROUTER
+2026-03-12 21:40:18,374 [INFO] embedding_hfavicons distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/json/embedding_hfavicons_distribution_ROUTER.json
+2026-03-12 21:40:18,374 [INFO]   - Unique http-favicon-urls: 60720
+2026-03-12 21:40:18,374 [INFO] Drawing embedding_hfavicons combination bar chart for ROUTER...
+2026-03-12 21:40:19,005 [INFO] embedding_hfavicons combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/embedding_hfavicons_combination_bar_ROUTER.png
+2026-03-12 21:40:19,006 [INFO] Analyzing embedding_hfavicons distribution for device PRINTER
+2026-03-12 21:40:28,116 [INFO] embedding_hfavicons distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/json/embedding_hfavicons_distribution_PRINTER.json
+2026-03-12 21:40:28,116 [INFO]   - Unique http-favicon-urls: 13138
+2026-03-12 21:40:28,116 [INFO] Drawing embedding_hfavicons combination bar chart for PRINTER...
+2026-03-12 21:40:28,778 [INFO] embedding_hfavicons combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/embedding_hfavicons_combination_bar_PRINTER.png
+2026-03-12 21:40:28,778 [INFO] Analyzing embedding_hfavicons distribution for device SCADA
+2026-03-12 21:40:31,419 [INFO] embedding_hfavicons distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/json/embedding_hfavicons_distribution_SCADA.json
+2026-03-12 21:40:31,419 [INFO]   - Unique http-favicon-urls: 11363
+2026-03-12 21:40:31,419 [INFO] Drawing embedding_hfavicons combination bar chart for SCADA...
+2026-03-12 21:40:32,056 [INFO] embedding_hfavicons combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_hfavicons/png/embedding_hfavicons_combination_bar_SCADA.png
+2026-03-12 21:40:32,068 [INFO] Embedding & Clustering for hfavicons_embedding finished in 37282.94 seconds
+2026-03-13 09:44:46,274 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running...
+2026-03-13 09:55:50,813 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 10000/800400
+2026-03-13 09:56:08,408 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 10000 for Device CAMERA
+2026-03-13 10:06:05,276 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 20000/800400
+2026-03-13 10:06:41,059 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 20000 for Device CAMERA
+2026-03-13 10:16:36,529 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 30000/800400
+2026-03-13 10:17:29,715 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 30000 for Device CAMERA
+2026-03-13 10:27:21,006 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 40000/800400
+2026-03-13 10:28:32,027 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 40000 for Device CAMERA
+2026-03-13 10:38:27,184 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 50000/800400
+2026-03-13 10:39:55,171 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 50000 for Device CAMERA
+2026-03-13 10:49:46,483 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 60000/800400
+2026-03-13 10:51:32,404 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 60000 for Device CAMERA
+2026-03-13 11:01:25,868 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 70000/800400
+2026-03-13 11:03:29,397 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 70000 for Device CAMERA
+2026-03-13 11:13:18,666 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 80000/800400
+2026-03-13 11:15:40,533 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 80000 for Device CAMERA
+2026-03-13 11:25:33,813 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 90000/800400
+2026-03-13 11:28:15,273 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 90000 for Device CAMERA
+2026-03-13 11:38:03,405 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 100000/800400
+2026-03-13 11:41:04,644 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 100000 for Device CAMERA
+2026-03-13 11:50:53,025 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 110000/800400
+2026-03-13 11:54:12,457 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 110000 for Device CAMERA
+2026-03-13 12:03:59,989 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 120000/800400
+2026-03-13 12:07:39,011 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 120000 for Device CAMERA
+2026-03-13 12:17:29,367 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 130000/800400
+2026-03-13 12:21:27,440 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 130000 for Device CAMERA
+2026-03-13 12:31:16,718 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 140000/800400
+2026-03-13 12:35:34,017 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 140000 for Device CAMERA
+2026-03-13 12:45:25,458 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 150000/800400
+2026-03-13 12:49:58,651 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 150000 for Device CAMERA
+2026-03-13 12:59:46,775 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 160000/800400
+2026-03-13 13:04:40,142 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 160000 for Device CAMERA
+2026-03-13 13:14:30,617 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 170000/800400
+2026-03-13 13:19:46,163 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 170000 for Device CAMERA
+2026-03-13 13:29:37,755 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 180000/800400
+2026-03-13 13:35:20,436 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 180000 for Device CAMERA
+2026-03-13 13:45:13,159 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 190000/800400
+2026-03-13 13:51:05,534 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 190000 for Device CAMERA
+2026-03-13 14:00:56,164 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 200000/800400
+2026-03-13 14:07:09,345 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 200000 for Device CAMERA
+2026-03-13 14:16:59,695 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 210000/800400
+2026-03-13 14:23:29,816 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 210000 for Device CAMERA
+2026-03-13 14:33:18,784 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 220000/800400
+2026-03-13 14:40:10,210 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 220000 for Device CAMERA
+2026-03-13 14:49:59,661 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 230000/800400
+2026-03-13 14:57:10,316 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 230000 for Device CAMERA
+2026-03-13 15:07:03,433 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 240000/800400
+2026-03-13 15:14:33,077 [INFO] [hfavicons Embedding (PCA: True)] Saved milestone at 240000 for Device CAMERA
+2026-03-13 15:24:23,985 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA running... 250000/800400

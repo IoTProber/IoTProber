@@ -1,0 +1,109 @@
+2026-03-17 08:17:02,421 [INFO] Load pretrained SentenceTransformer: /home/iot-classification/qwen3_embedding_06b
+2026-03-17 08:17:07,906 [INFO] 1 prompt is loaded, with the key: query
+2026-03-17 08:17:08,625 [INFO] [whois Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-17 08:17:08,887 [INFO] [whois Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-17 08:17:09,143 [INFO] [whois Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-17 08:17:09,406 [INFO] [whois Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-17 08:17:09,666 [INFO] [whois Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-17 08:17:09,930 [INFO] [whois Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-17 08:17:10,189 [INFO] [whois Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-17 08:17:10,465 [INFO] [whois Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-17 08:17:10,757 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running...
+2026-03-17 08:26:18,550 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 10000/130000
+2026-03-17 08:26:46,526 [INFO] [whois Embedding (PCA: True)] Saved milestone at 10000 for Device CAMERA
+2026-03-17 08:34:53,022 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 20000/130000
+2026-03-17 08:35:47,533 [INFO] [whois Embedding (PCA: True)] Saved milestone at 20000 for Device CAMERA
+2026-03-17 08:43:42,120 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 30000/130000
+2026-03-17 08:45:04,188 [INFO] [whois Embedding (PCA: True)] Saved milestone at 30000 for Device CAMERA
+2026-03-17 08:52:59,344 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 40000/130000
+2026-03-17 08:54:50,210 [INFO] [whois Embedding (PCA: True)] Saved milestone at 40000 for Device CAMERA
+2026-03-17 09:02:39,315 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 50000/130000
+2026-03-17 09:05:00,440 [INFO] [whois Embedding (PCA: True)] Saved milestone at 50000 for Device CAMERA
+2026-03-17 09:12:51,587 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 60000/130000
+2026-03-17 09:15:40,181 [INFO] [whois Embedding (PCA: True)] Saved milestone at 60000 for Device CAMERA
+2026-03-17 09:23:29,319 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 70000/130000
+2026-03-17 09:26:48,491 [INFO] [whois Embedding (PCA: True)] Saved milestone at 70000 for Device CAMERA
+2026-03-17 09:35:09,810 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 80000/130000
+2026-03-17 09:39:06,668 [INFO] [whois Embedding (PCA: True)] Saved milestone at 80000 for Device CAMERA
+2026-03-17 09:47:26,985 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 90000/130000
+2026-03-17 09:51:48,705 [INFO] [whois Embedding (PCA: True)] Saved milestone at 90000 for Device CAMERA
+2026-03-17 09:59:37,649 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 100000/130000
+2026-03-17 10:04:20,637 [INFO] [whois Embedding (PCA: True)] Saved milestone at 100000 for Device CAMERA
+2026-03-17 10:12:14,075 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 110000/130000
+2026-03-17 10:17:23,839 [INFO] [whois Embedding (PCA: True)] Saved milestone at 110000 for Device CAMERA
+2026-03-17 10:25:12,887 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA running... 120000/130000
+2026-03-17 10:30:55,814 [INFO] [whois Embedding (PCA: True)] Saved milestone at 120000 for Device CAMERA
+2026-03-17 10:38:51,142 [INFO] Embedding Length: 130000
+2026-03-17 10:46:02,593 [INFO] [**] Qwen3 embedding done!
+2026-03-17 10:46:02,596 [INFO] [PCA] PCA for Device CAMERA running...
+2026-03-17 10:52:53,404 [INFO] [PCA] PCA for Device CAMERA done!
+2026-03-17 10:52:53,404 [INFO] [HDBSCAN] HDBSCAN for Device CAMERA running...
+2026-03-17 12:25:41,209 [INFO] [HDBSCAN] Cluster Result of Device CAMERA: 1508 clusters, 29438 noise points
+2026-03-17 12:25:41,209 [INFO] [HDBSCAN] Clustering done for Device CAMERA
+2026-03-17 12:27:00,364 [INFO] PCA (256) Embedding & Clustering Result Saved at /home/iot-classification/platform_data/csv/local/1/embedding_whois/ipraw_CAMERA_embedding_whois_pca.csv
+2026-03-17 12:27:00,364 [INFO] [*] Drawing 2D cluster plot for device NAS
+2026-03-17 12:27:55,039 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_NAS_pca1_pca2_dbscan(pca).png
+2026-03-17 12:27:55,040 [INFO] [*] Drawing 2D cluster plot for device NVR
+2026-03-17 12:28:06,290 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_NVR_pca1_pca2_dbscan(pca).png
+2026-03-17 12:28:06,291 [INFO] [*] Drawing 2D cluster plot for device POWER_METER
+2026-03-17 12:28:12,161 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_POWER_METER_pca1_pca2_dbscan(pca).png
+2026-03-17 12:28:12,161 [INFO] [*] Drawing 2D cluster plot for device BUILDING_AUTOMATION
+2026-03-17 12:28:19,824 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_BUILDING_AUTOMATION_pca1_pca2_dbscan(pca).png
+2026-03-17 12:28:19,825 [INFO] [*] Drawing 2D cluster plot for device MEDICAL
+2026-03-17 12:28:28,974 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_MEDICAL_pca1_pca2_dbscan(pca).png
+2026-03-17 12:28:28,974 [INFO] [*] Drawing 2D cluster plot for device ROUTER
+2026-03-17 12:29:26,020 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_ROUTER_pca1_pca2_dbscan(pca).png
+2026-03-17 12:29:26,021 [INFO] [*] Drawing 2D cluster plot for device PRINTER
+2026-03-17 12:29:39,674 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_PRINTER_pca1_pca2_dbscan(pca).png
+2026-03-17 12:29:39,674 [INFO] [*] Drawing 2D cluster plot for device SCADA
+2026-03-17 12:29:51,162 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_SCADA_pca1_pca2_dbscan(pca).png
+2026-03-17 12:29:51,162 [INFO] [*] Drawing 2D cluster plot for device CAMERA
+2026-03-17 12:31:12,733 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_CAMERA_pca1_pca2_dbscan(pca).png
+2026-03-17 12:31:14,802 [INFO] Service analysis for whois_embedding finished at 2026-03-17 12:31:14
+2026-03-17 12:31:14,802 [INFO] ['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA', 'CAMERA']
+2026-03-17 12:31:14,803 [INFO] Analyzing embedding_whois distribution for device NAS
+2026-03-17 12:31:44,311 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_NAS.json
+2026-03-17 12:31:44,311 [INFO]   - Unique whois-info: 13602
+2026-03-17 12:31:44,311 [INFO] Drawing embedding_whois combination bar chart for NAS...
+2026-03-17 12:31:46,259 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_NAS.png
+2026-03-17 12:31:46,259 [INFO] Analyzing embedding_whois distribution for device NVR
+2026-03-17 12:31:51,020 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_NVR.json
+2026-03-17 12:31:51,021 [INFO]   - Unique whois-info: 1428
+2026-03-17 12:31:51,021 [INFO] Drawing embedding_whois combination bar chart for NVR...
+2026-03-17 12:31:52,226 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_NVR.png
+2026-03-17 12:31:52,226 [INFO] Analyzing embedding_whois distribution for device POWER_METER
+2026-03-17 12:32:03,069 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_POWER_METER.json
+2026-03-17 12:32:03,069 [INFO]   - Unique whois-info: 161
+2026-03-17 12:32:03,070 [INFO] Drawing embedding_whois combination bar chart for POWER_METER...
+2026-03-17 12:32:04,361 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_POWER_METER.png
+2026-03-17 12:32:04,361 [INFO] Analyzing embedding_whois distribution for device BUILDING_AUTOMATION
+2026-03-17 12:32:12,206 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_BUILDING_AUTOMATION.json
+2026-03-17 12:32:12,207 [INFO]   - Unique whois-info: 1750
+2026-03-17 12:32:12,207 [INFO] Drawing embedding_whois combination bar chart for BUILDING_AUTOMATION...
+2026-03-17 12:32:13,511 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_BUILDING_AUTOMATION.png
+2026-03-17 12:32:13,511 [INFO] Analyzing embedding_whois distribution for device MEDICAL
+2026-03-17 12:32:23,207 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_MEDICAL.json
+2026-03-17 12:32:23,208 [INFO]   - Unique whois-info: 843
+2026-03-17 12:32:23,208 [INFO] Drawing embedding_whois combination bar chart for MEDICAL...
+2026-03-17 12:32:24,494 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_MEDICAL.png
+2026-03-17 12:32:24,495 [INFO] Analyzing embedding_whois distribution for device ROUTER
+2026-03-17 12:32:47,540 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_ROUTER.json
+2026-03-17 12:32:47,541 [INFO]   - Unique whois-info: 13735
+2026-03-17 12:32:47,541 [INFO] Drawing embedding_whois combination bar chart for ROUTER...
+2026-03-17 12:32:48,802 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_ROUTER.png
+2026-03-17 12:32:48,802 [INFO] Analyzing embedding_whois distribution for device PRINTER
+2026-03-17 12:32:59,708 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_PRINTER.json
+2026-03-17 12:32:59,708 [INFO]   - Unique whois-info: 4511
+2026-03-17 12:32:59,708 [INFO] Drawing embedding_whois combination bar chart for PRINTER...
+2026-03-17 12:33:01,040 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_PRINTER.png
+2026-03-17 12:33:01,041 [INFO] Analyzing embedding_whois distribution for device SCADA
+2026-03-17 12:33:04,165 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_SCADA.json
+2026-03-17 12:33:04,165 [INFO]   - Unique whois-info: 3704
+2026-03-17 12:33:04,165 [INFO] Drawing embedding_whois combination bar chart for SCADA...
+2026-03-17 12:33:05,395 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_SCADA.png
+2026-03-17 12:33:05,395 [INFO] Analyzing embedding_whois distribution for device CAMERA
+2026-03-17 12:33:18,322 [INFO] embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_CAMERA.json
+2026-03-17 12:33:18,323 [INFO]   - Unique whois-info: 18392
+2026-03-17 12:33:18,323 [INFO] Drawing embedding_whois combination bar chart for CAMERA...
+2026-03-17 12:33:19,593 [INFO] embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_CAMERA.png
+2026-03-17 12:33:19,683 [INFO] Embedding & Clustering for whois_embedding finished in 15371.32 seconds

@@ -1,0 +1,200 @@
+nohup: ignoring input
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: /home/iot-classification/qwen3_embedding_06b
+INFO:sentence_transformers.SentenceTransformer:1 prompt is loaded, with the key: query
+INFO:root:Service analysis for dns_embedding started at 2026-03-11 16:17:02
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device NAS has been done!
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device NVR has been done!
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device PRINTER running...
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device PRINTER running... 10000/17330
+INFO:root:[dns Embedding (PCA: True)] Saved milestone at 10000 for Device PRINTER
+INFO:root:Embedding Length: 17330
+INFO:root:[**] Qwen3 embedding done!
+INFO:root:[PCA] PCA for Device PRINTER running...
+INFO:root:[PCA] PCA for Device PRINTER done!
+INFO:root:[HDBSCAN] HDBSCAN for Device PRINTER running...
+INFO:root:[HDBSCAN] Cluster Result of Device PRINTER: 47 clusters, 3464 noise points
+INFO:root:[HDBSCAN] Clustering done for Device PRINTER
+INFO:root:PCA (256) Embedding & Clustering Result Saved at /home/iot-classification/platform_data/csv/local/1/embedding_dns/ipraw_PRINTER_embedding_dns_pca.csv
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device SCADA running...
+INFO:root:[dns Embedding (PCA: True)] Embedding for Device SCADA running... 10000/11800
+INFO:root:[dns Embedding (PCA: True)] Saved milestone at 10000 for Device SCADA
+INFO:root:Embedding Length: 11800
+INFO:root:[**] Qwen3 embedding done!
+INFO:root:[PCA] PCA for Device SCADA running...
+INFO:root:[PCA] PCA for Device SCADA done!
+INFO:root:[HDBSCAN] HDBSCAN for Device SCADA running...
+INFO:root:[HDBSCAN] Cluster Result of Device SCADA: 45 clusters, 2734 noise points
+INFO:root:[HDBSCAN] Clustering done for Device SCADA
+INFO:root:PCA (256) Embedding & Clustering Result Saved at /home/iot-classification/platform_data/csv/local/1/embedding_dns/ipraw_SCADA_embedding_dns_pca.csv
+INFO:root:[*] Drawing 2D cluster plot for device NAS
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_NAS_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device NVR
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_NVR_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device POWER_METER
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_POWER_METER_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device BUILDING_AUTOMATION
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_BUILDING_AUTOMATION_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device MEDICAL
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_MEDICAL_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device ROUTER
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_ROUTER_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device PRINTER
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_PRINTER_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device SCADA
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_SCADA_pca1_pca2_dbscan(pca).png
+INFO:root:Service analysis for dns_embedding finished at 2026-03-11 16:49:27
+INFO:root:['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA']
+INFO:root:Analyzing embedding_dns distribution for device NAS
+INFO:root:embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_NAS.json
+INFO:root:  - Unique dns-reverse: 43137
+INFO:root:Drawing embedding_dns combination bar chart for NAS...
+INFO:root:embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_NAS.png
+INFO:root:Analyzing embedding_dns distribution for device NVR
+INFO:root:embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_NVR.json
+INFO:root:  - Unique dns-reverse: 14540
+INFO:root:Drawing embedding_dns combination bar chart for NVR...
+INFO:root:embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_NVR.png
+INFO:root:Analyzing embedding_dns distribution for device POWER_METER
+INFO:root:embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_POWER_METER.json
+INFO:root:  - Unique dns-reverse: 3426
+INFO:root:Drawing embedding_dns combination bar chart for POWER_METER...
+INFO:root:embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_POWER_METER.png
+INFO:root:Analyzing embedding_dns distribution for device BUILDING_AUTOMATION
+INFO:root:embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_BUILDING_AUTOMATION.json
+INFO:root:  - Unique dns-reverse: 5542
+INFO:root:Drawing embedding_dns combination bar chart for BUILDING_AUTOMATION...
+INFO:root:embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_BUILDING_AUTOMATION.png
+INFO:root:Analyzing embedding_dns distribution for device MEDICAL
+INFO:root:embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_MEDICAL.json
+INFO:root:  - Unique dns-reverse: 4406
+INFO:root:Drawing embedding_dns combination bar chart for MEDICAL...
+INFO:root:embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_MEDICAL.png
+INFO:root:Analyzing embedding_dns distribution for device ROUTER
+INFO:root:embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_ROUTER.json
+INFO:root:  - Unique dns-reverse: 52000
+INFO:root:Drawing embedding_dns combination bar chart for ROUTER...
+INFO:root:embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_ROUTER.png
+INFO:root:Analyzing embedding_dns distribution for device PRINTER
+INFO:root:embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_PRINTER.json
+INFO:root:  - Unique dns-reverse: 11127
+INFO:root:Drawing embedding_dns combination bar chart for PRINTER...
+INFO:root:embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_PRINTER.png
+INFO:root:Analyzing embedding_dns distribution for device SCADA
+INFO:root:embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_SCADA.json
+INFO:root:  - Unique dns-reverse: 6049
+INFO:root:Drawing embedding_dns combination bar chart for SCADA...
+INFO:root:embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_SCADA.png
+INFO:root:Embedding & Clustering for dns_embedding finished in 2046.18 seconds
+2026-03-17 03:07:11,477 [INFO] Load pretrained SentenceTransformer: /home/iot-classification/qwen3_embedding_06b
+2026-03-17 03:07:13,999 [INFO] 1 prompt is loaded, with the key: query
+2026-03-17 03:07:14,659 [INFO] [dns Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-17 03:07:14,919 [INFO] [dns Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-17 03:07:15,178 [INFO] [dns Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-17 03:07:15,443 [INFO] [dns Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-17 03:07:15,703 [INFO] [dns Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-17 03:07:15,963 [INFO] [dns Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-17 03:07:16,228 [INFO] [dns Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-17 03:07:16,488 [INFO] [dns Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-17 03:07:16,756 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running...
+2026-03-17 03:17:08,700 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 10000/130000
+2026-03-17 03:17:35,377 [INFO] [dns Embedding (PCA: True)] Saved milestone at 10000 for Device CAMERA
+2026-03-17 03:25:05,951 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 20000/130000
+2026-03-17 03:25:59,635 [INFO] [dns Embedding (PCA: True)] Saved milestone at 20000 for Device CAMERA
+2026-03-17 03:33:30,779 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 30000/130000
+2026-03-17 03:34:51,345 [INFO] [dns Embedding (PCA: True)] Saved milestone at 30000 for Device CAMERA
+2026-03-17 03:42:23,046 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 40000/130000
+2026-03-17 03:44:11,131 [INFO] [dns Embedding (PCA: True)] Saved milestone at 40000 for Device CAMERA
+2026-03-17 03:51:42,577 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 50000/130000
+2026-03-17 03:53:58,389 [INFO] [dns Embedding (PCA: True)] Saved milestone at 50000 for Device CAMERA
+2026-03-17 04:01:31,123 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 60000/130000
+2026-03-17 04:04:15,526 [INFO] [dns Embedding (PCA: True)] Saved milestone at 60000 for Device CAMERA
+2026-03-17 04:13:26,552 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 70000/130000
+2026-03-17 04:16:39,668 [INFO] [dns Embedding (PCA: True)] Saved milestone at 70000 for Device CAMERA
+2026-03-17 04:25:17,532 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 80000/130000
+2026-03-17 04:28:58,503 [INFO] [dns Embedding (PCA: True)] Saved milestone at 80000 for Device CAMERA
+2026-03-17 04:36:35,400 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 90000/130000
+2026-03-17 04:40:43,721 [INFO] [dns Embedding (PCA: True)] Saved milestone at 90000 for Device CAMERA
+2026-03-17 04:48:16,988 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 100000/130000
+2026-03-17 04:52:54,303 [INFO] [dns Embedding (PCA: True)] Saved milestone at 100000 for Device CAMERA
+2026-03-17 05:00:26,813 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 110000/130000
+2026-03-17 05:05:35,712 [INFO] [dns Embedding (PCA: True)] Saved milestone at 110000 for Device CAMERA
+2026-03-17 05:13:35,438 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA running... 120000/130000
+2026-03-17 05:19:28,122 [INFO] [dns Embedding (PCA: True)] Saved milestone at 120000 for Device CAMERA
+2026-03-17 05:27:13,039 [INFO] Embedding Length: 130000
+2026-03-17 05:35:35,509 [INFO] [**] Qwen3 embedding done!
+2026-03-17 05:35:35,509 [INFO] [PCA] PCA for Device CAMERA running...
+2026-03-17 05:37:47,629 [INFO] [PCA] PCA for Device CAMERA done!
+2026-03-17 05:37:47,629 [INFO] [HDBSCAN] HDBSCAN for Device CAMERA running...
+2026-03-17 07:09:40,998 [INFO] [HDBSCAN] Cluster Result of Device CAMERA: 403 clusters, 14639 noise points
+2026-03-17 07:09:40,998 [INFO] [HDBSCAN] Clustering done for Device CAMERA
+2026-03-17 07:11:02,138 [INFO] PCA (256) Embedding & Clustering Result Saved at /home/iot-classification/platform_data/csv/local/1/embedding_dns/ipraw_CAMERA_embedding_dns_pca.csv
+2026-03-17 07:11:02,139 [INFO] [*] Drawing 2D cluster plot for device NAS
+2026-03-17 07:11:22,997 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_NAS_pca1_pca2_dbscan(pca).png
+2026-03-17 07:11:22,997 [INFO] [*] Drawing 2D cluster plot for device NVR
+2026-03-17 07:11:30,147 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_NVR_pca1_pca2_dbscan(pca).png
+2026-03-17 07:11:30,147 [INFO] [*] Drawing 2D cluster plot for device POWER_METER
+2026-03-17 07:11:33,417 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_POWER_METER_pca1_pca2_dbscan(pca).png
+2026-03-17 07:11:33,417 [INFO] [*] Drawing 2D cluster plot for device BUILDING_AUTOMATION
+2026-03-17 07:11:37,643 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_BUILDING_AUTOMATION_pca1_pca2_dbscan(pca).png
+2026-03-17 07:11:37,681 [INFO] [*] Drawing 2D cluster plot for device MEDICAL
+2026-03-17 07:11:41,371 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_MEDICAL_pca1_pca2_dbscan(pca).png
+2026-03-17 07:11:41,372 [INFO] [*] Drawing 2D cluster plot for device ROUTER
+2026-03-17 07:12:07,357 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_ROUTER_pca1_pca2_dbscan(pca).png
+2026-03-17 07:12:07,357 [INFO] [*] Drawing 2D cluster plot for device PRINTER
+2026-03-17 07:12:13,223 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_PRINTER_pca1_pca2_dbscan(pca).png
+2026-03-17 07:12:13,223 [INFO] [*] Drawing 2D cluster plot for device SCADA
+2026-03-17 07:12:18,569 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_SCADA_pca1_pca2_dbscan(pca).png
+2026-03-17 07:12:18,570 [INFO] [*] Drawing 2D cluster plot for device CAMERA
+2026-03-17 07:12:44,925 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/cluster_2d_CAMERA_pca1_pca2_dbscan(pca).png
+2026-03-17 07:12:48,104 [INFO] Service analysis for dns_embedding finished at 2026-03-17 07:12:48
+2026-03-17 07:12:48,105 [INFO] ['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA', 'CAMERA']
+2026-03-17 07:12:48,105 [INFO] Analyzing embedding_dns distribution for device NAS
+2026-03-17 07:13:15,400 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_NAS.json
+2026-03-17 07:13:15,400 [INFO]   - Unique dns-reverse: 43137
+2026-03-17 07:13:15,400 [INFO] Drawing embedding_dns combination bar chart for NAS...
+2026-03-17 07:13:16,222 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_NAS.png
+2026-03-17 07:13:16,222 [INFO] Analyzing embedding_dns distribution for device NVR
+2026-03-17 07:13:20,561 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_NVR.json
+2026-03-17 07:13:20,561 [INFO]   - Unique dns-reverse: 14540
+2026-03-17 07:13:20,561 [INFO] Drawing embedding_dns combination bar chart for NVR...
+2026-03-17 07:13:21,440 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_NVR.png
+2026-03-17 07:13:21,441 [INFO] Analyzing embedding_dns distribution for device POWER_METER
+2026-03-17 07:13:31,691 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_POWER_METER.json
+2026-03-17 07:13:31,692 [INFO]   - Unique dns-reverse: 3426
+2026-03-17 07:13:31,692 [INFO] Drawing embedding_dns combination bar chart for POWER_METER...
+2026-03-17 07:13:32,612 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_POWER_METER.png
+2026-03-17 07:13:32,613 [INFO] Analyzing embedding_dns distribution for device BUILDING_AUTOMATION
+2026-03-17 07:13:39,398 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_BUILDING_AUTOMATION.json
+2026-03-17 07:13:39,398 [INFO]   - Unique dns-reverse: 5542
+2026-03-17 07:13:39,398 [INFO] Drawing embedding_dns combination bar chart for BUILDING_AUTOMATION...
+2026-03-17 07:13:40,288 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_BUILDING_AUTOMATION.png
+2026-03-17 07:13:40,289 [INFO] Analyzing embedding_dns distribution for device MEDICAL
+2026-03-17 07:13:49,580 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_MEDICAL.json
+2026-03-17 07:13:49,580 [INFO]   - Unique dns-reverse: 4406
+2026-03-17 07:13:49,580 [INFO] Drawing embedding_dns combination bar chart for MEDICAL...
+2026-03-17 07:13:51,070 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_MEDICAL.png
+2026-03-17 07:13:51,070 [INFO] Analyzing embedding_dns distribution for device ROUTER
+2026-03-17 07:14:12,521 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_ROUTER.json
+2026-03-17 07:14:12,522 [INFO]   - Unique dns-reverse: 52000
+2026-03-17 07:14:12,522 [INFO] Drawing embedding_dns combination bar chart for ROUTER...
+2026-03-17 07:14:13,381 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_ROUTER.png
+2026-03-17 07:14:13,381 [INFO] Analyzing embedding_dns distribution for device PRINTER
+2026-03-17 07:14:24,154 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_PRINTER.json
+2026-03-17 07:14:24,154 [INFO]   - Unique dns-reverse: 11127
+2026-03-17 07:14:24,154 [INFO] Drawing embedding_dns combination bar chart for PRINTER...
+2026-03-17 07:14:25,007 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_PRINTER.png
+2026-03-17 07:14:25,008 [INFO] Analyzing embedding_dns distribution for device SCADA
+2026-03-17 07:14:28,091 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_SCADA.json
+2026-03-17 07:14:28,091 [INFO]   - Unique dns-reverse: 6049
+2026-03-17 07:14:28,091 [INFO] Drawing embedding_dns combination bar chart for SCADA...
+2026-03-17 07:14:28,970 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_SCADA.png
+2026-03-17 07:14:29,170 [INFO] Analyzing embedding_dns distribution for device CAMERA
+2026-03-17 07:14:40,695 [INFO] embedding_dns distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/json/embedding_dns_distribution_CAMERA.json
+2026-03-17 07:14:40,696 [INFO]   - Unique dns-reverse: 66501
+2026-03-17 07:14:40,696 [INFO] Drawing embedding_dns combination bar chart for CAMERA...
+2026-03-17 07:14:41,570 [INFO] embedding_dns combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_dns/png/embedding_dns_combination_bar_CAMERA.png
+2026-03-17 07:14:41,669 [INFO] Embedding & Clustering for dns_embedding finished in 14847.28 seconds

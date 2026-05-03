@@ -1,0 +1,5700 @@
+{
+  "213.237.58.85": {
+    "vendor": "Bosch",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.638,
+    "changed_features": {}
+  },
+  "118.69.182.34": {
+    "vendor": "Bosch",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.638,
+    "changed_features": {}
+  },
+  "16.112.7.154": {
+    "vendor": "Fortinet",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.029,
+    "changed_features": {}
+  },
+  "16.78.16.188": {
+    "vendor": "Fortinet",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.029,
+    "changed_features": {}
+  },
+  "54.46.51.109": {
+    "vendor": "Fortinet",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.029,
+    "changed_features": {}
+  },
+  "67.193.247.168": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.197.26.207": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "88.192.152.130": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.48.92.102": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.147.98.153": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.250.233.158": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.106.235.112": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.99.98": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "88.193.133.170": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "209.159.192.233": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "60.246.107.230": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.253.225.51": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "62.65.79.173": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "80.115.83.164": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "180.181.68.152": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "207.172.172.105": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "99.229.129.239": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.111.251": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.115.194": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "99.244.19.77": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "81.95.86.251": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "81.95.82.56": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "80.220.227.74": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.195.116.61": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "38.86.7.95": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "57.134.185.159": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "82.139.214.196": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.57.67.198": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "50.80.135.111": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "64.179.134.20": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.47.130.46": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "62.198.207.159": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "217.121.12.236": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "38.86.26.87": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "99.236.169.85": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "50.64.60.202": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.107.169": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.109.120": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.156.206.241": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "178.174.116.99": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.33.114.51": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "81.95.84.77": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.37.19.110": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "173.31.73.201": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "24.156.245.149": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "99.227.103.49": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "46.212.114.129": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "23.93.208.251": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.251.45.165": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "62.199.25.252": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "192.159.47.176": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.113.175.180": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.198.95.168": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.203.221.215": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "99.239.102.12": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.34.86.120": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "31.21.181.128": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "221.127.182.40": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "95.68.112.107": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "81.95.82.148": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "82.148.182.17": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "173.207.122.169": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "206.162.61.231": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.153.153.118": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "50.125.80.240": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.150.119.199": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "81.95.93.34": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "192.184.213.52": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "83.233.171.165": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "173.238.26.196": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.27.26.111": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "173.16.88.248": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.52.189.161": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "99.235.39.42": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "81.95.91.113": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "83.249.245.15": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "95.160.24.219": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "216.9.27.67": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.68.152": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "160.2.126.35": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "217.197.63.186": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "221.155.202.92": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "76.191.177.205": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.199.215.253": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "198.200.78.227": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "69.40.188.169": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "140.177.125.72": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "82.148.182.159": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.146.90.252": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "173.20.154.0": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "23.93.215.78": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.96.199": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "62.65.79.100": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.56.51.180": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "213.47.162.185": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "50.83.187.227": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "72.24.113.245": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "140.141.198.172": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.67.244": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "78.156.1.70": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "84.48.67.145": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "184.155.14.141": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "24.119.192.200": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "140.174.82.49": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "69.172.131.133": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "82.22.173.117": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "38.131.87.52": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "50.1.244.127": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "47.198.212.45": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "67.80.124.218": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "119.14.220.236": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.36.143.71": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "221.163.134.39": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "90.73.14.221": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "176.72.153.97": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "136.35.12.13": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "62.198.230.167": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "24.150.34.47": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "206.162.108.177": {
+    "vendor": "Philips",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.011,
+    "changed_features": {}
+  },
+  "180.74.241.54": {
+    "vendor": "Schneider Electric",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.617,
+    "changed_features": {}
+  },
+  "185.60.40.222": {
+    "vendor": "Schneider Electric",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.617,
+    "changed_features": {}
+  },
+  "86.16.222.12": {
+    "vendor": "Schneider Electric",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.617,
+    "changed_features": {}
+  },
+  "186.235.87.243": {
+    "vendor": "Schneider Electric",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.617,
+    "changed_features": {}
+  },
+  "157.250.171.10": {
+    "vendor": "Schneider Electric",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.617,
+    "changed_features": {}
+  },
+  "37.123.185.182": {
+    "vendor": "Siemens",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.359,
+    "changed_features": {}
+  },
+  "60.248.230.231": {
+    "vendor": "Carrier",
+    "device_type": "BUILDING_AUTOMATION",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.148,
+    "changed_features": {}
+  },
+  "118.166.90.81": {
+    "vendor": "ASUS",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.894,
+    "changed_features": {}
+  },
+  "111.246.105.222": {
+    "vendor": "DrayTek",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.182,
+    "changed_features": {}
+  },
+  "14.176.18.127": {
+    "vendor": "DrayTek",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.182,
+    "changed_features": {}
+  },
+  "203.91.69.243": {
+    "vendor": "DrayTek",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.182,
+    "changed_features": {}
+  },
+  "177.193.224.148": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "177.33.200.154": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "186.54.47.147": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "187.64.182.172": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "187.33.182.53": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "191.187.79.8": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "189.50.252.81": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "191.54.187.243": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "179.190.161.156": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "189.112.176.49": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "186.224.108.48": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "186.224.108.32": {
+    "vendor": "Intelbras",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.053,
+    "changed_features": {}
+  },
+  "81.60.210.233": {
+    "vendor": "MOBOTIX",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.803,
+    "changed_features": {}
+  },
+  "87.149.19.38": {
+    "vendor": "MOBOTIX",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.803,
+    "changed_features": {}
+  },
+  "212.3.205.111": {
+    "vendor": "MOBOTIX",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.803,
+    "changed_features": {}
+  },
+  "201.26.28.74": {
+    "vendor": "MikroTik",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.146,
+    "changed_features": {}
+  },
+  "203.251.54.177": {
+    "vendor": "Samsung",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.916,
+    "changed_features": {}
+  },
+  "203.91.69.217": {
+    "vendor": "Samsung",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.916,
+    "changed_features": {}
+  },
+  "69.4.137.166": {
+    "vendor": "Samsung",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.916,
+    "changed_features": {}
+  },
+  "218.159.254.48": {
+    "vendor": "Samsung",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.916,
+    "changed_features": {}
+  },
+  "221.10.75.238": {
+    "vendor": "TP-LINK",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.579,
+    "changed_features": {}
+  },
+  "78.188.91.143": {
+    "vendor": "Ubiquiti",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.32,
+    "changed_features": {}
+  },
+  "87.121.128.100": {
+    "vendor": "Ubiquiti",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.32,
+    "changed_features": {}
+  },
+  "87.121.128.115": {
+    "vendor": "Ubiquiti",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.32,
+    "changed_features": {}
+  },
+  "125.143.230.131": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "221.164.218.134": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "188.25.78.186": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "59.127.155.1": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "221.164.218.135": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "116.97.226.24": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "118.32.180.73": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "211.219.136.60": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "154.125.135.63": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "121.158.57.48": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "220.80.73.240": {
+    "vendor": "Xiongmai Technology",
+    "device_type": "CAMERA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.232,
+    "changed_features": {}
+  },
+  "78.23.246.27": {
+    "vendor": "AVM",
+    "device_type": "MEDIA_SERVER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.549,
+    "changed_features": {}
+  },
+  "85.23.235.157": {
+    "vendor": "Microsoft",
+    "device_type": "MEDIA_SERVER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.75,
+    "changed_features": {}
+  },
+  "49.207.180.88": {
+    "vendor": "TP-Link",
+    "device_type": "MEDIA_SERVER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.473,
+    "changed_features": {}
+  },
+  "149.91.123.75": {
+    "vendor": "Western Digital",
+    "device_type": "MEDIA_SERVER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.651,
+    "changed_features": {}
+  },
+  "16.174.1.87": {
+    "vendor": "Hikvision",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.168,
+    "changed_features": {}
+  },
+  "16.171.242.205": {
+    "vendor": "Hikvision",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.168,
+    "changed_features": {}
+  },
+  "74.207.227.122": {
+    "vendor": "Huawei",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.577,
+    "changed_features": {}
+  },
+  "108.136.238.60": {
+    "vendor": "NextGen Healthcare",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.34,
+    "changed_features": {}
+  },
+  "41.33.66.218": {
+    "vendor": "NextGen Healthcare",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.34,
+    "changed_features": {}
+  },
+  "18.197.32.59": {
+    "vendor": "NextGen Healthcare",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.34,
+    "changed_features": {}
+  },
+  "211.228.195.98": {
+    "vendor": "Synology",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.396,
+    "changed_features": {}
+  },
+  "54.187.249.38": {
+    "vendor": "ABB",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.525,
+    "changed_features": {}
+  },
+  "185.93.207.230": {
+    "vendor": "Cisco",
+    "device_type": "MEDICAL",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.252,
+    "changed_features": {}
+  },
+  "210.139.99.101": {
+    "vendor": "Check Point",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.258,
+    "changed_features": {}
+  },
+  "202.51.32.248": {
+    "vendor": "Check Point",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.258,
+    "changed_features": {}
+  },
+  "180.30.151.175": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "133.247.158.88": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "210.164.157.201": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "78.189.226.132": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "54.85.221.73": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "13.233.102.214": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "122.23.130.147": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "210.164.157.165": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "13.247.112.251": {
+    "vendor": "Fortinet",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.108,
+    "changed_features": {}
+  },
+  "14.9.97.0": {
+    "vendor": "Merit Li-Lin",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.371,
+    "changed_features": {}
+  },
+  "122.16.196.29": {
+    "vendor": "Merit Li-Lin",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.371,
+    "changed_features": {}
+  },
+  "106.72.191.98": {
+    "vendor": "Synology",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.973,
+    "changed_features": {}
+  },
+  "195.22.56.178": {
+    "vendor": "Synology",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.973,
+    "changed_features": {}
+  },
+  "153.206.4.16": {
+    "vendor": "Synology",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.973,
+    "changed_features": {}
+  },
+  "150.31.90.110": {
+    "vendor": "Synology",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.973,
+    "changed_features": {}
+  },
+  "46.33.102.27": {
+    "vendor": "TP-Link",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.023,
+    "changed_features": {}
+  },
+  "210.136.86.205": {
+    "vendor": "TP-Link",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.023,
+    "changed_features": {}
+  },
+  "67.134.63.13": {
+    "vendor": "Ubiquiti",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.196,
+    "changed_features": {}
+  },
+  "103.141.238.55": {
+    "vendor": "Ubiquiti",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.196,
+    "changed_features": {}
+  },
+  "185.8.196.99": {
+    "vendor": "Ubiquiti",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.196,
+    "changed_features": {}
+  },
+  "67.199.160.252": {
+    "vendor": "Ubiquiti",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.196,
+    "changed_features": {}
+  },
+  "177.86.200.13": {
+    "vendor": "Ubiquiti",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.196,
+    "changed_features": {}
+  },
+  "5.252.238.12": {
+    "vendor": "Ubiquiti",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.196,
+    "changed_features": {}
+  },
+  "77.102.94.66": {
+    "vendor": "Hikvision",
+    "device_type": "NVR",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.398,
+    "changed_features": {}
+  },
+  "43.217.161.77": {
+    "vendor": "Fortinet",
+    "device_type": "POWER_METER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.425,
+    "changed_features": {}
+  },
+  "52.78.207.36": {
+    "vendor": "Fortinet",
+    "device_type": "POWER_METER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.425,
+    "changed_features": {}
+  },
+  "51.52.118.255": {
+    "vendor": "DrayTek",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.608,
+    "changed_features": {}
+  },
+  "88.97.104.193": {
+    "vendor": "DrayTek",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.608,
+    "changed_features": {}
+  },
+  "46.97.41.14": {
+    "vendor": "Fortinet",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.485,
+    "changed_features": {}
+  },
+  "73.208.45.167": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.173.154.102": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "112.162.200.116": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "96.236.130.176": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.86.2.237": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.168.67": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "45.20.210.34": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "138.23.116.171": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "138.23.151.174": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "38.18.221.6": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "45.27.163.17": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "185.163.15.27": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "50.241.239.134": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "218.39.195.60": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "141.48.166.33": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "115.20.194.45": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "93.133.243.74": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "74.90.192.156": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "86.201.79.208": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "49.204.80.14": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.167.126.192": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.119.123.254": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.27.10.7": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "136.227.144.23": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "15.168.61.88": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "78.72.153.143": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "79.138.33.197": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "96.35.201.238": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "185.188.116.97": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "80.11.238.136": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "54.81.149.67": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "99.60.23.174": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "172.114.154.176": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "173.15.211.173": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.59.164.156": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "1.232.246.142": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.223.107.110": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "71.70.150.109": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "68.21.140.252": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.202.217.141": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.39.235.123": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.107.194.221": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "134.60.75.167": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "83.23.201.25": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.174.237.120": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "56.155.127.206": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "45.37.82.177": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "2.32.201.175": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "54.66.20.229": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.112.115.197": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "38.148.92.190": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "154.5.99.161": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "51.45.5.152": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "93.227.170.47": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.173.187.189": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "195.135.12.66": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "96.18.165.136": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "92.117.167.171": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "91.177.38.134": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "165.139.144.19": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "162.197.34.175": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "1.254.36.131": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "209.166.92.156": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "117.250.121.35": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "155.207.131.164": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "203.255.27.15": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "47.146.238.194": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "203.126.240.56": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "88.65.251.190": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "139.30.101.185": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "125.135.14.240": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "193.240.51.254": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "209.136.103.139": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.223.178.50": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "24.242.155.57": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "65.70.24.227": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "82.155.192.160": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "183.104.125.184": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "96.19.198.176": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "108.235.3.38": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "136.152.59.146": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "163.25.101.140": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "47.62.87.206": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "69.114.17.19": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "16.170.240.157": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "45.31.89.16": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "58.76.44.174": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "195.251.166.79": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "138.117.195.168": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "119.201.4.36": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "148.206.105.103": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "216.189.197.189": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "75.141.241.208": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "47.181.83.102": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "96.86.38.130": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "108.226.172.230": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "174.94.45.151": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "132.247.147.212": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.210.55.236": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "112.220.150.139": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "169.229.213.217": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "163.19.6.136": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "75.188.64.38": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.102.35.153": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "94.16.18.19": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "151.97.91.121": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "148.206.123.198": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.228.20.106": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.192.66.128": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "75.113.214.175": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "125.142.77.13": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "75.109.208.34": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "118.36.23.115": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "92.32.19.135": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "18.145.215.210": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "132.248.119.148": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "66.188.52.173": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "148.204.149.220": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "204.184.169.180": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "54.165.247.225": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "209.113.209.6": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "51.21.247.225": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "37.182.80.147": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.60.65": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "206.81.101.246": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "201.184.43.3": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.146.57.209": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "69.163.29.32": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "61.72.25.159": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.113.194.57": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "18.25.15.34": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.27.27.203": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "90.38.153.199": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "118.36.88.146": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "173.31.105.232": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "175.194.81.185": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "37.103.251.110": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "162.198.40.164": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "209.136.83.91": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.197.64.4": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.94.155.159": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "70.93.228.130": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "191.7.120.77": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.177.218.176": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "157.88.130.107": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "84.77.69.180": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.168.23.209": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "108.200.160.166": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "38.247.58.236": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.228.158.212": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "24.8.92.103": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "18.25.15.41": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "143.225.107.4": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "1.222.220.150": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.113.237.78": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "155.4.24.201": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "78.182.17.67": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.69.244.186": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "90.125.167.46": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "163.180.103.113": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "125.243.210.158": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "24.216.38.162": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "139.179.4.254": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "14.56.9.52": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "99.57.180.186": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "164.177.20.219": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "180.74.195.121": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "141.255.57.143": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "188.240.193.192": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "207.135.231.206": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.79.33.239": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "100.30.179.7": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "162.246.120.121": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "69.165.37.167": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.168.190.181": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.39.180": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "24.6.195.153": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "68.171.198.44": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "62.20.194.33": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "149.156.162.136": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "169.212.147.225": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.115.190": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.39.247": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "84.196.14.42": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "15.134.141.35": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "14.52.169.131": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.27.16.13": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "65.92.70.203": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.77.240": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "58.141.101.21": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "50.109.87.34": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "199.247.244.71": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "67.243.89.55": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "190.210.147.226": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "35.8.64.74": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.101.216.7": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "119.196.240.101": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "202.5.61.89": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.73.98": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "93.228.164.210": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "101.59.72.204": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "52.77.247.18": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.117.54.202": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "108.172.241.156": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.124.140.100": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.194.19.159": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "73.183.254.152": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "141.135.149.102": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "84.30.136.7": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "58.210.228.66": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "148.206.127.84": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "221.125.137.158": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "213.66.226.76": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "159.26.12.252": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.60.50": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "96.60.189.26": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "184.67.239.98": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "31.127.53.241": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "216.195.29.40": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "139.91.170.190": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "217.211.154.110": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "93.172.173.91": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "14.37.58.131": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "89.221.48.42": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.198.154.188": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "114.71.50.41": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "182.70.255.52": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.186.204.113": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "79.199.111.200": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "115.23.136.136": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "18.170.120.184": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "132.247.147.205": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "79.46.98.127": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "203.232.212.27": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.16.39": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "131.159.37.170": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "54.169.252.135": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "185.76.59.27": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "45.23.69.161": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "189.150.71.46": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "189.150.18.130": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "76.142.61.225": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "50.238.88.228": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "218.156.49.200": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.75.254.42": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "41.178.108.109": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "202.30.17.32": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "112.172.171.21": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "88.192.160.13": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "37.26.193.140": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "95.235.157.37": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "31.6.221.37": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "180.176.40.44": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "213.143.198.11": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "176.148.202.121": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "185.93.152.83": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "77.166.192.135": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "207.74.70.130": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "178.134.27.162": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "50.65.143.140": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "196.202.94.22": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "174.182.120.121": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "187.251.208.33": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "14.7.149.27": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "118.70.160.208": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "99.106.28.10": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.102.7.242": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "74.192.225.160": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "119.201.149.176": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "49.204.80.11": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "222.119.89.140": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "1.120.174.104": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "142.112.216.160": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "148.204.149.208": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.90.232.224": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "80.13.26.245": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "152.92.218.242": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "84.173.130.229": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "24.216.60.42": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.172.194.237": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "47.135.83.138": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "69.222.183.76": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "190.141.236.142": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "24.138.180.225": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.213.115.96": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "112.172.95.55": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "99.6.225.9": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "162.237.82.153": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "82.225.23.44": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "70.169.181.171": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "151.42.135.222": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "109.151.191.253": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.213.141.134": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "86.223.162.62": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "98.144.6.129": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "12.32.175.53": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "139.179.233.69": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "89.160.52.186": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "175.196.136.115": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "183.82.57.155": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.175.19.15": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "139.30.205.69": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "80.135.157.36": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.168.30": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "182.176.79.253": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "81.83.82.189": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "182.70.124.190": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "73.241.199.177": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "194.56.236.95": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "204.184.169.2": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "186.188.214.213": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.102.3.217": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "54.206.177.74": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "93.146.10.240": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.119.62": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "78.141.9.241": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.191.118.201": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "173.76.137.47": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "183.97.40.219": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "131.159.46.66": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "209.89.190.162": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "137.63.141.36": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "78.82.157.194": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "24.209.161.39": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "221.154.58.134": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "119.207.84.57": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "114.70.22.35": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "88.129.230.154": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "203.51.12.5": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "221.159.244.111": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "160.217.163.47": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "1.221.28.134": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.186.130.53": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "100.36.91.147": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "168.188.49.219": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "13.56.210.228": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.107.205.210": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "163.18.65.75": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "204.15.104.117": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "64.173.191.47": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.88.52.237": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "108.7.233.133": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.43.10": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.126.64.136": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "15.152.152.65": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "76.128.213.195": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "86.234.37.251": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "120.157.135.179": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.217.213.159": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "146.168.40.228": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.102.36.139": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "58.151.111.8": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "80.28.105.209": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "156.19.17.2": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "179.56.159.76": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "173.31.226.126": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "187.104.155.97": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.245.219.8": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.213.141.189": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "88.5.92.237": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "58.8.255.224": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "115.137.48.83": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "4.36.110.170": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "119.205.126.86": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "172.118.0.95": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "84.253.59.198": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "195.251.148.30": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "137.63.152.30": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "108.12.200.102": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "119.205.126.112": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.39.235.118": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "168.188.16.177": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.119.147.47": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "191.8.166.114": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "161.53.207.185": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.57.234.196": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.240.71.56": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "165.246.70.156": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "152.249.244.231": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "83.249.230.241": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "125.143.116.97": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.174.237.119": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "139.30.65.40": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "130.25.217.101": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "178.142.49.175": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "160.217.197.87": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "184.162.45.12": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "163.18.24.19": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "203.38.121.140": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "73.121.246.79": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "59.17.106.201": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "98.182.6.124": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "117.16.153.30": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "176.174.7.239": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "216.31.68.197": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.119.54": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "112.196.2.157": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "61.57.85.93": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "122.45.55.208": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.112.180.175": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "175.212.66.18": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.135.190": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "97.92.40.91": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "195.130.119.70": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "203.201.149.22": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "169.211.239.56": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "165.124.206.21": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "91.42.121.39": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "98.223.185.14": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.148.174.166": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "201.178.35.15": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.53.20.156": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "69.1.17.71": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "61.38.164.161": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "160.80.94.189": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "151.55.81.72": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "160.217.205.128": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "184.167.52.3": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "59.31.113.158": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "37.189.90.137": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "50.27.171.159": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "195.113.33.10": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.230.187.125": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "76.164.136.39": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "112.164.27.197": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "160.217.156.201": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "61.83.163.239": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "61.239.107.17": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "80.216.132.175": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "119.206.132.145": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "113.59.174.12": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "81.248.166.132": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "221.155.131.233": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.99.72.39": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "118.70.160.211": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.59.164.159": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.81.57.250": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "195.254.236.8": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.172.35.18": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "143.225.61.27": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "47.204.238.141": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "49.204.232.10": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "15.73.171.23": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.156.37.67": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "80.223.10.71": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "136.29.65.96": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "139.30.65.14": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "128.197.84.200": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "184.54.176.45": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "162.225.122.183": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "24.12.74.40": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "174.1.116.46": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "59.98.4.40": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "177.66.110.14": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "14.33.104.219": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "206.146.66.69": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "165.229.205.81": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "137.82.107.14": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "108.160.70.1": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "155.207.86.72": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "108.239.10.114": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "222.114.217.119": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "119.196.240.133": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "130.111.179.39": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "203.246.111.213": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.41.48": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.143.216.162": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "115.30.74.241": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "152.92.113.11": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "64.202.43.96": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.113.237.68": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "152.92.118.48": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "162.227.23.57": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "107.143.157.34": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "193.110.187.45": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "23.91.192.240": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "79.8.124.14": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "93.41.142.175": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "112.167.31.213": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "76.219.115.78": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.7.80.10": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "91.176.228.50": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "160.80.97.95": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "93.159.243.160": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "70.133.167.42": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "211.48.66.10": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "45.167.191.55": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "43.210.151.213": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "109.67.148.123": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "173.174.178.83": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "100.1.86.70": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "86.88.174.186": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "222.108.163.6": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "113.247.233.117": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "84.182.217.152": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.117.16": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "71.251.215.3": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "115.93.208.90": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "132.248.247.137": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "160.217.205.164": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.191.19.158": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "201.211.252.247": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "196.219.142.3": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.91.81.46": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "99.70.24.54": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "202.30.10.36": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "148.204.61.228": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "70.33.55.69": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "155.185.245.176": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.186.66.26": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.113.152.10": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.113.201.22": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "3.26.103.246": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "202.30.19.52": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "141.51.66.21": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.236.22": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "169.229.174.28": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "118.34.139.141": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.230.5.203": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "213.66.60.75": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "150.165.52.121": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "31.113.182.79": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "139.30.46.163": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.228.158.209": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.142.78.24": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "75.88.181.242": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.192.168.137": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "198.37.139.103": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.21.131.63": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "107.192.96.227": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "99.70.213.217": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "88.119.189.118": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "140.129.2.114": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "61.182.253.222": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "104.205.130.50": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.91.209.136": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "61.250.154.218": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "45.24.210.53": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.163.112.238": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "112.170.59.128": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "130.15.60.192": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "175.214.193.71": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "132.247.147.194": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "201.48.125.37": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "162.216.74.21": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "213.135.238.132": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "201.184.243.202": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "155.207.131.87": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "203.244.187.114": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "210.182.167.109": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "147.102.110.206": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "130.149.32.52": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "69.163.7.79": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "121.151.9.78": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "82.130.154.44": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "105.159.110.44": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "220.122.182.146": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "165.246.136.98": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "177.67.237.55": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "206.116.167.142": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "129.8.73.22": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "99.70.121.155": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "213.59.187.14": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "69.66.189.236": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "80.45.246.103": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "18.209.70.40": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "175.193.112.247": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "75.178.138.253": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "71.15.87.133": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "65.184.70.217": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "190.140.129.239": {
+    "vendor": "HP",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 13.98,
+    "changed_features": {}
+  },
+  "182.253.154.231": {
+    "vendor": "Synology",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.299,
+    "changed_features": {}
+  },
+  "81.167.235.225": {
+    "vendor": "Synology",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.299,
+    "changed_features": {}
+  },
+  "18.4.13.100": {
+    "vendor": "Xerox",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.013,
+    "changed_features": {}
+  },
+  "203.193.147.9": {
+    "vendor": "Xerox",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.013,
+    "changed_features": {}
+  },
+  "159.90.32.173": {
+    "vendor": "Xerox",
+    "device_type": "PRINTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.013,
+    "changed_features": {}
+  },
+  "73.167.202.2": {
+    "vendor": "Comcast",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.175,
+    "changed_features": {}
+  },
+  "24.19.200.70": {
+    "vendor": "Comcast",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.175,
+    "changed_features": {}
+  },
+  "103.236.173.127": {
+    "vendor": "MikroTik",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.265,
+    "changed_features": {}
+  },
+  "194.150.68.149": {
+    "vendor": "MikroTik",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.265,
+    "changed_features": {}
+  },
+  "194.187.154.92": {
+    "vendor": "MikroTik",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.265,
+    "changed_features": {}
+  },
+  "213.192.10.156": {
+    "vendor": "MikroTik",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.265,
+    "changed_features": {}
+  },
+  "194.150.68.153": {
+    "vendor": "MikroTik",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.265,
+    "changed_features": {}
+  },
+  "194.150.68.158": {
+    "vendor": "MikroTik",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.265,
+    "changed_features": {}
+  },
+  "36.91.26.149": {
+    "vendor": "MikroTik",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.265,
+    "changed_features": {}
+  },
+  "79.116.59.105": {
+    "vendor": "MikroTik",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.265,
+    "changed_features": {}
+  },
+  "95.143.103.75": {
+    "vendor": "ZTE",
+    "device_type": "ROUTER",
+    "detection_method": "IoTProber",
+    "class_drift_score": 16.076,
+    "changed_features": {}
+  },
+  "59.126.240.62": {
+    "vendor": "ASUS",
+    "device_type": "SCADA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.164,
+    "changed_features": {}
+  },
+  "49.49.147.233": {
+    "vendor": "Huawei",
+    "device_type": "SCADA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.12,
+    "changed_features": {}
+  },
+  "219.68.96.49": {
+    "vendor": "TP-Link",
+    "device_type": "SCADA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.375,
+    "changed_features": {}
+  },
+  "5.58.11.23": {
+    "vendor": "TP-Link",
+    "device_type": "SCADA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.375,
+    "changed_features": {}
+  },
+  "31.202.87.111": {
+    "vendor": "TP-Link",
+    "device_type": "SCADA",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.375,
+    "changed_features": {}
+  },
+  "89.154.131.117": {
+    "vendor": "ASUS",
+    "device_type": "VPN",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.08,
+    "changed_features": {}
+  },
+  "78.34.6.177": {
+    "vendor": "AVM",
+    "device_type": "VPN",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.247,
+    "changed_features": {}
+  },
+  "178.199.221.235": {
+    "vendor": "AVM",
+    "device_type": "VPN",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.247,
+    "changed_features": {}
+  },
+  "111.50.0.62": {
+    "vendor": "EMQ",
+    "device_type": "VPN",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.359,
+    "changed_features": {}
+  },
+  "3.39.190.239": {
+    "vendor": "Fortinet",
+    "device_type": "VPN",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.147,
+    "changed_features": {}
+  },
+  "13.212.173.42": {
+    "vendor": "Palo Alto Networks",
+    "device_type": "VPN",
+    "detection_method": "IoTProber",
+    "class_drift_score": 14.076,
+    "changed_features": {}
+  },
+  "93.240.42.135": {
+    "vendor": "Sophos",
+    "device_type": "VPN",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.454,
+    "changed_features": {}
+  },
+  "185.58.122.77": {
+    "vendor": "Hikvision",
+    "device_type": "VPN",
+    "detection_method": "IoTProber",
+    "class_drift_score": 15.411,
+    "changed_features": {}
+  }
+}

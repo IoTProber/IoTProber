@@ -1,0 +1,15 @@
+{
+    "as": ["as-info"],
+    "whois": ["whois-info"],
+    "os": ["os-info"],
+    "sw": ["sw-info"],
+    "hw": ["hw-info"],
+    "sd": ["service-distribution"],
+    "body": ["http-bodys"],
+    "htags": ["http-tags"],
+    "hfavicons": ["http-favicon-urls"],
+    "hpart": ["http-part-info"],
+    "http": ["http-info"],
+    "certificate": ["cert-info"],
+    "dns": ["dns-reverse"]
+}

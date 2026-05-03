@@ -1,0 +1,8632 @@
+[
+  {
+    "ip": "100.27.186.230",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "107.20.61.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Asus",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "108.130.211.44",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "108.136.125.64",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Asus",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "108.136.143.242",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Draytek",
+      "Orange",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "108.136.240.203",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Sony",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "108.136.245.209",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "108.136.248.28",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "NCR",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "108.136.249.1",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "ASUS",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "108.136.44.163",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "108.137.130.98",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "AXIS Communications",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "108.137.3.34",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "SAP",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "108.137.71.147",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Orange",
+      "Asus",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "128.230.68.168",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "Merit LILIN",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "13.114.104.9",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.114.142.161",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Schneider Electric",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "13.115.91.236",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Asus",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "13.124.131.165",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "NCR",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "13.126.252.245",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Tridium",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "13.126.9.128",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "EasyIO",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "13.127.211.161",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.127.32.134",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "ZyXEL",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "13.135.163.216",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Fortinet",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "13.135.66.125",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.192.167.117",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SMA",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "13.201.120.131",
+    "type": "NVR",
+    "top3_vendor": [
+      "egauge",
+      "Bosch",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "13.201.36.0",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Axis Communications AB",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "13.201.69.89",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Sonos",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "13.201.84.243",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ivanti",
+      "Check Point",
+      "Sony"
+    ]
+  },
+  {
+    "ip": "13.201.95.186",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Orange",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "13.208.158.226",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Veeam",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "13.208.164.228",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Electro Industries/GaugeTech",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "13.208.168.200",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "TP-LINK",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "13.208.185.215",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.208.185.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Merit Lilin",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "13.208.209.251",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit Lilin",
+      "TiVo",
+      "Orange"
+    ]
+  },
+  {
+    "ip": "13.208.45.178",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.210.12.116",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Fortinet",
+      "Sony",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "13.210.218.101",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "eGauge",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "13.211.83.1",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Phoenix Contact",
+      "Circutor"
+    ]
+  },
+  {
+    "ip": "13.212.4.127",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "13.212.80.249",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Digi International",
+      "Electroind",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "13.212.94.235",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Janitza",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "13.212.95.185",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Bosch",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "13.212.97.146",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "Yokogawa",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "13.214.208.121",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Cisco",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "13.214.213.33",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit LILIN",
+      "Orange",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "13.217.199.51",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "ZyXEL",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "13.218.217.13",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "13.229.204.159",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Check Point",
+      "Schneider Electric",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "13.229.75.64",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "NCR",
+      "GE"
+    ]
+  },
+  {
+    "ip": "13.230.185.87",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ZyXEL",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "13.230.225.195",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-LINK",
+      "Reolink",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "13.231.188.156",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.231.229.216",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Veeam",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "13.231.41.255",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SEL",
+      "Reolink",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "13.232.109.58",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Bosch",
+      "egauge",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "13.232.202.159",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Veeam",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "13.232.83.46",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Circutor",
+      "SEL",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "13.233.106.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "Schneider Electric",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "13.233.107.165",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Draytek",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "13.233.125.3",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Draytek",
+      "Axis",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "13.233.141.26",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SEL",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "13.233.162.30",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.233.204.10",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Phoenix Contact",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "13.233.26.27",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.234.111.49",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Emerson",
+      "Honeywell",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "13.234.113.248",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "AXIS Communications",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "13.234.120.2",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sagemcom",
+      "NCR",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "13.235.18.223",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "ZyXEL",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "13.236.80.189",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.236.91.237",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "QNAP",
+      "ASUS",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "13.239.73.10",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Netgear",
+      "Fortinet",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "13.244.107.64",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "SonicWall",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "13.244.119.190",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Axis Communications",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "13.244.120.182",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sophos",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "13.244.63.147",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "QNAP",
+      "Yokogawa",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "13.245.108.209",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Palo Alto Networks",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "13.245.157.224",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Honeywell",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "13.245.196.49",
+    "type": "Scada",
+    "top3_vendor": [
+      "Sony",
+      "Bosch",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "13.245.197.119",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "AXIS",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "13.245.198.180",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Schneider Electric",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "13.245.27.91",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Orange",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "13.245.30.132",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Yokogawa",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "13.245.30.228",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SMA",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "13.245.30.58",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "ABB",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "13.245.75.191",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.245.87.222",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.246.201.43",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "13.246.22.86",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.246.38.198",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Schneider Electric",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "13.246.38.88",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "PaperCut",
+      "Yokogawa",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "13.246.9.215",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "ASUS",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "13.247.176.118",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SMA",
+      "Fortinet",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "13.247.181.41",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.247.188.236",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Shenzhen Reecam Tech. Ltd.",
+      "TP-Link",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "13.247.229.213",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "13.247.95.195",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Cisco",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "13.250.28.153",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.36.234.140",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Veeam",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "13.36.234.148",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "Reolink",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "13.36.241.68",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Netgear",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "13.37.226.37",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.37.228.180",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Electro Industries/GaugeTech",
+      "Sony"
+    ]
+  },
+  {
+    "ip": "13.38.30.198",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS Communications",
+      "Reolink",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "13.38.88.182",
+    "type": "Medical",
+    "top3_vendor": [
+      "Axis",
+      "TP-LINK",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "13.40.120.225",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SonicWall",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "13.40.133.127",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "egauge",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "13.40.47.150",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Orange",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "13.40.5.91",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "NetGear",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "13.48.55.231",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.49.223.73",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Digi International",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "13.51.176.249",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "13.55.41.99",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sophos",
+      "Honeywell",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "13.56.179.173",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Schneider Electric",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "13.56.240.230",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications AB",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "13.56.80.245",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.57.14.103",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.57.199.240",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SonicWall",
+      "ZyXEL",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "13.57.234.90",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "Axis Communications AB",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "13.60.48.105",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Eaton",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "13.60.60.194",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "TiVo",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "13.60.76.90",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Palo Alto Networks",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "13.61.144.188",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.61.152.69",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "13.61.189.120",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "eGauge Systems LLC",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "13.62.227.158",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Ivanti",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "13.62.227.209",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Emerson",
+      "PaperCut",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "13.62.52.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Draytek",
+      "HP"
+    ]
+  },
+  {
+    "ip": "13.62.57.125",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Siemens",
+      "HP"
+    ]
+  },
+  {
+    "ip": "147.81.13.185",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems",
+      "TP-Link",
+      "Sony"
+    ]
+  },
+  {
+    "ip": "147.81.14.9",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.152.32.81",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "TP-LINK",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "15.152.38.226",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Tridium",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "15.152.47.246",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.152.49.246",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sony",
+      "Siemens",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "15.152.50.158",
+    "type": "Router",
+    "top3_vendor": [
+      "Fortinet",
+      "Honeywell",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "15.157.63.71",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "Merit Lilin",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "15.160.10.147",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "ASUS",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "15.160.10.198",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS Communications",
+      "Electroind",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "15.160.114.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Axis",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "15.160.144.80",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.160.149.119",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Electro Industries/GaugeTech",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "15.160.187.135",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sagemcom",
+      "Ubiquiti",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "15.160.198.31",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "Siemens",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "15.160.223.10",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "15.160.238.154",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "HP",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "15.160.26.29",
+    "type": "Router",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Bosch",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "15.160.77.199",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.161.111.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "EasyIO",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "15.161.155.131",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Merit Lilin",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "15.161.155.137",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SMA",
+      "Bosch",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "15.161.234.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ivanti",
+      "HP",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "15.161.234.19",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.161.246.174",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "TP-LINK",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "15.161.246.38",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.161.91.229",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-LINK",
+      "ASUS",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "15.168.12.62",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.168.13.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.168.136.19",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems",
+      "EasyIO",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "15.168.136.66",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SMA",
+      "Reolink",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "15.168.136.90",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Hikvision",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "15.168.140.240",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SAP",
+      "Orange"
+    ]
+  },
+  {
+    "ip": "15.168.16.51",
+    "type": "Medical",
+    "top3_vendor": [
+      "Fortinet",
+      "Cisco",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "15.168.237.32",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.168.238.128",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "NetGear",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "15.168.240.49",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.168.37.37",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Orange",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "15.168.7.123",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "ZyXEL",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "15.168.8.235",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ZyXEL",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "15.184.217.199",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "EasyIO",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "15.185.146.154",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Emerson",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "15.185.149.115",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.185.176.8",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Cisco",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "15.185.193.232",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Hikvision",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "15.185.233.136",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Hikvision",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "15.185.34.43",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Electro Industries",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "15.185.55.44",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "ASUS",
+      "Axis Communications",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "15.185.76.121",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "PaperCut",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "15.185.80.114",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS",
+      "SAP",
+      "egauge"
+    ]
+  },
+  {
+    "ip": "15.185.80.83",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SonicWall",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "15.185.81.193",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Emerson",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "15.216.1.94",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Reolink",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "15.216.147.102",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.216.29.203",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "Shenzhen Reecam Tech. Ltd.",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "15.216.44.24",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "egauge",
+      "eGauge Systems",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "15.216.94.246",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems LLC",
+      "Sagemcom",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "15.222.244.184",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "SonicWall",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "15.222.64.39",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Circutor",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "15.222.7.109",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Axis",
+      "GE"
+    ]
+  },
+  {
+    "ip": "15.223.113.60",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.223.116.221",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Check Point",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "15.223.121.58",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Asus",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "15.223.205.100",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "NCR",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "15.223.64.122",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Eaton",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "15.228.187.1",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Schneider Electric",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "15.228.187.85",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "ZyXEL",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "15.228.194.32",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Bosch",
+      "Sagemcom"
+    ]
+  },
+  {
+    "ip": "15.228.194.34",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.228.199.249",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Schneider Electric",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "15.229.16.139",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Sonos",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "15.232.23.44",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "TiVo",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "15.236.131.56",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Eaton",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "15.236.133.52",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "AXIS Communications",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "15.236.95.37",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries/GaugeTech",
+      "Yokogawa",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "15.237.110.22",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "Axis",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "15.237.126.47",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Ubiquiti",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "15.237.137.140",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "HP",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "15.237.193.159",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "15.237.196.96",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "157.175.146.88",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NCR",
+      "Hikvision",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "157.175.175.97",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Emerson",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "157.175.186.201",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "PaperCut",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "157.175.187.81",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "AXIS Communications",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "157.175.188.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Netgear",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "157.175.40.184",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "Axis",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "157.175.43.137",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "Dahua",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "157.175.49.140",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "SMA",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "157.175.54.17",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "157.175.56.46",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sonos",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "157.241.106.233",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "158.252.33.110",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "158.252.78.184",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "ZyXEL",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "158.252.93.180",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Phoenix Contact",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "158.252.93.57",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.112.109.190",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Netgear",
+      "TP-LINK",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "16.112.131.225",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "Siemens",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "16.112.132.154",
+    "type": "Scada",
+    "top3_vendor": [
+      "Honeywell",
+      "SonicWall",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "16.112.31.40",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.147.252.36",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Reolink",
+      "Sagemcom"
+    ]
+  },
+  {
+    "ip": "16.148.123.93",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Bosch",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "16.148.73.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.16.186.63",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Bosch",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "16.16.58.202",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Tridium",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "16.162.4.70",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Ivanti",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "16.162.46.124",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "EasyIO",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "16.163.95.226",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Netgear",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "16.163.97.195",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries",
+      "ASUS",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "16.170.162.252",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Draytek",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "16.170.172.69",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Siemens",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "16.170.173.18",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Siemens",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "16.170.221.215",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.171.227.10",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications AB",
+      "Electroind",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "16.176.178.113",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "EasyIO",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "16.18.11.97",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Electro Industries",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "16.18.18.81",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "ASUS",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "16.22.13.45",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "GE",
+      "Sony"
+    ]
+  },
+  {
+    "ip": "16.22.14.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Veeam",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "16.24.141.63",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "Axis Communications AB",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "16.24.144.161",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "Axis",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "16.24.144.31",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Fortinet",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "16.24.146.11",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.24.146.142",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Siemens",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "16.24.151.75",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.24.171.235",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "GE",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "16.24.204.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ABB",
+      "Sagemcom"
+    ]
+  },
+  {
+    "ip": "16.24.204.148",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.24.214.43",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Palo Alto Networks",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "16.24.27.209",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.24.69.228",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Electroind",
+      "Orange",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "16.24.71.218",
+    "type": "Medical",
+    "top3_vendor": [
+      "ASUS",
+      "Emerson",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "16.24.73.15",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.24.82.34",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "GE",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "16.24.97.91",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "AXIS",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "16.26.187.5",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Hikvision",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "16.26.193.225",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.26.193.55",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "egauge",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "16.26.207.214",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "Orange",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "16.26.40.166",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ubiquiti",
+      "Sonos",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "16.26.42.134",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Emerson",
+      "HP"
+    ]
+  },
+  {
+    "ip": "16.26.43.133",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Sonos",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "16.26.48.106",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "TP-Link",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "16.26.87.218",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "ASUS",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "16.26.99.186",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Ubiquiti",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "16.27.10.66",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "egauge",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "16.27.23.142",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Ubiquiti",
+      "HP",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "16.27.23.6",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "QNAP",
+      "Fortinet",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "16.27.6.48",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.27.8.169",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "Veeam",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "16.27.9.173",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Check Point",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "16.27.9.26",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Dahua",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "16.28.105.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.28.105.50",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Cisco",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "16.28.109.232",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.28.29.103",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "Eaton",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "16.50.111.230",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Eaton",
+      "GE"
+    ]
+  },
+  {
+    "ip": "16.50.115.217",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "PaperCut",
+      "Circutor",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "16.50.117.104",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.50.117.255",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Check Point",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "16.50.231.222",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Dahua",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "16.50.231.9",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Circutor",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "16.50.40.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "SAP",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "16.50.41.12",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Axis Communications",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "16.50.41.247",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "SEL",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "16.50.44.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Orange",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "16.50.44.64",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.50.47.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Asus",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "16.50.65.149",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Orange",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "16.51.151.63",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Asus",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "16.51.152.48",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sonos",
+      "Check Point",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "16.51.157.184",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-LINK",
+      "Palo Alto Networks",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "16.51.158.173",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sagemcom",
+      "Axis Communications AB",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "16.51.197.230",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "SEL",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "16.51.81.50",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Draytek",
+      "ASUS",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "16.51.89.63",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.52.129.125",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Electro Industries",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "16.52.158.52",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SEL",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "16.52.40.121",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Siemens",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "16.52.44.58",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "egauge",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "16.62.174.168",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Palo Alto Networks",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "16.62.226.172",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Schneider Electric",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "16.62.233.216",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Veeam",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "16.62.240.253",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Siemens",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "16.62.58.1",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NetGear",
+      "ABB",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "16.62.60.96",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sony",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "16.62.81.73",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit Lilin",
+      "TP-LINK",
+      "Sony"
+    ]
+  },
+  {
+    "ip": "16.62.85.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sagemcom",
+      "EasyIO",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "16.63.101.16",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "EasyIO",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "16.63.108.178",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "GE",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "16.63.111.225",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Circutor",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "16.63.152.112",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "TP-LINK",
+      "egauge"
+    ]
+  },
+  {
+    "ip": "16.63.159.153",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Schneider Electric",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "16.63.161.211",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Schneider Electric",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "16.63.163.252",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Orange",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "16.63.172.16",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Axis",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "16.63.221.58",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "eGauge Systems",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "16.63.233.92",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Merit Lilin",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "16.63.35.64",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Orange",
+      "Bosch",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "16.63.58.88",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Electro Industries",
+      "Circutor"
+    ]
+  },
+  {
+    "ip": "16.78.107.161",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.78.108.34",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "16.78.113.248",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Fortinet",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "16.78.114.44",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Electro Industries",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "16.78.22.96",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "AXIS Communications",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "16.78.220.164",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Check Point",
+      "Ubiquiti",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "16.78.33.85",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Shenzhen Reecam Tech. Ltd.",
+      "Bosch",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "16.78.4.19",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "16.78.42.160",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Yokogawa",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "16.78.47.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sonos",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "16.78.92.27",
+    "type": "NVR",
+    "top3_vendor": [
+      "PaperCut",
+      "Axis",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "16.79.111.57",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Draytek",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "16.79.135.233",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Schneider Electric",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "16.79.135.81",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ivanti",
+      "SEL",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "16.79.136.35",
+    "type": "NAS",
+    "top3_vendor": [
+      "Siemens",
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "16.79.167.180",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Schneider Electric",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "16.79.61.172",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "ASUS",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "16.79.68.226",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "SEL",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "16.79.71.24",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "16.79.99.240",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "162.191.223.175",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SEL",
+      "Draytek",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "166.139.118.50",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "HP",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "173.28.126.31",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "175.41.167.13",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sophos",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "18.100.124.154",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Axis",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "18.100.124.214",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Sonos",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "18.100.202.223",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Circutor",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "18.100.226.143",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.100.44.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Electroind",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "18.101.133.40",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sonos",
+      "ASUS",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "18.101.142.62",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sagemcom",
+      "Electro Industries/GaugeTech",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "18.101.182.152",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "18.101.94.183",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "eGauge Systems",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "18.116.62.248",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Ivanti",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "18.130.163.73",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sagemcom",
+      "Emerson",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "18.130.27.69",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Schneider Electric",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "18.130.80.117",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NCR",
+      "Hikvision",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "18.130.99.179",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.132.37.54",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Sagemcom",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "18.132.41.37",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.142.249.221",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Merit Lilin",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "18.143.116.133",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "TiVo",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "18.143.148.40",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries/GaugeTech",
+      "TiVo",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "18.143.171.179",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ZyXEL",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "18.144.21.213",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Orange",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "18.144.31.65",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "ABB",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "18.144.51.129",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Axis",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "18.153.48.22",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries/GaugeTech",
+      "Axis Communications AB",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "18.159.108.132",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SEL",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "18.159.35.186",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "egauge",
+      "Fortinet",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "18.162.150.101",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.162.228.145",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZyXEL",
+      "Axis",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "18.162.232.23",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Palo Alto Networks",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "18.162.41.38",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "AXIS Communications",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "18.162.41.94",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.163.188.92",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit LILIN",
+      "NCR",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "18.163.2.4",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "PaperCut",
+      "NetGear",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "18.163.200.236",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "TP-Link",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "18.163.3.26",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Bosch",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "18.163.40.163",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Ivanti",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "18.163.79.185",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SAP",
+      "Palo Alto Networks",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "18.163.81.134",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.167.172.246",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries",
+      "Fortinet",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "18.167.69.201",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Bosch",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "18.170.224.126",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Dahua",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "18.170.225.46",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Axis Communications",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "18.170.227.41",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Orange",
+      "Reolink",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "18.170.54.14",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries/GaugeTech",
+      "Axis Communications AB",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "18.170.60.100",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.171.172.237",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Asus",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "18.171.242.23",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Axis",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "18.175.135.59",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NetGear",
+      "Hikvision",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "18.175.139.237",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.175.146.60",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ivanti",
+      "Fortinet",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "18.175.153.192",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "18.175.221.179",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.175.251.189",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "QNAP",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "18.183.229.131",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Digi International",
+      "TP-LINK",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "18.185.109.249",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sagemcom",
+      "AXIS",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "18.185.35.39",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Veeam",
+      "Hikvision",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "18.188.238.94",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge Systems LLC",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "18.189.145.161",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sonos",
+      "Circutor"
+    ]
+  },
+  {
+    "ip": "18.192.122.33",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.192.63.68",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "18.201.210.14",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.201.62.179",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Draytek",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "18.202.228.13",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries",
+      "Orange",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "18.202.32.48",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Draytek",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "18.203.68.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Veeam",
+      "Sophos",
+      "HP"
+    ]
+  },
+  {
+    "ip": "18.205.194.20",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "AXIS",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "18.206.241.224",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Asus",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "18.207.123.122",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SAP",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "18.208.245.114",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "eGauge",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "18.212.75.53",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Dahua",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "18.212.75.82",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.215.153.111",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.217.59.173",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Janitza",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "18.221.13.216",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "SEL",
+      "Sony"
+    ]
+  },
+  {
+    "ip": "18.224.55.180",
+    "type": "NVR",
+    "top3_vendor": [
+      "Tridium",
+      "ABB",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "18.224.60.164",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "SAP",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "18.225.254.139",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.226.133.246",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "AXIS",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "18.226.164.116",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Palo Alto Networks",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "18.228.12.128",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Orange",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "18.228.12.7",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Phoenix Contact",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "18.228.152.33",
+    "type": "Scada",
+    "top3_vendor": [
+      "Fortinet",
+      "EasyIO",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "18.228.189.175",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.228.191.102",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Bosch",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "18.229.134.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Orange",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "18.229.143.251",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "eGauge Systems",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "18.229.150.111",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Siemens",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "18.230.20.176",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Honeywell",
+      "Orange"
+    ]
+  },
+  {
+    "ip": "18.230.228.167",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Check Point",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "18.230.56.202",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "AXIS Communications",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "18.230.75.230",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Phoenix Contact",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "18.230.75.26",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Fortinet",
+      "Sagemcom",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "18.231.111.190",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "eGauge Systems",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "18.231.111.88",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "ABB",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "18.231.114.247",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "Ivanti",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "18.231.117.178",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.231.123.121",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Bosch",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "18.231.123.184",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.231.124.250",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.231.174.32",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "NCR",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "18.231.188.91",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "PaperCut",
+      "Sagemcom",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "18.231.247.100",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Fortinet",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "18.231.47.85",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Electro Industries/GaugeTech",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "18.234.223.123",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Draytek",
+      "EasyIO",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "18.234.84.203",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "SAP",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "18.236.188.188",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS",
+      "Schneider Electric",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "18.237.78.122",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Check Point",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "18.60.146.113",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Netgear",
+      "egauge",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "18.60.153.120",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.60.216.34",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ubiquiti",
+      "AXIS Communications",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "18.60.255.216",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Axis",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "18.60.39.55",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Axis",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "18.61.119.116",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Sagemcom",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "18.61.156.89",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Shenzhen Reecam Tech. Ltd.",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "18.61.159.83",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "18.61.211.70",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SAP",
+      "Tridium",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "18.61.69.70",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit Lilin",
+      "Axis",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "184.169.202.207",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Reolink",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "184.169.208.219",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "AXIS Communications",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "184.72.28.155",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "egauge",
+      "Sagemcom"
+    ]
+  },
+  {
+    "ip": "184.75.98.106",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "187.189.75.11",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "TP-Link",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "189.199.233.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Janitza",
+      "SonicWall",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "192.183.72.38",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "204.13.114.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "Check Point",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "212.50.39.34",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "Merit Lilin",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "212.50.51.195",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "ABB",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "23.22.134.63",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications AB",
+      "Phoenix Contact",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "24.43.192.64",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems LLC",
+      "Bosch",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "24.97.150.166",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "Axis Communications AB",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "3.10.226.180",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.10.233.43",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "HP",
+      "Orange"
+    ]
+  },
+  {
+    "ip": "3.101.34.237",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "eGauge",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "3.101.65.124",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "HP",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "3.106.204.68",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sophos",
+      "Merit LILIN",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "3.107.169.199",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Veeam",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "3.107.42.114",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.107.71.115",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications",
+      "egauge"
+    ]
+  },
+  {
+    "ip": "3.108.184.141",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Sony",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "3.109.183.102",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "PaperCut",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "3.112.203.46",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Palo Alto Networks",
+      "Circutor"
+    ]
+  },
+  {
+    "ip": "3.112.43.172",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-LINK",
+      "EasyIO",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "3.113.7.5",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Bosch",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "3.12.71.195",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Shenzhen Reecam Tech. Ltd.",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "3.121.208.217",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Sagemcom",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "3.121.219.52",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit Lilin",
+      "SMA",
+      "HP"
+    ]
+  },
+  {
+    "ip": "3.123.37.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Axis Communications",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "3.127.211.26",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Electroind",
+      "GE",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "3.128.171.164",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZyXEL",
+      "Siemens",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "3.129.249.152",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.138.36.116",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Draytek",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "3.141.41.154",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Phoenix Contact",
+      "egauge"
+    ]
+  },
+  {
+    "ip": "3.143.214.136",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "Draytek",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "3.143.244.122",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "AXIS Communications",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "3.144.251.3",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sophos",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "3.145.54.4",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "ABB",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "3.145.7.27",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.148.178.103",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "AXIS",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "3.148.193.155",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.149.236.149",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Merit Lilin",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "3.15.195.105",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "QNAP",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "3.208.19.30",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "TP-Link",
+      "egauge"
+    ]
+  },
+  {
+    "ip": "3.21.247.45",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NCR",
+      "Orange",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "3.21.98.128",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.24.214.218",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Veeam",
+      "NetGear",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "3.24.214.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "GE",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "3.248.251.170",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Siemens",
+      "ZyXEL",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "3.249.12.141",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "QNAP",
+      "Bosch",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "3.25.101.240",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "PaperCut",
+      "Siemens",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "3.25.150.45",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Janitza",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "3.25.151.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ZyXEL",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "3.25.152.2",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Merit LILIN",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "3.25.195.233",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sonos",
+      "ABB",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "3.25.203.232",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "AXIS Communications",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "3.25.205.73",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Yokogawa",
+      "eGauge Systems LLC",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "3.250.74.248",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Schneider Electric",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "3.252.219.109",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Check Point",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "3.253.140.194",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Emerson",
+      "Netgear",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "3.254.155.170",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "PaperCut",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "3.26.18.200",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NetGear",
+      "Asus",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "3.26.18.81",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Janitza",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "3.26.55.21",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "ABB",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "3.26.67.177",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "eGauge Systems LLC",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "3.27.28.37",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge Systems",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "3.27.58.3",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Merit Lilin",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "3.28.163.23",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Yokogawa",
+      "SAP",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "3.28.204.128",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.28.205.38",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "NCR",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "3.28.42.219",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Shenzhen Reecam Tech. Ltd.",
+      "Honeywell",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "3.28.43.18",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Emerson",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "3.28.44.86",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Ubiquiti",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "3.29.230.128",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Eaton",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "3.29.230.49",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sophos",
+      "Dahua",
+      "HP"
+    ]
+  },
+  {
+    "ip": "3.29.63.155",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.34.133.191",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Asus",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "3.34.146.65",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "eGauge Systems LLC",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "3.34.255.115",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "3.34.49.220",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Reolink",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "3.35.230.149",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.36.118.219",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NCR",
+      "Emerson",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "3.36.133.98",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Check Point",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "3.36.56.25",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Emerson",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "3.38.165.175",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "Sagemcom",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "3.38.182.46",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications AB",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "3.38.251.113",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Sony",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "3.39.240.106",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Merit Lilin",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "3.6.87.93",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "GE",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "3.65.226.80",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Reolink",
+      "GE"
+    ]
+  },
+  {
+    "ip": "3.66.164.137",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "SMA",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "3.67.93.176",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.70.120.45",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.70.167.207",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Honeywell",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "3.70.225.74",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "TP-LINK",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "3.70.234.255",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "QNAP",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "3.71.179.74",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.71.5.115",
+    "type": "Scada",
+    "top3_vendor": [
+      "Merit Lilin",
+      "Reolink",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "3.72.19.97",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "TiVo",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "3.77.238.96",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Shenzhen Reecam Tech. Ltd.",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "3.79.235.234",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Merit Lilin",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "3.79.56.154",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "NCR",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "3.8.174.217",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.8.78.200",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Axis Communications AB",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "3.89.134.127",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Dahua",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "3.90.248.183",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Draytek",
+      "Eaton",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "3.90.29.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "QNAP",
+      "Reolink",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "3.91.0.173",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Netgear",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "3.95.241.116",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Ubiquiti",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "3.96.136.88",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "3.96.213.195",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries/GaugeTech",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "3.97.8.2",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Siemens",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "3.97.9.97",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Palo Alto Networks",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "3.99.179.213",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Draytek",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "3.99.180.179",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "SMA",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "34.208.22.104",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "34.209.55.211",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "SMA",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "34.215.145.176",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "34.215.93.15",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "34.217.13.23",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "GE",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "34.217.146.252",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "34.217.176.34",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Axis Communications",
+      "Fortinet",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "34.217.69.159",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "egauge",
+      "SMA",
+      "HP"
+    ]
+  },
+  {
+    "ip": "34.219.158.143",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electroind",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "34.219.36.6",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS Communications",
+      "Netgear",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "34.222.136.98",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "SMA",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "34.226.202.109",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Palo Alto Networks",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "34.240.239.142",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZyXEL",
+      "Circutor",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "34.243.162.102",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Ivanti",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "34.244.19.197",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Veeam",
+      "egauge"
+    ]
+  },
+  {
+    "ip": "34.244.40.69",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Reolink",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "34.245.141.71",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Draytek",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "34.245.231.239",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Sonos",
+      "eGauge Systems",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "34.245.30.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "34.245.8.245",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Tridium",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "34.245.9.152",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ABB",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "34.254.98.149",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Circutor",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "35.152.134.162",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Digi International",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "35.152.134.9",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Ivanti",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "35.152.181.99",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Yokogawa",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "35.152.251.229",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Sonos",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "35.152.94.161",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Ubiquiti",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "35.152.98.96",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Sonos",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "35.154.176.161",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS",
+      "Electroind",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "35.154.242.238",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Electro Industries",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "35.157.129.194",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Emerson",
+      "ASUS",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "35.161.159.43",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries/GaugeTech",
+      "Circutor",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "35.162.0.82",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ubiquiti",
+      "egauge",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "35.166.19.117",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries/GaugeTech",
+      "Fortinet",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "35.177.88.255",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "35.178.104.60",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Tridium",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "35.178.72.147",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit LILIN",
+      "Check Point",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "35.179.166.162",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "NCR",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "35.179.96.125",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Schneider Electric",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "35.180.121.55",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "35.180.122.94",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Fortinet",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "35.180.123.159",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Cisco",
+      "Netgear",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "35.180.158.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Yokogawa",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "35.180.203.232",
+    "type": "Medical",
+    "top3_vendor": [
+      "EasyIO",
+      "Sagemcom",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "35.180.24.228",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "35.180.65.49",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "35.182.192.95",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Janitza",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "35.182.215.144",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Sophos",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "35.183.100.154",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications AB",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "35.183.34.88",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "35.72.10.117",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "SMA",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "35.86.175.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Palo Alto Networks",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "35.86.92.146",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NetGear",
+      "Digi International",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "35.87.185.245",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "35.87.76.11",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "Bosch",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "35.88.139.96",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Circutor",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "35.89.204.144",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Bosch",
+      "Digi International",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "35.91.19.213",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Sophos",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "35.91.234.79",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Sonos",
+      "egauge"
+    ]
+  },
+  {
+    "ip": "35.93.49.169",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "SonicWall",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "35.94.141.248",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "35.94.182.153",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "EasyIO",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "35.94.19.77",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Orange",
+      "Asus",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "35.94.37.146",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "NetGear",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "38.2.110.196",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems LLC",
+      "Cisco",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "40.172.121.147",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "40.172.232.129",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "40.176.128.116",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Ivanti",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "40.176.255.8",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "40.176.46.156",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Cisco",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "40.176.84.72",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "egauge",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "40.177.164.33",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NetGear",
+      "AXIS Communications",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "40.192.100.28",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Fortinet",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "40.192.16.216",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "Sonos",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "40.192.18.61",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "40.192.6.100",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS Communications",
+      "Circutor",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "43.198.100.139",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "ZyXEL",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "43.198.187.55",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Shenzhen Reecam Tech. Ltd.",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "43.198.224.186",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "43.198.225.195",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Yokogawa",
+      "Fortinet",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "43.198.227.5",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "43.198.247.152",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "43.198.98.175",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "43.199.143.170",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "Shenzhen Reecam Tech. Ltd.",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "43.199.155.25",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Orange",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "43.199.204.213",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Circutor",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "43.201.16.186",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "PaperCut",
+      "SonicWall",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "43.202.51.16",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "43.203.122.109",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "43.203.192.3",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Emerson",
+      "EasyIO",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "43.203.195.93",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NCR",
+      "Shenzhen Reecam Tech. Ltd.",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "43.203.210.14",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "egauge",
+      "ASUS",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "43.203.228.251",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "NCR",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "43.203.233.47",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Electro Industries/GaugeTech",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "43.203.247.19",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "AXIS",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "43.203.252.117",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Digi International",
+      "Fortinet",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "43.205.232.141",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "Hikvision",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "43.205.254.30",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Fortinet",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "43.207.112.239",
+    "type": "Camera",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "43.207.145.36",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "egauge",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "43.207.87.37",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "43.208.1.174",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries",
+      "Axis Communications",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "43.208.21.103",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Orange",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "43.208.75.174",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Sophos",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "43.209.115.197",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "SAP",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "43.209.252.8",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Hikvision",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "43.216.179.196",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications AB",
+      "Tridium",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "43.216.5.19",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Bosch",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "43.217.18.141",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Netgear",
+      "TP-Link",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "43.217.2.3",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "SMA",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "43.217.248.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sony",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "43.218.133.94",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "SonicWall",
+      "Sony"
+    ]
+  },
+  {
+    "ip": "43.218.47.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Cisco",
+      "Honeywell",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "43.218.47.152",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "ZyXEL",
+      "PaperCut"
+    ]
+  },
+  {
+    "ip": "43.218.76.114",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Draytek",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "43.218.81.91",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Janitza",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "44.201.123.167",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "AXIS",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "44.201.196.80",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Netgear",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "44.243.19.71",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-LINK",
+      "Fortinet",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "44.248.208.12",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Yokogawa",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "44.248.224.70",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "44.249.24.57",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "GE",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "44.251.53.18",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "TP-Link",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "44.252.71.237",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "44.255.64.97",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "46.137.238.20",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Phoenix Contact",
+      "AXIS Communications"
+    ]
+  },
+  {
+    "ip": "47.129.154.77",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit LILIN",
+      "Electroind",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "50.18.236.119",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "50.21.200.104",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "ZyXEL",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "51.112.187.196",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Axis",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "51.112.229.154",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.112.231.149",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Merit Lilin",
+      "Orange"
+    ]
+  },
+  {
+    "ip": "51.112.43.137",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries/GaugeTech",
+      "Axis Communications",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "51.112.47.68",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Ivanti",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "51.112.52.33",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Dahua",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "51.112.53.183",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "AXIS",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "51.112.54.194",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "TP-Link",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "51.112.54.88",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "eGauge Systems LLC",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "51.118.32.217",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Check Point",
+      "EasyIO",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "51.118.54.2",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "egauge",
+      "Hikvision",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "51.118.58.155",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.16.245.183",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "Electroind",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "51.16.43.133",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "NCR",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "51.16.43.215",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "TP-LINK",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "51.16.47.86",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.16.48.29",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.16.49.112",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "eGauge",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "51.16.54.189",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.16.55.105",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "ASUS",
+      "ABB"
+    ]
+  },
+  {
+    "ip": "51.17.115.244",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "HP",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "51.17.22.88",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-LINK",
+      "Ubiquiti",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "51.17.64.35",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "HP",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "51.17.79.132",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "NetGear",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "51.17.8.87",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Bosch",
+      "Tridium",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "51.17.92.107",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Check Point",
+      "QNAP",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "51.20.119.99",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "Sonos",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "51.20.137.62",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Merit LILIN",
+      "Cisco"
+    ]
+  },
+  {
+    "ip": "51.20.192.134",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.20.250.32",
+    "type": "Scada",
+    "top3_vendor": [
+      "Hikvision",
+      "SMA",
+      "HP"
+    ]
+  },
+  {
+    "ip": "51.20.252.52",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TiVo",
+      "Merit LILIN",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "51.20.252.84",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "egauge",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "51.20.66.169",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Netgear",
+      "Fortinet",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "51.21.130.217",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.21.244.75",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Shenzhen Reecam Tech. Ltd.",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "51.21.252.210",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Netgear",
+      "EasyIO",
+      "Circutor"
+    ]
+  },
+  {
+    "ip": "51.21.253.27",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Ivanti",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "51.21.3.30",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "51.34.122.56",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "AXIS",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "51.34.125.247",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Sonos",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "51.34.136.98",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Electroind",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "51.34.146.181",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems LLC",
+      "Sonos",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "51.34.18.168",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Shenzhen Reecam Tech. Ltd.",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "51.34.23.219",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "PaperCut",
+      "Orange",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "51.34.38.203",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications AB",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "51.34.52.201",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "TP-Link",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "51.44.21.57",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Yokogawa",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "51.44.212.22",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "Merit LILIN",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "51.44.221.8",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Fortinet",
+      "Sony"
+    ]
+  },
+  {
+    "ip": "51.48.100.141",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Digi International",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "51.48.101.238",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Draytek",
+      "Merit Lilin",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "51.48.146.188",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "51.48.155.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Check Point",
+      "QNAP",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "51.48.163.230",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Tridium",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "51.49.120.119",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Draytek",
+      "egauge",
+      "HP"
+    ]
+  },
+  {
+    "ip": "51.49.133.248",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Axis Communications AB",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "51.49.135.111",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "GE",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "51.49.52.55",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "TP-Link",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "51.49.85.7",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ivanti",
+      "Sonos",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "51.84.174.241",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications AB",
+      "Honeywell",
+      "Circutor"
+    ]
+  },
+  {
+    "ip": "51.84.175.90",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Asus",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "51.84.232.133",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Check Point",
+      "Shenzhen Reecam Tech. Ltd.",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "51.84.232.156",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "ZheJiang Dahua Technology CO.,LTD.",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "51.84.240.177",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Sagemcom",
+      "Merit Lilin"
+    ]
+  },
+  {
+    "ip": "51.84.241.193",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ivanti",
+      "Electro Industries/GaugeTech",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "51.84.241.216",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Schneider Electric",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "51.84.65.54",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Cisco",
+      "eGauge Systems LLC",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "51.85.34.5",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Shenzhen Reecam Tech. Ltd.",
+      "Phoenix Contact",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "51.85.37.203",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.85.39.102",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Shenzhen Reecam Tech. Ltd.",
+      "Honeywell",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "51.85.44.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Axis Communications AB",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "51.85.46.30",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Emerson",
+      "SAP",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "51.85.49.14",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "eGauge",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "51.85.60.209",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "egauge",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "51.85.75.83",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.92.136.60",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Merit LILIN",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "51.92.151.147",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "51.92.243.103",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Electro Industries",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "51.92.32.148",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "SMA",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "51.94.159.145",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "51.94.17.104",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Orange",
+      "Netgear",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "51.94.234.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "QNAP",
+      "Hikvision",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "51.94.28.74",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Circutor",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "51.94.3.111",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Hikvision",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "51.95.70.232",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Bosch",
+      "Circutor"
+    ]
+  },
+  {
+    "ip": "51.96.103.141",
+    "type": "Scada",
+    "top3_vendor": [
+      "Fortinet",
+      "SEL",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "51.96.103.218",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "51.96.143.121",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "NCR",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "51.96.143.194",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "51.96.143.208",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Sagemcom",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "51.96.16.38",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "NCR",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "51.96.91.12",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Merit LILIN",
+      "Schneider Electric"
+    ]
+  },
+  {
+    "ip": "51.96.95.175",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Ubiquiti",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "52.12.166.50",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.14.185.179",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "QNAP",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "52.15.62.251",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "egauge",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "52.192.110.23",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Dahua",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "52.192.72.75",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.194.214.171",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Cisco",
+      "Orange"
+    ]
+  },
+  {
+    "ip": "52.194.254.116",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.195.221.69",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NetGear",
+      "Digi International",
+      "HP"
+    ]
+  },
+  {
+    "ip": "52.197.198.178",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.201.19.245",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electro Industries",
+      "ASUS",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "52.207.243.199",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Cisco",
+      "GE",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "52.209.136.180",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "NetGear",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "52.212.129.157",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "SonicWall",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "52.23.239.112",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "AXIS",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "52.32.230.35",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "HP",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "52.41.145.134",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.51.24.177",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.53.188.44",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SAP",
+      "ZyXEL",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "52.56.154.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.56.64.214",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries",
+      "Shenzhen Reecam Tech. Ltd."
+    ]
+  },
+  {
+    "ip": "52.59.223.3",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.59.245.235",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "TiVo",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "52.59.71.41",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "AXIS",
+      "HP"
+    ]
+  },
+  {
+    "ip": "52.64.105.208",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Bosch",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "52.64.152.94",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SMA",
+      "Honeywell",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "52.66.82.162",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sagemcom",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "52.67.176.78",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS Communications",
+      "Cisco",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "52.67.180.201",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Tridium",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "52.67.9.243",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "eGauge Systems LLC",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "52.77.252.43",
+    "type": "NAS",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "52.78.166.249",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Check Point",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "52.78.183.126",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Siemens",
+      "Sagemcom"
+    ]
+  },
+  {
+    "ip": "52.79.253.183",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Sagemcom",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "54.147.150.187",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Phoenix Contact",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "54.149.161.70",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electro Industries/GaugeTech",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "54.152.154.64",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.154.206.84",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "SMA",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "54.155.244.183",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Emerson",
+      "TP-Link",
+      "HP"
+    ]
+  },
+  {
+    "ip": "54.163.201.103",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications",
+      "AXIS",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "54.168.132.99",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Reolink",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "54.169.167.101",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Janitza",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "54.170.144.63",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Shenzhen Reecam Tech. Ltd.",
+      "Fortinet",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "54.170.64.28",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.176.144.125",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Circutor",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "54.176.149.11",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "QNAP",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "54.176.224.168",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "GE",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "54.176.26.158",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "QNAP",
+      "egauge"
+    ]
+  },
+  {
+    "ip": "54.176.36.142",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Bosch",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "54.176.96.138",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ivanti",
+      "Siemens",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "54.177.170.235",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "PaperCut",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "54.177.19.239",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "SAP",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "54.177.89.13",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ubiquiti",
+      "Shenzhen Reecam Tech. Ltd.",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "54.178.40.108",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Janitza",
+      "Draytek"
+    ]
+  },
+  {
+    "ip": "54.178.63.22",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Dahua",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "54.180.156.96",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.180.228.45",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.180.233.87",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Axis Communications",
+      "Reolink",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "54.180.245.134",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "NCR",
+      "TP-LINK",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "54.180.245.197",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.183.141.202",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Check Point",
+      "SMA"
+    ]
+  },
+  {
+    "ip": "54.183.181.69",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Veeam",
+      "AXIS",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "54.187.165.205",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "PaperCut",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "54.188.45.87",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.191.100.181",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Netgear",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "54.193.142.109",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.193.185.209",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Palo Alto Networks",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "54.194.110.8",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Emerson",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "54.195.129.13",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "TP-Link",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "54.195.16.162",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Axis Communications AB",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "54.197.203.16",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "SEL",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "54.199.80.237",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "eGauge",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "54.213.140.90",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Check Point",
+      "Palo Alto Networks",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "54.213.215.243",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "eGauge Systems LLC",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "54.215.162.130",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.215.35.243",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "Digi International",
+      "GE"
+    ]
+  },
+  {
+    "ip": "54.215.75.46",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "TP-Link",
+      "SAP"
+    ]
+  },
+  {
+    "ip": "54.216.135.121",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "Fortinet",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "54.218.32.37",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Circutor",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "54.219.117.231",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems LLC",
+      "Fortinet",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "54.226.119.28",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Netgear",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "54.226.199.208",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Reolink",
+      "Palo Alto Networks"
+    ]
+  },
+  {
+    "ip": "54.227.23.100",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems",
+      "SMA",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "54.232.148.232",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "eGauge",
+      "Axis Communications"
+    ]
+  },
+  {
+    "ip": "54.232.19.56",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Electro Industries",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "54.232.238.178",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Reolink",
+      "TP-LINK",
+      "Sophos"
+    ]
+  },
+  {
+    "ip": "54.233.14.240",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SAP",
+      "Electro Industries/GaugeTech",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "54.233.34.136",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "PaperCut",
+      "Palo Alto Networks",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "54.233.89.252",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Netgear",
+      "Fortinet",
+      "Reolink"
+    ]
+  },
+  {
+    "ip": "54.241.197.141",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Draytek",
+      "Sagemcom"
+    ]
+  },
+  {
+    "ip": "54.241.197.170",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Schneider Electric",
+      "Sonos",
+      "Netgear"
+    ]
+  },
+  {
+    "ip": "54.241.218.43",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.241.238.236",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.241.239.92",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Tridium",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "54.242.130.177",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Schneider Electric",
+      "Honeywell"
+    ]
+  },
+  {
+    "ip": "54.244.154.134",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.245.141.43",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "SonicWall",
+      "TP-LINK"
+    ]
+  },
+  {
+    "ip": "54.249.131.102",
+    "type": "Scada",
+    "top3_vendor": [
+      "Tridium",
+      "ZyXEL",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "54.250.198.42",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.250.245.186",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications AB",
+      "QNAP",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "54.252.150.170",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Siemens",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "54.252.225.79",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Honeywell",
+      "TP-Link"
+    ]
+  },
+  {
+    "ip": "54.253.110.16",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Phoenix Contact",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  },
+  {
+    "ip": "54.253.86.159",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "54.254.250.38",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems LLC",
+      "Fortinet",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "54.255.177.16",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Emerson",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "54.255.194.97",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "ASUS",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "54.64.97.142",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "TP-Link",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "54.65.17.77",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "SonicWall",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "54.71.94.72",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "EasyIO",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "54.74.169.126",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Sagemcom",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "54.78.44.242",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Dahua",
+      "Veeam"
+    ]
+  },
+  {
+    "ip": "54.85.162.246",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Sonos",
+      "QNAP"
+    ]
+  },
+  {
+    "ip": "54.86.238.243",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Honeywell",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "54.91.149.150",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Cisco",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "54.92.208.184",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "TP-LINK",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "54.94.172.166",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZyXEL",
+      "eGauge",
+      "Sonos"
+    ]
+  },
+  {
+    "ip": "54.95.25.84",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Hikvision",
+      "AXIS",
+      "Circutor"
+    ]
+  },
+  {
+    "ip": "56.112.21.67",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "HP",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "56.112.40.238",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "SEL",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "56.124.106.151",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "Electro Industries",
+      "Sagemcom"
+    ]
+  },
+  {
+    "ip": "56.124.127.239",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "SEL",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "56.124.76.211",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Fortinet",
+      "SEL"
+    ]
+  },
+  {
+    "ip": "56.125.193.47",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "Sophos",
+      "eGauge Systems"
+    ]
+  },
+  {
+    "ip": "56.125.214.0",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Netgear",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "56.125.223.23",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "HP",
+      "SEL",
+      "Merit LILIN"
+    ]
+  },
+  {
+    "ip": "56.125.50.1",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ubiquiti",
+      "Fortinet",
+      "SonicWall"
+    ]
+  },
+  {
+    "ip": "56.155.105.131",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Palo Alto Networks",
+      "ZyXEL"
+    ]
+  },
+  {
+    "ip": "56.155.106.177",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "NCR",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "56.155.107.75",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "NetGear",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "56.155.107.89",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "AXIS Communications",
+      "ASUS",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "56.155.132.10",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "PaperCut",
+      "Janitza"
+    ]
+  },
+  {
+    "ip": "56.155.136.115",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Ivanti",
+      "Orange",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "56.155.136.32",
+    "type": "Building_Automation",
+    "top3_vendor": [
+      "Tridium",
+      "Circutor",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "56.155.140.182",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Sagemcom",
+      "eGauge Systems LLC"
+    ]
+  },
+  {
+    "ip": "56.155.26.1",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Janitza",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "56.155.26.232",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "AXIS",
+      "Ivanti"
+    ]
+  },
+  {
+    "ip": "56.155.27.184",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Yokogawa",
+      "NetGear"
+    ]
+  },
+  {
+    "ip": "56.155.27.253",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "eGauge Systems LLC",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "56.155.45.71",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Reolink",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "56.228.12.28",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Axis",
+      "Tridium"
+    ]
+  },
+  {
+    "ip": "56.228.81.254",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "Fortinet",
+      "AXIS"
+    ]
+  },
+  {
+    "ip": "56.228.9.195",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "57.180.33.30",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Merit Lilin",
+      "Orange",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "57.180.41.74",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "63.177.240.154",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "63.178.4.232",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Asus",
+      "Electro Industries/GaugeTech"
+    ]
+  },
+  {
+    "ip": "63.180.253.172",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Cisco",
+      "Netgear",
+      "eGauge"
+    ]
+  },
+  {
+    "ip": "63.181.35.11",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Dahua",
+      "Honeywell",
+      "Emerson"
+    ]
+  },
+  {
+    "ip": "63.33.41.156",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "TP-LINK",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "63.33.62.90",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "63.35.233.54",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Shenzhen Reecam Tech. Ltd.",
+      "Bosch"
+    ]
+  },
+  {
+    "ip": "64.32.122.28",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge",
+      "Emerson",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "65.0.12.206",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "65.0.80.136",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "65.1.133.177",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Electroind",
+      "Phoenix Contact"
+    ]
+  },
+  {
+    "ip": "65.1.86.41",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications AB",
+      "Sophos",
+      "ASUS"
+    ]
+  },
+  {
+    "ip": "65.2.11.25",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Tridium",
+      "Fortinet",
+      "Asus"
+    ]
+  },
+  {
+    "ip": "65.2.183.250",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "Siemens",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "65.2.9.21",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Orange",
+      "PaperCut",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "68.234.77.193",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems",
+      "EasyIO",
+      "TiVo"
+    ]
+  },
+  {
+    "ip": "69.49.205.163",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems",
+      "Siemens",
+      "EasyIO"
+    ]
+  },
+  {
+    "ip": "69.58.146.60",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "eGauge Systems",
+      "TiVo",
+      "NCR"
+    ]
+  },
+  {
+    "ip": "72.130.78.64",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "egauge",
+      "HP",
+      "Digi International"
+    ]
+  },
+  {
+    "ip": "73.17.8.65",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Orange",
+      "Sagemcom",
+      "Siemens"
+    ]
+  },
+  {
+    "ip": "78.12.121.33",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis Communications AB",
+      "ASUS",
+      "Electroind"
+    ]
+  },
+  {
+    "ip": "78.12.184.62",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "Siemens",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "78.12.25.48",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "95.40.117.177",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "95.40.14.140",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "95.40.16.173",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "95.40.41.28",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "95.40.57.224",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "ZyXEL",
+      "Ubiquiti"
+    ]
+  },
+  {
+    "ip": "98.130.120.144",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Palo Alto Networks",
+      "ASUS",
+      "Orange"
+    ]
+  },
+  {
+    "ip": "98.130.121.135",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "Bosch",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "98.130.121.191",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "SonicWall",
+      "Siemens",
+      "Yokogawa"
+    ]
+  },
+  {
+    "ip": "98.130.121.248",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Asus",
+      "SEL",
+      "Dahua"
+    ]
+  },
+  {
+    "ip": "98.130.124.218",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Axis",
+      "eGauge Systems",
+      "Hikvision"
+    ]
+  },
+  {
+    "ip": "98.130.129.178",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "TP-Link",
+      "Fortinet",
+      "Check Point"
+    ]
+  },
+  {
+    "ip": "98.130.84.20",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ZyXEL",
+      "Yokogawa",
+      "Axis Communications AB"
+    ]
+  },
+  {
+    "ip": "98.130.85.101",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "98.81.211.19",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "98.84.162.82",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ASUS",
+      "QNAP",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "98.89.23.83",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Unknown"
+    ]
+  },
+  {
+    "ip": "98.89.34.172",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Electroind",
+      "PaperCut",
+      "Electro Industries"
+    ]
+  },
+  {
+    "ip": "98.93.8.199",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Fortinet",
+      "Ivanti",
+      "Eaton"
+    ]
+  },
+  {
+    "ip": "99.79.192.163",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "Honeywell",
+      "Netgear",
+      "Fortinet"
+    ]
+  },
+  {
+    "ip": "99.79.36.46",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "ABB",
+      "Netgear",
+      "Axis"
+    ]
+  },
+  {
+    "ip": "99.79.62.208",
+    "type": "Power_meter",
+    "top3_vendor": [
+      "EasyIO",
+      "Sophos",
+      "ZheJiang Dahua Technology CO.,LTD."
+    ]
+  }
+]

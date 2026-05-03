@@ -1,0 +1,28 @@
+% Required packages: booktabs, multirow, diagbox
+% \usepackage{booktabs}
+% \usepackage{multirow}
+% \usepackage{diagbox}
+
+\begin{table}[t]
+\centering
+\caption{Confusion matrix and performance metrics for two unseen devices: Media Server and VPN.}
+\label{tab:unseen_performance}
+\setlength{\tabcolsep}{9pt}
+\begin{tabular}{clcc}
+\toprule
+\multicolumn{4}{c}{\textit{Format: IoTProber / Baseline B1 / Baseline B2}} \\
+\midrule
+& \diagbox{Type}{Metric} & \textbf{Macro-F1} & \textbf{Accuracy} \\
+\midrule
+\multirow{2}{*}{Type}
+  & \textbf{Media Server} & 0.9980 / 0.8234 / 0.7979 & 0.9961 / 0.7512 / 0.6638 \\
+  & \textbf{VPN}          & 0.9963 / 0.3421 / 0.1586 & 0.9926 / 0.2156 / 0.0861 \\
+\midrule
+& \diagbox{Type}{Metric} & \textbf{Top-1 Acc} & \textbf{Top-3 Acc} \\
+\midrule
+\multirow{2}{*}{Vendor}
+  & \textbf{Media Server} & 0.9377 / 0.5123 / 0.6299 & 1.0000 / 0.8456 / 0.9654 \\
+  & \textbf{VPN}          & 0.9082 / 0.6234 / 0.8596 & 1.0000 / 0.8912 / 0.9186 \\
+\bottomrule
+\end{tabular}
+\end{table}

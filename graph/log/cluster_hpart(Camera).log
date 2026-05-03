@@ -1,0 +1,164 @@
+2026-03-18 10:56:20,966 [INFO] Load pretrained SentenceTransformer: /home/iot-classification/qwen3_embedding_06b
+2026-03-18 10:56:23,415 [INFO] 1 prompt is loaded, with the key: query
+2026-03-18 10:56:24,119 [INFO] [hpart Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-18 10:56:24,419 [INFO] [hpart Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-18 10:56:24,727 [INFO] [hpart Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-18 10:56:25,027 [INFO] [hpart Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-18 10:56:25,329 [INFO] [hpart Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-18 10:56:25,646 [INFO] [hpart Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-18 10:56:25,953 [INFO] [hpart Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-18 10:56:26,252 [INFO] [hpart Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-18 10:56:26,554 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running...
+2026-03-18 11:09:10,899 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 10000/130000
+2026-03-18 11:09:32,780 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 10000 for Device CAMERA
+2026-03-18 11:19:10,249 [ERROR] CUDA out of memory. Tried to allocate 3.45 GiB. GPU 1 has a total capacity of 31.74 GiB of which 1021.12 MiB is free. Process 2040578 has 30.74 GiB memory in use. Of the allocated memory 30.29 GiB is allocated by PyTorch, and 81.75 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:19:11,760 [ERROR] CUDA out of memory. Tried to allocate 3.45 GiB. GPU 1 has a total capacity of 31.74 GiB of which 1001.12 MiB is free. Process 2040578 has 30.76 GiB memory in use. Of the allocated memory 30.29 GiB is allocated by PyTorch, and 101.75 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:19:13,288 [ERROR] CUDA out of memory. Tried to allocate 3.45 GiB. GPU 1 has a total capacity of 31.74 GiB of which 1001.12 MiB is free. Process 2040578 has 30.76 GiB memory in use. Of the allocated memory 30.29 GiB is allocated by PyTorch, and 101.75 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:19:13,290 [INFO] [DEBUG] Chunking Text index: 17609
+2026-03-18 11:19:16,341 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 11:22:17,505 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 20000/130000
+2026-03-18 11:23:01,097 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 20000 for Device CAMERA
+2026-03-18 11:30:11,002 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:30:12,799 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:30:14,764 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:30:14,765 [INFO] [DEBUG] Chunking Text index: 25657
+2026-03-18 11:30:25,743 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 11:33:05,214 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:33:07,178 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:33:09,214 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:33:09,215 [INFO] [DEBUG] Chunking Text index: 27772
+2026-03-18 11:33:21,733 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 11:36:03,935 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 30000/130000
+2026-03-18 11:37:11,207 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 30000 for Device CAMERA
+2026-03-18 11:49:44,929 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 40000/130000
+2026-03-18 11:51:14,153 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 40000 for Device CAMERA
+2026-03-18 11:54:02,767 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:54:04,796 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:54:06,874 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 11:54:06,875 [INFO] [DEBUG] Chunking Text index: 42278
+2026-03-18 11:54:20,736 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 12:03:49,482 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:03:51,559 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:03:53,619 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:03:53,620 [INFO] [DEBUG] Chunking Text index: 49892
+2026-03-18 12:04:04,574 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 12:04:13,344 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 50000/130000
+2026-03-18 12:06:06,038 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 50000 for Device CAMERA
+2026-03-18 12:12:48,766 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:12:51,084 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:12:53,267 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:12:53,268 [INFO] [DEBUG] Chunking Text index: 55412
+2026-03-18 12:13:05,207 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 12:16:26,901 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:16:29,069 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:16:31,218 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:16:31,220 [INFO] [DEBUG] Chunking Text index: 58038
+2026-03-18 12:16:41,815 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 12:19:15,516 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 60000/130000
+2026-03-18 12:21:30,699 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 60000 for Device CAMERA
+2026-03-18 12:33:53,874 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 70000/130000
+2026-03-18 12:36:31,968 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 70000 for Device CAMERA
+2026-03-18 12:38:10,210 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:38:12,621 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:38:15,076 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 12:38:15,077 [INFO] [DEBUG] Chunking Text index: 71262
+2026-03-18 12:38:33,892 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 12:49:29,864 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 80000/130000
+2026-03-18 12:52:31,358 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 80000 for Device CAMERA
+2026-03-18 13:04:48,880 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 90000/130000
+2026-03-18 13:08:13,319 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 90000 for Device CAMERA
+2026-03-18 13:20:33,820 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 100000/130000
+2026-03-18 13:24:24,736 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 100000 for Device CAMERA
+2026-03-18 13:29:35,604 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:29:38,242 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:29:40,888 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:29:40,889 [INFO] [DEBUG] Chunking Text index: 104240
+2026-03-18 13:29:52,511 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 13:34:07,923 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:34:10,622 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:34:13,294 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:34:13,296 [INFO] [DEBUG] Chunking Text index: 107611
+2026-03-18 13:34:25,357 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 13:37:20,739 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 110000/130000
+2026-03-18 13:41:32,304 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 110000 for Device CAMERA
+2026-03-18 13:43:52,841 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.26 GiB is free. Process 2040578 has 7.48 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 104.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:43:55,835 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:43:58,898 [ERROR] CUDA out of memory. Tried to allocate 64.00 GiB. GPU 1 has a total capacity of 31.74 GiB of which 24.28 GiB is free. Process 2040578 has 7.46 GiB memory in use. Of the allocated memory 7.01 GiB is allocated by PyTorch, and 84.76 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-18 13:43:58,899 [INFO] [DEBUG] Chunking Text index: 111813
+2026-03-18 13:44:25,275 [INFO] [DEBUG] Embedding Length: 1024
+2026-03-18 13:54:29,581 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA running... 120000/130000
+2026-03-18 13:59:07,007 [INFO] [hpart Embedding (PCA: True)] Saved milestone at 120000 for Device CAMERA
+2026-03-18 14:11:41,975 [INFO] Embedding Length: 130000
+2026-03-18 14:16:42,643 [INFO] [**] Qwen3 embedding done!
+2026-03-18 14:16:42,662 [INFO] [PCA] PCA for Device CAMERA running...
+2026-03-18 14:17:03,592 [INFO] [PCA] PCA for Device CAMERA done!
+2026-03-18 14:17:03,593 [INFO] [HDBSCAN] HDBSCAN for Device CAMERA running...
+2026-03-18 14:17:13,381 [INFO] [HDBSCAN] Cluster Result of Device CAMERA: 447 clusters, 45425 noise points
+2026-03-18 14:17:13,381 [INFO] [HDBSCAN] Clustering done for Device CAMERA
+2026-03-18 14:18:34,218 [INFO] PCA (256) Embedding & Clustering Result Saved at /home/iot-classification/platform_data/csv/local/1/embedding_hpart/ipraw_CAMERA_embedding_hpart_pca.csv
+2026-03-18 14:18:34,219 [INFO] [*] Drawing 2D cluster plot for device NAS
+2026-03-18 14:18:46,519 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_NAS_pca1_pca2_dbscan(pca).png
+2026-03-18 14:18:46,519 [INFO] [*] Drawing 2D cluster plot for device NVR
+2026-03-18 14:18:52,399 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_NVR_pca1_pca2_dbscan(pca).png
+2026-03-18 14:18:52,399 [INFO] [*] Drawing 2D cluster plot for device POWER_METER
+2026-03-18 14:18:55,214 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_POWER_METER_pca1_pca2_dbscan(pca).png
+2026-03-18 14:18:55,215 [INFO] [*] Drawing 2D cluster plot for device BUILDING_AUTOMATION
+2026-03-18 14:18:58,691 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_BUILDING_AUTOMATION_pca1_pca2_dbscan(pca).png
+2026-03-18 14:18:58,691 [INFO] [*] Drawing 2D cluster plot for device MEDICAL
+2026-03-18 14:19:01,899 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_MEDICAL_pca1_pca2_dbscan(pca).png
+2026-03-18 14:19:01,899 [INFO] [*] Drawing 2D cluster plot for device ROUTER
+2026-03-18 14:19:23,885 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_ROUTER_pca1_pca2_dbscan(pca).png
+2026-03-18 14:19:23,885 [INFO] [*] Drawing 2D cluster plot for device PRINTER
+2026-03-18 14:19:30,151 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_PRINTER_pca1_pca2_dbscan(pca).png
+2026-03-18 14:19:30,151 [INFO] [*] Drawing 2D cluster plot for device SCADA
+2026-03-18 14:19:35,277 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_SCADA_pca1_pca2_dbscan(pca).png
+2026-03-18 14:19:35,278 [INFO] [*] Drawing 2D cluster plot for device CAMERA
+2026-03-18 14:20:12,301 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/cluster_2d_CAMERA_pca1_pca2_dbscan(pca).png
+2026-03-18 14:20:14,472 [INFO] Service analysis for hpart_embedding finished at 2026-03-18 14:20:14
+2026-03-18 14:20:14,475 [INFO] ['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA', 'CAMERA']
+2026-03-18 14:20:14,532 [INFO] Analyzing embedding_hpart distribution for device NAS
+2026-03-18 14:20:46,753 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_NAS.json
+2026-03-18 14:20:46,754 [INFO]   - Unique http-part-info: 74499
+2026-03-18 14:20:46,754 [INFO] Drawing embedding_hpart combination bar chart for NAS...
+2026-03-18 14:20:48,788 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_NAS.png
+2026-03-18 14:20:48,788 [INFO] Analyzing embedding_hpart distribution for device NVR
+2026-03-18 14:20:54,111 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_NVR.json
+2026-03-18 14:20:54,111 [INFO]   - Unique http-part-info: 5407
+2026-03-18 14:20:54,111 [INFO] Drawing embedding_hpart combination bar chart for NVR...
+2026-03-18 14:20:55,280 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_NVR.png
+2026-03-18 14:20:55,280 [INFO] Analyzing embedding_hpart distribution for device POWER_METER
+2026-03-18 14:21:08,722 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_POWER_METER.json
+2026-03-18 14:21:08,723 [INFO]   - Unique http-part-info: 3925
+2026-03-18 14:21:08,723 [INFO] Drawing embedding_hpart combination bar chart for POWER_METER...
+2026-03-18 14:21:59,894 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_POWER_METER.png
+2026-03-18 14:21:59,895 [INFO] Analyzing embedding_hpart distribution for device BUILDING_AUTOMATION
+2026-03-18 14:22:09,401 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_BUILDING_AUTOMATION.json
+2026-03-18 14:22:09,402 [INFO]   - Unique http-part-info: 5849
+2026-03-18 14:22:09,402 [INFO] Drawing embedding_hpart combination bar chart for BUILDING_AUTOMATION...
+2026-03-18 14:22:43,108 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_BUILDING_AUTOMATION.png
+2026-03-18 14:22:43,109 [INFO] Analyzing embedding_hpart distribution for device MEDICAL
+2026-03-18 14:22:54,860 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_MEDICAL.json
+2026-03-18 14:22:54,860 [INFO]   - Unique http-part-info: 5784
+2026-03-18 14:22:54,860 [INFO] Drawing embedding_hpart combination bar chart for MEDICAL...
+2026-03-18 14:22:57,718 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_MEDICAL.png
+2026-03-18 14:22:57,719 [INFO] Analyzing embedding_hpart distribution for device ROUTER
+2026-03-18 14:23:23,420 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_ROUTER.json
+2026-03-18 14:23:23,420 [INFO]   - Unique http-part-info: 64360
+2026-03-18 14:23:23,420 [INFO] Drawing embedding_hpart combination bar chart for ROUTER...
+2026-03-18 14:23:24,964 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_ROUTER.png
+2026-03-18 14:23:24,964 [INFO] Analyzing embedding_hpart distribution for device PRINTER
+2026-03-18 14:23:38,820 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_PRINTER.json
+2026-03-18 14:23:38,820 [INFO]   - Unique http-part-info: 15661
+2026-03-18 14:23:38,820 [INFO] Drawing embedding_hpart combination bar chart for PRINTER...
+2026-03-18 14:23:40,498 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_PRINTER.png
+2026-03-18 14:23:40,499 [INFO] Analyzing embedding_hpart distribution for device SCADA
+2026-03-18 14:23:44,372 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_SCADA.json
+2026-03-18 14:23:44,373 [INFO]   - Unique http-part-info: 11491
+2026-03-18 14:23:44,373 [INFO] Drawing embedding_hpart combination bar chart for SCADA...
+2026-03-18 14:23:46,309 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_SCADA.png
+2026-03-18 14:23:46,310 [INFO] Analyzing embedding_hpart distribution for device CAMERA
+2026-03-18 14:23:59,989 [INFO] embedding_hpart distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/json/embedding_hpart_distribution_CAMERA.json
+2026-03-18 14:23:59,989 [INFO]   - Unique http-part-info: 67028
+2026-03-18 14:23:59,989 [INFO] Drawing embedding_hpart combination bar chart for CAMERA...
+2026-03-18 14:24:01,927 [INFO] embedding_hpart combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_hpart/png/embedding_hpart_combination_bar_CAMERA.png
+2026-03-18 14:24:02,023 [INFO] Embedding & Clustering for hpart_embedding finished in 12458.21 seconds

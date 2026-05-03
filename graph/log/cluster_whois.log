@@ -1,0 +1,92 @@
+nohup: ignoring input
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: /home/iot-classification/qwen3_embedding_06b
+INFO:sentence_transformers.SentenceTransformer:1 prompt is loaded, with the key: query
+INFO:root:Service analysis for whois_embedding started at 2026-03-11 16:16:42
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device NAS has been done!
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device NVR has been done!
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device PRINTER running...
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device PRINTER running... 10000/17330
+INFO:root:[whois Embedding (PCA: True)] Saved milestone at 10000 for Device PRINTER
+INFO:root:Embedding Length: 17330
+INFO:root:[**] Qwen3 embedding done!
+INFO:root:[PCA] PCA for Device PRINTER running...
+INFO:root:[PCA] PCA for Device PRINTER done!
+INFO:root:[HDBSCAN] HDBSCAN for Device PRINTER running...
+INFO:root:[HDBSCAN] Cluster Result of Device PRINTER: 282 clusters, 5552 noise points
+INFO:root:[HDBSCAN] Clustering done for Device PRINTER
+INFO:root:PCA (256) Embedding & Clustering Result Saved at /home/iot-classification/platform_data/csv/local/1/embedding_whois/ipraw_PRINTER_embedding_whois_pca.csv
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device SCADA running...
+INFO:root:[whois Embedding (PCA: True)] Embedding for Device SCADA running... 10000/11800
+INFO:root:[whois Embedding (PCA: True)] Saved milestone at 10000 for Device SCADA
+INFO:root:Embedding Length: 11800
+INFO:root:[**] Qwen3 embedding done!
+INFO:root:[PCA] PCA for Device SCADA running...
+INFO:root:[PCA] PCA for Device SCADA done!
+INFO:root:[HDBSCAN] HDBSCAN for Device SCADA running...
+INFO:root:[HDBSCAN] Cluster Result of Device SCADA: 163 clusters, 4954 noise points
+INFO:root:[HDBSCAN] Clustering done for Device SCADA
+INFO:root:PCA (256) Embedding & Clustering Result Saved at /home/iot-classification/platform_data/csv/local/1/embedding_whois/ipraw_SCADA_embedding_whois_pca.csv
+INFO:root:[*] Drawing 2D cluster plot for device NAS
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_NAS_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device NVR
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_NVR_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device POWER_METER
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_POWER_METER_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device BUILDING_AUTOMATION
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_BUILDING_AUTOMATION_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device MEDICAL
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_MEDICAL_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device ROUTER
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_ROUTER_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device PRINTER
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_PRINTER_pca1_pca2_dbscan(pca).png
+INFO:root:[*] Drawing 2D cluster plot for device SCADA
+INFO:root:[+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/cluster_2d_SCADA_pca1_pca2_dbscan(pca).png
+INFO:root:Service analysis for whois_embedding finished at 2026-03-11 16:50:34
+INFO:root:['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA']
+INFO:root:Analyzing embedding_whois distribution for device NAS
+INFO:root:embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_NAS.json
+INFO:root:  - Unique whois-info: 13602
+INFO:root:Drawing embedding_whois combination bar chart for NAS...
+INFO:root:embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_NAS.png
+INFO:root:Analyzing embedding_whois distribution for device NVR
+INFO:root:embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_NVR.json
+INFO:root:  - Unique whois-info: 1428
+INFO:root:Drawing embedding_whois combination bar chart for NVR...
+INFO:root:embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_NVR.png
+INFO:root:Analyzing embedding_whois distribution for device POWER_METER
+INFO:root:embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_POWER_METER.json
+INFO:root:  - Unique whois-info: 161
+INFO:root:Drawing embedding_whois combination bar chart for POWER_METER...
+INFO:root:embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_POWER_METER.png
+INFO:root:Analyzing embedding_whois distribution for device BUILDING_AUTOMATION
+INFO:root:embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_BUILDING_AUTOMATION.json
+INFO:root:  - Unique whois-info: 1750
+INFO:root:Drawing embedding_whois combination bar chart for BUILDING_AUTOMATION...
+INFO:root:embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_BUILDING_AUTOMATION.png
+INFO:root:Analyzing embedding_whois distribution for device MEDICAL
+INFO:root:embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_MEDICAL.json
+INFO:root:  - Unique whois-info: 843
+INFO:root:Drawing embedding_whois combination bar chart for MEDICAL...
+INFO:root:embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_MEDICAL.png
+INFO:root:Analyzing embedding_whois distribution for device ROUTER
+INFO:root:embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_ROUTER.json
+INFO:root:  - Unique whois-info: 13735
+INFO:root:Drawing embedding_whois combination bar chart for ROUTER...
+INFO:root:embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_ROUTER.png
+INFO:root:Analyzing embedding_whois distribution for device PRINTER
+INFO:root:embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_PRINTER.json
+INFO:root:  - Unique whois-info: 4511
+INFO:root:Drawing embedding_whois combination bar chart for PRINTER...
+INFO:root:embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_PRINTER.png
+INFO:root:Analyzing embedding_whois distribution for device SCADA
+INFO:root:embedding_whois distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/json/embedding_whois_distribution_SCADA.json
+INFO:root:  - Unique whois-info: 3704
+INFO:root:Drawing embedding_whois combination bar chart for SCADA...
+INFO:root:embedding_whois combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_whois/png/embedding_whois_combination_bar_SCADA.png
+INFO:root:Embedding & Clustering for whois_embedding finished in 2137.21 seconds
+/home/iot-classification/rag_domain.json

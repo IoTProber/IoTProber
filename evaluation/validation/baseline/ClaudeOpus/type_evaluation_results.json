@@ -1,0 +1,211 @@
+{
+    "Claude Opus": [
+        {
+            "Type": "Camera",
+            "TP": 18703,
+            "FN": 1297,
+            "FP": 963,
+            "Classified_as": {
+                "Camera": 18703,
+                "Printer": 89,
+                "Scada": 37,
+                "Router": 197,
+                "NAS": 152,
+                "NVR": 703,
+                "Power_meter": 26,
+                "Building_Automation": 63,
+                "Medical": 30
+            },
+            "Precision": 95.1,
+            "Recall": 93.52,
+            "Accuracy": 97.03,
+            "F1-score": 94.3,
+            "Test Samples": 20000
+        },
+        {
+            "Type": "Printer",
+            "TP": 3974,
+            "FN": 358,
+            "FP": 294,
+            "Classified_as": {
+                "Camera": 73,
+                "Printer": 3974,
+                "Scada": 28,
+                "Router": 57,
+                "NAS": 89,
+                "NVR": 32,
+                "Power_meter": 26,
+                "Building_Automation": 13,
+                "Medical": 40
+            },
+            "Precision": 93.11,
+            "Recall": 91.74,
+            "Accuracy": 99.14,
+            "F1-score": 92.42,
+            "Test Samples": 4332
+        },
+        {
+            "Type": "Scada",
+            "TP": 2641,
+            "FN": 309,
+            "FP": 191,
+            "Classified_as": {
+                "Camera": 21,
+                "Printer": 19,
+                "Scada": 2641,
+                "Router": 50,
+                "NAS": 46,
+                "NVR": 12,
+                "Power_meter": 78,
+                "Building_Automation": 63,
+                "Medical": 20
+            },
+            "Precision": 93.26,
+            "Recall": 89.53,
+            "Accuracy": 99.34,
+            "F1-score": 91.36,
+            "Test Samples": 2950
+        },
+        {
+            "Type": "Router",
+            "TP": 18637,
+            "FN": 1363,
+            "FP": 1072,
+            "Classified_as": {
+                "Camera": 253,
+                "Printer": 83,
+                "Scada": 53,
+                "Router": 18637,
+                "NAS": 737,
+                "NVR": 137,
+                "Power_meter": 40,
+                "Building_Automation": 40,
+                "Medical": 20
+            },
+            "Precision": 94.56,
+            "Recall": 93.19,
+            "Accuracy": 96.8,
+            "F1-score": 93.87,
+            "Test Samples": 20000
+        },
+        {
+            "Type": "NAS",
+            "TP": 18561,
+            "FN": 1439,
+            "FP": 1081,
+            "Classified_as": {
+                "Camera": 313,
+                "Printer": 73,
+                "Scada": 38,
+                "Router": 723,
+                "NAS": 18561,
+                "NVR": 197,
+                "Power_meter": 32,
+                "Building_Automation": 43,
+                "Medical": 20
+            },
+            "Precision": 94.5,
+            "Recall": 92.81,
+            "Accuracy": 96.69,
+            "F1-score": 93.65,
+            "Test Samples": 20000
+        },
+        {
+            "Type": "NVR",
+            "TP": 3982,
+            "FN": 492,
+            "FP": 1093,
+            "Classified_as": {
+                "Camera": 293,
+                "Printer": 18,
+                "Scada": 9,
+                "Router": 38,
+                "NAS": 47,
+                "NVR": 3982,
+                "Power_meter": 40,
+                "Building_Automation": 14,
+                "Medical": 33
+            },
+            "Precision": 78.46,
+            "Recall": 89.0,
+            "Accuracy": 97.92,
+            "F1-score": 83.4,
+            "Test Samples": 4474
+        },
+        {
+            "Type": "Power_meter",
+            "TP": 964,
+            "FN": 32,
+            "FP": 263,
+            "Classified_as": {
+                "Camera": 1,
+                "Printer": 0,
+                "Scada": 7,
+                "Router": 2,
+                "NAS": 2,
+                "NVR": 3,
+                "Power_meter": 964,
+                "Building_Automation": 13,
+                "Medical": 4
+            },
+            "Precision": 78.57,
+            "Recall": 96.79,
+            "Accuracy": 99.61,
+            "F1-score": 86.73,
+            "Test Samples": 996
+        },
+        {
+            "Type": "Building_Automation",
+            "TP": 1726,
+            "FN": 54,
+            "FP": 260,
+            "Classified_as": {
+                "Camera": 3,
+                "Printer": 4,
+                "Scada": 12,
+                "Router": 3,
+                "NAS": 5,
+                "NVR": 4,
+                "Power_meter": 17,
+                "Building_Automation": 1726,
+                "Medical": 6
+            },
+            "Precision": 86.91,
+            "Recall": 96.97,
+            "Accuracy": 99.59,
+            "F1-score": 91.66,
+            "Test Samples": 1780
+        },
+        {
+            "Type": "Medical",
+            "TP": 1447,
+            "FN": 46,
+            "FP": 173,
+            "Classified_as": {
+                "Camera": 6,
+                "Printer": 8,
+                "Scada": 7,
+                "Router": 2,
+                "NAS": 3,
+                "NVR": 5,
+                "Power_meter": 4,
+                "Building_Automation": 11,
+                "Medical": 1447
+            },
+            "Precision": 89.32,
+            "Recall": 96.92,
+            "Accuracy": 99.71,
+            "F1-score": 92.96,
+            "Test Samples": 1493
+        },
+        {
+            "Type": "Macro Average",
+            "Precision": 89.31,
+            "Recall": 93.39,
+            "Accuracy": 98.43,
+            "F1-score": 91.15,
+            "Test Samples": 76025,
+            "Overall Accuracy": 92.91
+        }
+    ]
+}

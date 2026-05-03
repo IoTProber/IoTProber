@@ -1,0 +1,387 @@
+2026-03-30 09:36:08,931 [INFO] Service analysis for as_embedding started at 2026-03-30 09:36:08
+2026-03-30 09:36:08,931 [INFO] Feature columns: ['as-info']
+2026-03-30 09:36:09,188 [INFO] [as Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:36:09,470 [INFO] [as Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:36:09,736 [INFO] [as Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:36:09,994 [INFO] [as Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:36:10,251 [INFO] [as Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:36:10,517 [INFO] [as Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:36:10,798 [INFO] [as Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:36:11,054 [INFO] [as Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:36:11,309 [INFO] [as Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:36:11,309 [INFO] All devices have been embedded for perspective as
+2026-03-30 09:36:11,309 [INFO] Service analysis for as_embedding finished at 2026-03-30 09:36:11
+2026-03-30 09:36:11,309 [INFO] ['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA', 'CAMERA']
+2026-03-30 09:36:11,309 [INFO] Analyzing embedding_as distribution for device NAS
+2026-03-30 09:38:16,467 [INFO] Service analysis for as_embedding started at 2026-03-30 09:38:16
+2026-03-30 09:38:16,468 [INFO] Feature columns: ['as-info']
+2026-03-30 09:38:16,726 [INFO] [as Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:16,981 [INFO] [as Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:17,243 [INFO] [as Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:17,500 [INFO] [as Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:17,758 [INFO] [as Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:18,020 [INFO] [as Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:18,278 [INFO] [as Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:18,534 [INFO] [as Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:18,794 [INFO] [as Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:18,794 [INFO] All devices have been embedded for perspective as
+2026-03-30 09:38:18,794 [INFO] Service analysis for as_embedding finished at 2026-03-30 09:38:18
+2026-03-30 09:38:18,794 [INFO] Embedding & Clustering for as_embedding finished in 2.33 seconds
+2026-03-30 09:38:18,794 [INFO] Service analysis for whois_embedding started at 2026-03-30 09:38:18
+2026-03-30 09:38:18,794 [INFO] Feature columns: ['whois-info']
+2026-03-30 09:38:19,051 [INFO] [whois Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:19,307 [INFO] [whois Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:19,569 [INFO] [whois Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:19,825 [INFO] [whois Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:20,081 [INFO] [whois Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:20,343 [INFO] [whois Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:20,599 [INFO] [whois Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:20,854 [INFO] [whois Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:21,115 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:21,115 [INFO] All devices have been embedded for perspective whois
+2026-03-30 09:38:21,115 [INFO] Service analysis for whois_embedding finished at 2026-03-30 09:38:21
+2026-03-30 09:38:21,115 [INFO] Embedding & Clustering for whois_embedding finished in 2.32 seconds
+2026-03-30 09:38:21,115 [INFO] Service analysis for os_embedding started at 2026-03-30 09:38:21
+2026-03-30 09:38:21,116 [INFO] Feature columns: ['os-info']
+2026-03-30 09:38:21,372 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:21,628 [INFO] [os Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:21,885 [INFO] [os Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:22,141 [INFO] [os Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:22,445 [INFO] [os Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:22,707 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:22,963 [INFO] [os Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:23,224 [INFO] [os Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:23,480 [INFO] [os Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:23,480 [INFO] All devices have been embedded for perspective os
+2026-03-30 09:38:23,481 [INFO] Service analysis for os_embedding finished at 2026-03-30 09:38:23
+2026-03-30 09:38:23,481 [INFO] Embedding & Clustering for os_embedding finished in 2.37 seconds
+2026-03-30 09:38:23,481 [INFO] Service analysis for sw_embedding started at 2026-03-30 09:38:23
+2026-03-30 09:38:23,481 [INFO] Feature columns: ['sw-info']
+2026-03-30 09:38:23,736 [INFO] [sw Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:24,014 [INFO] [sw Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:24,275 [INFO] [sw Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:24,532 [INFO] [sw Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:24,789 [INFO] [sw Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:25,051 [INFO] [sw Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:25,308 [INFO] [sw Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:25,563 [INFO] [sw Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:25,822 [INFO] [sw Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:25,822 [INFO] All devices have been embedded for perspective sw
+2026-03-30 09:38:25,823 [INFO] Service analysis for sw_embedding finished at 2026-03-30 09:38:25
+2026-03-30 09:38:25,823 [INFO] Embedding & Clustering for sw_embedding finished in 2.34 seconds
+2026-03-30 09:38:25,823 [INFO] Service analysis for hw_embedding started at 2026-03-30 09:38:25
+2026-03-30 09:38:25,823 [INFO] Feature columns: ['hw-info']
+2026-03-30 09:38:26,080 [INFO] [hw Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:26,336 [INFO] [hw Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:26,595 [INFO] [hw Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:26,909 [INFO] [hw Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:27,165 [INFO] [hw Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:27,424 [INFO] [hw Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:27,682 [INFO] [hw Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:27,938 [INFO] [hw Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:28,205 [INFO] [hw Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:28,205 [INFO] All devices have been embedded for perspective hw
+2026-03-30 09:38:28,205 [INFO] Service analysis for hw_embedding finished at 2026-03-30 09:38:28
+2026-03-30 09:38:28,206 [INFO] Embedding & Clustering for hw_embedding finished in 2.38 seconds
+2026-03-30 09:38:28,206 [INFO] Service analysis for sd_embedding started at 2026-03-30 09:38:28
+2026-03-30 09:38:28,206 [INFO] Feature columns: ['service-distribution']
+2026-03-30 09:38:28,465 [INFO] [sd Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:28,721 [INFO] [sd Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:28,978 [INFO] [sd Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:29,235 [INFO] [sd Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:29,492 [INFO] [sd Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:29,747 [INFO] [sd Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:30,029 [INFO] [sd Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:30,295 [INFO] [sd Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:30,552 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:30,552 [INFO] All devices have been embedded for perspective sd
+2026-03-30 09:38:30,552 [INFO] Service analysis for sd_embedding finished at 2026-03-30 09:38:30
+2026-03-30 09:38:30,552 [INFO] Embedding & Clustering for sd_embedding finished in 2.35 seconds
+2026-03-30 09:38:30,552 [INFO] Service analysis for body_embedding started at 2026-03-30 09:38:30
+2026-03-30 09:38:30,552 [INFO] Feature columns: ['http-bodys']
+2026-03-30 09:38:30,809 [INFO] [body Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:31,072 [INFO] [body Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:31,328 [INFO] [body Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:31,584 [INFO] [body Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:31,840 [INFO] [body Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:32,100 [INFO] [body Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:32,357 [INFO] [body Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:32,614 [INFO] [body Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:32,870 [INFO] [body Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:32,870 [INFO] All devices have been embedded for perspective body
+2026-03-30 09:38:32,870 [INFO] Service analysis for body_embedding finished at 2026-03-30 09:38:32
+2026-03-30 09:38:32,870 [INFO] Embedding & Clustering for body_embedding finished in 2.32 seconds
+2026-03-30 09:38:32,870 [INFO] Service analysis for htags_embedding started at 2026-03-30 09:38:32
+2026-03-30 09:38:32,870 [INFO] Feature columns: ['http-tags']
+2026-03-30 09:38:33,184 [INFO] [htags Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:33,444 [INFO] [htags Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:33,700 [INFO] [htags Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:33,957 [INFO] [htags Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:34,214 [INFO] [htags Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:34,470 [INFO] [htags Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:34,737 [INFO] [htags Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:34,996 [INFO] [htags Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:35,252 [INFO] [htags Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:35,253 [INFO] All devices have been embedded for perspective htags
+2026-03-30 09:38:35,253 [INFO] Service analysis for htags_embedding finished at 2026-03-30 09:38:35
+2026-03-30 09:38:35,253 [INFO] Embedding & Clustering for htags_embedding finished in 2.38 seconds
+2026-03-30 09:38:35,253 [INFO] Service analysis for hfavicons_embedding started at 2026-03-30 09:38:35
+2026-03-30 09:38:35,253 [INFO] Feature columns: ['http-favicon-urls']
+2026-03-30 09:38:35,510 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:35,767 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:36,023 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:36,280 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:36,537 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:36,794 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:37,073 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:37,331 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:37,587 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:37,587 [INFO] All devices have been embedded for perspective hfavicons
+2026-03-30 09:38:37,588 [INFO] Service analysis for hfavicons_embedding finished at 2026-03-30 09:38:37
+2026-03-30 09:38:37,588 [INFO] Embedding & Clustering for hfavicons_embedding finished in 2.33 seconds
+2026-03-30 09:38:37,588 [INFO] Service analysis for hpart_embedding started at 2026-03-30 09:38:37
+2026-03-30 09:38:37,588 [INFO] Feature columns: ['http-part-info']
+2026-03-30 09:38:37,844 [INFO] [hpart Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:38,100 [INFO] [hpart Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:38,363 [INFO] [hpart Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:38,620 [INFO] [hpart Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:38,875 [INFO] [hpart Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:39,131 [INFO] [hpart Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:39,387 [INFO] [hpart Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:39,647 [INFO] [hpart Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:39,903 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:39,903 [INFO] All devices have been embedded for perspective hpart
+2026-03-30 09:38:39,903 [INFO] Service analysis for hpart_embedding finished at 2026-03-30 09:38:39
+2026-03-30 09:38:39,903 [INFO] Embedding & Clustering for hpart_embedding finished in 2.32 seconds
+2026-03-30 09:38:39,903 [INFO] Service analysis for http_embedding started at 2026-03-30 09:38:39
+2026-03-30 09:38:39,904 [INFO] Feature columns: ['http-info']
+2026-03-30 09:38:40,160 [INFO] [http Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:40,417 [INFO] [http Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:40,673 [INFO] [http Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:40,974 [INFO] [http Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:41,245 [INFO] [http Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:41,502 [INFO] [http Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:41,758 [INFO] [http Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:42,014 [INFO] [http Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:42,270 [INFO] [http Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:42,270 [INFO] All devices have been embedded for perspective http
+2026-03-30 09:38:42,270 [INFO] Service analysis for http_embedding finished at 2026-03-30 09:38:42
+2026-03-30 09:38:42,271 [INFO] Embedding & Clustering for http_embedding finished in 2.37 seconds
+2026-03-30 09:38:42,271 [INFO] Service analysis for certificate_embedding started at 2026-03-30 09:38:42
+2026-03-30 09:38:42,271 [INFO] Feature columns: ['cert-info']
+2026-03-30 09:38:42,528 [INFO] [certificate Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:42,783 [INFO] [certificate Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:43,052 [INFO] [certificate Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:43,309 [INFO] [certificate Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:43,565 [INFO] [certificate Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:43,821 [INFO] [certificate Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:44,077 [INFO] [certificate Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:44,335 [INFO] [certificate Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:44,592 [INFO] [certificate Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:44,592 [INFO] All devices have been embedded for perspective certificate
+2026-03-30 09:38:44,592 [INFO] Service analysis for certificate_embedding finished at 2026-03-30 09:38:44
+2026-03-30 09:38:44,592 [INFO] Embedding & Clustering for certificate_embedding finished in 2.32 seconds
+2026-03-30 09:38:44,592 [INFO] Service analysis for dns_embedding started at 2026-03-30 09:38:44
+2026-03-30 09:38:44,592 [INFO] Feature columns: ['dns-reverse']
+2026-03-30 09:38:44,848 [INFO] [dns Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:38:45,104 [INFO] [dns Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:38:45,361 [INFO] [dns Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:38:45,617 [INFO] [dns Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:38:45,893 [INFO] [dns Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:38:46,156 [INFO] [dns Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:38:46,412 [INFO] [dns Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:38:46,669 [INFO] [dns Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:38:46,925 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:38:46,925 [INFO] All devices have been embedded for perspective dns
+2026-03-30 09:38:46,925 [INFO] Service analysis for dns_embedding finished at 2026-03-30 09:38:46
+2026-03-30 09:38:46,925 [INFO] Embedding & Clustering for dns_embedding finished in 2.33 seconds
+2026-03-30 09:45:13,145 [INFO] Service analysis for as_embedding started at 2026-03-30 09:45:13
+2026-03-30 09:45:13,145 [INFO] Feature columns: ['as-info']
+2026-03-30 09:45:13,411 [INFO] [as Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:13,671 [INFO] [as Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:13,932 [INFO] [as Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:14,195 [INFO] [as Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:14,453 [INFO] [as Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:14,717 [INFO] [as Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:15,011 [INFO] [as Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:15,280 [INFO] [as Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:15,547 [INFO] [as Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:15,547 [INFO] All devices have been embedded for perspective as
+2026-03-30 09:45:15,547 [INFO] Service analysis for as_embedding finished at 2026-03-30 09:45:15
+2026-03-30 09:45:15,547 [INFO] Embedding & Clustering for as_embedding finished in 2.40 seconds
+2026-03-30 09:45:15,547 [INFO] Service analysis for whois_embedding started at 2026-03-30 09:45:15
+2026-03-30 09:45:15,547 [INFO] Feature columns: ['whois-info']
+2026-03-30 09:45:15,826 [INFO] [whois Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:16,084 [INFO] [whois Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:16,343 [INFO] [whois Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:16,603 [INFO] [whois Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:16,910 [INFO] [whois Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:17,166 [INFO] [whois Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:17,433 [INFO] [whois Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:17,694 [INFO] [whois Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:17,972 [INFO] [whois Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:17,973 [INFO] All devices have been embedded for perspective whois
+2026-03-30 09:45:17,973 [INFO] Service analysis for whois_embedding finished at 2026-03-30 09:45:17
+2026-03-30 09:45:17,973 [INFO] Embedding & Clustering for whois_embedding finished in 2.43 seconds
+2026-03-30 09:45:17,973 [INFO] Service analysis for os_embedding started at 2026-03-30 09:45:17
+2026-03-30 09:45:17,973 [INFO] Feature columns: ['os-info']
+2026-03-30 09:45:18,235 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:18,494 [INFO] [os Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:18,754 [INFO] [os Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:19,012 [INFO] [os Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:19,268 [INFO] [os Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:19,574 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:19,830 [INFO] [os Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:20,097 [INFO] [os Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:20,356 [INFO] [os Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:20,356 [INFO] All devices have been embedded for perspective os
+2026-03-30 09:45:20,357 [INFO] Service analysis for os_embedding finished at 2026-03-30 09:45:20
+2026-03-30 09:45:20,357 [INFO] Embedding & Clustering for os_embedding finished in 2.38 seconds
+2026-03-30 09:45:20,357 [INFO] Service analysis for sw_embedding started at 2026-03-30 09:45:20
+2026-03-30 09:45:20,357 [INFO] Feature columns: ['sw-info']
+2026-03-30 09:45:20,623 [INFO] [sw Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:20,901 [INFO] [sw Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:21,161 [INFO] [sw Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:21,419 [INFO] [sw Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:21,679 [INFO] [sw Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:21,936 [INFO] [sw Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:22,195 [INFO] [sw Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:22,494 [INFO] [sw Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:22,758 [INFO] [sw Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:22,758 [INFO] All devices have been embedded for perspective sw
+2026-03-30 09:45:22,759 [INFO] Service analysis for sw_embedding finished at 2026-03-30 09:45:22
+2026-03-30 09:45:22,759 [INFO] Embedding & Clustering for sw_embedding finished in 2.40 seconds
+2026-03-30 09:45:22,759 [INFO] Service analysis for hw_embedding started at 2026-03-30 09:45:22
+2026-03-30 09:45:22,759 [INFO] Feature columns: ['hw-info']
+2026-03-30 09:45:23,015 [INFO] [hw Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:23,285 [INFO] [hw Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:23,548 [INFO] [hw Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:23,807 [INFO] [hw Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:24,089 [INFO] [hw Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:24,346 [INFO] [hw Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:24,604 [INFO] [hw Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:24,863 [INFO] [hw Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:25,119 [INFO] [hw Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:25,119 [INFO] All devices have been embedded for perspective hw
+2026-03-30 09:45:25,119 [INFO] Service analysis for hw_embedding finished at 2026-03-30 09:45:25
+2026-03-30 09:45:25,119 [INFO] Embedding & Clustering for hw_embedding finished in 2.36 seconds
+2026-03-30 09:45:25,119 [INFO] Service analysis for sd_embedding started at 2026-03-30 09:45:25
+2026-03-30 09:45:25,119 [INFO] Feature columns: ['service-distribution']
+2026-03-30 09:45:25,379 [INFO] [sd Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:25,637 [INFO] [sd Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:25,892 [INFO] [sd Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:26,197 [INFO] [sd Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:26,454 [INFO] [sd Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:26,710 [INFO] [sd Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:26,979 [INFO] [sd Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:27,236 [INFO] [sd Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:27,493 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:27,493 [INFO] All devices have been embedded for perspective sd
+2026-03-30 09:45:27,493 [INFO] Service analysis for sd_embedding finished at 2026-03-30 09:45:27
+2026-03-30 09:45:27,493 [INFO] Embedding & Clustering for sd_embedding finished in 2.37 seconds
+2026-03-30 09:45:27,493 [INFO] Service analysis for body_embedding started at 2026-03-30 09:45:27
+2026-03-30 09:45:27,493 [INFO] Feature columns: ['http-bodys']
+2026-03-30 09:45:27,761 [INFO] [body Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:28,031 [INFO] [body Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:28,289 [INFO] [body Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:28,546 [INFO] [body Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:28,805 [INFO] [body Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:29,061 [INFO] [body Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:29,319 [INFO] [body Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:29,576 [INFO] [body Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:29,834 [INFO] [body Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:29,835 [INFO] All devices have been embedded for perspective body
+2026-03-30 09:45:29,835 [INFO] Service analysis for body_embedding finished at 2026-03-30 09:45:29
+2026-03-30 09:45:29,835 [INFO] Embedding & Clustering for body_embedding finished in 2.34 seconds
+2026-03-30 09:45:29,835 [INFO] Service analysis for htags_embedding started at 2026-03-30 09:45:29
+2026-03-30 09:45:29,835 [INFO] Feature columns: ['http-tags']
+2026-03-30 09:45:30,091 [INFO] [htags Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:30,389 [INFO] [htags Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:30,652 [INFO] [htags Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:30,908 [INFO] [htags Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:31,166 [INFO] [htags Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:31,434 [INFO] [htags Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:31,690 [INFO] [htags Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:31,947 [INFO] [htags Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:32,205 [INFO] [htags Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:32,205 [INFO] All devices have been embedded for perspective htags
+2026-03-30 09:45:32,205 [INFO] Service analysis for htags_embedding finished at 2026-03-30 09:45:32
+2026-03-30 09:45:32,205 [INFO] Embedding & Clustering for htags_embedding finished in 2.37 seconds
+2026-03-30 09:45:32,205 [INFO] Service analysis for hfavicons_embedding started at 2026-03-30 09:45:32
+2026-03-30 09:45:32,205 [INFO] Feature columns: ['http-favicon-urls']
+2026-03-30 09:45:32,487 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:32,749 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:33,011 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:33,268 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:33,526 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:33,783 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:34,039 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:34,298 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:34,555 [INFO] [hfavicons Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:34,556 [INFO] All devices have been embedded for perspective hfavicons
+2026-03-30 09:45:34,556 [INFO] Service analysis for hfavicons_embedding finished at 2026-03-30 09:45:34
+2026-03-30 09:45:34,556 [INFO] Embedding & Clustering for hfavicons_embedding finished in 2.35 seconds
+2026-03-30 09:45:34,556 [INFO] Service analysis for hpart_embedding started at 2026-03-30 09:45:34
+2026-03-30 09:45:34,556 [INFO] Feature columns: ['http-part-info']
+2026-03-30 09:45:34,816 [INFO] [hpart Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:35,072 [INFO] [hpart Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:35,367 [INFO] [hpart Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:35,634 [INFO] [hpart Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:35,890 [INFO] [hpart Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:36,147 [INFO] [hpart Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:36,413 [INFO] [hpart Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:36,676 [INFO] [hpart Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:36,935 [INFO] [hpart Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:36,936 [INFO] All devices have been embedded for perspective hpart
+2026-03-30 09:45:36,936 [INFO] Service analysis for hpart_embedding finished at 2026-03-30 09:45:36
+2026-03-30 09:45:36,936 [INFO] Embedding & Clustering for hpart_embedding finished in 2.38 seconds
+2026-03-30 09:45:36,936 [INFO] Service analysis for http_embedding started at 2026-03-30 09:45:36
+2026-03-30 09:45:36,936 [INFO] Feature columns: ['http-info']
+2026-03-30 09:45:37,193 [INFO] [http Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:37,449 [INFO] [http Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:37,725 [INFO] [http Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:37,988 [INFO] [http Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:38,245 [INFO] [http Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:38,503 [INFO] [http Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:38,760 [INFO] [http Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:39,017 [INFO] [http Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:39,275 [INFO] [http Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:39,275 [INFO] All devices have been embedded for perspective http
+2026-03-30 09:45:39,275 [INFO] Service analysis for http_embedding finished at 2026-03-30 09:45:39
+2026-03-30 09:45:39,275 [INFO] Embedding & Clustering for http_embedding finished in 2.34 seconds
+2026-03-30 09:45:39,276 [INFO] Service analysis for certificate_embedding started at 2026-03-30 09:45:39
+2026-03-30 09:45:39,276 [INFO] Feature columns: ['cert-info']
+2026-03-30 09:45:39,532 [INFO] [certificate Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:39,792 [INFO] [certificate Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:40,048 [INFO] [certificate Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:40,304 [INFO] [certificate Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:40,564 [INFO] [certificate Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:40,824 [INFO] [certificate Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:41,082 [INFO] [certificate Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:41,381 [INFO] [certificate Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:41,643 [INFO] [certificate Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:41,644 [INFO] All devices have been embedded for perspective certificate
+2026-03-30 09:45:41,644 [INFO] Service analysis for certificate_embedding finished at 2026-03-30 09:45:41
+2026-03-30 09:45:41,644 [INFO] Embedding & Clustering for certificate_embedding finished in 2.37 seconds
+2026-03-30 09:45:41,644 [INFO] Service analysis for dns_embedding started at 2026-03-30 09:45:41
+2026-03-30 09:45:41,644 [INFO] Feature columns: ['dns-reverse']
+2026-03-30 09:45:41,901 [INFO] [dns Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-30 09:45:42,157 [INFO] [dns Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-30 09:45:42,424 [INFO] [dns Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-30 09:45:42,683 [INFO] [dns Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-30 09:45:42,939 [INFO] [dns Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-30 09:45:43,197 [INFO] [dns Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-30 09:45:43,452 [INFO] [dns Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-30 09:45:43,710 [INFO] [dns Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-30 09:45:43,977 [INFO] [dns Embedding (PCA: True)] Embedding for Device CAMERA has been done!
+2026-03-30 09:45:43,977 [INFO] All devices have been embedded for perspective dns
+2026-03-30 09:45:43,978 [INFO] Service analysis for dns_embedding finished at 2026-03-30 09:45:43
+2026-03-30 09:45:43,978 [INFO] Embedding & Clustering for dns_embedding finished in 2.33 seconds
+2026-03-30 10:22:38,144 [INFO] Saved concatenated embedding for device NAS to /home/iot-classification/platform_data/csv/local/1/embedding_local/ipraw_NAS_embedding.csv (11265 cols)
+2026-03-30 10:31:27,610 [INFO] Saved concatenated embedding for device NVR to /home/iot-classification/platform_data/csv/local/1/embedding_local/ipraw_NVR_embedding.csv (11265 cols)
+2026-03-30 10:33:27,053 [INFO] Saved concatenated embedding for device POWER_METER to /home/iot-classification/platform_data/csv/local/1/embedding_local/ipraw_POWER_METER_embedding.csv (11265 cols)
+2026-03-30 10:37:00,426 [INFO] Saved concatenated embedding for device BUILDING_AUTOMATION to /home/iot-classification/platform_data/csv/local/1/embedding_local/ipraw_BUILDING_AUTOMATION_embedding.csv (11265 cols)
+2026-03-30 10:39:58,911 [INFO] Saved concatenated embedding for device MEDICAL to /home/iot-classification/platform_data/csv/local/1/embedding_local/ipraw_MEDICAL_embedding.csv (11265 cols)
+2026-03-30 11:25:51,644 [INFO] Saved concatenated embedding for device ROUTER to /home/iot-classification/platform_data/csv/local/1/embedding_local/ipraw_ROUTER_embedding.csv (11265 cols)
+2026-03-30 11:34:29,173 [INFO] Saved concatenated embedding for device PRINTER to /home/iot-classification/platform_data/csv/local/1/embedding_local/ipraw_PRINTER_embedding.csv (11265 cols)
+2026-03-30 11:40:19,349 [INFO] Saved concatenated embedding for device SCADA to /home/iot-classification/platform_data/csv/local/1/embedding_local/ipraw_SCADA_embedding.csv (11265 cols)

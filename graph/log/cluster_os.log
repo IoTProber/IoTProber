@@ -1,0 +1,197 @@
+2026-03-11 17:14:10,948 [INFO] Load pretrained SentenceTransformer: /root/iot-classification/ecs_code/qwen3_embedding_06b
+2026-03-11 17:14:12,679 [INFO] 1 prompt is loaded, with the key: query
+2026-03-11 17:14:12,934 [INFO] Service analysis for os_embedding started at 2026-03-11 17:14:12
+2026-03-11 17:14:13,136 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running...
+2026-03-11 17:19:27,171 [INFO] Load pretrained SentenceTransformer: /root/iot-classification/ecs_code/qwen3_embedding_06b
+2026-03-11 17:19:29,066 [INFO] 1 prompt is loaded, with the key: query
+2026-03-11 17:19:29,314 [INFO] Service analysis for os_embedding started at 2026-03-11 17:19:29
+2026-03-11 17:19:29,518 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running...
+2026-03-11 17:28:26,862 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 10000/74878
+2026-03-11 17:28:43,133 [INFO] [os Embedding (PCA: True)] Saved milestone at 10000 for Device NAS
+2026-03-11 17:38:24,847 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 10000/74878
+2026-03-11 17:38:40,943 [INFO] [os Embedding (PCA: True)] Saved milestone at 10000 for Device NAS
+2026-03-11 17:47:14,899 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 20000/74878
+2026-03-11 17:47:46,948 [INFO] [os Embedding (PCA: True)] Saved milestone at 20000 for Device NAS
+2026-03-11 17:56:57,801 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 20000/74878
+2026-03-11 17:57:30,898 [INFO] [os Embedding (PCA: True)] Saved milestone at 20000 for Device NAS
+2026-03-11 18:03:22,791 [INFO] Load pretrained SentenceTransformer: /root/iot-classification/ecs_code/qwen3_embedding_06b
+2026-03-11 18:03:24,494 [INFO] 1 prompt is loaded, with the key: query
+2026-03-11 18:03:24,754 [INFO] Service analysis for os_embedding started at 2026-03-11 18:03:24
+2026-03-11 18:03:24,972 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running...
+2026-03-11 18:03:52,300 [INFO] [os Embedding (PCA: True)] Resuming from milestone at index 20000 for Device NAS
+2026-03-11 18:03:52,717 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 20000/74878
+2026-03-11 18:04:24,790 [INFO] [os Embedding (PCA: True)] Saved milestone at 20000 for Device NAS
+2026-03-11 18:14:04,810 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 30000/74878
+2026-03-11 18:14:53,542 [INFO] [os Embedding (PCA: True)] Saved milestone at 30000 for Device NAS
+2026-03-11 18:24:32,828 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 40000/74878
+2026-03-11 18:25:37,835 [INFO] [os Embedding (PCA: True)] Saved milestone at 40000 for Device NAS
+2026-03-11 18:35:17,113 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 50000/74878
+2026-03-11 18:36:38,655 [INFO] [os Embedding (PCA: True)] Saved milestone at 50000 for Device NAS
+2026-03-11 18:46:17,812 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 60000/74878
+2026-03-11 18:47:55,291 [INFO] [os Embedding (PCA: True)] Saved milestone at 60000 for Device NAS
+2026-03-11 18:57:34,294 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS running... 70000/74878
+2026-03-11 18:59:28,784 [INFO] [os Embedding (PCA: True)] Saved milestone at 70000 for Device NAS
+2026-03-11 19:04:11,451 [INFO] Embedding Length: 74878
+2026-03-11 19:06:14,754 [INFO] [**] Qwen3 embedding done!
+2026-03-11 19:06:30,320 [INFO] [PCA] PCA for Device NAS done!
+2026-03-11 19:06:30,320 [INFO] [HDBSCAN] HDBSCAN for Device NAS running...
+2026-03-11 19:24:51,134 [INFO] [HDBSCAN] Cluster Result of Device NAS: 99 clusters, 1066 noise points
+2026-03-11 19:24:51,135 [INFO] [HDBSCAN] Clustering done for Device NAS
+2026-03-11 19:25:26,604 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/ipraw_NAS_embedding_os_pca.csv
+2026-03-11 19:25:27,513 [INFO] [os Embedding (PCA: True)] Embedding for Device NVR running...
+2026-03-11 19:35:07,727 [INFO] [os Embedding (PCA: True)] Embedding for Device NVR running... 10000/17898
+2026-03-11 19:35:24,851 [INFO] [os Embedding (PCA: True)] Saved milestone at 10000 for Device NVR
+2026-03-11 19:43:02,085 [INFO] Embedding Length: 17898
+2026-03-11 19:43:32,768 [INFO] [**] Qwen3 embedding done!
+2026-03-11 19:43:42,470 [INFO] [PCA] PCA for Device NVR done!
+2026-03-11 19:43:42,470 [INFO] [HDBSCAN] HDBSCAN for Device NVR running...
+2026-03-11 19:44:41,880 [INFO] [HDBSCAN] Cluster Result of Device NVR: 25 clusters, 469 noise points
+2026-03-11 19:44:41,880 [INFO] [HDBSCAN] Clustering done for Device NVR
+2026-03-11 19:44:50,704 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/ipraw_NVR_embedding_os_pca.csv
+2026-03-11 19:44:51,107 [INFO] [os Embedding (PCA: True)] Embedding for Device POWER_METER running...
+2026-03-11 19:48:52,026 [INFO] Embedding Length: 3984
+2026-03-11 19:48:58,815 [INFO] [**] Qwen3 embedding done!
+2026-03-11 19:49:13,821 [INFO] [PCA] PCA for Device POWER_METER done!
+2026-03-11 19:49:13,821 [INFO] [HDBSCAN] HDBSCAN for Device POWER_METER running...
+2026-03-11 19:49:17,602 [INFO] [HDBSCAN] Cluster Result of Device POWER_METER: 20 clusters, 452 noise points
+2026-03-11 19:49:17,602 [INFO] [HDBSCAN] Clustering done for Device POWER_METER
+2026-03-11 19:49:19,607 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/ipraw_POWER_METER_embedding_os_pca.csv
+2026-03-11 19:49:19,877 [INFO] [os Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION running...
+2026-03-11 19:56:18,153 [INFO] Embedding Length: 7124
+2026-03-11 19:56:29,967 [INFO] [**] Qwen3 embedding done!
+2026-03-11 19:56:45,414 [INFO] [PCA] PCA for Device BUILDING_AUTOMATION done!
+2026-03-11 19:56:45,414 [INFO] [HDBSCAN] HDBSCAN for Device BUILDING_AUTOMATION running...
+2026-03-11 19:56:55,923 [INFO] [HDBSCAN] Cluster Result of Device BUILDING_AUTOMATION: 31 clusters, 407 noise points
+2026-03-11 19:56:55,923 [INFO] [HDBSCAN] Clustering done for Device BUILDING_AUTOMATION
+2026-03-11 19:56:59,425 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/ipraw_BUILDING_AUTOMATION_embedding_os_pca.csv
+2026-03-11 19:56:59,704 [INFO] [os Embedding (PCA: True)] Embedding for Device MEDICAL running...
+2026-03-11 20:02:52,498 [INFO] Embedding Length: 5975
+2026-03-11 20:03:02,336 [INFO] [**] Qwen3 embedding done!
+2026-03-11 20:03:13,403 [INFO] [PCA] PCA for Device MEDICAL done!
+2026-03-11 20:03:13,403 [INFO] [HDBSCAN] HDBSCAN for Device MEDICAL running...
+2026-03-11 20:03:21,168 [INFO] [HDBSCAN] Cluster Result of Device MEDICAL: 32 clusters, 441 noise points
+2026-03-11 20:03:21,168 [INFO] [HDBSCAN] Clustering done for Device MEDICAL
+2026-03-11 20:03:24,101 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/ipraw_MEDICAL_embedding_os_pca.csv
+2026-03-11 20:03:24,373 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running...
+2026-03-11 20:13:16,696 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 10000/92770
+2026-03-11 20:13:33,437 [INFO] [os Embedding (PCA: True)] Saved milestone at 10000 for Device ROUTER
+2026-03-11 20:23:07,342 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 20000/92770
+2026-03-11 20:23:40,331 [INFO] [os Embedding (PCA: True)] Saved milestone at 20000 for Device ROUTER
+2026-03-11 20:33:14,226 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 30000/92770
+2026-03-11 20:34:04,133 [INFO] [os Embedding (PCA: True)] Saved milestone at 30000 for Device ROUTER
+2026-03-11 20:43:38,156 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 40000/92770
+2026-03-11 20:44:44,308 [INFO] [os Embedding (PCA: True)] Saved milestone at 40000 for Device ROUTER
+2026-03-11 20:54:16,778 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 50000/92770
+2026-03-11 20:55:39,821 [INFO] [os Embedding (PCA: True)] Saved milestone at 50000 for Device ROUTER
+2026-03-11 21:05:12,297 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 60000/92770
+2026-03-11 21:06:52,729 [INFO] [os Embedding (PCA: True)] Saved milestone at 60000 for Device ROUTER
+2026-03-11 21:16:25,233 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 70000/92770
+2026-03-11 21:18:24,685 [INFO] [os Embedding (PCA: True)] Saved milestone at 70000 for Device ROUTER
+2026-03-11 21:27:56,825 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 80000/92770
+2026-03-11 21:30:13,087 [INFO] [os Embedding (PCA: True)] Saved milestone at 80000 for Device ROUTER
+2026-03-11 21:39:44,987 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER running... 90000/92770
+2026-03-11 21:42:20,774 [INFO] [os Embedding (PCA: True)] Saved milestone at 90000 for Device ROUTER
+2026-03-11 21:44:59,116 [INFO] Embedding Length: 92770
+2026-03-11 21:47:35,390 [INFO] [**] Qwen3 embedding done!
+2026-03-11 21:47:54,663 [INFO] [PCA] PCA for Device ROUTER done!
+2026-03-11 21:47:54,663 [INFO] [HDBSCAN] HDBSCAN for Device ROUTER running...
+2026-03-11 22:16:02,072 [INFO] [HDBSCAN] Cluster Result of Device ROUTER: 124 clusters, 1098 noise points
+2026-03-11 22:16:02,072 [INFO] [HDBSCAN] Clustering done for Device ROUTER
+2026-03-11 22:16:45,795 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/ipraw_ROUTER_embedding_os_pca.csv
+2026-03-11 22:16:46,894 [INFO] [os Embedding (PCA: True)] Embedding for Device PRINTER running...
+2026-03-11 22:26:35,233 [INFO] [os Embedding (PCA: True)] Embedding for Device PRINTER running... 10000/17330
+2026-03-11 22:26:51,962 [INFO] [os Embedding (PCA: True)] Saved milestone at 10000 for Device PRINTER
+2026-03-11 22:33:55,074 [INFO] Embedding Length: 17330
+2026-03-11 22:34:25,945 [INFO] [**] Qwen3 embedding done!
+2026-03-11 22:34:39,982 [INFO] [PCA] PCA for Device PRINTER done!
+2026-03-11 22:34:39,982 [INFO] [HDBSCAN] HDBSCAN for Device PRINTER running...
+2026-03-11 22:35:40,606 [INFO] [HDBSCAN] Cluster Result of Device PRINTER: 93 clusters, 1017 noise points
+2026-03-11 22:35:40,607 [INFO] [HDBSCAN] Clustering done for Device PRINTER
+2026-03-11 22:35:48,971 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/ipraw_PRINTER_embedding_os_pca.csv
+2026-03-11 22:35:49,364 [INFO] [os Embedding (PCA: True)] Embedding for Device SCADA running...
+2026-03-11 22:45:30,673 [INFO] [os Embedding (PCA: True)] Embedding for Device SCADA running... 10000/11800
+2026-03-11 22:45:48,345 [INFO] [os Embedding (PCA: True)] Saved milestone at 10000 for Device SCADA
+2026-03-11 22:47:32,548 [INFO] Embedding Length: 11800
+2026-03-11 22:47:53,471 [INFO] [**] Qwen3 embedding done!
+2026-03-11 22:48:08,054 [INFO] [PCA] PCA for Device SCADA done!
+2026-03-11 22:48:08,054 [INFO] [HDBSCAN] HDBSCAN for Device SCADA running...
+2026-03-11 22:48:34,637 [INFO] [HDBSCAN] Cluster Result of Device SCADA: 25 clusters, 402 noise points
+2026-03-11 22:48:34,637 [INFO] [HDBSCAN] Clustering done for Device SCADA
+2026-03-11 22:48:40,454 [INFO] PCA (256) Embedding & Clustering Result Saved at /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/ipraw_SCADA_embedding_os_pca.csv
+2026-03-11 22:48:40,802 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-11 22:48:41,142 [INFO] [os Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-11 22:48:41,480 [INFO] [os Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-11 22:48:41,821 [INFO] [os Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-11 22:48:42,159 [INFO] [os Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-11 22:48:42,498 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-11 22:48:42,838 [INFO] [os Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-11 22:48:43,177 [INFO] [os Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-12 00:13:32,928 [INFO] Load pretrained SentenceTransformer: /root/iot-classification/ecs_code/qwen3_embedding_06b
+2026-03-12 00:13:34,594 [INFO] 1 prompt is loaded, with the key: query
+2026-03-12 00:13:34,841 [INFO] Service analysis for os_embedding started at 2026-03-12 00:13:34
+2026-03-12 00:13:35,045 [INFO] [os Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-12 00:13:35,255 [INFO] [os Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-12 00:13:35,469 [INFO] [os Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-12 00:13:35,680 [INFO] [os Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-12 00:13:35,889 [INFO] [os Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-12 00:13:36,103 [INFO] [os Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-12 00:13:36,317 [INFO] [os Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-12 00:13:36,540 [INFO] [os Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-12 00:13:36,540 [INFO] [*] Drawing 2D cluster plot for device NAS
+2026-03-12 00:13:45,913 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/cluster_2d_NAS_pca1_pca2_dbscan(pca).png
+2026-03-12 00:13:45,913 [INFO] [*] Drawing 2D cluster plot for device NVR
+2026-03-12 00:13:49,450 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/cluster_2d_NVR_pca1_pca2_dbscan(pca).png
+2026-03-12 00:13:49,450 [INFO] [*] Drawing 2D cluster plot for device POWER_METER
+2026-03-12 00:13:51,965 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/cluster_2d_POWER_METER_pca1_pca2_dbscan(pca).png
+2026-03-12 00:13:51,965 [INFO] [*] Drawing 2D cluster plot for device BUILDING_AUTOMATION
+2026-03-12 00:13:54,892 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/cluster_2d_BUILDING_AUTOMATION_pca1_pca2_dbscan(pca).png
+2026-03-12 00:13:54,892 [INFO] [*] Drawing 2D cluster plot for device MEDICAL
+2026-03-12 00:13:57,781 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/cluster_2d_MEDICAL_pca1_pca2_dbscan(pca).png
+2026-03-12 00:13:57,781 [INFO] [*] Drawing 2D cluster plot for device ROUTER
+2026-03-12 00:14:08,038 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/cluster_2d_ROUTER_pca1_pca2_dbscan(pca).png
+2026-03-12 00:14:08,039 [INFO] [*] Drawing 2D cluster plot for device PRINTER
+2026-03-12 00:14:13,153 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/cluster_2d_PRINTER_pca1_pca2_dbscan(pca).png
+2026-03-12 00:14:13,153 [INFO] [*] Drawing 2D cluster plot for device SCADA
+2026-03-12 00:14:16,221 [INFO] [+] 2D cluster plot saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/cluster_2d_SCADA_pca1_pca2_dbscan(pca).png
+2026-03-12 00:14:16,222 [INFO] Service analysis for os_embedding finished at 2026-03-12 00:14:16
+2026-03-12 00:14:16,222 [INFO] ['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA']
+2026-03-12 00:14:16,222 [INFO] Analyzing embedding_os distribution for device NAS
+2026-03-12 00:14:39,021 [INFO] embedding_os distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/json/embedding_os_distribution_NAS.json
+2026-03-12 00:14:39,021 [INFO]   - Unique os-info: 557
+2026-03-12 00:14:39,021 [INFO] Drawing embedding_os combination bar chart for NAS...
+2026-03-12 00:14:40,053 [INFO] embedding_os combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/embedding_os_combination_bar_NAS.png
+2026-03-12 00:14:40,054 [INFO] Analyzing embedding_os distribution for device NVR
+2026-03-12 00:14:43,561 [INFO] embedding_os distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/json/embedding_os_distribution_NVR.json
+2026-03-12 00:14:43,561 [INFO]   - Unique os-info: 160
+2026-03-12 00:14:43,561 [INFO] Drawing embedding_os combination bar chart for NVR...
+2026-03-12 00:14:44,268 [INFO] embedding_os combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/embedding_os_combination_bar_NVR.png
+2026-03-12 00:14:44,268 [INFO] Analyzing embedding_os distribution for device POWER_METER
+2026-03-12 00:14:52,860 [INFO] embedding_os distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/json/embedding_os_distribution_POWER_METER.json
+2026-03-12 00:14:52,860 [INFO]   - Unique os-info: 113
+2026-03-12 00:14:52,860 [INFO] Drawing embedding_os combination bar chart for POWER_METER...
+2026-03-12 00:14:53,571 [INFO] embedding_os combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/embedding_os_combination_bar_POWER_METER.png
+2026-03-12 00:14:53,571 [INFO] Analyzing embedding_os distribution for device BUILDING_AUTOMATION
+2026-03-12 00:14:59,199 [INFO] embedding_os distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/json/embedding_os_distribution_BUILDING_AUTOMATION.json
+2026-03-12 00:14:59,199 [INFO]   - Unique os-info: 159
+2026-03-12 00:14:59,199 [INFO] Drawing embedding_os combination bar chart for BUILDING_AUTOMATION...
+2026-03-12 00:14:59,899 [INFO] embedding_os combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/embedding_os_combination_bar_BUILDING_AUTOMATION.png
+2026-03-12 00:14:59,899 [INFO] Analyzing embedding_os distribution for device MEDICAL
+2026-03-12 00:15:07,725 [INFO] embedding_os distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/json/embedding_os_distribution_MEDICAL.json
+2026-03-12 00:15:07,726 [INFO]   - Unique os-info: 147
+2026-03-12 00:15:07,726 [INFO] Drawing embedding_os combination bar chart for MEDICAL...
+2026-03-12 00:15:08,442 [INFO] embedding_os combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/embedding_os_combination_bar_MEDICAL.png
+2026-03-12 00:15:08,442 [INFO] Analyzing embedding_os distribution for device ROUTER
+2026-03-12 00:15:26,435 [INFO] embedding_os distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/json/embedding_os_distribution_ROUTER.json
+2026-03-12 00:15:26,435 [INFO]   - Unique os-info: 511
+2026-03-12 00:15:26,435 [INFO] Drawing embedding_os combination bar chart for ROUTER...
+2026-03-12 00:15:27,148 [INFO] embedding_os combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/embedding_os_combination_bar_ROUTER.png
+2026-03-12 00:15:27,148 [INFO] Analyzing embedding_os distribution for device PRINTER
+2026-03-12 00:15:36,389 [INFO] embedding_os distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/json/embedding_os_distribution_PRINTER.json
+2026-03-12 00:15:36,389 [INFO]   - Unique os-info: 800
+2026-03-12 00:15:36,389 [INFO] Drawing embedding_os combination bar chart for PRINTER...
+2026-03-12 00:15:37,099 [INFO] embedding_os combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/embedding_os_combination_bar_PRINTER.png
+2026-03-12 00:15:37,099 [INFO] Analyzing embedding_os distribution for device SCADA
+2026-03-12 00:15:39,756 [INFO] embedding_os distribution stats saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/json/embedding_os_distribution_SCADA.json
+2026-03-12 00:15:39,757 [INFO]   - Unique os-info: 171
+2026-03-12 00:15:39,757 [INFO] Drawing embedding_os combination bar chart for SCADA...
+2026-03-12 00:15:40,442 [INFO] embedding_os combination bar chart saved to: /root/iot-classification/ecs_code/platform_data/csv/local/1/embedding_os/png/embedding_os_combination_bar_SCADA.png

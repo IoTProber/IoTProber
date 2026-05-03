@@ -1,0 +1,72 @@
+{
+    "as": {
+        "cols": ["as-asn", "as-name", "as-bgp_prefix", "as-country_code"],
+        "prompt_info": "Autonomous System (AS) information including ASN, name, BGP prefix, and country code",
+        "weight": 0.03
+    },
+    "whois": {
+        "cols": ["whois-network-handle", "whois-network-name", "whois-organization-handle", "whois-organization-name"],
+        "prompt_info": "WHOIS information including network handle, network name, organization handle, and organization name",
+        "weight": 0.03
+    },
+    "os": {
+        "cols": ["os-vendor", "os-product", "os-version"],
+        "prompt_info": "Operating system information including vendor, product, and version",
+        "weight": 0.10
+    },
+    "sw": {
+        "cols": ["sw-vendors", "sw-products", "sw-versions"],
+        "prompt_info": "Software information including vendor, product, and version",
+        "weight": 0.11
+    },
+    "hw": {
+        "cols": ["hw-vendors", "hw-products", "hw-versions"],
+        "prompt_info": "Software information including vendor, product, and version",
+        "weight": 0.13
+    },
+    "sd": {
+        "cols": ["service-distribution"],
+        "prompt_info": "Service distribution information",
+        "weight": 0.09
+    },
+    "body": {
+        "cols": ["http-bodys"],
+        "prompt_info": "HTTP information including html body content",
+        "weight": 0.08
+    },
+    "htags": {
+        "cols": ["http-tags"],
+        "prompt_info": "HTTP information including html tags",
+        "weight": 0.08
+    },
+    "hfavicons": {
+        "cols": ["http-favicon-urls"],
+        "prompt_info": "HTTP information including http favicon URLs",
+        "weight": 0.15
+    },
+    "hpart": {
+        "cols": ["http-tags", "http-favicon-urls"],
+        "prompt_info": "HTTP information including html tags and http favicon URLs",
+        "weight": 0
+    },
+    "http": {
+        "cols": ["http-bodys", "http-tags", "http-favicon-urls"],
+        "prompt_info": "HTTP information including html body content, html tags, and http favicon URLs",
+        "weight": 0
+    },
+    "certificate": {
+        "cols": ["cert-subjects", "cert-issuers", "tls-versions"],
+        "prompt_info": "Certificate information including subjects, issuers, and TLS versions",
+        "weight": 0.16
+    },
+    "dns": {
+        "cols": ["dns-reverse"],
+        "prompt_info": "DNS reverse lookup information",
+        "weight": 0.04
+    },
+    "overall":{
+        "cols": ["as-info", "whois-info", "os-info", "sw-info", "hw-info", "service-distribution", "http-part-info", "cert-info", "dns-reverse"],
+        "prompt_info": "Overall information including Autonomous System, WHOIS, OS, Software, Hardware, Service Distribution, HTTP Tags and Favicons, Certificate, and DNS",
+        "weight": 0
+    }
+}

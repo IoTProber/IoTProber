@@ -1,0 +1,109 @@
+2026-03-18 07:57:10,386 [INFO] Load pretrained SentenceTransformer: /home/iot-classification/qwen3_embedding_06b
+2026-03-18 07:57:12,884 [INFO] 1 prompt is loaded, with the key: query
+2026-03-18 07:57:13,561 [INFO] [sd Embedding (PCA: True)] Embedding for Device NAS has been done!
+2026-03-18 07:57:13,899 [INFO] [sd Embedding (PCA: True)] Embedding for Device NVR has been done!
+2026-03-18 07:57:14,339 [INFO] [sd Embedding (PCA: True)] Embedding for Device POWER_METER has been done!
+2026-03-18 07:57:14,792 [INFO] [sd Embedding (PCA: True)] Embedding for Device BUILDING_AUTOMATION has been done!
+2026-03-18 07:57:15,246 [INFO] [sd Embedding (PCA: True)] Embedding for Device MEDICAL has been done!
+2026-03-18 07:57:15,699 [INFO] [sd Embedding (PCA: True)] Embedding for Device ROUTER has been done!
+2026-03-18 07:57:16,121 [INFO] [sd Embedding (PCA: True)] Embedding for Device PRINTER has been done!
+2026-03-18 07:57:16,488 [INFO] [sd Embedding (PCA: True)] Embedding for Device SCADA has been done!
+2026-03-18 07:57:16,953 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running...
+2026-03-18 08:07:16,559 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 10000/130000
+2026-03-18 08:07:37,777 [INFO] [sd Embedding (PCA: True)] Saved milestone at 10000 for Device CAMERA
+2026-03-18 08:17:20,358 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 20000/130000
+2026-03-18 08:18:03,141 [INFO] [sd Embedding (PCA: True)] Saved milestone at 20000 for Device CAMERA
+2026-03-18 08:27:45,745 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 30000/130000
+2026-03-18 08:28:50,216 [INFO] [sd Embedding (PCA: True)] Saved milestone at 30000 for Device CAMERA
+2026-03-18 08:38:32,099 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 40000/130000
+2026-03-18 08:39:58,487 [INFO] [sd Embedding (PCA: True)] Saved milestone at 40000 for Device CAMERA
+2026-03-18 08:49:41,097 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 50000/130000
+2026-03-18 08:51:30,300 [INFO] [sd Embedding (PCA: True)] Saved milestone at 50000 for Device CAMERA
+2026-03-18 09:01:13,602 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 60000/130000
+2026-03-18 09:03:28,023 [INFO] [sd Embedding (PCA: True)] Saved milestone at 60000 for Device CAMERA
+2026-03-18 09:13:18,164 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 70000/130000
+2026-03-18 09:16:04,903 [INFO] [sd Embedding (PCA: True)] Saved milestone at 70000 for Device CAMERA
+2026-03-18 09:26:02,762 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 80000/130000
+2026-03-18 09:29:12,534 [INFO] [sd Embedding (PCA: True)] Saved milestone at 80000 for Device CAMERA
+2026-03-18 09:39:01,877 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 90000/130000
+2026-03-18 09:42:22,966 [INFO] [sd Embedding (PCA: True)] Saved milestone at 90000 for Device CAMERA
+2026-03-18 09:52:05,226 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 100000/130000
+2026-03-18 09:55:50,295 [INFO] [sd Embedding (PCA: True)] Saved milestone at 100000 for Device CAMERA
+2026-03-18 10:05:33,157 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 110000/130000
+2026-03-18 10:09:45,567 [INFO] [sd Embedding (PCA: True)] Saved milestone at 110000 for Device CAMERA
+2026-03-18 10:19:27,110 [INFO] [sd Embedding (PCA: True)] Embedding for Device CAMERA running... 120000/130000
+2026-03-18 10:23:57,170 [INFO] [sd Embedding (PCA: True)] Saved milestone at 120000 for Device CAMERA
+2026-03-18 10:33:39,235 [INFO] Embedding Length: 130000
+2026-03-18 10:38:35,906 [INFO] [**] Qwen3 embedding done!
+2026-03-18 10:38:35,906 [INFO] [PCA] PCA for Device CAMERA running...
+2026-03-18 10:38:55,460 [INFO] [PCA] PCA for Device CAMERA done!
+2026-03-18 10:38:55,460 [INFO] [HDBSCAN] HDBSCAN for Device CAMERA running...
+2026-03-18 10:39:02,773 [INFO] [HDBSCAN] Cluster Result of Device CAMERA: 632 clusters, 48699 noise points
+2026-03-18 10:39:02,774 [INFO] [HDBSCAN] Clustering done for Device CAMERA
+2026-03-18 10:40:22,308 [INFO] PCA (256) Embedding & Clustering Result Saved at /home/iot-classification/platform_data/csv/local/1/embedding_sd/ipraw_CAMERA_embedding_sd_pca.csv
+2026-03-18 10:40:22,308 [INFO] [*] Drawing 2D cluster plot for device NAS
+2026-03-18 10:40:45,313 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_NAS_pca1_pca2_dbscan(pca).png
+2026-03-18 10:40:45,313 [INFO] [*] Drawing 2D cluster plot for device NVR
+2026-03-18 10:40:53,064 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_NVR_pca1_pca2_dbscan(pca).png
+2026-03-18 10:40:53,064 [INFO] [*] Drawing 2D cluster plot for device POWER_METER
+2026-03-18 10:40:55,883 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_POWER_METER_pca1_pca2_dbscan(pca).png
+2026-03-18 10:40:55,884 [INFO] [*] Drawing 2D cluster plot for device BUILDING_AUTOMATION
+2026-03-18 10:40:59,900 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_BUILDING_AUTOMATION_pca1_pca2_dbscan(pca).png
+2026-03-18 10:40:59,900 [INFO] [*] Drawing 2D cluster plot for device MEDICAL
+2026-03-18 10:41:03,366 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_MEDICAL_pca1_pca2_dbscan(pca).png
+2026-03-18 10:41:03,367 [INFO] [*] Drawing 2D cluster plot for device ROUTER
+2026-03-18 10:41:45,786 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_ROUTER_pca1_pca2_dbscan(pca).png
+2026-03-18 10:41:45,786 [INFO] [*] Drawing 2D cluster plot for device PRINTER
+2026-03-18 10:41:53,850 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_PRINTER_pca1_pca2_dbscan(pca).png
+2026-03-18 10:41:53,851 [INFO] [*] Drawing 2D cluster plot for device SCADA
+2026-03-18 10:41:59,610 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_SCADA_pca1_pca2_dbscan(pca).png
+2026-03-18 10:41:59,611 [INFO] [*] Drawing 2D cluster plot for device CAMERA
+2026-03-18 10:42:39,607 [INFO] [+] 2D cluster plot saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/cluster_2d_CAMERA_pca1_pca2_dbscan(pca).png
+2026-03-18 10:42:41,817 [INFO] Service analysis for sd_embedding finished at 2026-03-18 10:42:41
+2026-03-18 10:42:41,817 [INFO] ['NAS', 'NVR', 'POWER_METER', 'BUILDING_AUTOMATION', 'MEDICAL', 'ROUTER', 'PRINTER', 'SCADA', 'CAMERA']
+2026-03-18 10:42:41,851 [INFO] Analyzing embedding_sd distribution for device NAS
+2026-03-18 10:43:11,741 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_NAS.json
+2026-03-18 10:43:11,741 [INFO]   - Unique service-distribution: 66221
+2026-03-18 10:43:11,741 [INFO] Drawing embedding_sd combination bar chart for NAS...
+2026-03-18 10:43:12,669 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_NAS.png
+2026-03-18 10:43:12,669 [INFO] Analyzing embedding_sd distribution for device NVR
+2026-03-18 10:43:17,433 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_NVR.json
+2026-03-18 10:43:17,433 [INFO]   - Unique service-distribution: 5518
+2026-03-18 10:43:17,433 [INFO] Drawing embedding_sd combination bar chart for NVR...
+2026-03-18 10:43:18,184 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_NVR.png
+2026-03-18 10:43:18,185 [INFO] Analyzing embedding_sd distribution for device POWER_METER
+2026-03-18 10:43:30,143 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_POWER_METER.json
+2026-03-18 10:43:30,143 [INFO]   - Unique service-distribution: 3914
+2026-03-18 10:43:30,143 [INFO] Drawing embedding_sd combination bar chart for POWER_METER...
+2026-03-18 10:43:32,333 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_POWER_METER.png
+2026-03-18 10:43:32,334 [INFO] Analyzing embedding_sd distribution for device BUILDING_AUTOMATION
+2026-03-18 10:43:40,380 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_BUILDING_AUTOMATION.json
+2026-03-18 10:43:40,380 [INFO]   - Unique service-distribution: 5513
+2026-03-18 10:43:40,380 [INFO] Drawing embedding_sd combination bar chart for BUILDING_AUTOMATION...
+2026-03-18 10:43:41,225 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_BUILDING_AUTOMATION.png
+2026-03-18 10:43:41,225 [INFO] Analyzing embedding_sd distribution for device MEDICAL
+2026-03-18 10:43:51,797 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_MEDICAL.json
+2026-03-18 10:43:51,798 [INFO]   - Unique service-distribution: 5768
+2026-03-18 10:43:51,798 [INFO] Drawing embedding_sd combination bar chart for MEDICAL...
+2026-03-18 10:43:53,882 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_MEDICAL.png
+2026-03-18 10:43:53,883 [INFO] Analyzing embedding_sd distribution for device ROUTER
+2026-03-18 10:44:17,933 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_ROUTER.json
+2026-03-18 10:44:17,933 [INFO]   - Unique service-distribution: 53697
+2026-03-18 10:44:17,933 [INFO] Drawing embedding_sd combination bar chart for ROUTER...
+2026-03-18 10:44:18,738 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_ROUTER.png
+2026-03-18 10:44:18,738 [INFO] Analyzing embedding_sd distribution for device PRINTER
+2026-03-18 10:44:30,633 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_PRINTER.json
+2026-03-18 10:44:30,633 [INFO]   - Unique service-distribution: 10125
+2026-03-18 10:44:30,633 [INFO] Drawing embedding_sd combination bar chart for PRINTER...
+2026-03-18 10:44:31,494 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_PRINTER.png
+2026-03-18 10:44:31,495 [INFO] Analyzing embedding_sd distribution for device SCADA
+2026-03-18 10:44:34,883 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_SCADA.json
+2026-03-18 10:44:34,883 [INFO]   - Unique service-distribution: 8011
+2026-03-18 10:44:34,883 [INFO] Drawing embedding_sd combination bar chart for SCADA...
+2026-03-18 10:44:35,725 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_SCADA.png
+2026-03-18 10:44:35,725 [INFO] Analyzing embedding_sd distribution for device CAMERA
+2026-03-18 10:44:48,714 [INFO] embedding_sd distribution stats saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/json/embedding_sd_distribution_CAMERA.json
+2026-03-18 10:44:48,715 [INFO]   - Unique service-distribution: 46622
+2026-03-18 10:44:48,715 [INFO] Drawing embedding_sd combination bar chart for CAMERA...
+2026-03-18 10:44:49,494 [INFO] embedding_sd combination bar chart saved to: /home/iot-classification/platform_data/csv/local/1/embedding_sd/png/embedding_sd_combination_bar_CAMERA.png
+2026-03-18 10:44:49,585 [INFO] Embedding & Clustering for sd_embedding finished in 10056.34 seconds

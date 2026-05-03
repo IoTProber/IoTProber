@@ -1,0 +1,336 @@
+                                          precision    recall  f1-score   support
+
+                 BUILDING_AUTOMATION-ABB       0.83      0.80      0.82        50
+                BUILDING_AUTOMATION-ASUS       0.83      0.80      0.82        50
+                BUILDING_AUTOMATION-Asus       0.77      0.80      0.78        50
+                BUILDING_AUTOMATION-Axis       0.87      0.82      0.85        50
+               BUILDING_AUTOMATION-Bosch       1.00      0.98      0.99        50
+               BUILDING_AUTOMATION-Carel       1.00      1.00      1.00        50
+             BUILDING_AUTOMATION-Carrier       0.94      1.00      0.97        50
+               BUILDING_AUTOMATION-Dahua       1.00      0.80      0.89        50
+                BUILDING_AUTOMATION-ELAN       0.98      1.00      0.99        50
+              BUILDING_AUTOMATION-EasyIO       0.93      0.84      0.88        50
+             BUILDING_AUTOMATION-Emerson       0.88      0.92      0.90        38
+            BUILDING_AUTOMATION-Fortinet       0.88      0.92      0.90        50
+           BUILDING_AUTOMATION-Hikvision       0.96      0.94      0.95        50
+           BUILDING_AUTOMATION-Honeywell       0.82      0.82      0.82        50
+              BUILDING_AUTOMATION-Ivanti       0.67      0.94      0.78        17
+              BUILDING_AUTOMATION-Loxone       0.94      1.00      0.97        32
+             BUILDING_AUTOMATION-Mobotix       0.97      1.00      0.98        31
+  BUILDING_AUTOMATION-Palo Alto Networks       0.91      0.86      0.89        50
+            BUILDING_AUTOMATION-PaperCut       0.94      0.88      0.91        17
+             BUILDING_AUTOMATION-Philips       0.93      0.82      0.87        50
+         BUILDING_AUTOMATION-Philips Hue       0.70      0.88      0.78        24
+   BUILDING_AUTOMATION-Reliable Controls       1.00      1.00      1.00        50
+ BUILDING_AUTOMATION-Rockwell Automation       0.89      0.94      0.91        33
+         BUILDING_AUTOMATION-S2 Security       1.00      1.00      1.00        50
+  BUILDING_AUTOMATION-Schneider Electric       1.00      0.96      0.98        50
+             BUILDING_AUTOMATION-Siemens       0.93      0.84      0.88        50
+             BUILDING_AUTOMATION-Tridium       0.85      0.88      0.86        50
+            BUILDING_AUTOMATION-Ubiquiti       0.96      0.92      0.94        25
+            BUILDING_AUTOMATION-Yokogawa       0.89      0.95      0.92        42
+               BUILDING_AUTOMATION-Zyxel       0.94      1.00      0.97        29
+                             CAMERA-ASUS       0.92      0.98      0.95        50
+                              CAMERA-AVM       0.98      1.00      0.99        50
+                             CAMERA-Axis       1.00      0.96      0.98        50
+                            CAMERA-Cisco       1.00      0.98      0.99        50
+                      CAMERA-Cradlepoint       0.93      1.00      0.96        50
+                           CAMERA-D-Link       0.98      0.98      0.98        50
+                            CAMERA-Dahua       0.98      1.00      0.99        50
+                          CAMERA-DrayTek       0.88      0.92      0.90        50
+                         CAMERA-Fortinet       1.00      0.98      0.99        50
+                   CAMERA-Hanwha Techwin       1.00      0.96      0.98        50
+                        CAMERA-Hikvision       0.94      1.00      0.97        50
+                           CAMERA-Huawei       1.00      0.76      0.86        50
+                        CAMERA-Intelbras       0.98      0.98      0.98        50
+                          CAMERA-MOBOTIX       0.93      1.00      0.96        50
+                         CAMERA-MikroTik       0.90      0.90      0.90        50
+                         CAMERA-Mikrotik       0.90      0.90      0.90        50
+                CAMERA-Milestone Systems       1.00      1.00      1.00        50
+                          CAMERA-Mobotix       1.00      0.90      0.95        50
+                        CAMERA-Panasonic       0.96      0.94      0.95        50
+                     CAMERA-RealNetworks       1.00      1.00      1.00        50
+                          CAMERA-Reolink       1.00      0.96      0.98        50
+                          CAMERA-Samsung       1.00      0.98      0.99        50
+                         CAMERA-Synology       0.96      0.94      0.95        50
+                          CAMERA-TP-LINK       0.96      0.98      0.97        50
+                          CAMERA-TP-Link       1.00      0.94      0.97        50
+                        CAMERA-Teltonika       0.98      0.98      0.98        50
+                         CAMERA-Ubiquiti       1.00      0.98      0.99        50
+                       CAMERA-WatchGuard       1.00      1.00      1.00        50
+              CAMERA-Xiongmai Technology       1.00      1.00      1.00        50
+                           CAMERA-iCatch       1.00      1.00      1.00        50
+                       MEDIA_SERVER-ASUS       1.00      1.00      1.00        13
+                    MEDIA_SERVER-ASUSTOR       1.00      1.00      1.00        14
+                        MEDIA_SERVER-AVM       1.00      1.00      1.00        22
+                       MEDIA_SERVER-Asus       1.00      1.00      1.00         8
+                    MEDIA_SERVER-Asustor       1.00      1.00      1.00        50
+                  MEDIA_SERVER-Blue Iris       0.94      0.98      0.96        50
+           MEDIA_SERVER-Bouygues Telecom       1.00      1.00      1.00        15
+                       MEDIA_SERVER-Emby       1.00      1.00      1.00         8
+                   MEDIA_SERVER-Fortinet       1.00      1.00      1.00        14
+                    MEDIA_SERVER-Freebox       0.98      0.96      0.97        50
+             MEDIA_SERVER-Home Assistant       0.98      0.98      0.98        50
+                   MEDIA_SERVER-Jellyfin       1.00      1.00      1.00        50
+                  MEDIA_SERVER-Microsoft       1.00      1.00      1.00        18
+                   MEDIA_SERVER-OPNsense       1.00      1.00      1.00         9
+             MEDIA_SERVER-OpenMediaVault       0.89      1.00      0.94         8
+                     MEDIA_SERVER-Orange       0.98      1.00      0.99        50
+                       MEDIA_SERVER-Plex       1.00      0.92      0.96        50
+                    MEDIA_SERVER-Proxmox       1.00      1.00      1.00        50
+                       MEDIA_SERVER-QNAP       1.00      1.00      1.00        50
+               MEDIA_SERVER-Raspberry Pi       1.00      1.00      1.00        27
+                    MEDIA_SERVER-Reolink       1.00      1.00      1.00         8
+                   MEDIA_SERVER-Synology       1.00      1.00      1.00        50
+                    MEDIA_SERVER-TP-Link       1.00      1.00      1.00        21
+                MEDIA_SERVER-TerraMaster       1.00      1.00      1.00        16
+                     MEDIA_SERVER-UGREEN       1.00      1.00      1.00        30
+                   MEDIA_SERVER-Ubiquiti       1.00      1.00      1.00        50
+                     MEDIA_SERVER-Unraid       1.00      1.00      1.00         8
+            MEDIA_SERVER-Western Digital       1.00      1.00      1.00        11
+                  MEDIA_SERVER-iXsystems       1.00      1.00      1.00        16
+                    MEDIA_SERVER-pfSense       1.00      1.00      1.00         9
+                             MEDICAL-ABB       0.75      0.73      0.74        49
+                            MEDICAL-ASUS       0.83      0.90      0.87        50
+             MEDICAL-AXIS Communications       0.86      0.95      0.90        38
+                            MEDICAL-Asus       0.83      0.70      0.76        50
+                            MEDICAL-Axis       0.95      0.74      0.83        50
+             MEDICAL-Axis Communications       0.76      0.88      0.81        42
+                           MEDICAL-Cisco       0.89      0.82      0.86        40
+                          MEDICAL-Citrix       0.98      1.00      0.99        43
+                           MEDICAL-Dahua       0.81      0.70      0.75        50
+                          MEDICAL-EasyIO       0.87      0.82      0.85        50
+                        MEDICAL-Fortinet       0.92      0.96      0.94        50
+                              MEDICAL-GE       0.88      0.93      0.90        15
+                              MEDICAL-HP       0.92      0.94      0.93        50
+                       MEDICAL-Hikvision       0.86      0.76      0.81        50
+                       MEDICAL-Honeywell       0.87      0.78      0.82        50
+                          MEDICAL-Huawei       0.89      0.94      0.91        50
+                          MEDICAL-Ivanti       0.92      0.70      0.80        50
+                        MEDICAL-MikroTik       1.00      0.85      0.92        13
+                        MEDICAL-Mikrotik       0.79      1.00      0.88        15
+              MEDICAL-NextGen Healthcare       0.97      0.97      0.97        34
+              MEDICAL-Palo Alto Networks       0.77      0.88      0.82        50
+                        MEDICAL-PaperCut       0.95      0.86      0.90        44
+                            MEDICAL-QNAP       0.86      0.92      0.89        13
+                             MEDICAL-SAP       0.93      0.83      0.88        30
+              MEDICAL-Schneider Electric       0.82      0.94      0.88        50
+                         MEDICAL-Siemens       1.00      0.98      0.99        50
+                       MEDICAL-SonicWall       0.87      0.93      0.90        14
+                        MEDICAL-Synology       1.00      1.00      1.00        17
+                         MEDICAL-TP-Link       0.78      1.00      0.88        18
+                         MEDICAL-Tridium       0.82      0.74      0.78        50
+                                NAS-ASUS       0.96      0.92      0.94        50
+                                 NAS-AVM       0.98      1.00      0.99        50
+                                NAS-Asus       0.96      0.92      0.94        50
+                             NAS-Axentra       1.00      1.00      1.00        44
+                                NAS-Axis       0.98      0.92      0.95        50
+                              NAS-D-Link       1.00      1.00      1.00        50
+                               NAS-Dahua       1.00      1.00      1.00        50
+                             NAS-DrayTek       0.96      1.00      0.98        50
+                            NAS-Fortinet       0.98      0.92      0.95        50
+                             NAS-Freebox       0.80      0.96      0.87        50
+                                  NAS-HP       0.98      0.90      0.94        50
+                      NAS-Hanwha Techwin       0.96      1.00      0.98        50
+                           NAS-Hikvision       1.00      0.88      0.94        50
+                      NAS-Home Assistant       0.96      0.90      0.93        49
+                             NAS-MOBOTIX       0.90      1.00      0.95        38
+                            NAS-MikroTik       1.00      0.94      0.97        50
+                            NAS-Mikrotik       0.94      1.00      0.97        49
+                             NAS-Mobotix       0.98      0.94      0.96        50
+                             NAS-NETGEAR       0.96      0.98      0.97        50
+                              NAS-NetApp       1.00      0.98      0.99        47
+                             NAS-Netgear       0.98      0.96      0.97        50
+                      NAS-OpenMediaVault       0.98      1.00      0.99        50
+                           NAS-Panasonic       0.98      1.00      0.99        50
+                             NAS-Proxmox       0.98      1.00      0.99        50
+                                NAS-QNAP       1.00      1.00      1.00        50
+                             NAS-Reolink       0.94      1.00      0.97        50
+                            NAS-Synology       1.00      0.92      0.96        50
+                            NAS-Ubiquiti       1.00      0.96      0.98        50
+                               NAS-ZyXEL       0.98      0.96      0.97        45
+                               NAS-Zyxel       0.96      0.96      0.96        50
+                                NVR-ASUS       1.00      0.92      0.96        50
+                              NVR-AVTech       1.00      1.00      1.00        50
+                                NVR-Asus       0.68      1.00      0.81        15
+                                NVR-Axis       0.91      0.84      0.88        50
+                 NVR-Axis Communications       1.00      0.86      0.92        42
+                         NVR-Check Point       1.00      1.00      1.00        50
+                               NVR-Cisco       1.00      1.00      1.00        16
+                               NVR-Dahua       0.80      0.82      0.81        50
+                             NVR-DrayTek       1.00      1.00      1.00        50
+                              NVR-EasyIO       0.62      1.00      0.76        16
+                            NVR-Fortinet       1.00      0.96      0.98        50
+                                  NVR-HP       0.89      1.00      0.94        17
+                           NVR-Hikvision       0.91      0.98      0.94        50
+                              NVR-Huawei       1.00      1.00      1.00        19
+                         NVR-Merit LILIN       0.64      0.64      0.64        50
+                        NVR-Merit Li-Lin       0.88      0.46      0.61        50
+                         NVR-Merit LiLin       0.55      0.52      0.54        50
+                         NVR-Merit Lilin       0.49      0.74      0.59        50
+                             NVR-Netgear       0.93      1.00      0.97        14
+                  NVR-Palo Alto Networks       0.94      0.94      0.94        50
+                           NVR-Panasonic       1.00      0.96      0.98        50
+                                NVR-QNAP       0.93      0.93      0.93        14
+                             NVR-Siemens       0.88      1.00      0.94        15
+                           NVR-SonicWall       1.00      0.96      0.98        28
+                            NVR-Synology       1.00      0.98      0.99        50
+                             NVR-TP-Link       0.91      1.00      0.95        20
+                             NVR-Tridium       0.71      1.00      0.83        15
+                            NVR-Ubiquiti       1.00      0.96      0.98        50
+                          NVR-WatchGuard       1.00      1.00      1.00        28
+                              NVR-Yamaha       0.94      1.00      0.97        16
+                         POWER_METER-ABB       0.76      0.84      0.80        50
+                        POWER_METER-ASUS       0.95      0.80      0.87        50
+         POWER_METER-AXIS Communications       0.80      1.00      0.89        24
+                        POWER_METER-Asus       0.80      0.78      0.79        50
+                        POWER_METER-Axis       0.88      0.86      0.87        50
+         POWER_METER-Axis Communications       0.75      0.93      0.83        41
+                       POWER_METER-Cisco       0.67      1.00      0.80        10
+                       POWER_METER-Dahua       0.78      0.78      0.78        50
+                     POWER_METER-Draytek       0.90      1.00      0.95         9
+                      POWER_METER-EasyIO       0.88      0.74      0.80        50
+          POWER_METER-Electro Industries       1.00      1.00      1.00        10
+POWER_METER-Electro Industries/GaugeTech       0.79      1.00      0.88        11
+POWER_METER-Electro Industries/Gaugetech       0.84      1.00      0.91        16
+                  POWER_METER-Electroind       0.94      0.92      0.93        50
+                     POWER_METER-Emerson       0.75      1.00      0.86         9
+                    POWER_METER-Fortinet       0.93      0.82      0.87        50
+                          POWER_METER-HP       0.88      0.90      0.89        50
+                   POWER_METER-Hikvision       1.00      0.96      0.98        50
+                   POWER_METER-Honeywell       0.83      0.88      0.85        50
+                      POWER_METER-Ivanti       0.78      0.91      0.84        32
+          POWER_METER-Palo Alto Networks       0.81      0.84      0.82        50
+                         POWER_METER-SAP       0.67      1.00      0.80        12
+                         POWER_METER-SMA       0.90      1.00      0.95         9
+          POWER_METER-Schneider Electric       0.93      0.84      0.88        50
+                     POWER_METER-Siemens       0.91      0.98      0.94        50
+                     POWER_METER-TP-Link       0.89      0.92      0.91        26
+                     POWER_METER-Tridium       0.76      0.74      0.75        50
+                    POWER_METER-Ubiquiti       0.67      1.00      0.80        10
+                      POWER_METER-eGauge       0.85      0.58      0.69        50
+              POWER_METER-eGauge Systems       0.76      0.79      0.78        24
+                            PRINTER-ASUS       1.00      0.92      0.96        50
+                             PRINTER-AVM       1.00      1.00      1.00        16
+                            PRINTER-Asus       0.69      1.00      0.82         9
+                            PRINTER-Axis       0.92      0.96      0.94        50
+                         PRINTER-Brother       1.00      1.00      1.00        50
+                           PRINTER-Canon       1.00      1.00      1.00        50
+                          PRINTER-D-Link       1.00      1.00      1.00         6
+                           PRINTER-Dahua       0.74      1.00      0.85        31
+                         PRINTER-DrayTek       0.96      1.00      0.98        50
+                         PRINTER-Draytek       0.78      1.00      0.88         7
+                          PRINTER-EasyIO       0.83      1.00      0.91        20
+                           PRINTER-Epson       0.89      1.00      0.94         8
+                        PRINTER-Fortinet       0.94      0.98      0.96        50
+                              PRINTER-HP       1.00      0.92      0.96        50
+                       PRINTER-Hikvision       0.98      0.98      0.98        50
+                          PRINTER-Huawei       1.00      1.00      1.00         6
+                  PRINTER-Konica Minolta       1.00      1.00      1.00        50
+                         PRINTER-Kyocera       1.00      0.92      0.96        50
+                         PRINTER-Lexmark       1.00      0.98      0.99        50
+              PRINTER-Palo Alto Networks       0.86      1.00      0.92         6
+                        PRINTER-PaperCut       0.60      1.00      0.75         6
+                           PRINTER-Ricoh       1.00      1.00      1.00        50
+                           PRINTER-Sharp       1.00      1.00      1.00        50
+                       PRINTER-SonicWall       1.00      1.00      1.00         6
+                        PRINTER-Synology       0.97      1.00      0.98        32
+                         PRINTER-Toshiba       1.00      1.00      1.00         7
+                        PRINTER-Ubiquiti       1.00      1.00      1.00         8
+                           PRINTER-Xerox       0.98      1.00      0.99        50
+                           PRINTER-Zebra       1.00      0.96      0.98        50
+              PRINTER-Zebra Technologies       0.89      1.00      0.94        16
+                             ROUTER-ASUS       0.96      0.96      0.96        50
+                             ROUTER-Asus       0.98      0.90      0.94        50
+                             ROUTER-Axis       0.98      0.86      0.91        50
+                            ROUTER-Cisco       0.98      0.98      0.98        50
+                          ROUTER-Comcast       0.98      1.00      0.99        50
+                           ROUTER-D-Link       0.96      0.98      0.97        50
+                            ROUTER-Dahua       1.00      0.98      0.99        50
+               ROUTER-Digi International       1.00      1.00      1.00        50
+                          ROUTER-DrayTek       0.87      0.82      0.85        50
+                          ROUTER-Draytek       0.82      0.84      0.83        50
+                         ROUTER-Fortinet       0.96      0.86      0.91        50
+                               ROUTER-HP       0.92      0.98      0.95        50
+                        ROUTER-Hikvision       0.98      0.80      0.88        50
+                           ROUTER-Huawei       0.70      0.80      0.75        50
+                        ROUTER-Intelbras       0.96      0.94      0.95        50
+                         ROUTER-MikroTik       0.98      0.92      0.95        50
+                          ROUTER-Mobotix       1.00      1.00      1.00        50
+                          ROUTER-NETGEAR       0.94      1.00      0.97        50
+                          ROUTER-Netgear       1.00      0.94      0.97        50
+               ROUTER-Palo Alto Networks       0.92      0.88      0.90        50
+                        ROUTER-Panasonic       1.00      0.98      0.99        50
+                             ROUTER-QNAP       1.00      0.96      0.98        50
+                          ROUTER-Reolink       1.00      0.96      0.98        50
+                         ROUTER-Synology       0.98      0.96      0.97        50
+                          ROUTER-TP-Link       0.96      1.00      0.98        50
+                         ROUTER-Ubiquiti       0.98      0.98      0.98        50
+                              ROUTER-ZTE       1.00      1.00      1.00        50
+                            ROUTER-ZyXEL       0.94      0.98      0.96        50
+                            ROUTER-Zyxel       0.98      0.96      0.97        50
+                          ROUTER-pfSense       0.72      0.96      0.82        50
+                              SCADA-ASUS       1.00      0.98      0.99        50
+                         SCADA-Advantech       1.00      1.00      1.00        50
+                              SCADA-Axis       0.86      1.00      0.93        31
+                             SCADA-Dahua       0.98      0.98      0.98        50
+                           SCADA-DrayTek       1.00      0.94      0.97        50
+                               SCADA-EMQ       1.00      1.00      1.00        50
+                          SCADA-Fortinet       1.00      0.96      0.98        50
+                           SCADA-Freebox       0.98      0.98      0.98        50
+                         SCADA-Hikvision       0.98      0.90      0.94        50
+                    SCADA-Home Assistant       1.00      1.00      1.00        50
+                            SCADA-Huawei       0.98      1.00      0.99        50
+              SCADA-Inductive Automation       1.00      1.00      1.00        50
+                 SCADA-Microhard Systems       1.00      1.00      1.00        37
+                         SCADA-Microsoft       1.00      1.00      1.00        50
+                          SCADA-MikroTik       1.00      0.94      0.97        50
+                          SCADA-Node-RED       0.96      0.98      0.97        50
+                           SCADA-OpenWrt       0.97      0.97      0.97        31
+                            SCADA-Orange       1.00      1.00      1.00        50
+                           SCADA-Proxmox       1.00      1.00      1.00        32
+                      SCADA-Raspberry Pi       1.00      1.00      1.00        50
+                           SCADA-Siemens       1.00      0.96      0.98        50
+                          SCADA-Synology       1.00      0.98      0.99        50
+                           SCADA-TP-Link       1.00      1.00      1.00        34
+                         SCADA-Teltonika       1.00      0.96      0.98        50
+                               SCADA-USR       0.86      1.00      0.93        44
+                          SCADA-Ubiquiti       0.98      0.96      0.97        50
+                    SCADA-Victron Energy       1.00      1.00      1.00        49
+                              SCADA-WAGO       0.94      1.00      0.97        31
+                              SCADA-Wago       1.00      0.96      0.98        50
+                    SCADA-eGauge Systems       0.53      0.78      0.63        32
+                                VPN-ASUS       1.00      1.00      1.00        10
+                                 VPN-AVM       0.98      0.96      0.97        50
+                             VPN-Asustor       1.00      1.00      1.00        16
+                               VPN-Cisco       1.00      1.00      1.00        31
+                                 VPN-EMQ       1.00      1.00      1.00        27
+                                  VPN-F5       1.00      0.91      0.95        32
+                         VPN-F5 Networks       0.86      1.00      0.93        19
+                            VPN-Fortinet       1.00      1.00      1.00        20
+                             VPN-Freebox       0.96      1.00      0.98        50
+                                 VPN-H3C       1.00      1.00      1.00        37
+                           VPN-Hikvision       1.00      1.00      1.00        14
+                      VPN-Home Assistant       1.00      0.96      0.98        50
+                              VPN-Huawei       1.00      1.00      1.00        45
+                            VPN-Keenetic       1.00      1.00      1.00        15
+                           VPN-Microsoft       1.00      1.00      1.00        50
+                             VPN-OpenWrt       1.00      1.00      1.00        50
+                  VPN-Palo Alto Networks       1.00      1.00      1.00        35
+                             VPN-Proxmox       1.00      1.00      1.00        37
+                                VPN-QNAP       1.00      1.00      1.00        50
+                              VPN-Ruijie       1.00      1.00      1.00        13
+                             VPN-Sangfor       1.00      1.00      1.00        50
+                           VPN-SoftEther       1.00      1.00      1.00        31
+                           VPN-SonicWall       1.00      1.00      1.00        27
+                              VPN-Sophos       1.00      1.00      1.00        34
+                            VPN-Synology       1.00      0.98      0.99        50
+                             VPN-TP-Link       1.00      1.00      1.00        24
+                            VPN-Ubiquiti       1.00      1.00      1.00        50
+                              VPN-VMware       1.00      1.00      1.00        10
+                          VPN-WatchGuard       1.00      1.00      1.00        17
+                               VPN-iKuai       1.00      1.00      1.00        17
+
+                                accuracy                           0.94     13144
+                               macro avg       0.94      0.95      0.94     13144
+                            weighted avg       0.94      0.94      0.94     13144

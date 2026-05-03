@@ -1,0 +1,13 @@
+# Excluded directories
+__pycache__/
+backup/
+drift_data/
+platform_data/
+qwen3_embedding_06b/
+
+# Large data files
+*.csv
+
+# Python
+*.pyc
+*.pyo

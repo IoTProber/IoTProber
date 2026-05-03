@@ -1,0 +1,56 @@
+{
+  "accuracy": 0.9367,
+  "precision_macro": 0.9352,
+  "recall_macro": 0.9462,
+  "f1_macro": 0.938,
+  "f1_weighted": 0.937,
+  "hinge_loss": 0.1385,
+  "best_params": {
+    "C": 10,
+    "gamma": 0.01,
+    "kernel": "rbf"
+  },
+  "cv_best_f1": 0.5302,
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "hinge_loss": 8.4513,
+      "f1_macro": 0.5279,
+      "accuracy": 0.5652,
+      "precision_macro": 0.5527,
+      "recall_macro": 0.5294
+    },
+    {
+      "fold": 2,
+      "hinge_loss": 8.9208,
+      "f1_macro": 0.5159,
+      "accuracy": 0.5626,
+      "precision_macro": 0.5454,
+      "recall_macro": 0.5194
+    },
+    {
+      "fold": 3,
+      "hinge_loss": 8.625,
+      "f1_macro": 0.5378,
+      "accuracy": 0.5728,
+      "precision_macro": 0.5685,
+      "recall_macro": 0.5371
+    },
+    {
+      "fold": 4,
+      "hinge_loss": 8.3652,
+      "f1_macro": 0.5304,
+      "accuracy": 0.5706,
+      "precision_macro": 0.5606,
+      "recall_macro": 0.5292
+    },
+    {
+      "fold": 5,
+      "hinge_loss": 8.5066,
+      "f1_macro": 0.5392,
+      "accuracy": 0.5765,
+      "precision_macro": 0.5625,
+      "recall_macro": 0.5424
+    }
+  ]
+}
