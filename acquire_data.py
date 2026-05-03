@@ -1212,8 +1212,8 @@ def main():
         # args.token = "censys_2jgji8RD_Pn5PmdEqkpTCsgthv7NGqxSG"
 
         # HX Censys Token
-        args.org_id = "92c9e1f8-cadf-476e-a1a2-a1ebb02df8cc"
-        args.token = "censys_V949x2Te_HApxVJdqZDNyHed8UZY2iFDF"   
+        args.org_id = ""
+        args.token = ""   
 
         # print("Error: --org_id and --token are required")
         # return
