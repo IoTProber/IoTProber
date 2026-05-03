@@ -1,3 +1,4 @@
+IoTProber: Internet-scale IoT Device Identification Based on Hierarchical Graph Retrieval-Augmented Generation
 ![Framework Diagram](./arch.png)
 
 ### Step 0. Configuration
