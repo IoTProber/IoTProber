@@ -7,6 +7,7 @@ Configure llm_config.json using your API key.
 **Acquire RAG Data and Drift Data**
 
 python acquire_data.py --collect -collect_new --filter_new --filter_old --convert --org_id <Your Org ID> --token <Your Token>
+
 python acquire_data.py --drift
 
 **Or You Can Download Dataset from Our Huggging Face Repository**
