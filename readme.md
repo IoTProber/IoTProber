@@ -1,3 +1,5 @@
+![Framework Diagram](./arch.pdf)
+
 ### Step 0. Configuration
 Configure llm_config.json using your API key.
 
