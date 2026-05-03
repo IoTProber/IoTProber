@@ -1,37 +1,37 @@
 {
     "DEEPSEEK2":{
-        "API_KEY": "sk-7b6779aafc6940db95fd7d75f277a2a8",
+        "API_KEY": "<Your Secret Key>",
         "BASE_URL": "https://api.deepseek.com",
         "MODEL": "deepseek-chat"
     },
     "DEEPSEEK":{
-        "API_KEY": "sk-a1ad76dcf6a04f9295284a4651b16e4f",
+        "API_KEY": "<Your Secret Key>",
         "BASE_URL": "https://api.deepseek.com",
         "MODEL": "deepseek-chat"
     },
     "CLAUDE":{
-        "API_KEY": "sk-UF3GYIdtz3NRNBoJAiMZFvampVAAoE0ukV07TF0DpUXH6Lhi",
-        "BASE_URL": "http://1.95.142.151:3000",
+        "API_KEY": "<Your Secret Key>",
+        "BASE_URL": "<Your Base Url>",
         "MODEL": "claude-sonnet-4-6"
     },
     "CLAUDE2":{
-        "API_KEY": "sk-6IwIVi0zUpIjcEqfdCcDSai2HKvO7jSeLikHhvNzzv5zKNIb",
-        "BASE_URL": "http://1.95.142.151:3000",
+        "API_KEY": "<Your Secret Key>",
+        "BASE_URL": "<Your Base Url>",
         "MODEL": "claude-sonnet-4-6"
     },
     "GEMINI2":{
-        "API_KEY": "sk-3XkoJHGflNC9z37QB0rKyiBuNMhK5Z2fvjbNkFZqP3GtcB5e",
-        "BASE_URL": "https://us.novaiapi.com/v1",
+        "API_KEY": "<Your Secret Key>",
+        "BASE_URL": "<Your Base Url>",
         "MODEL": "gemini-3.1-pro-preview"
     },
     "GEMINI":{
-        "API_KEY": "sk-7oIOMfGaJRLFdibPprkYBkZxgqDLiuAjMTVTtucu9PfumXdW",
-        "BASE_URL": "https://us.novaiapi.com/v1",
+        "API_KEY": "<Your Secret Key>",
+        "BASE_URL": "<Your Base Url>",
         "MODEL": "gemini-3.1-pro-preview-thinking"
     },
     "OPENAI":{
-        "API_KEY": "sk-YCPZWQlmeMR4DEXQAd640587E9B244Fe839c3e0946A54e55",
-        "BASE_URL": "",
+        "API_KEY": "<Your Secret Key>",
+        "BASE_URL": "<Your Base Url>",
         "MODEL": "gpt-4o"
     }
 }
