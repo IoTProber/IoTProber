@@ -11,13 +11,17 @@ Input:
     key perspectives 和 non-key perspectives, 来自 reasoning_path_retrieval 的输出.
     Key perspectives and non-key perspectives from reasoning_path_retrieval output.
 
-Output:
-    - unseen_probability: float [0, 1], 设备属于 unseen 的概率
-    - is_unseen: bool, 是否属于 unseen 设备
-    - predicted_type: str, 预测的设备类型 (来自 all_IoT_devices.json)
-    - predicted_vendor: str, 预测的设备厂商
+Output (per design: TWO independent probabilities with per-field "none" labels):
+    - new_type_probability: float [0, 1], 属于「新设备类型」的概率
+    - new_vendor_probability: float [0, 1], 属于「新设备厂商」的概率
+    - is_unseen: bool, 类型或厂商超过各自 adapter 校准阈值即为 unseen
+    - predicted_type: str, 新类型成立时输出具体类型, 否则输出 "none"
+    - predicted_vendor: str, 新厂商成立时输出具体厂商, 否则输出 "none"
     - confidence: float [0, 1], 整体预测置信度
     - reasoning: str, 推理链说明
+
+    注意: 若缺乏足够信息判别 (key perspectives 缺失/无法归属), 概率应低于 0.5,
+    对应字段输出 "none".
 
 Design:
     Stage 1 — Statistical Pre-screening (统计预筛选):
@@ -56,9 +60,22 @@ try:
 except ImportError:
     _TAVILY_AVAILABLE = False
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from util import load_perspective_info
+from util import (
+    load_perspective_info,
+    UNSEEN_INFO_COLS,
+    CLASSIFIER_SYSTEM,
+    CLASSIFICATION_CONTRACT_VERSION,
+    build_fingerprint_info_text,
+    build_unseen_type_vendor_classification_prompt,
+    DeepSeekFingerprintSummarizer,
+    field_generation_confidences,
+    normalize_unseen_label,
+    normalize_unseen_vendor,
+    match_known_unseen_type,
+    match_known_unseen_vendor,
+)
 
 # ── Logging ──────────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -73,6 +90,25 @@ _BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _DEFAULT_MODEL_PATH = os.path.join(_BASE, "Meta-Llama-3.1-8B-Instruct")
 _RAG_DEVICES_PATH = os.path.join(_BASE, "rag_devices.json")
 _ALL_DEVICES_PATH = os.path.join(_BASE, "all_IoT_devices.json")
+_LLM_CFG_PATH = os.path.join(_BASE, "llm_config.json")
+_CLASSIFICATION_METADATA_PATH = os.path.join(
+    _BASE,
+    "evaluation",
+    "unseen",
+    "llama3",
+    "dataset",
+    "known_vendors.json",
+)
+_METADATA_FILENAME = "known_vendors.json"
+_SUMMARY_CACHE_PATH = os.path.join(
+    _BASE,
+    "evaluation",
+    "unseen",
+    "llama3",
+    "data_summary_cache",
+    "summary_cache.jsonl",
+)
+_DEFAULT_MAX_INPUT_TOKENS = 32768
 
 # 排除不参与局部检索和推理路径检索的 perspective
 # Perspectives excluded from retrieval-level analysis
@@ -95,7 +131,10 @@ _PERSPECTIVE_TO_REPORT_KEY = {
 }
 
 # Unseen 概率阈值 / Unseen probability threshold
+# 只要「新类型」或「新厂商」概率之一 > 0.5 即判为 unseen; 低于阈值的字段标签输出 "none"
 _UNSEEN_THRESHOLD = 0.5
+_NONE_LABEL = "none"
+_INVALID_CLASS_LABELS = {"", "unknown", "none", "nan", "null", "n/a", "n a"}
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -133,6 +172,7 @@ class UnseenDeviceDetector:
         load_in_4bit: bool = False,
         load_in_8bit: bool = False,
         max_new_tokens: int = 1024,
+        max_input_tokens: int = _DEFAULT_MAX_INPUT_TOKENS,
     ):
         """
         初始化 UnseenDeviceDetector
@@ -153,6 +193,8 @@ class UnseenDeviceDetector:
                           Use bitsandbytes 8-bit quantization
             max_new_tokens: 生成的最大 token 数
                             Maximum tokens for generation
+            max_input_tokens: 最大输入 token 数, 必须与微调配置一致
+                              Maximum input tokens, aligned with fine-tuning
         """
         self.base_path = _BASE
         self.model_path = model_path or _DEFAULT_MODEL_PATH
@@ -160,6 +202,9 @@ class UnseenDeviceDetector:
         self.gpu = gpu
         self.device_str = f"cuda:{gpu}" if gpu >= 0 and torch.cuda.is_available() else "cpu"
         self.max_new_tokens = max_new_tokens
+        self.max_input_tokens = max_input_tokens
+        self._adapter_loaded = False
+        self.fingerprint_summarizer = None
 
         if torch_dtype is None:
             self.torch_dtype = torch.bfloat16 if self.device_str != "cpu" else torch.float32
@@ -172,6 +217,24 @@ class UnseenDeviceDetector:
         self.unseen_candidates: List[str] = [
             d for d in self.all_devices if d not in self.rag_devices
         ]
+        self.classification_metadata = self._load_classification_metadata()
+        self.known_vendors_by_type: Dict[str, List[str]] = (
+            self.classification_metadata.get(
+                "known_vendors_by_type", {}
+            )
+        )
+        self.type_confidence_threshold = float(
+            self.classification_metadata.get(
+                "type_confidence_threshold",
+                _UNSEEN_THRESHOLD,
+            )
+        )
+        self.vendor_confidence_threshold = float(
+            self.classification_metadata.get(
+                "vendor_confidence_threshold",
+                _UNSEEN_THRESHOLD,
+            )
+        )
 
         # 加载 perspective 配置 / Load perspective config
         self.perspective_info = load_perspective_info()
@@ -181,6 +244,8 @@ class UnseenDeviceDetector:
 
         # 加载模型 / Load model
         self._load_model(load_in_4bit, load_in_8bit)
+        if self._adapter_loaded:
+            self._init_fingerprint_summarizer()
 
         logging.info(
             f"UnseenDeviceDetector initialized: model={self.model_path}, "
@@ -195,6 +260,97 @@ class UnseenDeviceDetector:
     def _load_json(path: str) -> dict:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
+
+    def _load_classification_metadata(self) -> Dict[str, Any]:
+        """Load the exact RAG type/vendor contract used to train the adapter."""
+        if self.adapter_path:
+            metadata_path = os.path.join(
+                self.adapter_path,
+                _METADATA_FILENAME,
+            )
+            if not os.path.isfile(metadata_path):
+                raise FileNotFoundError(
+                    f"Adapter metadata not found: {metadata_path}"
+                )
+        elif os.path.isfile(_CLASSIFICATION_METADATA_PATH):
+            metadata_path = _CLASSIFICATION_METADATA_PATH
+        else:
+            return {
+                "contract_version": CLASSIFICATION_CONTRACT_VERSION,
+                "rag_device_types": self.rag_devices,
+                "known_vendors_by_type": {},
+            }
+
+        metadata = self._load_json(metadata_path)
+        if metadata.get("contract_version") != CLASSIFICATION_CONTRACT_VERSION:
+            raise ValueError(
+                f"Unsupported classification contract in {metadata_path}: "
+                f"{metadata.get('contract_version')!r}"
+            )
+        if self.adapter_path and not metadata.get("confidence_calibrated"):
+            raise ValueError(
+                "Adapter confidence thresholds are not calibrated"
+            )
+        trained_types = metadata.get("rag_device_types")
+        if trained_types != self.rag_devices:
+            raise ValueError(
+                "Adapter RAG device types differ from the current rag_devices.json"
+            )
+        vendors_by_type = metadata.get("known_vendors_by_type")
+        if not isinstance(vendors_by_type, dict):
+            raise ValueError(
+                f"{metadata_path} contains no known_vendors_by_type"
+            )
+        for device_type in self.rag_devices:
+            vendors = vendors_by_type.get(device_type)
+            if not isinstance(vendors, list):
+                raise ValueError(
+                    f"{metadata_path} has no vendor list for {device_type}"
+                )
+            vendors_by_type[device_type] = sorted(
+                {
+                    str(vendor).strip()
+                    for vendor in vendors
+                    if str(vendor).strip()
+                },
+                key=str.casefold,
+            )
+        metadata["metadata_path"] = metadata_path
+        return metadata
+
+    def _init_fingerprint_summarizer(self):
+        metadata_max_len = int(
+            self.classification_metadata.get("max_input_tokens", 0)
+        )
+        if metadata_max_len != self.max_input_tokens:
+            raise ValueError(
+                "Adapter max_input_tokens differs from inference: "
+                f"{metadata_max_len} != {self.max_input_tokens}"
+            )
+        if self.classification_metadata.get(
+            "long_fingerprint_strategy"
+        ) != "deepseek_summary":
+            raise ValueError(
+                "Adapter was not prepared with DeepSeek long-fingerprint summary"
+            )
+        expected = self.classification_metadata.get("summarizer")
+        if not isinstance(expected, dict):
+            raise ValueError("Adapter metadata contains no summarizer contract")
+        token_budget = int(
+            self.classification_metadata["fingerprint_token_budget"]
+        )
+        summarizer = DeepSeekFingerprintSummarizer(
+            _LLM_CFG_PATH,
+            _SUMMARY_CACHE_PATH,
+            token_budget,
+            self.tokenizer,
+            max_workers=1,
+        )
+        if summarizer.contract != expected:
+            raise ValueError(
+                "Inference DeepSeek summarizer contract differs from adapter metadata"
+            )
+        self.fingerprint_summarizer = summarizer
 
     def _load_model(self, load_in_4bit: bool, load_in_8bit: bool):
         """
@@ -240,11 +396,16 @@ class UnseenDeviceDetector:
 
         # 加载 LoRA adapter (微调后的权重)
         # Load LoRA adapter (fine-tuned weights)
-        if self.adapter_path and os.path.isdir(self.adapter_path):
+        if self.adapter_path:
+            if not os.path.isdir(self.adapter_path):
+                raise FileNotFoundError(
+                    f"LoRA adapter directory not found: {self.adapter_path}"
+                )
             from peft import PeftModel
 
             logging.info(f"Loading LoRA adapter from {self.adapter_path}")
             self.model = PeftModel.from_pretrained(self.model, self.adapter_path)
+            self._adapter_loaded = True
 
         self.model.eval()
         logging.info("LLama model loaded successfully")
@@ -308,6 +469,9 @@ class UnseenDeviceDetector:
 
                 entry = {
                     "importance_score": fmd.get("importance_score", 0.0),
+                    "path_weight": fmd.get(
+                        "path_weight", fmd.get("importance_score", 0.0)
+                    ),
                     "feature_matching_score": fmd.get("feature_matching_score", 0.0),
                     "weighted_feature_score": fmd.get("weighted_feature_score", 0.0),
                     "best_cluster_similarity": best_sim,
@@ -357,6 +521,9 @@ class UnseenDeviceDetector:
                 "weight": self.perspective_info[p_name]["weight"],
                 "feature_values": values,
                 "importance_score": detail.get("importance_score", 0.0),
+                "path_weight": detail.get(
+                    "path_weight", detail.get("importance_score", 0.0)
+                ),
                 "feature_matching_score": detail.get("feature_matching_score", 0.0),
                 "best_cluster_similarity": detail.get("best_cluster_similarity", 0.0),
                 "matched_device_type": detail.get("matched_device_type", ""),
@@ -591,6 +758,46 @@ class UnseenDeviceDetector:
             logging.warning(f"Tavily search failed: {e}")
             return f"  (Web search failed: {e})"
 
+    def build_search_queries(
+        self,
+        query_fp: Dict[str, Any],
+        key_perspectives: Dict[str, Any],
+    ) -> List[str]:
+        searchable_tokens = (
+            "vendor", "product", "model", "server", "useragent", "subject",
+            "issuer", "dns", "domain", "hostname", "favicon", "mac", "title",
+            "software", "hardware",
+        )
+        candidates: List[Tuple[str, str]] = []
+        for key, value in query_fp.items():
+            if value is None or not any(token in key.lower() for token in searchable_tokens):
+                continue
+            for part in re.split(r"[;|\n,]", str(value)):
+                part = part.strip()
+                if 3 <= len(part) <= 160 and part.lower() not in {"none", "nan", "unknown"}:
+                    candidates.append((key, part))
+
+        for detail in key_perspectives.values():
+            for key, value in detail.get("feature_values", {}).items():
+                if not any(token in key.lower() for token in searchable_tokens):
+                    continue
+                for part in re.split(r"[;|\n,]", str(value)):
+                    part = part.strip()
+                    if 3 <= len(part) <= 160 and part.lower() not in {"none", "nan", "unknown"}:
+                        candidates.append((key, part))
+
+        queries: List[str] = []
+        seen = set()
+        for field, value in candidates:
+            marker = (field.lower(), value.lower())
+            if marker in seen:
+                continue
+            seen.add(marker)
+            queries.append(f'IoT device {field} "{value}" manufacturer model')
+            if len(queries) == 3:
+                break
+        return queries
+
     def _extract_community_perspectives(
         self, community_result: Optional[Dict[str, Any]]
     ) -> List[Dict[str, Any]]:
@@ -662,6 +869,7 @@ class UnseenDeviceDetector:
             lines.append(
                 f"### Perspective: {p_name} "
                 f"(importance={detail['importance_score']:.3f}, "
+                f"path_weight={detail['path_weight']:.3f}, "
                 f"weight={detail['weight']}, "
                 f"matching_score={detail['feature_matching_score']:.3f})"
             )
@@ -690,6 +898,33 @@ class UnseenDeviceDetector:
 
         return "\n".join(lines)
 
+    def _build_aligned_prompt(
+        self, query_fp: Dict,
+        web_search_results: Optional[str] = None,
+    ) -> Tuple[str, bool]:
+        """
+        Build the type/vendor classification prompt used by the fine-tuned adapter.
+        Its text contract matches the unseen training-data prompt, with an optional
+        web-search supplement appended when Tavily results are available.
+        """
+        fp_text = build_fingerprint_info_text(query_fp)
+        if not fp_text:
+            fp_text = "(no fingerprint info available)"
+        if self.fingerprint_summarizer is None:
+            raise RuntimeError("Fine-tuned inference summarizer is not initialized")
+        fp_text, was_summarized = self.fingerprint_summarizer.fit_one(fp_text)
+        prompt = build_unseen_type_vendor_classification_prompt(
+            fp_text,
+            self.rag_devices,
+            self.known_vendors_by_type,
+        )
+        if web_search_results:
+            prompt += (
+                f"\n\n## Web Search Results (Vendor Attribution)\n"
+                f"{web_search_results}\n"
+            )
+        return prompt, was_summarized
+
     def _build_detection_prompt(
         self,
         query_fp: Dict,
@@ -697,6 +932,7 @@ class UnseenDeviceDetector:
         non_key_perspectives: Dict,
         indicators: Dict,
         community_result: Optional[Dict[str, Any]] = None,
+        web_search_results: Optional[str] = None,
     ) -> str:
         """
         构建 unseen 设备检测的 prompt.
@@ -726,9 +962,7 @@ class UnseenDeviceDetector:
             )
         cluster_summary = "\n".join(cluster_summary_lines) if cluster_summary_lines else "  No community clusters matched."
 
-        # Tavily web search 辅助厂商归属
-        # Tavily web search for vendor attribution
-        vendor_search_text = self._tavily_vendor_search(key_perspectives, query_fp)
+        vendor_search_text = web_search_results or "  (No web search has been performed yet.)"
 
         prompt = f"""You are an expert IoT device classifier. Determine whether a query device is "unseen" (not belonging to any known RAG device type) based on the comparison between its key perspectives and the community-retrieved cluster perspectives.
 
@@ -760,20 +994,28 @@ Reason step by step:
 
 **Step 1 – Per-perspective verdict**: For each key perspective in the comparison above, judge whether the query device MATCHES or MISMATCHES the best community cluster on that perspective. A perspective_sim < 0.5 strongly indicates MISMATCH. State your verdict and a one-sentence reason.
 
-**Step 2 – Aggregate**: Count how many key perspectives are MATCH vs MISMATCH. If the majority of key perspectives are MISMATCH, the device is very likely unseen.
+**Step 2 – New-TYPE assessment**: Decide how likely the device is a NEW device *type* (not in the Known Device Types list). If the key perspectives that discriminate *device type* (e.g., service-distribution, hardware, software, certificate) mismatch all known clusters, new_type_probability is high. If the evidence clearly maps to a known type, it is low. If information is insufficient to decide, keep new_type_probability BELOW 0.5.
 
-**Step 3 – Vendor attribution**: Based on the web search results above and any identifiers from the key perspectives (e.g., DNS domains, OUI prefixes, certificate fields, HTTP headers), infer the most likely device vendor.
+**Step 3 – New-VENDOR assessment**: Using the web search results and vendor identifiers (DNS domains, OUI prefixes, certificate CN/O, HTTP headers), decide how likely the device is from a NEW *vendor*. If the identifiers point to a vendor absent from the known clusters, new_vendor_probability is high. If they match a known vendor, it is low. If information is insufficient, keep new_vendor_probability BELOW 0.5.
 
-**Step 4 – Decision**: Based on Steps 1-3 and the summary statistics, estimate unseen_probability, decide is_unseen, and predict the device type (from RAG types if known, from unseen candidates if unseen) and vendor.
+**Step 4 – Evidence sufficiency**: If identifying fields are ambiguous, unknown, or conflict with each other and no useful web evidence is present, set needs_web_search=true and provide up to three focused search_queries for the uncertain fields. Do not request web search when the supplied web results already resolve the uncertainty.
+
+**Step 5 – Decision & labels**:
+  - If new_type_probability > 0.5 → predicted_type = the concrete new device type (choose from Unseen Candidate Types, or a specific type name). Otherwise predicted_type = "none".
+  - If new_vendor_probability > 0.5 → predicted_vendor = the concrete new vendor name. Otherwise predicted_vendor = "none".
+  - The two probabilities are INDEPENDENT; a device can be a new type but a known vendor, or vice-versa.
 
 Output your step-by-step reasoning, then end with a JSON block:
 ```json
 {{
-    "unseen_probability": <float 0.0-1.0>,
-    "is_unseen": <true if unseen_probability >= 0.5>,
-    "predicted_type": "<device type>",
-    "predicted_vendor": "<vendor or 'Unknown'>",
-    "confidence": <float 0.0-1.0>
+    "new_type_probability": <float 0.0-1.0>,
+    "new_vendor_probability": <float 0.0-1.0>,
+    "is_unseen": <true if new_type_probability > 0.5 OR new_vendor_probability > 0.5>,
+    "predicted_type": "<new device type if new_type_probability > 0.5, else 'none'>",
+    "predicted_vendor": "<new vendor if new_vendor_probability > 0.5, else 'none'>",
+    "confidence": <float 0.0-1.0>,
+    "needs_web_search": <true or false>,
+    "search_queries": ["<focused query for an uncertain identifier>"]
 }}
 ```"""
         return prompt
@@ -809,7 +1051,7 @@ Output your step-by-step reasoning, then end with a JSON block:
             input_text,
             return_tensors="pt",
             truncation=True,
-            max_length=8192,
+            max_length=self.max_input_tokens,
         ).to(self.model.device)
 
         outputs = self.model.generate(
@@ -824,6 +1066,54 @@ Output your step-by-step reasoning, then end with a JSON block:
 
         generated_ids = outputs[0][inputs["input_ids"].shape[-1] :]
         return self.tokenizer.decode(generated_ids, skip_special_tokens=True)
+
+    @torch.inference_mode()
+    def _generate_classification(
+        self, prompt: str
+    ) -> Tuple[str, Dict[str, float]]:
+        """Generate deterministic labels and derive confidence from token logits."""
+        messages = [
+            {"role": "system", "content": CLASSIFIER_SYSTEM},
+            {"role": "user", "content": prompt},
+        ]
+        input_text = self.tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
+        inputs = self.tokenizer(
+            input_text,
+            return_tensors="pt",
+            truncation=True,
+            max_length=self.max_input_tokens,
+        ).to(self.model.device)
+        outputs = self.model.generate(
+            **inputs,
+            max_new_tokens=min(self.max_new_tokens, 256),
+            do_sample=False,
+            repetition_penalty=1.05,
+            pad_token_id=self.tokenizer.pad_token_id,
+            return_dict_in_generate=True,
+            output_scores=True,
+        )
+        generated_ids = outputs.sequences[
+            0, inputs["input_ids"].shape[-1]:
+        ].tolist()
+        text = self.tokenizer.decode(
+            generated_ids,
+            skip_special_tokens=True,
+            clean_up_tokenization_spaces=False,
+        )
+        token_log_probs = [
+            float(
+                torch.log_softmax(score[0].float(), dim=-1)[token_id].item()
+            )
+            for score, token_id in zip(outputs.scores, generated_ids)
+        ]
+        return text, field_generation_confidences(
+            self.tokenizer,
+            text,
+            generated_ids,
+            token_log_probs,
+        )
 
     # ═════════════════════════════════════════════════════════════════════
     # §6  Response Parsing (解析模型输出)
@@ -843,14 +1133,15 @@ Output your step-by-step reasoning, then end with a JSON block:
             except json.JSONDecodeError:
                 pass
 
-        # 2. JSON containing "unseen_probability"
-        for match in re.finditer(
-            r"\{[^{}]*\"unseen_probability\"[^{}]*\}", text, re.DOTALL
-        ):
-            try:
-                return json.loads(match.group())
-            except json.JSONDecodeError:
-                continue
+        # 2. JSON containing a current or legacy result key
+        for key in ("device_type", "new_type_probability", "unseen_probability"):
+            for match in re.finditer(
+                r"\{[^{}]*\"" + key + r"\"[^{}]*\}", text, re.DOTALL
+            ):
+                try:
+                    return json.loads(match.group())
+                except json.JSONDecodeError:
+                    continue
 
         # 3. last { ... } block (可能包含嵌套对象)
         start, end = text.rfind("{"), text.rfind("}") + 1
@@ -886,6 +1177,99 @@ Output your step-by-step reasoning, then end with a JSON block:
 
         return predicted_type
 
+    @staticmethod
+    def _normalize_label(value: Any) -> str:
+        return normalize_unseen_label(value)
+
+    @staticmethod
+    def _normalize_vendor(value: Any) -> str:
+        return normalize_unseen_vendor(value)
+
+    @classmethod
+    def _valid_class_label(cls, value: Any) -> bool:
+        return cls._normalize_label(value) not in _INVALID_CLASS_LABELS
+
+    def _match_known_type(self, predicted_type: str) -> Optional[str]:
+        """Return the matching canonical RAG type, including common aliases."""
+        return match_known_unseen_type(predicted_type, self.rag_devices)
+
+    def _match_known_vendor(
+        self,
+        predicted_vendor: str,
+        matched_rag_type: Optional[str],
+    ) -> Optional[str]:
+        """Match a vendor only inside the predicted RAG type's registry."""
+        return match_known_unseen_vendor(
+            predicted_vendor,
+            matched_rag_type,
+            self.known_vendors_by_type,
+        )
+
+    def _classification_novelty_result(
+        self,
+        parsed: Dict[str, Any],
+        generation_confidences: Dict[str, float],
+    ) -> Dict[str, Any]:
+        """Convert predicted labels and token confidence into novelty decisions."""
+        classified_type = str(
+            parsed.get("device_type", parsed.get("predicted_type", "UNKNOWN"))
+        ).strip()
+        classified_vendor = str(
+            parsed.get("device_vendor", parsed.get("predicted_vendor", "UNKNOWN"))
+        ).strip()
+        type_confidence = min(
+            1.0, max(0.0, generation_confidences.get("device_type", 0.0))
+        )
+        vendor_confidence = min(
+            1.0, max(0.0, generation_confidences.get("device_vendor", 0.0))
+        )
+        if not self._valid_class_label(classified_type):
+            type_confidence = 0.0
+        if not self._valid_class_label(classified_vendor):
+            vendor_confidence = 0.0
+
+        matched_rag_type = self._match_known_type(classified_type)
+        matched_known_vendor = self._match_known_vendor(
+            classified_vendor,
+            matched_rag_type,
+        )
+        is_new_type = bool(
+            matched_rag_type is None
+            and type_confidence > self.type_confidence_threshold
+        )
+        is_new_vendor = bool(
+            matched_known_vendor is None
+            and vendor_confidence > self.vendor_confidence_threshold
+        )
+
+        # A known-list match is deterministically not new. For unmatched labels,
+        # token confidence is the novelty confidence and must exceed 0.5.
+        new_type_probability = (
+            type_confidence if matched_rag_type is None else 0.0
+        )
+        new_vendor_probability = (
+            vendor_confidence if matched_known_vendor is None else 0.0
+        )
+        return {
+            "classified_type": classified_type,
+            "classified_vendor": classified_vendor,
+            "type_confidence": type_confidence,
+            "vendor_confidence": vendor_confidence,
+            "matched_rag_type": matched_rag_type,
+            "matched_known_vendor": matched_known_vendor,
+            "vendor_registry_type": matched_rag_type,
+            "is_new_type": is_new_type,
+            "is_new_vendor": is_new_vendor,
+            "new_type_probability": new_type_probability,
+            "new_vendor_probability": new_vendor_probability,
+            "is_unseen": is_new_type or is_new_vendor,
+            "predicted_type": classified_type if is_new_type else _NONE_LABEL,
+            "predicted_vendor": (
+                classified_vendor if is_new_vendor else _NONE_LABEL
+            ),
+            "confidence": min(type_confidence, vendor_confidence),
+        }
+
     # ═════════════════════════════════════════════════════════════════════
     # §7  Main Detection Entry (主检测入口)
     # ═════════════════════════════════════════════════════════════════════
@@ -895,6 +1279,8 @@ Output your step-by-step reasoning, then end with a JSON block:
         reasoning_result: Dict[str, Any],
         local_result: Optional[Dict[str, Any]] = None,
         community_result: Optional[Dict[str, Any]] = None,
+        web_search_results: Optional[str] = None,
+        allow_web_search: bool = True,
     ) -> Dict[str, Any]:
         """
         主入口: 检测查询设备是否为 unseen 设备.
@@ -912,10 +1298,11 @@ Output your step-by-step reasoning, then end with a JSON block:
 
         Returns:
             {
-                "unseen_probability": float,   # 设备属于 unseen 的概率
-                "is_unseen": bool,             # 是否属于 unseen 设备
-                "predicted_type": str,         # 预测的设备类型
-                "predicted_vendor": str,       # 预测的设备厂商
+                "new_type_probability": float,   # 属于「新设备类型」的概率
+                "new_vendor_probability": float, # 属于「新设备厂商」的概率
+                "is_unseen": bool,             # 任一校准后的新颖性判定成立
+                "predicted_type": str,         # 新类型标签, 否则为 "none"
+                "predicted_vendor": str,       # 新厂商标签, 否则为 "none"
                 "confidence": float,           # 整体预测置信度
                 "key_perspectives": dict,      # 关键 perspective 详情
                 "non_key_perspectives": dict,  # 非关键 perspective 详情
@@ -945,18 +1332,36 @@ Output your step-by-step reasoning, then end with a JSON block:
         )
         logging.info(f"Unseen indicators: {json.dumps(indicators, default=str)}")
 
-        # 3. 构建 prompt (聚焦 key perspectives vs community cluster perspectives)
-        # 3. Build prompt (focus on key perspectives vs community cluster perspectives)
+        # 3. 构建 prompt
+        # 3. Build prompt
         query_fp = reasoning_result.get("query_fingerprint", {})
-        prompt = self._build_detection_prompt(
-            query_fp, key_perspectives, non_key_perspectives, indicators,
-            community_result=community_result,
-        )
+        fingerprint_was_summarized = False
+        if self._adapter_loaded:
+            # Fine-tuned adapter: classify concrete type/vendor from the same
+            # info-column prompt used during SFT.
+            prompt, fingerprint_was_summarized = (
+                self._build_aligned_prompt(
+                    query_fp, web_search_results=web_search_results
+                )
+            )
+        else:
+            # Base-model zero-shot: rich perspective-comparison prompt.
+            prompt = self._build_detection_prompt(
+                query_fp, key_perspectives, non_key_perspectives, indicators,
+                community_result=community_result,
+                web_search_results=web_search_results,
+            )
 
         # 4. LLama 推理
         # 4. Run LLama inference
         t_gen_start = time.time()
-        raw_response = self._generate(prompt)
+        generation_confidences: Dict[str, float] = {}
+        if self._adapter_loaded:
+            raw_response, generation_confidences = (
+                self._generate_classification(prompt)
+            )
+        else:
+            raw_response = self._generate(prompt)
         t_gen = time.time() - t_gen_start
         logging.info(f"LLama generation took {t_gen:.2f}s")
 
@@ -964,32 +1369,148 @@ Output your step-by-step reasoning, then end with a JSON block:
         # 5. Parse response
         parsed = self._parse_response(raw_response)
 
-        # 6. 构建结果 (仅 5 个核心字段 + 辅助信息)
-        # 6. Build result (5 core fields + auxiliary info)
-        unseen_prob = float(parsed.get("unseen_probability", 0.5))
-        predicted_type = parsed.get(
-            "predicted_type", indicators.get("best_device_type", "UNKNOWN")
+        classification_result: Optional[Dict[str, Any]] = None
+        if self._adapter_loaded:
+            classification_result = self._classification_novelty_result(
+                parsed, generation_confidences
+            )
+            new_type_prob = classification_result["new_type_probability"]
+            new_vendor_prob = classification_result["new_vendor_probability"]
+            predicted_type = classification_result["predicted_type"]
+            predicted_vendor = classification_result["predicted_vendor"]
+            is_new_type = classification_result["is_new_type"]
+            is_new_vendor = classification_result["is_new_vendor"]
+            is_unseen = classification_result["is_unseen"]
+            confidence = classification_result["confidence"]
+        else:
+            # Base-model backward-compatible probability path.
+            legacy_prob = parsed.get("unseen_probability")
+            new_type_prob = float(
+                parsed.get(
+                    "new_type_probability",
+                    legacy_prob if legacy_prob is not None else 0.0,
+                )
+            )
+            new_vendor_prob = float(
+                parsed.get(
+                    "new_vendor_probability",
+                    legacy_prob if legacy_prob is not None else 0.0,
+                )
+            )
+            if new_type_prob > _UNSEEN_THRESHOLD:
+                raw_type = parsed.get("predicted_type", _NONE_LABEL)
+                predicted_type = self._validate_predicted_type(raw_type)
+                if not predicted_type or predicted_type.lower() == _NONE_LABEL:
+                    predicted_type = indicators.get("best_device_type", "UNKNOWN")
+            else:
+                predicted_type = _NONE_LABEL
+            if new_vendor_prob > _UNSEEN_THRESHOLD:
+                predicted_vendor = (
+                    parsed.get("predicted_vendor", _NONE_LABEL) or _NONE_LABEL
+                )
+                if str(predicted_vendor).lower() == _NONE_LABEL:
+                    predicted_vendor = "Unknown"
+            else:
+                predicted_vendor = _NONE_LABEL
+            is_new_type = new_type_prob > _UNSEEN_THRESHOLD
+            is_new_vendor = new_vendor_prob > _UNSEEN_THRESHOLD
+            is_unseen = is_new_type or is_new_vendor
+            confidence = min(
+                1.0, max(0.0, float(parsed.get("confidence", 0.0)))
+            )
+
+        search_queries = self.build_search_queries(query_fp, key_perspectives)
+        parsed_queries = parsed.get("search_queries", [])
+        if isinstance(parsed_queries, str):
+            parsed_queries = [parsed_queries]
+        if isinstance(parsed_queries, list):
+            parsed_queries = [
+                str(query).strip()[:300]
+                for query in parsed_queries
+                if str(query).strip()
+            ][:3]
+        else:
+            parsed_queries = []
+        if parsed_queries:
+            search_queries = parsed_queries
+
+        type_boundary = (
+            self.type_confidence_threshold
+            if self._adapter_loaded
+            else _UNSEEN_THRESHOLD
         )
-        predicted_type = self._validate_predicted_type(predicted_type)
+        vendor_boundary = (
+            self.vendor_confidence_threshold
+            if self._adapter_loaded
+            else _UNSEEN_THRESHOLD
+        )
+        uncertain = (
+            confidence < 0.65
+            or abs(new_type_prob - type_boundary) <= 0.15
+            or abs(new_vendor_prob - vendor_boundary) <= 0.15
+        )
+        model_requests_search = (
+            False
+            if self._adapter_loaded
+            else parsed.get("needs_web_search", False)
+        )
+        if isinstance(model_requests_search, str):
+            model_requests_search = model_requests_search.lower() in {
+                "true", "1", "yes"
+            }
+        needs_web_search = bool(
+            allow_web_search
+            and not web_search_results
+            and search_queries
+            and (model_requests_search or uncertain)
+        )
 
         result = {
-            # ── 5 core output fields ──
-            "unseen_probability": round(unseen_prob, 4),
-            "is_unseen": parsed.get("is_unseen", unseen_prob >= _UNSEEN_THRESHOLD),
+            # ── core output fields (two independent probabilities) ──
+            "new_type_probability": round(new_type_prob, 4),
+            "new_vendor_probability": round(new_vendor_prob, 4),
+            "type_confidence_threshold": round(type_boundary, 4),
+            "vendor_confidence_threshold": round(vendor_boundary, 4),
+            "is_new_type": is_new_type,
+            "is_new_vendor": is_new_vendor,
+            "is_unseen": is_unseen,
             "predicted_type": predicted_type,
-            "predicted_vendor": parsed.get("predicted_vendor", "Unknown"),
-            "confidence": round(float(parsed.get("confidence", 0.0)), 4),
+            "predicted_vendor": predicted_vendor,
+            "confidence": round(confidence, 4),
+            "needs_web_search": needs_web_search,
+            "search_queries": search_queries if needs_web_search else [],
+            "web_search_used": bool(web_search_results),
             # ── auxiliary info ──
             "key_perspectives": key_perspectives,
             "non_key_perspectives": non_key_perspectives,
             "indicators": indicators,
             "raw_response": raw_response,
+            "fingerprint_was_summarized": fingerprint_was_summarized,
             "generation_time_sec": round(t_gen, 3),
             "total_time_sec": round(time.time() - t0, 3),
         }
+        if classification_result is not None:
+            result.update({
+                "classified_type": classification_result["classified_type"],
+                "classified_vendor": classification_result["classified_vendor"],
+                "type_confidence": round(
+                    classification_result["type_confidence"], 4
+                ),
+                "vendor_confidence": round(
+                    classification_result["vendor_confidence"], 4
+                ),
+                "matched_rag_type": classification_result["matched_rag_type"],
+                "matched_known_vendor": (
+                    classification_result["matched_known_vendor"]
+                ),
+                "vendor_registry_type": (
+                    classification_result["vendor_registry_type"]
+                ),
+            })
 
         logging.info(
-            f"Unseen detection complete: unseen_prob={result['unseen_probability']:.3f}, "
+            f"Unseen detection complete: new_type_prob={result['new_type_probability']:.3f}, "
+            f"new_vendor_prob={result['new_vendor_probability']:.3f}, "
             f"is_unseen={result['is_unseen']}, type={result['predicted_type']}, "
             f"vendor={result['predicted_vendor']}, conf={result['confidence']:.3f}, "
             f"time={result['total_time_sec']:.1f}s"
@@ -1036,7 +1557,8 @@ Output your step-by-step reasoning, then end with a JSON block:
                 result["ip"] = ip
                 results.append(result)
                 print(
-                    f"  -> unseen_prob={result['unseen_probability']:.3f}, "
+                    f"  -> new_type_prob={result['new_type_probability']:.3f}, "
+                    f"new_vendor_prob={result['new_vendor_probability']:.3f}, "
                     f"type={result['predicted_type']}, "
                     f"vendor={result['predicted_vendor']}"
                 )
@@ -1059,80 +1581,29 @@ Output your step-by-step reasoning, then end with a JSON block:
         ground_truth_vendor: str = "Unknown",
         community_result: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
-        """
-        生成一条训练样本, 用于 SFT / LoRA 微调.
-        Generate a training sample for SFT / LoRA fine-tuning.
-
-        创建 (instruction, input, output) 三元组.
-        Creates an (instruction, input, output) triple suitable for
-        instruction-tuning with LoRA.
-
-        Args:
-            reasoning_result: reasoning_path_retrieval 的输出.
-            local_result: local_retrieval 的输出.
-            ground_truth_type: 真实设备类型标签.
-            ground_truth_vendor: 真实厂商标签.
-            community_result: community_retrieval 的输出.
-
-        Returns:
-            Dict with keys: instruction, input, output, metadata
-        """
-        key_perspectives, non_key_perspectives = self.extract_perspectives(
-            reasoning_result
-        )
-        indicators = self.compute_unseen_indicators(
-            reasoning_result, local_result, key_perspectives, non_key_perspectives
-        )
+        """Generate one type/vendor classification SFT sample."""
         query_fp = reasoning_result.get("query_fingerprint", {})
-
-        prompt = self._build_detection_prompt(
-            query_fp, key_perspectives, non_key_perspectives, indicators,
-            community_result=community_result,
+        prompt, fingerprint_was_summarized = self._build_aligned_prompt(
+            query_fp, web_search_results=None
         )
-
-        is_unseen = ground_truth_type not in self.rag_devices
-        is_in_all = ground_truth_type in self.all_devices
-
-        # 根据真实标签设定 unseen 概率
-        # Set unseen probability based on ground truth
-        if not is_unseen:
-            unseen_prob = 0.05
-            confidence = 0.90
-        elif is_in_all:
-            unseen_prob = 0.90
-            confidence = 0.85
-        else:
-            unseen_prob = 0.95
-            confidence = 0.70
-
         target_output = json.dumps(
             {
-                "unseen_probability": unseen_prob,
-                "is_unseen": is_unseen,
-                "predicted_type": ground_truth_type,
-                "predicted_vendor": ground_truth_vendor,
-                "confidence": confidence,
+                "device_type": ground_truth_type,
+                "device_vendor": ground_truth_vendor,
             },
-            indent=2,
             ensure_ascii=False,
+            separators=(",", ":"),
         )
 
         return {
-            "instruction": (
-                "You are an expert IoT network device classifier specializing in "
-                "unseen device detection. Always respond with valid JSON as instructed."
-            ),
+            "instruction": CLASSIFIER_SYSTEM,
             "input": prompt,
-            "output": f"```json\n{target_output}\n```",
+            "output": target_output,
             "metadata": {
                 "ip": query_fp.get("ip", ""),
                 "ground_truth_type": ground_truth_type,
                 "ground_truth_vendor": ground_truth_vendor,
-                "is_unseen": is_unseen,
-                "is_in_extended_catalogue": is_in_all,
-                "num_key_perspectives": len(key_perspectives),
-                "num_nonkey_perspectives": len(non_key_perspectives),
-                "heuristic_unseen_score": indicators.get("heuristic_unseen_score", 0.0),
+                "fingerprint_was_summarized": fingerprint_was_summarized,
             },
         }
 
@@ -1242,6 +1713,12 @@ if __name__ == "__main__":
         help="Load model in 8-bit quantization",
     )
     parser.add_argument(
+        "--max_input_tokens",
+        type=int,
+        default=_DEFAULT_MAX_INPUT_TOKENS,
+        help="Maximum input tokens; must match prepare/fine-tune (default 32768)",
+    )
+    parser.add_argument(
         "--output", type=str, default=None, help="Output JSON file path"
     )
     parser.add_argument(
@@ -1278,6 +1755,7 @@ if __name__ == "__main__":
         gpu=args.gpu,
         load_in_4bit=args.load_in_4bit,
         load_in_8bit=args.load_in_8bit,
+        max_input_tokens=args.max_input_tokens,
     )
 
     # 处理数据 / Process data
@@ -1298,15 +1776,22 @@ if __name__ == "__main__":
         cr = community_data if isinstance(community_data, dict) else None
         results = [detector.detect_unseen(reasoning_data, lr, cr)]
 
-    # 输出结果 (5 core fields + ip/error)
-    # Output results (5 core fields + ip/error)
+    # 输出结果 (core fields + ip/error)
+    # Output results (core fields + ip/error)
     output_results = []
     for r in results:
         output_results.append(
             {
                 "ip": r.get("ip", r.get("indicators", {}).get("ip", "")),
-                "unseen_probability": r.get("unseen_probability"),
+                "new_type_probability": r.get("new_type_probability"),
+                "new_vendor_probability": r.get("new_vendor_probability"),
+                "is_new_type": r.get("is_new_type"),
+                "is_new_vendor": r.get("is_new_vendor"),
                 "is_unseen": r.get("is_unseen"),
+                "classified_type": r.get("classified_type"),
+                "classified_vendor": r.get("classified_vendor"),
+                "type_confidence": r.get("type_confidence"),
+                "vendor_confidence": r.get("vendor_confidence"),
                 "predicted_type": r.get("predicted_type"),
                 "predicted_vendor": r.get("predicted_vendor"),
                 "confidence": r.get("confidence"),
@@ -1331,4 +1816,3 @@ if __name__ == "__main__":
     print(f"\n=== Summary ===")
     print(f"Total: {len(output_results)}, Unseen: {unseen_count}, "
           f"Known: {known_count}, Errors: {error_count}")
-s
