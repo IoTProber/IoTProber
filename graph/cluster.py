@@ -9,6 +9,7 @@ import argparse
 import json
 import numpy
 import hdbscan
+import joblib
 # from cuml.cluster import HDBSCAN   # 使用NVIDIA RAPIDS 加速
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -41,7 +42,7 @@ logging.basicConfig(
 os.environ["PYTORCH_ALLOC_CONF"] = "max_split_size_mb:128,expandable_segments:True,garbage_collection_threshold:0.8"
 
 class GraphClustering:
-    def __init__(self, gpu=1):
+    def __init__(self, gpu=1, devices=None):
         self.gpu = gpu
         self.base_path = os.path.dirname(os.path.dirname(__file__))
         # self.data_path = os.path.join(self.base_path, "rag_data")
@@ -72,7 +73,13 @@ class GraphClustering:
             p for p in self.perspective_names if p not in self.except_perspective
         ]
 
-        self.device_labels = load_all_dev_labels()
+        all_labels = load_all_dev_labels()
+        if devices:
+            device_set = set(devices)
+            self.device_labels = [d for d in all_labels if d in device_set]
+            logging.info(f"Device filter applied: {self.device_labels}")
+        else:
+            self.device_labels = all_labels
         self.llm = LLM()
         self.initialize()
         
@@ -582,7 +589,7 @@ class GraphClustering:
                 logging.info(f"[HDBSCAN] HDBSCAN for Device {dev} running...")
 
                 X = pca_df[pca_feature_cols].values
-                dbscan = hdbscan.HDBSCAN(min_cluster_size=20)
+                dbscan = hdbscan.HDBSCAN(min_cluster_size=20, prediction_data=True)
                 predict_clusters = dbscan.fit_predict(X)
 
                 if (predict_clusters == -1).all():
@@ -606,13 +613,50 @@ class GraphClustering:
                 # print(f"PCA (256) Embedding & Clustering Result Saved at {pca_cluster_path}")
                 logging.info(f"PCA (256) Embedding & Clustering Result Saved at {pca_cluster_path}")
 
+                # Step 5-1: 保存clusterer
+                clusterer_path = os.path.join(cluster_save_path, f"clusterer_{dev}.joblib")
+                joblib.dump(dbscan, clusterer_path)
+                logging.info(f"Clusterer saved at {clusterer_path}")
+
+                # Step 5-2: 保存cluster_info
+                cluster_info_path = os.path.join(cluster_save_path, "cluster_info.json")
+                if os.path.exists(cluster_info_path):
+                    with open(cluster_info_path) as f:
+                        cluster_info = json.load(f)
+                else:
+                    cluster_info = {}
+                dev_info = {}
+                labels_arr = numpy.asarray(predict_clusters)
+                for hl in sorted(set(labels_arr)):
+                    mask = labels_arr == hl
+                    points = X[mask]
+                    if len(points) == 0:
+                        continue
+                    center = points.mean(axis=0)
+                    dists = numpy.linalg.norm(points - center, axis=1)
+                    max_dist = float(dists.max())
+                    if len(dists) >= 10:
+                        min_10 = float(numpy.sort(dists)[9])
+                    else:
+                        min_10 = -1
+                    dev_info[str(int(hl))] = {
+                        "center": center.tolist(),
+                        "max_distance": max_dist,
+                        "min_10_distance": min_10,
+                        "node_count": int(len(points)),
+                    }
+                cluster_info[dev] = dev_info
+                with open(cluster_info_path, "w") as f:
+                    json.dump(cluster_info, f)
+                logging.info(f"cluster_info.json saved at {cluster_info_path}")
+
             else:
                 # Step 3: HDBSCAN 聚类
                 # print(f"[HDBSCAN] HDBSCAN for Device {dev} running...")
                 logging.info(f"[HDBSCAN] HDBSCAN for Device {dev} running...")
 
                 X = embedding_df[embedding_cols].values
-                dbscan = hdbscan.HDBSCAN(min_cluster_size=20)
+                dbscan = hdbscan.HDBSCAN(min_cluster_size=20, prediction_data=True)
                 predict_clusters = dbscan.fit_predict(X)
 
                 if (predict_clusters == -1).all():
@@ -636,6 +680,43 @@ class GraphClustering:
 
                 # print(f"NoPCA (1024) Embedding & Clustering Result Saved at {nopca_cluster_path}")
                 logging.info(f"NoPCA (1024) Embedding & Clustering Result Saved at {nopca_cluster_path}")
+
+                # Step 5-1: 保存clusterer
+                clusterer_path = os.path.join(cluster_save_path, f"clusterer_{dev}.joblib")
+                joblib.dump(dbscan, clusterer_path)
+                logging.info(f"Clusterer saved at {clusterer_path}")
+
+                # Step 5-2: 保存cluster_info
+                cluster_info_path = os.path.join(cluster_save_path, "cluster_info.json")
+                if os.path.exists(cluster_info_path):
+                    with open(cluster_info_path) as f:
+                        cluster_info = json.load(f)
+                else:
+                    cluster_info = {}
+                dev_info = {}
+                labels_arr = numpy.asarray(predict_clusters)
+                for hl in sorted(set(labels_arr)):
+                    mask = labels_arr == hl
+                    points = X[mask]
+                    if len(points) == 0:
+                        continue
+                    center = points.mean(axis=0)
+                    dists = numpy.linalg.norm(points - center, axis=1)
+                    max_dist = float(dists.max())
+                    if len(dists) >= 10:
+                        min_10 = float(numpy.sort(dists)[9])
+                    else:
+                        min_10 = -1
+                    dev_info[str(int(hl))] = {
+                        "center": center.tolist(),
+                        "max_distance": max_dist,
+                        "min_10_distance": min_10,
+                        "node_count": int(len(points)),
+                    }
+                cluster_info[dev] = dev_info
+                with open(cluster_info_path, "w") as f:
+                    json.dump(cluster_info, f)
+                logging.info(f"cluster_info.json saved at {cluster_info_path}")
         
         # 如果所有dev已经embedding完毕，跳过画图阶段
         if len(done_dev) == len(self.device_labels):
@@ -689,7 +770,7 @@ class GraphClustering:
             X = overall_df[feature_cols].values
 
             # 使用HDBScan进行自适应聚类
-            clusterer = hdbscan.HDBSCAN(min_cluster_size=20)
+            clusterer = hdbscan.HDBSCAN(min_cluster_size=20, prediction_data=True)
             cluster_labels = clusterer.fit_predict(X)
 
             # 将聚类结果添加到dataframe
@@ -699,6 +780,43 @@ class GraphClustering:
             output_path = os.path.join(overall_dir, f"ipraw_{dev}_embedding_overall_pca.csv")
             overall_df.to_csv(output_path, index=False)
             logging.info("Saved overall embedding for device %s to %s", dev, output_path)
+
+            # 保存clusterer
+            clusterer_path = os.path.join(overall_dir, f"clusterer_{dev}.joblib")
+            joblib.dump(clusterer, clusterer_path)
+            logging.info("Clusterer saved at %s", clusterer_path)
+
+            # 保存cluster_info
+            cluster_info_path = os.path.join(overall_dir, "cluster_info.json")
+            if os.path.exists(cluster_info_path):
+                with open(cluster_info_path) as f:
+                    cluster_info = json.load(f)
+            else:
+                cluster_info = {}
+            dev_info = {}
+            labels_arr = numpy.asarray(cluster_labels)
+            for hl in sorted(set(labels_arr)):
+                mask = labels_arr == hl
+                points = X[mask]
+                if len(points) == 0:
+                    continue
+                center = points.mean(axis=0)
+                dists = numpy.linalg.norm(points - center, axis=1)
+                max_dist = float(dists.max())
+                if len(dists) >= 10:
+                    min_10 = float(numpy.sort(dists)[9])
+                else:
+                    min_10 = -1
+                dev_info[str(int(hl))] = {
+                    "center": center.tolist(),
+                    "max_distance": max_dist,
+                    "min_10_distance": min_10,
+                    "node_count": int(len(points)),
+                }
+            cluster_info[dev] = dev_info
+            with open(cluster_info_path, "w") as f:
+                json.dump(cluster_info, f)
+            logging.info("cluster_info.json saved at %s", cluster_info_path)
 
     def concat_perspective_embeddings(self):
         """
@@ -1707,7 +1825,10 @@ class GraphClustering:
         logging.info(f"Service analysis for {target} finished at {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
         if not whether_distribution_analysis:
-            self.dev_distribution(cols=feature_cols, perspective_name=perspective_name)
+            try:
+                self.dev_distribution(cols=feature_cols, perspective_name=perspective_name)
+            except Exception as e:
+                logging.error(f"dev_distribution failed for {perspective_name}: {e}. Continuing with next perspective.")
 
         end_time = time.time()
         elapsed_time = end_time - start_time
@@ -1731,10 +1852,11 @@ if __name__ == "__main__":
     parser.add_argument("--hgt", action="store_true", help="Whether to cluster devices using HGT global embeddings")
     parser.add_argument("--report", action="store_true", help="Whether to geneate clustering report")
     parser.add_argument("--recovery", action="store_true", help="Whether to recover from errors in previous report generation")
+    parser.add_argument("--devices", nargs="*", default=None, help="Device types to process (default: all from rag_devices.json)")
 
     args = parser.parse_args()
 
-    gc_ins = GraphClustering(gpu=args.gpu)
+    gc_ins = GraphClustering(gpu=args.gpu, devices=args.devices)
 
     if args.target:
         log_filename = f"cluster_{args.target}.log"

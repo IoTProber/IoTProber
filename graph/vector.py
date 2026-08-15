@@ -1,16 +1,21 @@
 """
-vector.py - 将 platform_data/csv/local/1 下各 perspective 的 embedding CSV 
-            通过 Milvus Lite 向量数据库进行保存
+vector.py - 向量存储流水线: Milvus (单 perspective) + local npz (多 perspective 拼接)
 
-Save embedding CSVs from platform_data/csv/local/1/embedding_{perspective}/
-into a local Milvus vector database stored at platform_data/csv/local/1/vectorDB/
+Pipeline:
+  1. Milvus: 各单 perspective 的 1024 维 embedding → embedding_{perspective} collection
+  2. local npz: embedding_local/ipraw_{device}_embedding.csv 的多 perspective 拼接向量
+     (11 perspectives × 1024 = 11264 维), 各 perspective 独立 L2 归一化, 不预乘权重
+
+Save embedding CSVs from platform_data/csv/rag/embedding_{perspective}/
+into a local Milvus vector database stored at platform_data/csv/rag/vectorDB/
+and numpy .npy files stored at platform_data/csv/rag/vectorDB/local_npz/
 
 Usage:
-    conda run -n probe python agent/vector.py
-    conda run -n probe python agent/vector.py --perspectives as certificate
-    conda run -n probe python agent/vector.py --devices CAMERA PRINTER
-    conda run -n probe python agent/vector.py --batch_size 5000
-    conda run -n probe python agent/vector.py --drop  # 重建所有collection
+    conda run -n probe python graph/vector.py
+    conda run -n probe python graph/vector.py --perspectives as certificate
+    conda run -n probe python graph/vector.py --devices CAMERA PRINTER
+    conda run -n probe python graph/vector.py --batch_size 5000
+    conda run -n probe python graph/vector.py --drop  # 重建所有collection和npy
 """
 
 import os
@@ -31,20 +36,24 @@ from pymilvus import (
     FieldSchema,
 )
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from util import load_all_dev_labels
+
 # ─── 路径配置 / Path config ───────────────────────────────────────────
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LOCAL_PATH = os.path.join(BASE_PATH, "platform_data", "csv", "local", "1")
+LOCAL_PATH = os.path.join(BASE_PATH, "platform_data", "csv", "rag")
 VECTOR_DB_DIR = os.path.join(LOCAL_PATH, "vectorDB")
 MILVUS_DB_FILE = os.path.join(VECTOR_DB_DIR, "milvus.db")
+LOCAL_NPZ_DIR = os.path.join(VECTOR_DB_DIR, "local_npz")
 RAG_DOMAIN_FILE = os.path.join(BASE_PATH, "rag_domain.json")
+PERSPECTIVE_INFO_FILE = os.path.join(BASE_PATH, "perspective_info.json")
 
 EMBEDDING_DIM = 1024
 EMBEDDING_OVERALL_DIM = 1024*11
 MAX_IP_LENGTH = 64
 MAX_DEVICE_LENGTH = 64
 BATCH_SIZE = 5000  # 每批插入条数 / rows per insert batch
-
-perspective_info_config = load_perspective_info()
+NPZ_BATCH_SIZE = 1000  # npz 导出时的 chunksize
 
 
 # ─── 日志 / Logging ──────────────────────────────────────────────────
@@ -55,15 +64,24 @@ logging.basicConfig(
 
 def load_device_names(rag_domain_path: str = RAG_DOMAIN_FILE) -> List[str]:
     """
-    从 rag_domain.json 读取所有设备名称
-    Load all device names from rag_domain.json
+    读取所有设备名称。优先使用 util.load_all_dev_labels() (基于 rag_devices.json);
+    若旧的 rag_domain.json 存在则作为兼容回退。
+    Load all device names. Prefer util.load_all_dev_labels() (rag_devices.json);
+    fall back to the legacy rag_domain.json only if present.
     """
-    with open(rag_domain_path, "r") as f:
-        domain = json.load(f)
-    devices = []
-    for category_devices in domain.values():
-        devices.extend(category_devices)
-    return sorted(set(devices))
+    devices = load_all_dev_labels()
+    if devices:
+        return sorted(set(devices))
+
+    # 兼容回退 / backward-compat fallback
+    if os.path.exists(rag_domain_path):
+        with open(rag_domain_path, "r") as f:
+            domain = json.load(f)
+        legacy = []
+        for category_devices in domain.values():
+            legacy.extend(category_devices)
+        return sorted(set(legacy))
+    return []
 
 
 def get_device_csv_files(local_path: str, perspective: str, device_names: List[str]) -> List[dict]:
@@ -263,6 +281,125 @@ def parse_log_for_resume(log_path: str) -> Optional[dict]:
         return last_loading
 
     return None
+
+
+def load_retrieval_perspectives() -> List[str]:
+    """
+    从 perspective_info.json 加载参与局部检索的 perspective 名称 (排除 hpart, http, overall)
+    Load retrieval perspective names from perspective_info.json (excluding hpart, http, overall)
+    """
+    with open(PERSPECTIVE_INFO_FILE, "r", encoding="utf-8") as f:
+        cfg = json.load(f)
+    except_perspectives = ["hpart", "http", "overall"]
+    return [p for p in cfg.keys() if p not in except_perspectives]
+
+
+def insert_csv_to_local_npz(device: str, filepath: str,
+                            retrieval_perspectives: List[str],
+                            npz_dir: str = LOCAL_NPZ_DIR,
+                            batch_size: int = NPZ_BATCH_SIZE) -> int:
+    """
+    读取 CSV 文件, 对各 perspective 独立 L2 归一化后, 保存为 numpy npy 文件.
+    替代 Milvus Lite 存储, 避免高维向量导致嵌入式服务器崩溃.
+    每个 device 保存为 local_npz/{device}_embeddings.npy 和 {device}_ips.npy.
+    库向量不预乘权重; 查询时按正文公式 2 动态应用相对权重.
+    """
+    logging.info(f"Loading CSV: {os.path.basename(filepath)} (device={device})")
+
+    all_embeddings = []
+    all_ips = []
+    total_rows = 0
+
+    for chunk_df in pd.read_csv(filepath, chunksize=batch_size):
+        ip_list = chunk_df["ip"].astype(str).tolist()
+
+        # 按 perspective 顺序构建有序列名
+        ordered_cols = []
+        for p_name in retrieval_perspectives:
+            ordered_cols.extend(
+                [f"{p_name}{i}" for i in range(1, EMBEDDING_DIM + 1)]
+            )
+        embeddings = chunk_df[ordered_cols].values  # (batch, overall_dim)
+
+        num_perspectives = len(retrieval_perspectives)
+
+        # 公式 2 的库向量: 每个 perspective 独立归一化, 不预乘权重
+        emb_reshaped = embeddings.reshape(
+            embeddings.shape[0], num_perspectives, EMBEDDING_DIM
+        )
+        perspective_norms = np.linalg.norm(
+            emb_reshaped, axis=2, keepdims=True
+        )
+        perspective_norms = np.where(
+            perspective_norms == 0, 1.0, perspective_norms
+        )
+        normalized_blocks = emb_reshaped / perspective_norms
+        normalized_flat = normalized_blocks.reshape(
+            embeddings.shape[0], -1
+        )
+
+        all_embeddings.append(normalized_flat.astype(np.float32))
+        all_ips.extend(ip_list)
+        total_rows += len(ip_list)
+        logging.info(
+            f"  Processed batch: {len(ip_list)} rows "
+            f"(total so far: {total_rows})"
+        )
+
+    # 拼接所有 chunk 并保存为 .npy (支持 mmap 读取, 避免 OOM)
+    embeddings_array = np.vstack(all_embeddings)  # (N, overall_dim)
+    ips_array = np.array(all_ips, dtype=str)
+
+    emb_path = os.path.join(npz_dir, f"{device}_embeddings.npy")
+    ips_path = os.path.join(npz_dir, f"{device}_ips.npy")
+    np.save(emb_path, embeddings_array)
+    np.save(ips_path, ips_array)
+    logging.info(
+        f"Finished {os.path.basename(filepath)}: "
+        f"{total_rows} rows saved to {device}_embeddings.npy"
+    )
+    return total_rows
+
+
+def export_local_npz(all_devices: List[str], drop: bool = False,
+                      skip_existing: bool = True):
+    """
+    导出 local npz 文件 (多 perspective 拼接向量, 各 perspective 独立 L2 归一化)
+    Export local npz files (multi-perspective concatenated vectors, per-perspective L2 normalized)
+    """
+    retrieval_perspectives = load_retrieval_perspectives()
+    logging.info(f"Retrieval perspectives ({len(retrieval_perspectives)}): {retrieval_perspectives}")
+
+    os.makedirs(LOCAL_NPZ_DIR, exist_ok=True)
+    local_dir = os.path.join(LOCAL_PATH, "embedding_local")
+
+    if not os.path.isdir(local_dir):
+        logging.warning(f"Directory not found: {local_dir}")
+        return 0
+
+    if drop:
+        for f in os.listdir(LOCAL_NPZ_DIR):
+            if f.endswith(".npy") or f.endswith(".npz"):
+                os.remove(os.path.join(LOCAL_NPZ_DIR, f))
+        logging.info("Dropped all local npy files.")
+
+    total_rows = 0
+    for device in all_devices:
+        fname = f"ipraw_{device}_embedding.csv"
+        fpath = os.path.join(local_dir, fname)
+        if not os.path.isfile(fpath):
+            logging.warning(f"File not found: {fname}")
+            continue
+
+        emb_npy_path = os.path.join(LOCAL_NPZ_DIR, f"{device}_embeddings.npy")
+        if skip_existing and not drop and os.path.exists(emb_npy_path):
+            logging.info(f"Skipping {device} in local_npz (already has data)")
+            continue
+
+        rows = insert_csv_to_local_npz(device, fpath, retrieval_perspectives)
+        total_rows += rows
+
+    return total_rows
 
 
 def delete_device_from_collection(client: MilvusClient, col_name: str, device: str) -> int:
@@ -473,6 +610,15 @@ def main():
                 logging.warning(f"File not found: {fname}")
     else:
         logging.warning(f"Directory not found: {overall_dir}")
+
+    # ─── Step 2: 导出 local npz (多 perspective 拼接向量) ───
+    logging.info("Processing embedding_local files (numpy npz storage)...")
+    npz_rows = export_local_npz(
+        all_devices,
+        drop=args.drop,
+        skip_existing=args.skip_existing,
+    )
+    total_rows += npz_rows
 
     logging.info(f"All done. Total rows inserted: {total_rows}")
     logging.info(f"Vector DB saved to: {VECTOR_DB_DIR}")
