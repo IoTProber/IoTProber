@@ -434,7 +434,7 @@ agent.py (LangGraph orchestrator)
 - **Class**: `PerspectiveAwareCAE` (PACA) + `DriftDetector` (single-device inference)
 - Detects **in-class concept drift**: same label but shifted feature space (e.g., a camera vendor silently updates firmware).
 - Uses perspective-weighted reconstruction loss + contrastive loss:
-  - Non-critical perspectives (`whois`, `as`, `dns`, `sd`, `htags`, `hfavicons`, `body`) → high weight → their reconstruction error signals drift.
+  - Non-critical perspectives (`whois`, `as`, `dns`, `sd`, `htags`, `body`) → high weight → their reconstruction error signals drift.
   - Critical perspectives (`sw`, `hw`, `os`, `certificate`) → low weight → their change more likely indicates a new device/vendor.
 - Detection rule (paper): score `S(x)=Σ_p α_p·mean((x−x̂)²)`; robust threshold `τ = median(S_ref) + γ·MAD(S_ref)` (`γ=3.5`); drift iff `S(x) > τ`; per-perspective z-scores give interpretable attribution.
 - `run_drift_detection()` trains PACA and persists `paca_model.pt` + `paca_artifacts.pkl` (vectorizers/scaler/threshold); `DriftDetector.detect_query_device(fingerprint)` scores a single queried device for the first-stage gate. Outputs to `drift_data/autoencoder_drift/`.
