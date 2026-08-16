@@ -8,6 +8,8 @@
         "ROUTER",
         "PRINTER",
         "SCADA",
-        "CAMERA"
+        "CAMERA",
+        "ALARM",
+        "CONTROLLER"
     ]
 }
