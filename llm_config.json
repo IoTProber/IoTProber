@@ -1,37 +1,37 @@
 {
-    "DEEPSEEK2":{
-        "API_KEY": "sk-7b6779aafc6940db95fd7d75f277a2a8",
-        "BASE_URL": "https://api.deepseek.com",
-        "MODEL": "deepseek-chat"
-    },
     "DEEPSEEK":{
-        "API_KEY": "sk-a1ad76dcf6a04f9295284a4651b16e4f",
-        "BASE_URL": "https://api.deepseek.com",
-        "MODEL": "deepseek-chat"
+        "API_KEY": "YOUR_API_KEY",
+        "BASE_URL": "YOUR_BASE_URL",
+        "MODEL": "deepseek-v4-pro"
     },
     "CLAUDE":{
-        "API_KEY": "sk-UF3GYIdtz3NRNBoJAiMZFvampVAAoE0ukV07TF0DpUXH6Lhi",
-        "BASE_URL": "http://1.95.142.151:3000",
+        "API_KEY": "YOUR_API_KEY",
+        "BASE_URL": "YOUR_BASE_URL",
         "MODEL": "claude-sonnet-4-6"
     },
-    "CLAUDE2":{
-        "API_KEY": "sk-6IwIVi0zUpIjcEqfdCcDSai2HKvO7jSeLikHhvNzzv5zKNIb",
-        "BASE_URL": "http://1.95.142.151:3000",
-        "MODEL": "claude-sonnet-4-6"
+    "CLAUDEBaseline":{
+        "API_KEY": "YOUR_API_KEY",
+        "BASE_URL": "YOUR_BASE_URL",
+        "MODEL": "claude-opus-4-6"
     },
-    "GEMINI2":{
-        "API_KEY": "sk-3XkoJHGflNC9z37QB0rKyiBuNMhK5Z2fvjbNkFZqP3GtcB5e",
-        "BASE_URL": "https://us.novaiapi.com/v1",
-        "MODEL": "gemini-3.1-pro-preview"
+    "CLAUDELabel":{
+        "API_KEY": "YOUR_API_KEY",
+        "BASE_URL": "YOUR_BASE_URL",
+        "MODEL": "claude-opus-4-8"
     },
     "GEMINI":{
-        "API_KEY": "sk-7oIOMfGaJRLFdibPprkYBkZxgqDLiuAjMTVTtucu9PfumXdW",
-        "BASE_URL": "https://us.novaiapi.com/v1",
-        "MODEL": "gemini-3.1-pro-preview-thinking"
+        "API_KEY": "YOUR_API_KEY",
+        "BASE_URL": "YOUR_BASE_URL",
+        "MODEL": "gemini-3.5-flash"
     },
     "OPENAI":{
-        "API_KEY": "sk-YCPZWQlmeMR4DEXQAd640587E9B244Fe839c3e0946A54e55",
-        "BASE_URL": "",
-        "MODEL": "gpt-4o"
+        "API_KEY": "YOUR_API_KEY",
+        "BASE_URL": "YOUR_BASE_URL",
+        "MODEL": "gpt-5.6-sol"
+    },
+    "BIGMODEL":{
+        "API_KEY": "YOUR_API_KEY",
+        "BASE_URL": "YOUR_BASE_URL",
+        "MODEL": "glm-5.2"
     }
 }

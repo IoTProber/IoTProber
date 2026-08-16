@@ -16,6 +16,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 from util import *
 from censys_platform import SDK, Port
+import shodan
 
 logging.basicConfig(
     level=logging.INFO,
@@ -1172,6 +1173,118 @@ class CensysData:
         logging.info(f"Output directory: {drift_data_path}")
         logging.info(f"{'='*60}\n")
 
+class ShodanData:
+    def __init__(self, api_key):
+        self.base_path = os.getcwd()
+        self.save_path = os.path.join(self.base_path, "platform_data/censys_raw_data")
+        self.api_key = api_key
+        self.api = shodan.Shodan(self.api_key)
+
+        self.device_label_list = load_all_dev_labels()
+        self.new_device_label_list = load_new_dev_labels()
+
+        self.device_search_queries = {
+            "ALARM": "alarm panel port:80",
+            "CAMERA": "webcam port:80",
+            "CONTROLLER": "industrial controller port:502",
+            "NAS": "NAS port:80",
+            "NVR": "NVR port:80",
+            "POWER_METER": "power meter modbus port:502",
+            "PRINTER": "printer port:9100",
+            "ROUTER": "router port:22",
+            "SCADA": "SCADA port:502",
+            "BUILDING_AUTOMATION": "building automation port:502",
+            "MEDICAL": "medical device port:80",
+            "MEDIA_SERVER": "media server port:80",
+            "VPN": "vpn port:443",
+        }
+
+    def acquire_shodan_iot_devices(self, device_label, max_results=1000, save_raw=True):
+        """
+        Search Shodan for IoT devices of a specific type and save raw JSON per IP.
+        """
+        result_dir = os.path.join(self.save_path, device_label.lower(), "raw")
+        if not os.path.exists(result_dir):
+            os.makedirs(result_dir)
+
+        query = self.device_search_queries.get(device_label, device_label.lower())
+        logging.info(f"[Shodan] Searching for {device_label} with query: '{query}'")
+        print(f"[Shodan] Searching for {device_label} with query: '{query}'")
+
+        existing_ips = set()
+        if os.path.exists(result_dir):
+            existing_ips = {f.replace(".json", "") for f in os.listdir(result_dir) if f.endswith(".json")}
+
+        try:
+            results = self.api.search(query, limit=max_results)
+        except shodan.APIError as e:
+            logging.error(f"[Shodan] API error for {device_label}: {e}")
+            print(f"[Shodan] API error for {device_label}: {e}")
+            return
+
+        total = results.get("total", 0)
+        matches = results.get("matches", [])
+        logging.info(f"[Shodan] {device_label}: found {total} total results, retrieved {len(matches)} matches")
+        print(f"[Shodan] {device_label}: found {total} total results, retrieved {len(matches)} matches")
+
+        saved_count = 0
+        for match in matches:
+            ip_str = match.get("ip_str", str(match.get("ip", "")))
+            if ip_str in existing_ips:
+                continue
+
+            if save_raw:
+                filepath = os.path.join(result_dir, f"{ip_str}.json")
+                try:
+                    with open(filepath, "w", encoding="utf-8") as f:
+                        json.dump(match, f, indent=4)
+                    saved_count += 1
+                except Exception as e:
+                    logging.error(f"[Shodan] Error saving {ip_str}: {e}")
+
+        logging.info(f"[Shodan] {device_label}: saved {saved_count} new IP JSON files (skipped {len(matches) - saved_count} existing)")
+        print(f"[Shodan] {device_label}: saved {saved_count} new IP JSON files")
+
+    def acquire_shodan_host_info(self, ip):
+        """
+        Get detailed information for a specific IP from Shodan.
+        """
+        try:
+            host = self.api.host(ip)
+            return host
+        except shodan.APIError as e:
+            logging.error(f"[Shodan] Error fetching host {ip}: {e}")
+            return None
+
+    def acquire_all_shodan_devices(self, max_results=1000):
+        """
+        Search Shodan for all device types in device_label_list.
+        """
+        for device_label in self.device_label_list:
+            self.acquire_shodan_iot_devices(device_label, max_results=max_results)
+            time.sleep(2)
+
+    def acquire_new_shodan_devices(self, max_results=1000):
+        """
+        Search Shodan for new device types (MEDIA_SERVER, VPN).
+        """
+        for device_label in self.new_device_label_list:
+            self.acquire_shodan_iot_devices(device_label, max_results=max_results)
+            time.sleep(2)
+
+
+def load_search_config():
+    """
+    Load API credentials from search_config.json.
+    """
+    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "search_config.json")
+    if not os.path.exists(config_path):
+        logging.error(f"search_config.json not found at {config_path}")
+        return None
+    with open(config_path, "r") as f:
+        return json.load(f)
+
+
 def main():
     # Collect data
     # python acquire_data.py --collect
@@ -1203,20 +1316,19 @@ def main():
     parser.add_argument('--drift', action='store_true', help='Collect IPs for drift detection')
     parser.add_argument('--org_id', type=str, help='Censys organization ID')
     parser.add_argument('--token', type=str, help='Censys personal access token')
+    parser.add_argument('--shodan_collect', action='store_true', help='Collect data from Shodan for all device types')
+    parser.add_argument('--shodan_collect_new', action='store_true', help='Collect data from Shodan for new device types (MEDIA_SERVER, VPN)')
+    parser.add_argument('--shodan_host', type=str, help='Query Shodan host info for a specific IP')
+    parser.add_argument('--shodan_max', type=int, default=1000, help='Max results per Shodan search (default: 1000)')
     
     args = parser.parse_args()
     
+    config = load_search_config()
+    
     if not args.org_id or not args.token:
-        # LH Censys Token
-        # args.org_id = "1a124af4-f289-43b6-8695-b1cd29be627b"
-        # args.token = "censys_2jgji8RD_Pn5PmdEqkpTCsgthv7NGqxSG"
-
-        # HX Censys Token
-        args.org_id = "92c9e1f8-cadf-476e-a1a2-a1ebb02df8cc"
-        args.token = "censys_V949x2Te_HApxVJdqZDNyHed8UZY2iFDF"   
-
-        # print("Error: --org_id and --token are required")
-        # return
+        if config and "censys" in config and "platform" in config["censys"]:
+            args.org_id = args.org_id or config["censys"]["platform"].get("org_id", "")
+            args.token = args.token or config["censys"]["platform"].get("personal_access_token", "")
     
     cs = CensysData(
         censys_version="platform",
@@ -1251,6 +1363,31 @@ def main():
     if args.drift:
         print("Starting drift IP collection...")
         cs.drift_ip_collection()
+    
+    if args.shodan_collect or args.shodan_collect_new or args.shodan_host:
+        shodan_api_key = ""
+        if config and "shodan" in config:
+            shodan_api_key = config["shodan"].get("api_key", "")
+        
+        if not shodan_api_key:
+            print("Error: Shodan API key not found in search_config.json")
+            return
+        
+        sd = ShodanData(api_key=shodan_api_key)
+        
+        if args.shodan_collect:
+            print("Starting Shodan data collection for all device types...")
+            sd.acquire_all_shodan_devices(max_results=args.shodan_max)
+        
+        if args.shodan_collect_new:
+            print("Starting Shodan data collection for new device types...")
+            sd.acquire_new_shodan_devices(max_results=args.shodan_max)
+        
+        if args.shodan_host:
+            print(f"Querying Shodan host info for {args.shodan_host}...")
+            host_info = sd.acquire_shodan_host_info(args.shodan_host)
+            if host_info:
+                print(json.dumps(host_info, indent=2, default=str))
     
 if __name__ == "__main__":
     main()

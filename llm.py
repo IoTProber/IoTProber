@@ -74,7 +74,7 @@ class LLM:
     def get_llm_client(self, llm):
         if llm == "DEEPSEEK":
             return self.deepseek_client
-        elif llm == "CLAUDE":
+        elif llm in ("CLAUDE", "CLAUDEBaseline"):
             return self.claude_client
         elif llm == "GEMINI":
             return self.gemini_client
@@ -121,7 +121,7 @@ class LLM:
 
         return all_response_content
 
-    def chat_with_llm(self, llm, messages, whether_json: bool = False):
+    def chat_with_llm(self, llm, messages, whether_json: bool = False, return_usage: bool = False):
         """
         1. 使用Anthropic SDK调用Claude Sonnet 4.5进行问答
         
@@ -148,7 +148,11 @@ class LLM:
                 response_format={"type": "json_object"} if whether_json else None
             )
 
-            return json.loads(response.choices[0].message.content)
+            result = json.loads(response.choices[0].message.content)
+            if return_usage:
+                usage = {"prompt_tokens": response.usage.prompt_tokens, "completion_tokens": response.usage.completion_tokens}
+                return result, usage
+            return result
         
         elif llm == "OPENAI":
             response = client.chat.completions.create(
@@ -158,9 +162,13 @@ class LLM:
                 response_format={"type": "json_object"} if whether_json else None
             )
 
-            return response.choices[0].message.content
+            result = response.choices[0].message.content
+            if return_usage:
+                usage = {"prompt_tokens": response.usage.prompt_tokens, "completion_tokens": response.usage.completion_tokens}
+                return result, usage
+            return result
 
-        elif llm == "CLAUDE":
+        elif llm in ("CLAUDE", "CLAUDEBaseline"):
 
             response = client.messages.create(
                 model=model,
@@ -168,10 +176,20 @@ class LLM:
                 max_tokens=1024
             )
             
-            if whether_json:
-                return convert_json_from_str(response.content[0].text)
+            usage = {"prompt_tokens": response.usage.input_tokens, "completion_tokens": response.usage.output_tokens}
+            text_blocks = [b for b in response.content if hasattr(b, 'text')]
+            raw_text = text_blocks[0].text if text_blocks else ""
             
-            return response.content[0].text
+            if whether_json:
+                try:
+                    result = convert_json_from_str(raw_text)
+                except Exception:
+                    result = {"error": "JSON parse failed", "raw": raw_text[:500]}
+            else:
+                result = raw_text
+            if return_usage:
+                return result, usage
+            return result
         
         elif llm == "GEMINI":
             # 使用官方API
@@ -186,9 +204,13 @@ class LLM:
                 messages=messages
             )
             if whether_json:
-                return convert_json_from_str(response.choices[0].message.content)
-            
-            return response.choices[0].message.content
+                result = convert_json_from_str(response.choices[0].message.content)
+            else:
+                result = response.choices[0].message.content
+            if return_usage:
+                usage = {"prompt_tokens": response.usage.prompt_tokens, "completion_tokens": response.usage.completion_tokens}
+                return result, usage
+            return result
         
         else:
             raise ValueError(f"不支持的 LLM: {llm}")
