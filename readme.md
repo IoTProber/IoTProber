@@ -293,18 +293,6 @@ agent.py (LangGraph orchestrator)
 ## Directory Structure
 
 ```
-
-├── acquire_data.py             # Censys / Shodan data acquisition (CensysData, ShodanData)
-├── llm.py                      # LLM abstraction layer (Claude / DeepSeek / Gemini / OpenAI)
-├── util.py                     # Shared utilities (feature loading, text processing, etc.)
-├── llm_config.json             # LLM API keys, base URLs, and model names
-├── perspective_info.json       # 11-perspective definitions with feature columns and weights
-├── perspective_name.json       # Perspective cluster label names
-├── local_used_features.txt     # 25 features used for local retrieval vectors
-├── rag_devices.json            # Known IoT device type labels
-├── new_devices.json            # Candidate new device type labels
-├── requirements.txt            # Pinned Python dependencies
-│
 ├── graph/                      # Graph construction and embedding
 │   ├── construction.py         # GraphConstruction: one-shot pipeline driver (cluster→build→HGT→vector)
 │   ├── cluster.py              # Multi-perspective clustering (HDBSCAN + KMeans + LLM)
@@ -334,14 +322,18 @@ agent.py (LangGraph orchestrator)
 │   └── drift/                  # Concept drift evaluation data
 │
 ├── platform_data/              # Raw fingerprint data fetched from Censys/Shodan
-│   └── csv/local/1/            # Processed CSV and embedding files
-│       ├── ipraw_{DEV}.csv
-│       ├── embedding_{persp}/
-│       ├── community/
-│       ├── hgt_embeddings/
-│       └── vectorDB/milvus.db
+│   └── csv/                    # Processed CSV and embedding files
+│       ├── all/                # Raw fingerprint CSV
+│       ├── label/              # Vendor label CSV
+│       ├── rag/                # Rag fingerprint data clustering result
+│           ├── community/
+│               ├── embedding_overall  # Comprehensive-view clustering result
+│               ├── single             # Single-perspective clustering result
+│           ├── embedding_local/       # Entity Node - embedding
+│           ├── vectorDB/
+│               ├── local_npz/         # Local Entity
+│               ├── milvus.db          # Milvus Embedding Stored Database
 │
-├── rag_data/                   # Raw Censys/Shodan fingerprint CSVs (CensysData.save_path)
 ├── drift_data/                 # Concept drift detection outputs
 ├── qwen3_embedding_06b/        # Local Qwen3-Embedding-0.6B model weights
 ├── Meta-Llama-3.1-8B-Instruct/ # Local LLaMA model weights and LoRA adapters
@@ -349,6 +341,17 @@ agent.py (LangGraph orchestrator)
     ├── local/{DEV}_local.json
     ├── community/{DEV}_community.json
     └── reasoning/{DEV}_reasoning.json
+├── acquire_data.py             # Censys / Shodan data acquisition (CensysData, ShodanData)
+├── llm.py                      # LLM abstraction layer (Claude / DeepSeek / Gemini / OpenAI)
+├── util.py                     # Shared utilities (feature loading, text processing, etc.)
+├── llm_config.json             # LLM API keys, base URLs, and model names
+├── perspective_info.json       # 11-perspective definitions with feature columns and weights
+├── perspective_name.json       # Perspective cluster label names
+├── local_used_features.txt     # 25 features used for local retrieval vectors
+├── rag_devices.json            # Known IoT device type labels
+├── new_devices.json            # Candidate new device type labels
+├── requirements.txt            # Pinned Python dependencies
+│
 ```
 
 ---
