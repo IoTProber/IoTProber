@@ -1,93 +1,95 @@
-# IoTProber Demo — 11 类设备识别最小展示
+# IoTProber Demo — Minimal Showcase for 11 Device Types
 
-每类设备（`config/rag_devices.json` 的 11 个 RAG 类型）各 3 个**识别效果最好**的真实指纹。
-候选池 40/类，用 v2 adapter 走生产推理链路
-（`UnseenDeviceDetector._build_aligned_prompt → _generate_classification → _classification_novelty_result`）
-打分，取「类型判对 + 类型置信度最高」的 Top-3（同类内优先厂商不重复）。
+For each of the 11 RAG device types defined in `config/rag_devices.json`, 40 validation-set test cases are randomly selected. They are evaluated through the production inference pipeline with the v2 adapter
+(`UnseenDeviceDetector._build_aligned_prompt → _generate_classification → _classification_novelty_result`).
+The top three correctly classified cases with the highest type confidence are retained, with vendor diversity preferred within each device type.
 
-## 候选池的三重排除（2026-09-20 审计后加入）
+## Three-Stage Candidate Pool Filtering
 
-排名前必须知道 demo 数据是从什么池子里选的：
+Before reviewing the rankings, it is important to understand how the demo candidate pool is filtered:
 
-1. **训练/验证集 IP 排除**（65,027 个）——否则展示的是记忆而非识别
-2. **跨类型重复 IP 排除**（15,346 个）——同一指纹同时出现在多个类型文件里，标签自相矛盾
-3. **通用云主机排除**（约 8,900 行）——按 `dns-reverse`/`as-name`/`whois` 匹配 AWS/GCP/Azure 等；
-   语料中 POWER_METER 一度 85% 是 AWS EC2 主机
+1. **Training/validation IP exclusion** (65,027 IPs) — otherwise the demo would measure memorization rather than recognition.
+2. **Cross-type duplicate IP exclusion** (15,346 IPs) — the same fingerprint appears in multiple device-type files with conflicting labels.
+3. **Generic cloud host exclusion** (approximately 8,900 rows) — AWS, GCP, Azure, and similar hosts are identified through `dns-reverse`, `as-name`, and `whois`; at one point, 85% of the POWER_METER corpus consisted of AWS EC2 hosts.
 
-排除后各类型候选池正确率（40 个候选，除非注明）：
+Candidate-pool accuracy after filtering (40 candidates per type unless otherwise noted):
 
-| 类型 | 正确 | | 类型 | 正确 | | 类型 | 正确 |
+| Device Type | Correct | | Device Type | Correct | | Device Type | Correct |
 |---|---|---|---|---|---|---|---|
 | ALARM | 40/40 | | CONTROLLER | 40/40 | | NVR | 40/40 |
 | POWER_METER | 38/38 | | MEDICAL | 39/40 | | NAS | 39/40 |
 | SCADA | 39/40 | | BUILDING_AUTOMATION | 38/40 | | PRINTER | 37/40 |
 | CAMERA | 36/40 | | ROUTER | 34/40 | | | |
 
-> 说明：本 demo 的「正确」= 与 ipraw 语料的目录标签一致。语料标签本身有噪声
-> （跨类型重复、云主机误标），上面第 2、3 条排除就是为了尽量剔除这类样本。
-> CONTROLLER 的富指纹样本不足 40，候选取自全量并在 `selection_summary.json` 中标记
-> `rich_filter_bypassed`。
+> In this demo, a result is considered "correct" when it matches the directory label in the ipraw corpus. The corpus labels themselves contain noise, including cross-type duplicates and mislabeled cloud hosts; filters 2 and 3 above are intended to remove as many of these samples as possible.
+> CONTROLLER has fewer than 40 rich-fingerprint samples, so its candidates are drawn from the full dataset and marked as `rich_filter_bypassed` in `selection_summary.json`.
 
-## 目录
+## Directory Structure
 
 ```
 demo/
-├── {TYPE}/cases.json            # 3 例：完整指纹 + 分类结果 + novelty + drift (+CAMERA 向量近邻)
-├── selection_summary.json       # 每类：池大小/排除数/正确数/最高置信度/是否触及过滤回退
-├── select_demo_data.py          # 筛选脚本（--candidates / --rank R / --merge，8 卡分片）
-├── demo_showcase.ipynb          # 最小展示 notebook（已执行，含图表）
-├── app.py + static/index.html   # 本地可视化 Web 界面
-├── screenshot_ui.py             # 可选：无头浏览器截图（用于视觉回归）
+├── {TYPE}/cases.json            # Three cases: full fingerprint + classification + novelty + drift (+ CAMERA vector neighbors)
+├── selection_summary.json       # Pool size, exclusions, correct count, maximum confidence, and filter fallback for each type
+├── select_demo_data.py          # Selection script (--candidates / --rank R / --merge, sharded across eight GPUs)
+├── demo_showcase.ipynb          # Executed minimal showcase notebook with charts
+├── app.py + static/index.html   # Local visualization web interface
+├── screenshot_ui.py             # Optional headless-browser screenshots for visual regression testing
 └── README.md
 ```
 
-## 环境要求（重要）
+## Environment Requirements
 
-| 步骤 | 环境 | 原因 |
+| Task | Environment | Reason |
 |---|---|---|
-| 查看 notebook / 打开网页 | `iotprober` | 只需 pandas/matplotlib/flask |
-| **在线识别**（`/api/classify`） | **`elastic_slm`** | 与生成 cases.json 时相同的 torch/transformers 数值，结果可比 |
-| **重新筛选**（`select_demo_data.py`） | **`elastic_slm`** | 该脚本 import 训练脚本，依赖 `datasets`（iotprober 环境没有） |
+| View the notebook or open the web interface | `iotprober` | Only pandas, matplotlib, and Flask are required. |
+| **Online classification** (`/api/classify`) | **`elastic_slm`** | Uses the same PyTorch/Transformers numerical environment that generated `cases.json`, making the results comparable. |
+| **Run selection again** (`select_demo_data.py`) | **`elastic_slm`** | The script imports the training code and depends on `datasets`, which is not installed in the `iotprober` environment. |
 
 ```bash
-EL=/root/anaconda3/envs/elastic_slm/bin/python     # 推理/筛选
-IO=/root/anaconda3/envs/iotprober/bin/python       # 仅网页/notebook
+EL=/root/anaconda3/envs/elastic_slm/bin/python     # Inference and selection
+IO=/root/anaconda3/envs/iotprober/bin/python       # Web interface and notebook only
 ```
 
-## 运行
+## Usage
 
 ```bash
-# 1) Notebook（静态展示，无需 GPU）
+# 1) Notebook (static showcase; no GPU required)
 cd demo && $IO -m jupyter nbconvert --to notebook --execute --inplace demo_showcase.ipynb
-#    或直接阅读已执行的 demo_showcase.ipynb
+#    Alternatively, open the already-executed demo_showcase.ipynb directly.
 
-# 2) Web 界面 → http://localhost:5001
+# 2) Web interface → http://localhost:5001
 cd demo && $EL app.py
-#    "在线识别"按需加载 v2 adapter：实测单卡约 8.7GB 显存，首次约 1 分钟
-#    与存储值的关系：分类结果一致；置信度可能差 ~1e-5（4-bit 推理的浮点非确定性）
-#    默认钉在 GPU 0（unseen.py 在 4-bit 下用 device_map="auto"，若不限制会把模型
-#    铺满 8 卡共约 27GB）。换卡：DEMO_GPU=3 $EL app.py
+#    "Online Classification" loads the v2 adapter on demand. In testing, it used
+#    approximately 8.7 GB of VRAM on one GPU and took about one minute on first load.
+#    The classification result matches the stored result, while confidence may differ
+#    by approximately 1e-5 because of floating-point nondeterminism in 4-bit inference.
+#    GPU 0 is used by default. With device_map="auto" in unseen.py, the model would
+#    otherwise occupy approximately 27 GB across all eight GPUs. To select another GPU:
+#    DEMO_GPU=3 $EL app.py
 
-# 3) 重新筛选（仅在语料更新时需要）
-#    前置条件（易被忽略）：
-#      · /dev/shm/ipraw/ipraw_{TYPE}.csv  ← 11 类原始指纹，约 8.4GB，tmpfs，重启即失
-#        重建：hf_hub_download('IoTProber/raw_dataset', 'platform_data/rag/ipraw_files.tar.gz',
-#                              repo_type='dataset') 后 tar -xzf 到 /dev/shm/ipraw
-#      · /dev/shm/demo_select             ← 中间产物（candidates.json），同样是 tmpfs
-#    因此三条命令必须按顺序、在同一开机周期内完成：
+# 3) Run selection again (only needed when the corpus changes)
+#    Prerequisites that are easy to overlook:
+#      · /dev/shm/ipraw/ipraw_{TYPE}.csv  ← Raw fingerprints for 11 device types,
+#        approximately 8.4 GB in tmpfs and lost after a reboot.
+#        Rebuild by downloading with:
+#        hf_hub_download('IoTProber/raw_dataset', 'platform_data/rag/ipraw_files.tar.gz',
+#                        repo_type='dataset')
+#        and then extracting the archive to /dev/shm/ipraw.
+#      · /dev/shm/demo_select             ← Intermediate candidates.json files,
+#        also stored in tmpfs.
+#    Run the following three commands in order during the same boot session:
 cd demo
-$EL select_demo_data.py --candidates                   # 建候选池（含三重排除，~5 分钟）
-for i in 0 1 2 3 4 5 6 7; do                            # 8 卡分片推理，~2 分钟
+$EL select_demo_data.py --candidates                   # Build the candidate pool with all three filters (~5 minutes)
+for i in 0 1 2 3 4 5 6 7; do                            # Eight-GPU sharded inference (~2 minutes)
   CUDA_VISIBLE_DEVICES=$i $EL select_demo_data.py --rank $i --world_size 8 &
 done
 wait
-$EL select_demo_data.py --merge                        # 选择 + drift + CAMERA 近邻（~2 分钟）
+$EL select_demo_data.py --merge                        # Selection + drift + CAMERA neighbors (~2 minutes)
 ```
 
-## 展示内容
+## Showcase Contents
 
-每个 case 含：完整 46 列指纹、adapter 分类（类型/厂商/双置信度/两个 novelty 概率）、
-PACA drift 分数（τ=8.7755，取自 artifacts，非硬编码）、以及 CAMERA 的向量近邻。
+Each case contains the complete 46-column fingerprint, adapter classification (device type, vendor, two confidence scores, and two novelty probabilities), a PACA drift score (τ=8.7755, loaded from artifacts rather than hard-coded), and vector neighbors for CAMERA cases.
 
 ```bash
 python - <<'PY'
