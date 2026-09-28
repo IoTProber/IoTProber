@@ -1,8 +1,8 @@
 # IoTProber Demo — Minimal Showcase for 11 Device Types
 
-For each of the 11 RAG device types defined in `config/rag_devices.json`, 40 validation-set test cases are randomly selected. They are evaluated through the production inference pipeline with the v2 adapter
-(`UnseenDeviceDetector._build_aligned_prompt → _generate_classification → _classification_novelty_result`).
-The top three correctly classified cases with the highest type confidence are retained, with vendor diversity preferred within each device type.
+For each of the 11 RAG device types defined in `config/rag_devices.json`, 40 validation cases are selected with a fixed random seed after the exclusions below (POWER_METER has 38 eligible cases). The complete, unranked set is stored in `validation_cases.json` and is the default input to the full-pipeline evaluation.
+
+The v2 adapter (`UnseenDeviceDetector._build_aligned_prompt → _generate_classification → _classification_novelty_result`) is run over this complete set. A separate `cases.json` contains three curated, correctly classified UI examples. Those curated examples are not used to report retrieval accuracy.
 
 ## Three-Stage Candidate Pool Filtering
 
@@ -28,9 +28,12 @@ Candidate-pool accuracy after filtering (40 candidates per type unless otherwise
 
 ```
 demo/
-├── {TYPE}/cases.json            # Three cases: full fingerprint + classification + novelty + drift (+ CAMERA vector neighbors)
+├── {TYPE}/cases.json            # Curated UI cases: fingerprint + classification + novelty + drift (+ CAMERA vector neighbors)
+├── {TYPE}/validation_cases.json # Complete fixed-seed random validation set; never post-filtered by correctness
 ├── selection_summary.json       # Pool size, exclusions, correct count, maximum confidence, and filter fallback for each type
 ├── select_demo_data.py          # Selection script (--candidates / --rank R / --merge, sharded across eight GPUs)
+├── run_fullflow_demo.py          # Complete three-level retrieval + decision evaluation over the random set
+├── evaluate_fullflow.py          # Integrity, availability, retrieval, accuracy, and calibration metrics
 ├── demo_showcase.ipynb          # Executed minimal showcase notebook with charts
 ├── app.py + static/index.html   # Local visualization web interface
 ├── screenshot_ui.py             # Optional headless-browser screenshots for visual regression testing
@@ -85,6 +88,16 @@ for i in 0 1 2 3 4 5 6 7; do                            # Eight-GPU sharded infe
 done
 wait
 $EL select_demo_data.py --merge                        # Selection + drift + CAMERA neighbors (~2 minutes)
+
+# Materialize/refresh only the unbiased validation files from existing
+# /dev/shm/demo_select candidates and predictions (does not touch cases.json):
+$EL select_demo_data.py --materialize-validation
+
+# Full three-level evaluation. It resumes only version-compatible per-IP caches,
+# keeps failures, and stores local/community/reasoning evidence in every result:
+$EL run_fullflow_demo.py
+# Use the curated UI cases only when explicitly requested:
+$EL run_fullflow_demo.py --showcase-only
 ```
 
 ## Showcase Contents

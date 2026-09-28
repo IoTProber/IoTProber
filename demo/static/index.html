@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IoTProber · 11 类设备识别 Demo</title>
+<title>IoTProber · Recognition Demo for 11 Device Types</title>
 <style>
 :root { color-scheme: light; }
 .viz-root {
@@ -37,14 +37,14 @@ body.viz-root {
 h1 { font-size: 22px; margin: 0 0 4px; }
 .sub { color: var(--text-secondary); margin: 0 0 20px; }
 
-/* 概览 stat tiles */
+/* Overview stat tiles */
 .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 26px; }
 .tile { background: var(--surface-2); border-radius: 10px; padding: 14px 16px; }
 .tile .k { color: var(--text-secondary); font-size: 12px; }
 .tile .v { font-size: 26px; font-weight: 650; margin-top: 2px; }
 .tile .n { color: var(--text-muted); font-size: 12px; }
 
-/* 类型准确率条形图（单量度 → 单色） */
+/* Type-accuracy bar chart (one measure, one hue) */
 .chart { margin-bottom: 30px; }
 .chart h2 { font-size: 15px; margin: 0 0 10px; }
 .bars { display: grid; gap: 6px; }
@@ -59,7 +59,7 @@ h1 { font-size: 22px; margin: 0 0 4px; }
 .track:hover .tip { display: block; }
 .bar-row .val { font-size: 12.5px; color: var(--text-primary); font-variant-numeric: tabular-nums; }
 
-/* 设备类型卡片 */
+/* Device-type cards */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
 .card { background: var(--surface-2); border-radius: 12px; padding: 16px; }
 .card h3 { margin: 0 0 2px; font-size: 15px; letter-spacing: .3px; }
@@ -82,7 +82,7 @@ details.fp pre { font-size: 11px; background: var(--surface-1); border-radius: 8
 .nbr { font-size: 11.5px; color: var(--text-secondary); margin-top: 6px; }
 .nbr span { font-variant-numeric: tabular-nums; }
 
-/* 在线识别 */
+/* Live recognition */
 .live { margin-top: 34px; background: var(--surface-2); border-radius: 12px; padding: 18px; }
 .live h2 { font-size: 15px; margin: 0 0 6px; }
 .live .hint { color: var(--text-muted); font-size: 12px; margin-bottom: 10px; }
@@ -99,23 +99,23 @@ button:disabled { opacity: .55; cursor: default; }
 </head>
 <body class="viz-root">
 <div class="wrap">
-  <h1>IoTProber · 11 类设备识别最小 Demo</h1>
-  <p class="sub">v2 adapter（含 novelty 修复）· 生产推理链路 · 每类选取识别置信度最高的 3 个真实指纹</p>
+  <h1>IoTProber · Minimal Recognition Demo for 11 Device Types</h1>
+  <p class="sub">v2 adapter with novelty fixes · production inference pipeline · three randomly selected real-world fingerprints per type</p>
 
   <div class="tiles" id="tiles"></div>
 
   <div class="chart">
-    <h2>候选池类型识别正确率（40 指纹/类）</h2>
+    <h2>Candidate-Pool Type Accuracy (40 Fingerprints per Type)</h2>
     <div class="bars" id="acc-chart"></div>
   </div>
 
   <div class="grid" id="cards"></div>
 
   <div class="live">
-    <h2>在线识别（可选）</h2>
-    <p class="hint">粘贴一段指纹 JSON（列名 → 值；或点击任意案例的“用于在线识别”填充），调用本地 v2 adapter 实时推断。首次调用需加载模型（约 1 分钟）。</p>
+    <h2>Live Recognition (Optional)</h2>
+    <p class="hint">Paste a fingerprint JSON object (field name → value), or click “Use for live recognition” on any case to fill it in. The local v2 adapter performs real-time inference. The first request may take about one minute while the model loads.</p>
     <textarea id="live-fp" placeholder='{"hw-vendors": "Hikvision", "cert-subjects": "CN=IPC", ...}'></textarea>
-    <button id="go">识别</button>
+    <button id="go">Recognize</button>
     <div id="live-out"></div>
   </div>
 </div>
@@ -140,23 +140,23 @@ async function boot() {
     if (!res.ok) throw new Error(`/api/demo HTTP ${res.status}`);
     data = await res.json();
   } catch (e) {
-    banner(`无法加载 demo 数据（${e}）。请确认 demo/app.py 正在运行，且 demo/ 下的 cases.json 完好。`);
+    banner(`Unable to load demo data (${e}). Make sure demo/app.py is running and the cases.json files under demo/ are intact.`);
     return;
   }
   const {types, summary} = data;
   DRIFT_TAU = data.drift_threshold ?? null;
   if ((data.load_failures ?? []).length)
-    banner(`部分数据文件无法读取：${data.load_failures.join('、')}`);
-  if (!Object.keys(types).length) { banner('demo/ 下没有可用的 cases.json'); return; }
+    banner(`Some data files could not be read: ${data.load_failures.join(', ')}`);
+  if (!Object.keys(types).length) { banner('No usable cases.json files were found under demo/.'); return; }
 
   // ---- stat tiles ----
   const allCases = Object.values(types).flat();
   const meanTopConf = Object.values(summary).map(s => s.top_conf).filter(Boolean);
   document.getElementById('tiles').innerHTML = `
-    <div class="tile"><div class="k">设备类型</div><div class="v">${Object.keys(types).length}</div><div class="n">rag_devices.json</div></div>
-    <div class="tile"><div class="k">展示案例</div><div class="v">${allCases.length}</div><div class="n">每类 3 个最佳指纹</div></div>
-    <div class="tile"><div class="k">平均最高置信度</div><div class="v">${(100 * meanTopConf.reduce((a,b)=>a+b,0)/meanTopConf.length).toFixed(2)}%</div><div class="n">type confidence</div></div>
-    <div class="tile"><div class="k">novelty 概率</div><div class="v">0.00</div><div class="n">全部正确判为已知类</div></div>`;
+    <div class="tile"><div class="k">Device types</div><div class="v">${Object.keys(types).length}</div><div class="n">rag_devices.json</div></div>
+    <div class="tile"><div class="k">Showcased cases</div><div class="v">${allCases.length}</div><div class="n">3 random fingerprints per type</div></div>
+    <div class="tile"><div class="k">Mean maximum confidence</div><div class="v">${(100 * meanTopConf.reduce((a,b)=>a+b,0)/meanTopConf.length).toFixed(2)}%</div><div class="n">type confidence</div></div>
+    <div class="tile"><div class="k">Novelty probability</div><div class="v">0.00</div><div class="n">All correctly recognized as known types</div></div>`;
 
   // ---- accuracy chart (single measure -> single hue) ----
   const acc = Object.entries(summary)
@@ -166,7 +166,7 @@ async function boot() {
     <div class="bar-row">
       <div class="lbl">${esc(t)}</div>
       <div class="track"><div class="fill" style="width:${(a*100).toFixed(1)}%">
-        <div class="tip">${esc(t)}：候选 40，正确 ${summary[t].correct}（${pct(a)}）</div></div></div>
+        <div class="tip">${esc(t)}: ${summary[t].candidates} candidates, ${summary[t].correct} correct (${pct(a)})</div></div></div>
       <div class="val">${pct(a)}</div>
     </div>`).join('');
 
@@ -175,9 +175,9 @@ async function boot() {
   document.getElementById('cards').innerHTML = Object.entries(types).map(([t, cases]) => `
     <div class="card">
       <h3>${esc(t)}</h3>
-      <div class="meta">候选 ${summary[t]?.candidates ?? '?'} · 正确 ${summary[t]?.correct ?? '?'} · 最高置信 ${pct(summary[t]?.top_conf ?? 0)}
-        ${summary[t]?.cloud_filter_skipped ? ' · <span title="该类型非云主机样本不足，未过滤云主机">⚠ 云主机未过滤</span>' : ''}
-        ${summary[t]?.rich_filter_bypassed ? ' · <span title="富指纹样本不足，候选取自全量">⚠ 富指纹过滤已跳过</span>' : ''}</div>
+      <div class="meta">${summary[t]?.candidates ?? '?'} candidates · ${summary[t]?.correct ?? '?'} correct · maximum confidence ${pct(summary[t]?.top_conf ?? 0)}
+        ${summary[t]?.cloud_filter_skipped ? ' · <span title="Too few non-cloud-host samples were available for this type">⚠ Cloud-host filter skipped</span>' : ''}
+        ${summary[t]?.rich_filter_bypassed ? ' · <span title="Too few rich fingerprints were available, so candidates were drawn from the full set">⚠ Rich-fingerprint filter skipped</span>' : ''}</div>
       ${cases.map(c => { CASES.push(c); return caseHtml(c, CASES.length - 1); }).join('')}
     </div>`).join('');
 
@@ -193,8 +193,8 @@ function caseHtml(c, gidx) {
   const r = c.result, d = c.drift ?? {};
   const driftBadge = d.error ? '' :
     (d.is_drift
-      ? `<span class="badge serious">⚠ 漂移</span>`
-      : `<span class="badge good">✓ 稳定</span>`);
+      ? `<span class="badge serious">⚠ Drift</span>`
+      : `<span class="badge good">✓ Stable</span>`);
   const tau = DRIFT_TAU === null ? 'τ' : `τ=${DRIFT_TAU.toFixed(2)}`;
   const nbr = (c.local_retrieval_neighbours ?? []).slice(0, 3).map(n =>
     `<span>${esc(n.ip)} (${n.similarity.toFixed(3)})</span>`).join(' · ');
@@ -202,13 +202,13 @@ function caseHtml(c, gidx) {
   <div class="case">
     <div class="ip">${esc(c.ip)}</div>
     <div class="pred">${esc(r.classified_type)} · ${esc(r.classified_vendor)} ${driftBadge}</div>
-    <div class="confline"><div class="k">类型置信度</div><div class="mini"><div class="fill" style="width:${(r.type_confidence*100).toFixed(1)}%"></div></div><div class="v">${r.type_confidence.toFixed(4)}</div></div>
-    <div class="confline"><div class="k">厂商置信度</div><div class="mini"><div class="fill" style="width:${(r.vendor_confidence*100).toFixed(1)}%"></div></div><div class="v">${r.vendor_confidence.toFixed(4)}</div></div>
-    <div class="kv">novelty 概率：类型 <b>${r.new_type_probability.toFixed(2)}</b> · 厂商 <b>${r.new_vendor_probability.toFixed(2)}</b>${d.drift_score !== undefined ? ` · drift ${d.is_drift ? '⚠' : '✓'} <b>${d.drift_score.toFixed(2)}</b>（${tau}）` : ''}</div>
-    ${nbr ? `<div class="nbr">近邻：${nbr}</div>` : ''}
-    <details class="fp"><summary>指纹详情 / 用于在线识别</summary>
+    <div class="confline"><div class="k">Type confidence</div><div class="mini"><div class="fill" style="width:${(r.type_confidence*100).toFixed(1)}%"></div></div><div class="v">${r.type_confidence.toFixed(4)}</div></div>
+    <div class="confline"><div class="k">Vendor confidence</div><div class="mini"><div class="fill" style="width:${(r.vendor_confidence*100).toFixed(1)}%"></div></div><div class="v">${r.vendor_confidence.toFixed(4)}</div></div>
+    <div class="kv">Novelty probability: type <b>${r.new_type_probability.toFixed(2)}</b> · vendor <b>${r.new_vendor_probability.toFixed(2)}</b>${d.drift_score !== undefined ? ` · drift ${d.is_drift ? '⚠' : '✓'} <b>${d.drift_score.toFixed(2)}</b> (${tau})` : ''}</div>
+    ${nbr ? `<div class="nbr">Nearest neighbors: ${nbr}</div>` : ''}
+    <details class="fp"><summary>Fingerprint details / Use for live recognition</summary>
       <pre>${esc(JSON.stringify(c.fingerprint, null, 1))}</pre>
-      <button data-case-idx="${gidx}">用于在线识别 ↑</button>
+      <button data-case-idx="${gidx}">Use for live recognition ↑</button>
     </details>
   </div>`;
 }
@@ -217,18 +217,18 @@ document.getElementById('go').addEventListener('click', async () => {
   const btn = document.getElementById('go'), out = document.getElementById('live-out');
   let fp;
   try { fp = JSON.parse(document.getElementById('live-fp').value); }
-  catch { out.innerHTML = '<span class="err">指纹不是合法 JSON</span>'; return; }
-  btn.disabled = true; btn.textContent = '识别中（首次需加载模型）…';
+  catch { out.innerHTML = '<span class="err">The fingerprint is not valid JSON.</span>'; return; }
+  btn.disabled = true; btn.textContent = 'Recognizing (the model loads on the first request)…';
   try {
     const r = await (await fetch('/api/classify', {method: 'POST',
       headers: {'Content-Type': 'application/json'}, body: JSON.stringify(fp)})).json();
     out.innerHTML = r.error
       ? `<span class="err">⚠ ${esc(r.error)}</span>`
       : `<div class="pred">${esc(r.classified_type)} · ${esc(r.classified_vendor)}</div>
-         <div class="kv">类型置信度 <b>${r.type_confidence}</b> · 厂商置信度 <b>${r.vendor_confidence}</b> ·
-          novelty(类型/厂商) <b>${r.new_type_probability}/${r.new_vendor_probability}</b>${r.is_unseen ? ' · <b style="color:var(--critical)">⚠ 判定为未见设备</b>' : ''}</div>`;
+         <div class="kv">Type confidence <b>${r.type_confidence}</b> · vendor confidence <b>${r.vendor_confidence}</b> ·
+          novelty (type/vendor) <b>${r.new_type_probability}/${r.new_vendor_probability}</b>${r.is_unseen ? ' · <b style="color:var(--critical)">⚠ Classified as an unseen device</b>' : ''}</div>`;
   } catch (e) { out.innerHTML = `<span class="err">${esc(e)}</span>`; }
-  btn.disabled = false; btn.textContent = '识别';
+  btn.disabled = false; btn.textContent = 'Recognize';
 });
 boot();
 </script>

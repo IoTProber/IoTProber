@@ -12,6 +12,9 @@ qwen3_embedding_06b/
 *.pyc
 *.pyo
 
+# Runtime logs
+*.log
+
 # Local client credentials
 config/deepseek.json
 config/glm.json

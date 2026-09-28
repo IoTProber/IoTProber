@@ -1,0 +1,7 @@
+{
+  "schema_version": "2026-09-25-v3",
+  "status": "legacy_results_invalidated",
+  "valid_aggregate_available": false,
+  "reason": "Existing per-type outputs predate self-match exclusion, label-leak removal, bounded cosine scoring, reliable community evidence, and versioned caches.",
+  "regenerate_with": "python demo/run_fullflow_demo.py"
+}

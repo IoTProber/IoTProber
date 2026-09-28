@@ -66,6 +66,20 @@ def _require_files(paths, what, hint):
             (f"\n  ... and {len(missing) - 6} more" if len(missing) > 6 else "") + f"\n{hint}")
 
 
+def _atomic_json_dump(path, value, indent=2):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp = f"{path}.tmp.{os.getpid()}"
+    try:
+        with open(tmp, "w", encoding="utf-8") as handle:
+            json.dump(value, handle, ensure_ascii=False, indent=indent, default=str)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp, path)
+    finally:
+        if os.path.exists(tmp):
+            os.remove(tmp)
+
+
 def _heldout_ips():
     """IPs used by the adapter training/validation — a demo case must not be one
     of them (otherwise the showcase demonstrates memorisation, not inference)."""
@@ -200,8 +214,45 @@ def run_rank(rank, world_size):
             out[f"{t}|{c['ip']}"] = {"type": t, "ip": c["ip"], "error": str(exc)[:150]}
         if (i + 1) % 20 == 0:
             print(f"[rank {rank}] {i+1}/{len(mine)}", flush=True)
-    json.dump(out, open(os.path.join(WORK, f"preds_{rank}.json"), "w"))
+    _atomic_json_dump(os.path.join(WORK, f"preds_{rank}.json"), out)
     print(f"[rank {rank}] wrote {len(out)}", flush=True)
+
+
+def materialize_validation_cases():
+    """Persist every fixed-seed random candidate without showcase ranking."""
+    cand_path = os.path.join(WORK, "candidates.json")
+    if not os.path.exists(cand_path):
+        raise SystemExit(f"{cand_path} not found — run --candidates first")
+    cand = json.load(open(cand_path))
+    predictions = {}
+    for name in os.listdir(WORK):
+        if name.startswith("preds_") and name.endswith(".json"):
+            predictions.update(json.load(open(os.path.join(WORK, name))))
+
+    for device_type, candidates in cand.items():
+        cases = []
+        for candidate in candidates:
+            row = predictions.get(f"{device_type}|{candidate['ip']}")
+            if row is None:
+                adapter_result = {"error": "adapter_prediction_missing"}
+            elif "error" in row:
+                adapter_result = {"error": row["error"]}
+            else:
+                adapter_result = {key: row[key] for key in (
+                    "classified_type", "classified_vendor", "type_confidence",
+                    "vendor_confidence", "new_type_probability",
+                    "new_vendor_probability",
+                )}
+            cases.append({
+                "ip": candidate["ip"],
+                "device_type": device_type,
+                "fingerprint": candidate["fingerprint"],
+                "result": adapter_result,
+                "selection": "fixed_seed_random_validation",
+            })
+        out_path = os.path.join(DEMO_DIR, device_type, "validation_cases.json")
+        _atomic_json_dump(out_path, cases)
+        print(f"{device_type:22} validation={len(cases):3} -> {out_path}")
 
 
 def run_merge():
@@ -220,7 +271,8 @@ def run_merge():
 
     # drift detector (fixed artifacts) for supplementary scoring
     from drift import DriftDetector
-    det_drift = DriftDetector(model_dir=os.path.join(REPO, "drift_data", "autoencoder_drift"))
+    from path_config import DRIFT_OUTPUT_DIR
+    det_drift = DriftDetector(model_dir=DRIFT_OUTPUT_DIR)
 
     # CAMERA-only local retrieval neighbours (production MultiLevelRetrieval
     # over the built npz store; other types have no npz store on this box)
@@ -245,6 +297,31 @@ def run_merge():
     summary = {}
     for t in sorted(cand):
         rows = [P[f"{t}|{c['ip']}"] for c in cand[t] if f"{t}|{c['ip']}" in P]
+        cand_by_ip = {str(c["ip"]): c for c in cand[t]}
+        # The fixed-seed random candidate pool is the validation set. Persist all
+        # cases before any correctness/confidence ranking so fullflow evaluation
+        # cannot silently become a curated showcase.
+        validation_cases = []
+        for candidate in cand[t]:
+            row = P.get(f"{t}|{candidate['ip']}")
+            if row is None:
+                adapter_result = {"error": "adapter_prediction_missing"}
+            elif "error" in row:
+                adapter_result = {"error": row["error"]}
+            else:
+                adapter_result = {key: row[key] for key in (
+                    "classified_type", "classified_vendor", "type_confidence",
+                    "vendor_confidence", "new_type_probability",
+                    "new_vendor_probability",
+                )}
+            validation_cases.append({
+                "ip": candidate["ip"],
+                "device_type": t,
+                "fingerprint": candidate["fingerprint"],
+                "result": adapter_result,
+                "selection": "fixed_seed_random_validation",
+            })
+
         ok = [r for r in rows if "error" not in r and r["classified_type"].strip().upper() == t]
         ok.sort(key=lambda r: -r["type_confidence"])
         # prefer vendor diversity in the showcase (three instances of one vendor
@@ -261,10 +338,10 @@ def run_merge():
             chosen += [r for r in ok if r not in chosen][:TOP_K - len(chosen)]
         tdir = os.path.join(DEMO_DIR, t)
         os.makedirs(tdir, exist_ok=True)
+        _atomic_json_dump(os.path.join(tdir, "validation_cases.json"), validation_cases)
         cases = []
-        cand_by_ip = {c["ip"]: c for c in cand[t]}
         for r in chosen:
-            c = cand_by_ip[r["ip"]]
+            c = cand_by_ip[str(r["ip"])]
             drift = {}
             try:
                 dd = det_drift.detect_query_device(c["fingerprint"])
@@ -283,14 +360,14 @@ def run_merge():
             if r["ip"] in neighbours:
                 case["local_retrieval_neighbours"] = neighbours[r["ip"]]
             cases.append(case)
-        json.dump(cases, open(os.path.join(tdir, "cases.json"), "w"), ensure_ascii=False, indent=2)
-        summary[t] = {"candidates": len(rows), "correct": len(ok),
+        _atomic_json_dump(os.path.join(tdir, "cases.json"), cases)
+        summary[t] = {"candidates": len(cand[t]), "adapter_predictions": len(rows),
+                      "correct": len(ok),
                       "top_conf": round(chosen[0]["type_confidence"], 4) if chosen else None,
                       "cases": len(cases), **cand_meta.get(t, {})}
         print(f"{t:22} cand={len(rows):3} correct={len(ok):3} "
               f"top_conf={summary[t]['top_conf']} saved={len(cases)}")
-    json.dump(summary, open(os.path.join(DEMO_DIR, "selection_summary.json"), "w"),
-              ensure_ascii=False, indent=2)
+    _atomic_json_dump(os.path.join(DEMO_DIR, "selection_summary.json"), summary)
     print("\nwrote", DEMO_DIR)
 
 
@@ -300,8 +377,11 @@ if __name__ == "__main__":
     p.add_argument("--world_size", type=int, default=8)
     p.add_argument("--candidates", action="store_true")
     p.add_argument("--merge", action="store_true")
+    p.add_argument("--materialize-validation", action="store_true")
     a = p.parse_args()
-    if a.candidates:
+    if a.materialize_validation:
+        materialize_validation_cases()
+    elif a.candidates:
         build_candidates()
     elif a.merge:
         run_merge()
