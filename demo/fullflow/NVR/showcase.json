@@ -1,0 +1,120 @@
+{
+  "type": "NVR",
+  "elapsed_sec": 459.4,
+  "n_cases": 3,
+  "n_correct": 3,
+  "showcase": [
+    {
+      "ip": "109.81.182.57",
+      "true_type": "NVR",
+      "adapter_only": {
+        "classified_type": "NVR",
+        "classified_vendor": "Merit Lilin",
+        "type_confidence": 0.9999976754257336,
+        "vendor_confidence": 0.9362204475679835,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "NVR",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "NVR",
+      "claude_type": "NVR",
+      "predicted_vendor": "Merit Lilin",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9362,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 2.3808670931030065,
+          "threshold": 8.775458586751483,
+          "is_drift": false,
+          "per_perspective_z": {
+            "os": 21.29353296089586,
+            "whois": 3.1913552126193285,
+            "as": 2.20174238994735,
+            "hfavicons": 1.1769887363833855,
+            "sw": 0.9911867873689745,
+            "hw": 0.8731486301243759,
+            "htags": 0.3978345125141445,
+            "body": -0.18084003002396803,
+            "dns": -0.6790895905248737,
+            "certificate": -0.727400598950067,
+            "sd": -0.9665580744531795
+          },
+          "drifted_perspectives": [
+            "os"
+          ]
+        }
+      },
+      "type_correct": true
+    },
+    {
+      "ip": "193.114.37.180",
+      "true_type": "NVR",
+      "adapter_only": {
+        "classified_type": "NVR",
+        "classified_vendor": "Huawei",
+        "type_confidence": 0.9999942183921477,
+        "vendor_confidence": 0.7607360767635106,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "NVR",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "NVR",
+      "claude_type": "NVR",
+      "predicted_vendor": "Lilin",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.7607,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 5.477928037755191,
+          "threshold": 8.775458586751483,
+          "is_drift": false,
+          "per_perspective_z": {
+            "os": 301.10331916088427,
+            "hfavicons": 111.79894978967106,
+            "certificate": 27.979286341242513,
+            "sd": 4.7741167546274825,
+            "hw": 3.7788313585945907,
+            "sw": 3.370718258140834,
+            "body": 2.8501152228920925,
+            "whois": 1.5370603511805392,
+            "htags": 0.7957086306458423,
+            "dns": 0.08755737281351834,
+            "as": -1.0434815365239698
+          },
+          "drifted_perspectives": [
+            "os",
+            "hw",
+            "sd",
+            "hfavicons",
+            "certificate"
+          ]
+        }
+      },
+      "type_correct": true
+    }
+  ]
+}

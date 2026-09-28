@@ -1,0 +1,177 @@
+[
+  {
+    "ip": "86.194.248.180",
+    "true_type": "NAS",
+    "adapter_only": {
+      "classified_type": "NAS",
+      "classified_vendor": "Synology",
+      "type_confidence": 0.9999429020102719,
+      "vendor_confidence": 0.9984859678988434,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.0
+    },
+    "predicted_type": "NAS",
+    "decision_confidence": 1.0,
+    "winning_llm": "GEMINI",
+    "gemini_type": "NAS",
+    "claude_type": "NAS",
+    "predicted_vendor": "Synology",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9985,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 1.1807456784881651,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 64.47103368744173,
+          "os": 8.67334192493906,
+          "certificate": 7.893882845068725,
+          "dns": 3.733334326295733,
+          "hfavicons": 1.2605160556739263,
+          "body": 0.0915088036089817,
+          "sw": -0.12929611770117963,
+          "sd": -0.16052003877819035,
+          "htags": -0.3631230416756264,
+          "whois": -0.5515030183595242,
+          "as": -0.8510880391633954
+        },
+        "drifted_perspectives": [
+          "os",
+          "hw",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "88.84.240.38",
+    "true_type": "NAS",
+    "adapter_only": {
+      "classified_type": "NAS",
+      "classified_vendor": "D-Link",
+      "type_confidence": 0.9994320520700734,
+      "vendor_confidence": 0.9999392481876791,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.0
+    },
+    "predicted_type": "NVR",
+    "decision_confidence": 0.985,
+    "winning_llm": "GEMINI",
+    "gemini_type": "NVR",
+    "claude_type": "NVR",
+    "predicted_vendor": "D-Link",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9994,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 22.58529943227768,
+        "threshold": 8.775458586751483,
+        "is_drift": true,
+        "per_perspective_z": {
+          "os": 7778.198647747193,
+          "hw": 354.1549302969389,
+          "whois": 113.98235801241887,
+          "sw": 50.99507504189531,
+          "certificate": 11.96303207134724,
+          "htags": 7.530267977873661,
+          "dns": 4.279231407712536,
+          "as": 1.7952099650675584,
+          "hfavicons": 1.0862870227176116,
+          "body": 0.7708209235155823,
+          "sd": -0.9444961174873974
+        },
+        "drifted_perspectives": [
+          "whois",
+          "os",
+          "sw",
+          "hw",
+          "htags",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": false
+  },
+  {
+    "ip": "61.40.19.90",
+    "true_type": "NAS",
+    "adapter_only": {
+      "classified_type": "NAS",
+      "classified_vendor": "Hanwha",
+      "type_confidence": 0.9550635760368783,
+      "vendor_confidence": 0.9777188291452872,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.0
+    },
+    "predicted_type": "NAS",
+    "decision_confidence": 0.99,
+    "winning_llm": "GEMINI",
+    "gemini_type": "NAS",
+    "claude_type": "NAS",
+    "predicted_vendor": "Synology",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9551,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 2.671427982393652,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "sw": 43.63558370025959,
+          "hfavicons": 21.414958260202845,
+          "body": 13.648484510830265,
+          "certificate": 8.481209230614411,
+          "os": 7.177584408713741,
+          "htags": 0.7569371924271374,
+          "sd": 0.3959547316436153,
+          "hw": 0.2756731044432877,
+          "as": -0.026383357381610212,
+          "dns": -0.9832216640433175,
+          "whois": -1.045895656890413
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "body",
+          "hfavicons",
+          "certificate"
+        ]
+      }
+    },
+    "type_correct": true
+  }
+]

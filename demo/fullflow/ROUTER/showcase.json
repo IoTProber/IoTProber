@@ -1,0 +1,121 @@
+{
+  "type": "ROUTER",
+  "elapsed_sec": 1338.6,
+  "n_cases": 3,
+  "n_correct": 3,
+  "showcase": [
+    {
+      "ip": "116.101.23.5",
+      "true_type": "ROUTER",
+      "adapter_only": {
+        "classified_type": "ROUTER",
+        "classified_vendor": "DrayTek",
+        "type_confidence": 0.9998193872158913,
+        "vendor_confidence": 0.9931072108605852,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "ROUTER",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "ROUTER",
+      "claude_type": "ROUTER",
+      "predicted_vendor": "DrayTek",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9931,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 3.291632532607764,
+          "threshold": 8.775458586751483,
+          "is_drift": false,
+          "per_perspective_z": {
+            "dns": 269.5369692826261,
+            "os": 19.38006328095504,
+            "sw": 14.257020955870273,
+            "certificate": 5.246165247354202,
+            "hw": 2.6678843041326408,
+            "sd": 2.395700347402884,
+            "hfavicons": 1.1997201699322202,
+            "body": 0.5506188913645985,
+            "htags": -0.27426946095859467,
+            "as": -0.901477133835102,
+            "whois": -1.8355863690369632
+          },
+          "drifted_perspectives": [
+            "os",
+            "sw",
+            "certificate",
+            "dns"
+          ]
+        }
+      },
+      "type_correct": true
+    },
+    {
+      "ip": "187.251.244.183",
+      "true_type": "ROUTER",
+      "adapter_only": {
+        "classified_type": "ROUTER",
+        "classified_vendor": "Huawei",
+        "type_confidence": 0.9993462359077163,
+        "vendor_confidence": 0.9998621626719719,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "ROUTER",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "ROUTER",
+      "claude_type": "ROUTER",
+      "predicted_vendor": "Huawei",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9993,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 8.321187803521752,
+          "threshold": 8.775458586751483,
+          "is_drift": false,
+          "per_perspective_z": {
+            "os": 2681.732142618861,
+            "hw": 1618.5102406676228,
+            "hfavicons": 107.88886886584065,
+            "certificate": 1.95989978985189,
+            "as": 1.570319985828679,
+            "sd": 1.3850731770305793,
+            "dns": 0.615175288431984,
+            "sw": -0.13488934709032957,
+            "body": -0.5036159076659952,
+            "htags": -0.9165148544560683,
+            "whois": -1.0701817710781825
+          },
+          "drifted_perspectives": [
+            "os",
+            "hw",
+            "hfavicons"
+          ]
+        }
+      },
+      "type_correct": true
+    }
+  ]
+}

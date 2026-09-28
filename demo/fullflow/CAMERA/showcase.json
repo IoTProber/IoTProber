@@ -1,0 +1,41 @@
+{
+  "type": "CAMERA",
+  "elapsed_sec": 1172.2,
+  "n_cases": 3,
+  "n_correct": 1,
+  "showcase": [
+    {
+      "ip": "210.65.226.181",
+      "true_type": "CAMERA",
+      "adapter_only": {
+        "classified_type": "CAMERA",
+        "classified_vendor": "Chunghwa Telecom",
+        "type_confidence": 0.9999938607709014,
+        "vendor_confidence": 0.8809237184118065,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.8809237184118065
+      },
+      "predicted_type": "CAMERA",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "CAMERA",
+      "claude_type": "CAMERA",
+      "predicted_vendor": "Chunghwa Telecom",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.8809,
+          "is_unseen": true,
+          "predicted_type": "none",
+          "predicted_vendor": "Chunghwa Telecom",
+          "confidence": 0.8809,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": false
+      },
+      "type_correct": true
+    }
+  ]
+}

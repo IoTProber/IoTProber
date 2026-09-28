@@ -1,0 +1,125 @@
+{
+  "type": "PRINTER",
+  "elapsed_sec": 850.9,
+  "n_cases": 3,
+  "n_correct": 3,
+  "showcase": [
+    {
+      "ip": "185.231.208.123",
+      "true_type": "PRINTER",
+      "adapter_only": {
+        "classified_type": "PRINTER",
+        "classified_vendor": "Brother",
+        "type_confidence": 0.9999482072423828,
+        "vendor_confidence": 0.9991590263978691,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "PRINTER",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "PRINTER",
+      "claude_type": "PRINTER",
+      "predicted_vendor": "Brother",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9992,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 13.536264686379582,
+          "threshold": 8.775458586751483,
+          "is_drift": true,
+          "per_perspective_z": {
+            "os": 934.8612787588079,
+            "whois": 84.70774333052431,
+            "sw": 46.41368970361121,
+            "certificate": 37.28167636445633,
+            "hw": 29.07825803438874,
+            "body": 7.814987027646244,
+            "hfavicons": 3.43699155293952,
+            "htags": 2.9677625936353995,
+            "sd": -0.4325384100497683,
+            "dns": -0.5668432129194092,
+            "as": -0.9899467544878595
+          },
+          "drifted_perspectives": [
+            "whois",
+            "os",
+            "sw",
+            "hw",
+            "body",
+            "certificate"
+          ]
+        }
+      },
+      "type_correct": true
+    },
+    {
+      "ip": "222.103.174.135",
+      "true_type": "PRINTER",
+      "adapter_only": {
+        "classified_type": "PRINTER",
+        "classified_vendor": "HP",
+        "type_confidence": 0.9999468962147356,
+        "vendor_confidence": 0.9999743706604208,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "PRINTER",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "PRINTER",
+      "claude_type": "PRINTER",
+      "predicted_vendor": "HP",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9999,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 12.290344083681703,
+          "threshold": 8.775458586751483,
+          "is_drift": true,
+          "per_perspective_z": {
+            "os": 15102.38654219491,
+            "hw": 44.44100886582098,
+            "hfavicons": 10.26078884435137,
+            "dns": 6.322968611268638,
+            "as": 4.021070041180122,
+            "sw": 1.0212641293990077,
+            "body": -0.06443342734585146,
+            "htags": -0.3483472374410475,
+            "sd": -0.35476934980892877,
+            "certificate": -0.4421403799313835,
+            "whois": -0.764850556879206
+          },
+          "drifted_perspectives": [
+            "as",
+            "os",
+            "hw",
+            "hfavicons",
+            "dns"
+          ]
+        }
+      },
+      "type_correct": true
+    }
+  ]
+}

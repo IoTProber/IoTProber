@@ -1,0 +1,128 @@
+{
+  "type": "SCADA",
+  "elapsed_sec": 1154.5,
+  "n_cases": 3,
+  "n_correct": 3,
+  "showcase": [
+    {
+      "ip": "83.42.125.35",
+      "true_type": "SCADA",
+      "adapter_only": {
+        "classified_type": "SCADA",
+        "classified_vendor": "Siemens",
+        "type_confidence": 0.9999103657348023,
+        "vendor_confidence": 0.9944161610209868,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "SCADA",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "SCADA",
+      "claude_type": "SCADA",
+      "predicted_vendor": "Siemens",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9944,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 4.393488835077733,
+          "threshold": 8.775458586751483,
+          "is_drift": false,
+          "per_perspective_z": {
+            "hw": 428.7793139993606,
+            "os": 140.631174207421,
+            "hfavicons": 40.46371962748437,
+            "htags": 6.55083492893253,
+            "certificate": 6.136577511605356,
+            "body": 5.078484743603784,
+            "whois": 2.8121742522264737,
+            "sw": 2.027607572372096,
+            "sd": 1.6113762638866027,
+            "as": -0.4130854782563227,
+            "dns": -0.4777683309578144
+          },
+          "drifted_perspectives": [
+            "os",
+            "hw",
+            "body",
+            "htags",
+            "hfavicons",
+            "certificate"
+          ]
+        }
+      },
+      "type_correct": true
+    },
+    {
+      "ip": "8.142.118.8",
+      "true_type": "SCADA",
+      "adapter_only": {
+        "classified_type": "SCADA",
+        "classified_vendor": "Hikvision",
+        "type_confidence": 0.999932652078917,
+        "vendor_confidence": 0.999980926947798,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "SCADA",
+      "decision_confidence": 0.95,
+      "winning_llm": "GEMINI",
+      "gemini_type": "SCADA",
+      "claude_type": "NVR",
+      "predicted_vendor": "Ganwei",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9999,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 10.302116346545517,
+          "threshold": 8.775458586751483,
+          "is_drift": true,
+          "per_perspective_z": {
+            "os": 492.97324525535805,
+            "hfavicons": 144.5528771903288,
+            "sw": 29.84696936713436,
+            "certificate": 21.981351420689432,
+            "sd": 21.794091793442576,
+            "body": 8.415399990765378,
+            "dns": 7.330471098700996,
+            "hw": 4.504864468594708,
+            "htags": 1.1894607437845472,
+            "as": 0.8424315675807547,
+            "whois": -0.2800983301628793
+          },
+          "drifted_perspectives": [
+            "os",
+            "sw",
+            "hw",
+            "sd",
+            "body",
+            "hfavicons",
+            "certificate",
+            "dns"
+          ]
+        }
+      },
+      "type_correct": true
+    }
+  ]
+}

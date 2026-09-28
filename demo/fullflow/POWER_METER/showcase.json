@@ -1,0 +1,124 @@
+{
+  "type": "POWER_METER",
+  "elapsed_sec": 236.0,
+  "n_cases": 3,
+  "n_correct": 3,
+  "showcase": [
+    {
+      "ip": "12.13.105.243",
+      "true_type": "POWER_METER",
+      "adapter_only": {
+        "classified_type": "POWER_METER",
+        "classified_vendor": "eGauge",
+        "type_confidence": 0.9998151982903378,
+        "vendor_confidence": 0.9996473294521605,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "POWER_METER",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "POWER_METER",
+      "claude_type": "POWER_METER",
+      "predicted_vendor": "eGauge",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.0,
+          "web_search_used": false,
+          "available": false
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 17.10451135551557,
+          "threshold": 8.775458586751483,
+          "is_drift": true,
+          "per_perspective_z": {
+            "hw": 551.765885151047,
+            "sw": 143.56993128347517,
+            "whois": 114.22061702322752,
+            "os": 2.0039809343051647,
+            "body": 1.7939469726659016,
+            "htags": 1.0629964267677587,
+            "certificate": 0.44852166426370205,
+            "sd": -0.008751821086619123,
+            "as": -0.598722519940669,
+            "hfavicons": -0.7043846998411776,
+            "dns": -0.72603605265934
+          },
+          "drifted_perspectives": [
+            "whois",
+            "sw",
+            "hw"
+          ]
+        }
+      },
+      "type_correct": true
+    },
+    {
+      "ip": "63.46.75.110",
+      "true_type": "POWER_METER",
+      "adapter_only": {
+        "classified_type": "POWER_METER",
+        "classified_vendor": "Sierra Wireless",
+        "type_confidence": 0.9994836789852354,
+        "vendor_confidence": 0.9903959465005818,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "POWER_METER",
+      "decision_confidence": 0.99,
+      "winning_llm": "GEMINI",
+      "gemini_type": "POWER_METER",
+      "claude_type": "POWER_METER",
+      "predicted_vendor": "Schweitzer Engineering Laboratories",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.0,
+          "web_search_used": false,
+          "available": false
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 24.767022905871272,
+          "threshold": 8.775458586751483,
+          "is_drift": true,
+          "per_perspective_z": {
+            "hw": 15560.475593233388,
+            "sw": 81.06471654946932,
+            "os": 20.920384117213633,
+            "dns": 16.45770860303854,
+            "body": 9.968343564556301,
+            "certificate": 8.48318610127735,
+            "htags": 4.001415956767671,
+            "hfavicons": 3.2017115794360107,
+            "sd": 1.4898574136919056,
+            "as": 0.030465468259695712,
+            "whois": -1.0654212385971602
+          },
+          "drifted_perspectives": [
+            "os",
+            "sw",
+            "hw",
+            "body",
+            "htags",
+            "certificate",
+            "dns"
+          ]
+        }
+      },
+      "type_correct": true
+    }
+  ]
+}

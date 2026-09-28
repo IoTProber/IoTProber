@@ -1,0 +1,126 @@
+{
+  "type": "BUILDING_AUTOMATION",
+  "elapsed_sec": 757.5,
+  "n_cases": 3,
+  "n_correct": 3,
+  "showcase": [
+    {
+      "ip": "92.34.132.51",
+      "true_type": "BUILDING_AUTOMATION",
+      "adapter_only": {
+        "classified_type": "BUILDING_AUTOMATION",
+        "classified_vendor": "Siemens",
+        "type_confidence": 0.9996256416649976,
+        "vendor_confidence": 0.9969228120760552,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "BUILDING_AUTOMATION",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "BUILDING_AUTOMATION",
+      "claude_type": "BUILDING_AUTOMATION",
+      "predicted_vendor": "Siemens",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9969,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 10.468484309501946,
+          "threshold": 8.775458586751483,
+          "is_drift": true,
+          "per_perspective_z": {
+            "hw": 846.2361684656623,
+            "hfavicons": 218.86270775361393,
+            "os": 33.20954424009759,
+            "sw": 30.951730646009267,
+            "htags": 7.882578965657902,
+            "as": 4.421121637764104,
+            "body": 1.881262227764691,
+            "sd": 1.0629119457191325,
+            "dns": 0.7330249897862329,
+            "whois": 0.625252823693164,
+            "certificate": -0.6971380287324584
+          },
+          "drifted_perspectives": [
+            "as",
+            "os",
+            "sw",
+            "hw",
+            "htags",
+            "hfavicons"
+          ]
+        }
+      },
+      "type_correct": true
+    },
+    {
+      "ip": "71.83.143.206",
+      "true_type": "BUILDING_AUTOMATION",
+      "adapter_only": {
+        "classified_type": "BUILDING_AUTOMATION",
+        "classified_vendor": "Bosch",
+        "type_confidence": 0.9998167274412642,
+        "vendor_confidence": 0.9999969403070099,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "BUILDING_AUTOMATION",
+      "decision_confidence": 0.99,
+      "winning_llm": "GEMINI",
+      "gemini_type": "BUILDING_AUTOMATION",
+      "claude_type": "NVR",
+      "predicted_vendor": "Bosch",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.9998,
+          "web_search_used": false,
+          "available": true
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 6.204933839384466,
+          "threshold": 8.775458586751483,
+          "is_drift": false,
+          "per_perspective_z": {
+            "os": 918.8302027571856,
+            "hw": 396.214165965089,
+            "certificate": 60.11710672703792,
+            "sw": 29.14209965333684,
+            "whois": 16.441473710459686,
+            "hfavicons": 8.879630040135925,
+            "sd": 2.087904015021712,
+            "htags": -0.18352426448228634,
+            "as": -0.29810762685870823,
+            "body": -0.6703486222288026,
+            "dns": -1.0032668668101374
+          },
+          "drifted_perspectives": [
+            "whois",
+            "os",
+            "sw",
+            "hw",
+            "hfavicons",
+            "certificate"
+          ]
+        }
+      },
+      "type_correct": true
+    }
+  ]
+}

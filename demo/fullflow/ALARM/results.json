@@ -1,0 +1,608 @@
+[
+  {
+    "ip": "107.89.86.28",
+    "true_type": "ALARM",
+    "adapter_only": {
+      "classified_type": "ALARM",
+      "classified_vendor": "Bosch",
+      "type_confidence": 0.9997334913394949,
+      "vendor_confidence": 0.9999777085466569,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.0
+    },
+    "predicted_type": "ALARM",
+    "decision_confidence": 0.97,
+    "winning_llm": "CLAUDE",
+    "gemini_type": "UNKNOWN",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9997,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 6.800602089613676,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 263.012857900824,
+          "certificate": 72.02077428676675,
+          "os": 61.06296754420578,
+          "sw": 47.313236248480266,
+          "body": 38.51217348266963,
+          "dns": 5.257828841758188,
+          "sd": 3.8642965412270507,
+          "as": 3.3081522349269847,
+          "htags": 2.7199321199992035,
+          "whois": 1.2564235047319086,
+          "hfavicons": 0.4391403505569218
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "body",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "107.89.86.23",
+    "true_type": "ALARM",
+    "adapter_only": {
+      "classified_type": "ALARM",
+      "classified_vendor": "Bosch",
+      "type_confidence": 0.9997057384085863,
+      "vendor_confidence": 0.999974132509302,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.0
+    },
+    "predicted_type": "ALARM",
+    "decision_confidence": 0.97,
+    "winning_llm": "CLAUDE",
+    "gemini_type": "UNKNOWN",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9997,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 6.800602089613676,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 263.012857900824,
+          "certificate": 72.02077428676675,
+          "os": 61.06296754420578,
+          "sw": 47.313236248480266,
+          "body": 38.51217348266963,
+          "dns": 5.257828841758188,
+          "sd": 3.8642965412270507,
+          "as": 3.3081522349269847,
+          "htags": 2.7199321199992035,
+          "whois": 1.2564235047319086,
+          "hfavicons": 0.4391403505569218
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "body",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "107.89.86.66",
+    "true_type": "ALARM",
+    "adapter_only": {
+      "classified_type": "ALARM",
+      "classified_vendor": "Bosch",
+      "type_confidence": 0.9997047860514175,
+      "vendor_confidence": 0.9999318598638716,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.0
+    },
+    "predicted_type": "ALARM",
+    "decision_confidence": 1.0,
+    "winning_llm": "CLAUDE",
+    "gemini_type": "ALARM",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9997,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 6.81463311240077,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 281.12805124334056,
+          "certificate": 72.07554225107575,
+          "os": 60.8543828234268,
+          "sw": 47.29484502842309,
+          "body": 38.49294410039331,
+          "dns": 5.397958157467178,
+          "sd": 3.8617312015599556,
+          "as": 3.306433700374717,
+          "htags": 2.705226129056583,
+          "whois": 1.169204727881899,
+          "hfavicons": 0.48506781902062085
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "body",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "107.89.86.37",
+    "true_type": "ALARM",
+    "adapter_only": null,
+    "predicted_type": "ALARM",
+    "decision_confidence": 0.97,
+    "winning_llm": "CLAUDE",
+    "gemini_type": "UNKNOWN",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9997,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 6.81463311240077,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 281.12805124334056,
+          "certificate": 72.07554225107575,
+          "os": 60.8543828234268,
+          "sw": 47.29484502842309,
+          "body": 38.49294410039331,
+          "dns": 5.397958157467178,
+          "sd": 3.8617312015599556,
+          "as": 3.306433700374717,
+          "htags": 2.705226129056583,
+          "whois": 1.169204727881899,
+          "hfavicons": 0.48506781902062085
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "body",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "107.89.86.19",
+    "true_type": "ALARM",
+    "adapter_only": null,
+    "predicted_type": "ALARM",
+    "decision_confidence": 1.0,
+    "winning_llm": "GEMINI",
+    "gemini_type": "ALARM",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9995,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 8.335642822086811,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 277.42819153654705,
+          "certificate": 71.53809582082933,
+          "os": 60.39914927180479,
+          "sw": 47.18124794630828,
+          "body": 34.9708746903826,
+          "sd": 12.416341586298564,
+          "dns": 5.7136182782548985,
+          "as": 3.3082796213851453,
+          "htags": 2.76492544410316,
+          "whois": 1.3403194905538907,
+          "hfavicons": 0.5720618494863697
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "body",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "12.237.46.4",
+    "true_type": "ALARM",
+    "adapter_only": null,
+    "predicted_type": "ALARM",
+    "decision_confidence": 0.92,
+    "winning_llm": "CLAUDE",
+    "gemini_type": "UNKNOWN",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9994,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 6.278152558486909,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 231.72637515628583,
+          "os": 43.693002259361315,
+          "sw": 12.196570129464726,
+          "as": 9.226569317957866,
+          "sd": 6.192008938273986,
+          "certificate": 5.585571279219936,
+          "htags": 1.4324031681808915,
+          "hfavicons": 1.0030789131222828,
+          "body": -0.7365744056738737,
+          "whois": -1.1878584953854976,
+          "dns": -1.2438656465249989
+        },
+        "drifted_perspectives": [
+          "as",
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "certificate"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "89.35.168.14",
+    "true_type": "ALARM",
+    "adapter_only": null,
+    "predicted_type": "ALARM",
+    "decision_confidence": 0.965,
+    "winning_llm": "GEMINI",
+    "gemini_type": "ALARM",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9977,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 7.660747156944126,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 228.1388624902295,
+          "sw": 105.9967902852167,
+          "hfavicons": 98.17079048734244,
+          "os": 41.18461041800035,
+          "whois": 19.09969294868716,
+          "certificate": 5.264458009823477,
+          "body": 4.654329415742282,
+          "sd": 3.3150252159274345,
+          "htags": 1.3413565662421854,
+          "dns": -0.7564381815050741,
+          "as": -0.9817395566968151
+        },
+        "drifted_perspectives": [
+          "whois",
+          "os",
+          "sw",
+          "hw",
+          "body",
+          "hfavicons",
+          "certificate"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "98.97.60.249",
+    "true_type": "ALARM",
+    "adapter_only": null,
+    "predicted_type": "ALARM",
+    "decision_confidence": 0.99,
+    "winning_llm": "GEMINI",
+    "gemini_type": "ALARM",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9993,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 13.526645810343325,
+        "threshold": 8.775458586751483,
+        "is_drift": true,
+        "per_perspective_z": {
+          "hw": 245.9888448322323,
+          "body": 92.56639444884763,
+          "os": 73.79495306518598,
+          "whois": 57.3950240124897,
+          "certificate": 32.237911017215,
+          "sw": 11.930591586435776,
+          "htags": 11.864184058269037,
+          "sd": 3.8718979722853026,
+          "dns": -0.30424827473808874,
+          "hfavicons": -0.30932019288193674,
+          "as": -1.1735788057570231
+        },
+        "drifted_perspectives": [
+          "whois",
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "body",
+          "htags",
+          "certificate"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "62.28.191.206",
+    "true_type": "ALARM",
+    "adapter_only": null,
+    "predicted_type": "ALARM",
+    "decision_confidence": 0.98,
+    "winning_llm": "GEMINI",
+    "gemini_type": "ALARM",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9932,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 12.668991575017571,
+        "threshold": 8.775458586751483,
+        "is_drift": true,
+        "per_perspective_z": {
+          "hw": 292.74773460448597,
+          "hfavicons": 290.6008347959431,
+          "sw": 240.0440350524102,
+          "body": 24.44959709193371,
+          "os": 18.051479439296248,
+          "certificate": 12.62530859097649,
+          "htags": 10.745026865810575,
+          "dns": 6.985827144038674,
+          "sd": 2.851521078027386,
+          "whois": 0.8798216007129761,
+          "as": -0.5307166088035362
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "hw",
+          "body",
+          "htags",
+          "hfavicons",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "107.89.86.70",
+    "true_type": "ALARM",
+    "adapter_only": null,
+    "predicted_type": "ALARM",
+    "decision_confidence": 1.0,
+    "winning_llm": "GEMINI",
+    "gemini_type": "ALARM",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9996,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 9.74302520044148,
+        "threshold": 8.775458586751483,
+        "is_drift": true,
+        "per_perspective_z": {
+          "hw": 293.1949975144904,
+          "hfavicons": 121.34740055340112,
+          "certificate": 73.30691500959426,
+          "os": 65.8013392454166,
+          "sw": 48.619748915650774,
+          "body": 43.02887116672575,
+          "htags": 3.920891247225649,
+          "sd": 3.7336063867498916,
+          "as": 3.3130530656674657,
+          "dns": 2.6624253631811268,
+          "whois": 0.3648202835312502
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "body",
+          "htags",
+          "hfavicons",
+          "certificate"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "107.90.254.250",
+    "true_type": "ALARM",
+    "adapter_only": null,
+    "predicted_type": "ALARM",
+    "decision_confidence": 0.95,
+    "winning_llm": "CLAUDE",
+    "gemini_type": "UNKNOWN",
+    "claude_type": "ALARM",
+    "predicted_vendor": "Bosch",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9996,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 6.868393965065479,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "hw": 264.3086109097969,
+          "certificate": 77.05705754132302,
+          "os": 60.95295910846448,
+          "sw": 47.394243707488585,
+          "body": 38.66837443566732,
+          "dns": 5.578466412246723,
+          "sd": 3.8581357132041973,
+          "as": 3.308328278281631,
+          "htags": 2.6919983003148533,
+          "whois": 1.027668093492249,
+          "hfavicons": 0.46453760232835306
+        },
+        "drifted_perspectives": [
+          "os",
+          "sw",
+          "hw",
+          "sd",
+          "body",
+          "certificate",
+          "dns"
+        ]
+      }
+    },
+    "type_correct": true
+  }
+]

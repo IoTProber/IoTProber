@@ -1,0 +1,115 @@
+{
+  "type": "CONTROLLER",
+  "elapsed_sec": 1046.5,
+  "n_cases": 11,
+  "n_correct": 11,
+  "showcase": [
+    {
+      "ip": "121.223.199.76",
+      "true_type": "CONTROLLER",
+      "adapter_only": {
+        "classified_type": "CONTROLLER",
+        "classified_vendor": "Schneider Electric",
+        "type_confidence": 0.9986625952144162,
+        "vendor_confidence": 0.9999828741301381,
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0
+      },
+      "predicted_type": "CONTROLLER",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "CONTROLLER",
+      "claude_type": "UNKNOWN",
+      "predicted_vendor": "Schneider Electric",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.0,
+          "web_search_used": false,
+          "available": false
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 32.41737482557073,
+          "threshold": 8.775458586751483,
+          "threshold_scope": "global",
+          "is_drift": true,
+          "per_perspective_z": {
+            "hw": 2871.7590134284465,
+            "hfavicons": 363.43058388773414,
+            "sw": 15.472694731048533,
+            "sd": 14.483497449385956,
+            "whois": 1.5597391640577736,
+            "dns": -0.22455664126283154,
+            "body": -0.5623840663854813,
+            "htags": -0.8101104750593133,
+            "os": -0.840314657748082,
+            "as": -0.8446074431704766,
+            "certificate": -1.0289175726185027
+          },
+          "drifted_perspectives": [
+            "sw",
+            "hw",
+            "sd",
+            "hfavicons"
+          ]
+        }
+      },
+      "type_correct": true
+    },
+    {
+      "ip": "58.105.167.47",
+      "true_type": "CONTROLLER",
+      "adapter_only": null,
+      "predicted_type": "CONTROLLER",
+      "decision_confidence": 1.0,
+      "winning_llm": "GEMINI",
+      "gemini_type": "CONTROLLER",
+      "claude_type": "UNKNOWN",
+      "predicted_vendor": "Schneider Electric",
+      "vendor_confidence": null,
+      "first_stage": {
+        "unseen": {
+          "new_type_probability": 0.0,
+          "new_vendor_probability": 0.0,
+          "is_unseen": false,
+          "predicted_type": "none",
+          "predicted_vendor": "none",
+          "confidence": 0.0,
+          "web_search_used": false,
+          "available": false
+        },
+        "drift_checked": true,
+        "drift": {
+          "drift_score": 21.48869470716454,
+          "threshold": 8.775458586751483,
+          "threshold_scope": "global",
+          "is_drift": true,
+          "per_perspective_z": {
+            "hw": 2919.146943794009,
+            "sw": 15.82792425163474,
+            "hfavicons": 2.653037316760856,
+            "body": -0.6291123162758679,
+            "sd": -0.7046197324637358,
+            "certificate": -0.7092950316713018,
+            "whois": -0.8565780734604135,
+            "as": -0.8654543468643714,
+            "htags": -0.8896441491202965,
+            "dns": -1.1080064179016842,
+            "os": -1.273329119387325
+          },
+          "drifted_perspectives": [
+            "sw",
+            "hw"
+          ]
+        }
+      },
+      "type_correct": true
+    }
+  ]
+}

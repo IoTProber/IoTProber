@@ -1,0 +1,149 @@
+[
+  {
+    "ip": "20.0.80.104",
+    "true_type": "MEDICAL",
+    "adapter_only": {
+      "classified_type": "MEDICAL",
+      "classified_vendor": "Siemens",
+      "type_confidence": 0.9999148322239377,
+      "vendor_confidence": 0.9999908209700331,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.0
+    },
+    "predicted_type": "MEDICAL",
+    "decision_confidence": 0.99,
+    "winning_llm": "GEMINI",
+    "gemini_type": "MEDICAL",
+    "claude_type": "MEDICAL",
+    "predicted_vendor": "Unknown",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9999,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 2.8755947976605967,
+        "threshold": 8.775458586751483,
+        "is_drift": false,
+        "per_perspective_z": {
+          "sw": 108.54933521999146,
+          "certificate": 4.756844038794472,
+          "hw": 2.6424977613676495,
+          "whois": 2.544870292773354,
+          "dns": 1.9722578204713312,
+          "as": 1.5617643125823777,
+          "os": 0.2629291499771193,
+          "body": -0.26296042888330146,
+          "htags": -0.5983166381856778,
+          "sd": -0.6255377987393577,
+          "hfavicons": -0.6607773042949873
+        },
+        "drifted_perspectives": [
+          "sw",
+          "certificate"
+        ]
+      }
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "78.137.196.60",
+    "true_type": "MEDICAL",
+    "adapter_only": {
+      "classified_type": "MEDICAL",
+      "classified_vendor": "Apple",
+      "type_confidence": 0.9998925447728465,
+      "vendor_confidence": 0.8728419367002933,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.8728419367002933
+    },
+    "predicted_type": "MEDICAL",
+    "decision_confidence": 0.985,
+    "winning_llm": "GEMINI",
+    "gemini_type": "MEDICAL",
+    "claude_type": "MEDICAL",
+    "predicted_vendor": "Unknown",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.8728,
+        "is_unseen": true,
+        "predicted_type": "none",
+        "predicted_vendor": "Apple",
+        "confidence": 0.8728,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": false
+    },
+    "type_correct": true
+  },
+  {
+    "ip": "217.218.243.150",
+    "true_type": "MEDICAL",
+    "adapter_only": {
+      "classified_type": "MEDICAL",
+      "classified_vendor": "Marco Pacs",
+      "type_confidence": 0.9998730582480034,
+      "vendor_confidence": 0.9465143500503466,
+      "new_type_probability": 0.0,
+      "new_vendor_probability": 0.0
+    },
+    "predicted_type": "MEDICAL",
+    "decision_confidence": 1.0,
+    "winning_llm": "GEMINI",
+    "gemini_type": "MEDICAL",
+    "claude_type": "MEDICAL",
+    "predicted_vendor": "Marco PACS",
+    "vendor_confidence": null,
+    "first_stage": {
+      "unseen": {
+        "new_type_probability": 0.0,
+        "new_vendor_probability": 0.0,
+        "is_unseen": false,
+        "predicted_type": "none",
+        "predicted_vendor": "none",
+        "confidence": 0.9465,
+        "web_search_used": false,
+        "available": true
+      },
+      "drift_checked": true,
+      "drift": {
+        "drift_score": 11.71448237914592,
+        "threshold": 8.775458586751483,
+        "is_drift": true,
+        "per_perspective_z": {
+          "os": 646.4936665781939,
+          "whois": 55.565888923011094,
+          "sw": 29.819486043111098,
+          "body": 13.00327142193711,
+          "sd": 10.851634583559024,
+          "htags": 4.74625486371528,
+          "hw": 2.65084505651396,
+          "hfavicons": 1.641893403782009,
+          "as": 0.060934315470536266,
+          "dns": 0.027515808720483013,
+          "certificate": -0.6063071765300031
+        },
+        "drifted_perspectives": [
+          "whois",
+          "os",
+          "sw",
+          "sd",
+          "body",
+          "htags"
+        ]
+      }
+    },
+    "type_correct": true
+  }
+]
