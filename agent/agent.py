@@ -37,7 +37,7 @@ from typing import List, Dict, Any, Optional
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from retrieval import MultiLevelRetrieval
+from retrieval import MultiLevelRetrieval, RETRIEVAL_SCHEMA_VERSION
 from util import *
 from path_config import (
     AGENT_LOG_FILE,
@@ -51,6 +51,31 @@ from path_config import (
     VECTOR_LOG_FILE,
     VENDOR_PREDICTION_DIR,
 )
+
+
+def _atomic_json_dump(path: str, value: Any) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp_path = f"{path}.tmp.{os.getpid()}"
+    try:
+        with open(tmp_path, "w", encoding="utf-8") as handle:
+            json.dump(value, handle, indent=2, ensure_ascii=False, default=str)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp_path, path)
+    finally:
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
+
+
+def _atomic_csv_dump(path: str, frame: pd.DataFrame) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp_path = f"{path}.tmp.{os.getpid()}"
+    try:
+        frame.to_csv(tmp_path, index=False)
+        os.replace(tmp_path, path)
+    finally:
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -144,7 +169,9 @@ class IdentificationAgent:
 
     def check_ip_already_retrieved(self, ip: str, device_name: str,
                                     whether_local: bool, whether_community: bool,
-                                    whether_reasoning: bool) -> bool:
+                                    whether_reasoning: bool,
+                                    query_fingerprint: dict = None,
+                                    top_k: int = 5) -> bool:
         """
         检查某个IP在分类保存的结果中是否已经完成了所需的检索
         Check if an IP has already completed required retrievals in categorized result files
@@ -158,7 +185,9 @@ class IdentificationAgent:
             True 如果所有需要的检索类型都已有结果
         """
         local_result, community_result, reasoning_result = \
-            self.retrieval_agent.load_retrieval_result_by_type(ip, device_name)
+            self.retrieval_agent.load_retrieval_result_by_type(
+                ip, device_name, query_fingerprint=query_fingerprint, top_k=top_k
+            )
         
         if whether_local and local_result is None:
             return False
@@ -335,13 +364,17 @@ class IdentificationAgent:
                 # 检查是否已有结果 (跳过已完成的)
                 # Check if already retrieved (skip completed ones)
                 if quick_resume and done_ips is not None:
-                    if ip in done_ips:
+                    if ip in done_ips and self.check_ip_already_retrieved(
+                        ip, device_name, whether_local, whether_community,
+                        whether_reasoning, query_fingerprint, top_k
+                    ):
                         print(f"IP {ip} 已有完整检索结果 (quick_resume), 跳过")
                         logging.info(f"IP {ip} 已有完整检索结果 (quick_resume), 跳过")
                         skipped_count += 1
                         continue
                 elif self.check_ip_already_retrieved(
-                    ip, device_name, whether_local, whether_community, whether_reasoning
+                    ip, device_name, whether_local, whether_community, whether_reasoning,
+                    query_fingerprint, top_k
                 ):
                     print(f"IP {ip} 已有完整检索结果, 跳过")
                     logging.info(f"IP {ip} 已有完整检索结果, 跳过")
@@ -351,7 +384,9 @@ class IdentificationAgent:
                 # 加载已有的部分结果用于级联检索
                 # Load existing partial results for cascading retrieval
                 existing_local, existing_community, _ = \
-                    self.retrieval_agent.load_retrieval_result_by_type(ip, device_name)
+                    self.retrieval_agent.load_retrieval_result_by_type(
+                        ip, device_name, query_fingerprint=query_fingerprint, top_k=top_k
+                    )
 
                 # 调用 run_retrieval_algorithm 执行检索
                 # Call run_retrieval_algorithm to perform retrieval
@@ -400,7 +435,9 @@ class IdentificationAgent:
                     records = json.load(f)
                 for rec in records:
                     ip = rec.get("ip")
-                    if ip:
+                    if (ip
+                            and rec.get("pipeline_version") == RETRIEVAL_SCHEMA_VERSION
+                            and rec.get("predicted_device_type")):
                         done_ips.add(str(ip))
             except (json.JSONDecodeError, ValueError) as e:
                 logging.warning(f"decision quick_resume: JSON损坏 {filepath}: {e}")
@@ -434,6 +471,7 @@ class IdentificationAgent:
                 "confidence":            r.get("final_confidence"),
                 "winning_llm":           r.get("winning_llm"),
                 "llm_agreement":         r.get("llm_agreement"),
+                "confidence_policy":     r.get("confidence_policy"),
                 "gemini_device_type":    r.get("gemini", {}).get("device_type"),
                 "gemini_reason":         r.get("gemini", {}).get("device_type_reason", ""),
                 "gemini_confidence":     r.get("gemini", {}).get("confidence"),
@@ -442,6 +480,7 @@ class IdentificationAgent:
                 "claude_confidence":     r.get("claude", {}).get("confidence"),
                 "first_stage":           r.get("first_stage"),
                 "elapsed_sec":           r.get("elapsed_sec"),
+                "pipeline_version":      RETRIEVAL_SCHEMA_VERSION,
             }
             for r in new_results
         ]
@@ -452,16 +491,22 @@ class IdentificationAgent:
                 "true_device_type":  r.get("true_device_type"),
                 "predicted_vendor":  r.get("predicted_vendor"),
                 "vendor_reason":     r.get("vendor_reason", ""),
-                "confidence":        r.get("final_confidence"),
+                "confidence":        r.get("final_vendor_confidence"),
+                "vendor_confidence": r.get("final_vendor_confidence"),
                 "winning_llm":       r.get("winning_llm"),
                 "llm_agreement":     r.get("llm_agreement"),
+                "confidence_policy": r.get("confidence_policy"),
+                "winning_vendor_llm": r.get("winning_vendor_llm"),
+                "vendor_llm_agreement": r.get("vendor_llm_agreement"),
+                "vendor_confidence_policy": r.get("vendor_confidence_policy"),
                 "gemini_vendor":     r.get("gemini", {}).get("vendor"),
                 "gemini_reason":     r.get("gemini", {}).get("vendor_reason", ""),
-                "gemini_confidence": r.get("gemini", {}).get("confidence"),
+                "gemini_confidence": r.get("gemini", {}).get("vendor_confidence"),
                 "claude_vendor":     r.get("claude", {}).get("vendor"),
                 "claude_reason":     r.get("claude", {}).get("vendor_reason", ""),
-                "claude_confidence": r.get("claude", {}).get("confidence"),
+                "claude_confidence": r.get("claude", {}).get("vendor_confidence"),
                 "elapsed_sec":       r.get("elapsed_sec"),
+                "pipeline_version":  RETRIEVAL_SCHEMA_VERSION,
             }
             for r in new_results
         ]
@@ -480,13 +525,12 @@ class IdentificationAgent:
                 except (json.JSONDecodeError, ValueError):
                     existing = []
 
-            existing_ips = {str(r.get("ip")) for r in existing}
+            records_by_ip = {str(record.get("ip")): record for record in existing}
             for rec in new_records:
-                if str(rec.get("ip")) not in existing_ips:
-                    existing.append(rec)
+                records_by_ip[str(rec.get("ip"))] = rec
+            existing = list(records_by_ip.values())
 
-            with open(filepath, "w", encoding="utf-8") as f:
-                json.dump(existing, f, indent=2, ensure_ascii=False)
+            _atomic_json_dump(filepath, existing)
             logging.info(f"[Decision] 保存 {len(existing)} 条记录 → {filepath}")
             print(f"  ✓  保存 → {filepath}")
 
@@ -495,12 +539,12 @@ class IdentificationAgent:
         type_df = pd.DataFrame(new_type_records)
         if os.path.exists(type_csv_file):
             existing_type_df = pd.read_csv(type_csv_file)
-            existing_type_ips = set(existing_type_df["ip"].astype(str))
-            new_type_rows = type_df[~type_df["ip"].astype(str).isin(existing_type_ips)]
-            combined_type_df = pd.concat([existing_type_df, new_type_rows], ignore_index=True)
+            combined_type_df = pd.concat([existing_type_df, type_df], ignore_index=True)
+            combined_type_df["ip"] = combined_type_df["ip"].astype(str)
+            combined_type_df = combined_type_df.drop_duplicates("ip", keep="last")
         else:
             combined_type_df = type_df
-        combined_type_df.to_csv(type_csv_file, index=False)
+        _atomic_csv_dump(type_csv_file, combined_type_df)
         logging.info(f"[Decision] 保存 {len(combined_type_df)} 条类型预测 → {type_csv_file}")
         print(f"  ✓  保存 → {type_csv_file}")
 
@@ -509,12 +553,12 @@ class IdentificationAgent:
         vendor_df = pd.DataFrame(new_vendor_records)
         if os.path.exists(vendor_csv_file):
             existing_vendor_df = pd.read_csv(vendor_csv_file)
-            existing_vendor_ips = set(existing_vendor_df["ip"].astype(str))
-            new_vendor_rows = vendor_df[~vendor_df["ip"].astype(str).isin(existing_vendor_ips)]
-            combined_vendor_df = pd.concat([existing_vendor_df, new_vendor_rows], ignore_index=True)
+            combined_vendor_df = pd.concat([existing_vendor_df, vendor_df], ignore_index=True)
+            combined_vendor_df["ip"] = combined_vendor_df["ip"].astype(str)
+            combined_vendor_df = combined_vendor_df.drop_duplicates("ip", keep="last")
         else:
             combined_vendor_df = vendor_df
-        combined_vendor_df.to_csv(vendor_csv_file, index=False)
+        _atomic_csv_dump(vendor_csv_file, combined_vendor_df)
         logging.info(f"[Decision] 保存 {len(combined_vendor_df)} 条厂商预测 → {vendor_csv_file}")
         print(f"  ✓  保存 → {vendor_csv_file}")
 
@@ -614,16 +658,15 @@ class IdentificationAgent:
                 new_results.append(result)
                 processed_count += 1
 
+                # Persist every completed IP atomically. A long LLM sweep may be
+                # interrupted; already completed decisions must remain resumable.
+                self._save_decision_merge(device_name, [result])
+
                 print(f"[Decision] 结果: {result.get('predicted_device_type', 'N/A')} "
                       f"(conf={result.get('final_confidence', 0):.3f}, "
                       f"winner={result.get('winning_llm', 'N/A')})")
                 logging.info(f"[Decision] IP={ip} → {result.get('predicted_device_type')} "
                             f"conf={result.get('final_confidence')}")
-
-            # 保存结果 (与已有结果合并)
-            # Save results (merge with existing)
-            if new_results:
-                self._save_decision_merge(device_name, new_results)
 
             print(f"\n[Decision] 设备 {device_name} 处理完成: 新处理 {processed_count}, "
                   f"跳过 {skipped_count}, 总计 {len(fingerprints)}")
@@ -805,6 +848,7 @@ class IoTDecisionGraph:
             extract_decision_json,
             normalize_decision,
             joint_vote,
+            _candidate_device_types,
             _AGENT_SYSTEM,
             _AGENT_HUMAN,
         )
@@ -816,7 +860,10 @@ class IoTDecisionGraph:
         self._extract_decision_json = extract_decision_json
         self._normalize_decision = normalize_decision
         self._joint_vote = joint_vote
-        self._agent_system = _AGENT_SYSTEM
+        # .replace, not .format: the prompt embeds literal JSON-schema braces
+        # that str.format would choke on
+        self._agent_system = _AGENT_SYSTEM.replace(
+            "{candidate_types}", _candidate_device_types())
         self._agent_human = _AGENT_HUMAN
 
         self.base_path = ROOT_DIR
@@ -1012,7 +1059,10 @@ class IoTDecisionGraph:
         if reasoning_result is None and self.runtime.retrieval_agent is not None:
             try:
                 local_result, community_result, reasoning_result = (
-                    self.runtime.retrieval_agent.load_retrieval_result_by_type(ip, device_name)
+                    self.runtime.retrieval_agent.load_retrieval_result_by_type(
+                        ip, device_name, query_fingerprint=state["fingerprint"],
+                        top_k=self.runtime.top_k,
+                    )
                 )
             except Exception as exc:
                 logging.warning("Loading retrieval results for unseen failed (%s): %s", ip, exc)
@@ -1109,7 +1159,10 @@ class IoTDecisionGraph:
         res = state.get("unseen_result", {})
         new_type = float(res.get("new_type_probability", 0.0))
         new_vendor = float(res.get("new_vendor_probability", 0.0))
-        run_drift = self.enable_first_stage and (new_type < 0.5) and (new_vendor < 0.5)
+        # Drift is a device-type distribution check. A novel vendor within a
+        # known type must not suppress it; only type novelty lacks a valid type
+        # baseline and therefore skips the drift detector.
+        run_drift = self.enable_first_stage and (new_type < 0.5)
         first_stage = {
             "unseen": {
                 "new_type_probability": new_type,
@@ -1225,8 +1278,13 @@ class IoTDecisionGraph:
             "predicted_vendor": voting["final_vendor"],
             "vendor_reason": voting["final_vendor_reason"],
             "final_confidence": voting["final_confidence"],
+            "final_vendor_confidence": voting["final_vendor_confidence"],
             "winning_llm": voting["winning_llm"],
             "llm_agreement": voting["llm_agreement"],
+            "confidence_policy": voting.get("confidence_policy"),
+            "winning_vendor_llm": voting.get("winning_vendor_llm"),
+            "vendor_llm_agreement": voting.get("vendor_llm_agreement"),
+            "vendor_confidence_policy": voting.get("vendor_confidence_policy"),
             "first_stage": state.get("first_stage"),
             "gemini": voting["gemini"],
             "claude": voting["claude"],

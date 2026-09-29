@@ -3,6 +3,7 @@ import re
 import os
 import sys
 import json
+import hashlib
 import shutil
 import pandas as pd
 import numpy as np
@@ -50,6 +51,86 @@ logging.basicConfig(
     filemode='a',
     filename=RETRIEVAL_LOG_FILE
 )
+
+RETRIEVAL_SCHEMA_VERSION = "2026-09-25-v3"
+LOCAL_VECTOR_FORMAT = "raw_per_perspective_unit_v1"
+MIN_REASONING_CLUSTER_SIZE = 3
+
+
+def _json_scalar(value: Any) -> Any:
+    """Convert numpy/pandas scalars into stable JSON values."""
+    if isinstance(value, np.generic):
+        value = value.item()
+    if value is None:
+        return None
+    try:
+        if pd.isna(value):
+            return None
+    except (TypeError, ValueError):
+        pass
+    return value
+
+
+def fingerprint_digest(fingerprint: Dict[str, Any]) -> str:
+    """Content hash used to prevent an IP-only cache hit on a changed fingerprint."""
+    canonical = {
+        str(key): _json_scalar(value)
+        for key, value in sorted((fingerprint or {}).items(), key=lambda item: str(item[0]))
+    }
+    payload = json.dumps(canonical, sort_keys=True, ensure_ascii=False, separators=(",", ":"), default=str)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def local_index_signature() -> str:
+    """Cheap signature for the active local-vector index files."""
+    index_dir = os.path.join(LOCAL_VECTOR_DB_DIR, "local_npz")
+    entries = []
+    if os.path.isdir(index_dir):
+        for name in sorted(os.listdir(index_dir)):
+            if not name.endswith(("_embeddings.npy", "_ips.npy")):
+                continue
+            path = os.path.join(index_dir, name)
+            try:
+                stat = os.stat(path)
+            except OSError:
+                continue
+            entries.append((name, stat.st_size, stat.st_mtime_ns))
+    payload = json.dumps(entries, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def build_cache_metadata(fingerprint: Dict[str, Any], top_k: int) -> Dict[str, Any]:
+    return {
+        "schema_version": RETRIEVAL_SCHEMA_VERSION,
+        "fingerprint_sha256": fingerprint_digest(fingerprint),
+        "index_signature": local_index_signature(),
+        "top_k": int(top_k),
+        "vector_format": LOCAL_VECTOR_FORMAT,
+    }
+
+
+def cache_record_matches(record: Dict[str, Any], fingerprint: Dict[str, Any], top_k: int) -> bool:
+    """Return True only for cache records produced for the exact current context."""
+    metadata = record.get("cache_metadata") if isinstance(record, dict) else None
+    if not isinstance(metadata, dict):
+        return False
+    expected = build_cache_metadata(fingerprint, top_k)
+    return all(metadata.get(key) == expected[key] for key in expected)
+
+
+def _atomic_json_dump(path: str, value: Any, *, indent: int = 2) -> None:
+    """Write JSON atomically so an interrupted run cannot leave a partial cache."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp_path = f"{path}.tmp.{os.getpid()}"
+    try:
+        with open(tmp_path, "w", encoding="utf-8") as handle:
+            json.dump(value, handle, indent=indent, ensure_ascii=False, default=str)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp_path, path)
+    finally:
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
 
 class MultiLevelRetrieval:
     """
@@ -107,7 +188,7 @@ class MultiLevelRetrieval:
 
         self.milvus_db_path = os.path.join(self.vector_db_path, "milvus.db")
         if whether_milvus:
-            from pymilvus import MilvusClient
+            from pymilvus import MilvusClient, DataType
             self.milvus_client = MilvusClient(uri=self.milvus_db_path)
             logging.info(f"=== Milvus客户端已连接: {self.milvus_db_path} ===\n")
         else:
@@ -129,6 +210,226 @@ class MultiLevelRetrieval:
         self.retrieval_history: List[Dict[str, Any]] = []
         self.reasoning_use_llm = True
         self._graph_db = None  # lazy Neo4j connection, initialized on first graph_neighbor use
+        self._cluster_assignment_cache: Dict[str, Optional[pd.DataFrame]] = {}
+        self._cluster_assignment_errors: Dict[str, str] = {}
+        self._cluster_report_cache: Dict[str, Dict[int, Any]] = {}
+        self._statistical_report_cache: Dict[tuple, Optional[Dict[str, Any]]] = {}
+        self._single_assignment_cache: Dict[tuple, Optional[pd.DataFrame]] = {}
+        self._single_summary_cache: Dict[tuple, Dict[int, Dict[str, Any]]] = {}
+        self._validated_vector_files: set = set()
+
+    def _load_comprehensive_assignments(self, device_type: str) -> Optional[pd.DataFrame]:
+        """Load and validate IP/cluster assignments once per device type.
+
+        A damaged artifact for one device type must not abort community
+        retrieval for every other candidate type. The caller can inspect
+        ``_cluster_assignment_errors`` to distinguish a missing artifact from
+        an invalid one and expose that loss of evidence in the result.
+        """
+        if device_type in self._cluster_assignment_cache:
+            return self._cluster_assignment_cache[device_type]
+        if not hasattr(self, "_cluster_assignment_errors"):
+            self._cluster_assignment_errors = {}
+        cluster_file = os.path.join(
+            self.com_view_path,
+            f"ipraw_{device_type}_embedding_overall_pca.csv",
+        )
+        if not os.path.exists(cluster_file):
+            self._cluster_assignment_cache[device_type] = None
+            self._cluster_assignment_errors[device_type] = "cluster_assignments_missing"
+            return None
+
+        try:
+            frame = pd.read_csv(
+                cluster_file,
+                usecols=["ip", "cluster"],
+                low_memory=False,
+            )
+            if frame.empty:
+                raise ValueError("assignment file contains no rows")
+
+            frame["ip"] = frame["ip"].astype("string").str.strip()
+            numeric_clusters = pd.to_numeric(frame["cluster"], errors="coerce")
+            invalid = (
+                frame["ip"].isna()
+                | frame["ip"].eq("")
+                | numeric_clusters.isna()
+                | (numeric_clusters % 1 != 0)
+            )
+            if invalid.any():
+                raise ValueError(
+                    f"assignment file contains {int(invalid.sum())} invalid rows"
+                )
+            frame["ip"] = frame["ip"].astype(str)
+            frame["cluster"] = numeric_clusters.astype(np.int64)
+
+            conflicting = frame.groupby("ip")["cluster"].nunique().gt(1)
+            if conflicting.any():
+                raise ValueError(
+                    f"assignment file maps {int(conflicting.sum())} IPs to multiple clusters"
+                )
+            frame = frame.drop_duplicates(subset=["ip"], keep="first")
+        except (OSError, UnicodeError, ValueError, pd.errors.ParserError) as exc:
+            logging.error(
+                "Invalid comprehensive cluster assignments for %s at %s: %s",
+                device_type,
+                cluster_file,
+                exc,
+            )
+            self._cluster_assignment_cache[device_type] = None
+            self._cluster_assignment_errors[device_type] = "cluster_assignments_invalid"
+            return None
+
+        self._cluster_assignment_cache[device_type] = frame
+        self._cluster_assignment_errors.pop(device_type, None)
+        return frame
+
+    def _comprehensive_cluster_ips(self, device_type: str, cluster_id: int) -> List[str]:
+        assignments = self._load_comprehensive_assignments(device_type)
+        if assignments is None or int(cluster_id) < 0:
+            return []
+        return assignments.loc[
+            assignments["cluster"] == int(cluster_id), "ip"
+        ].astype(str).tolist()
+
+    def _load_cluster_reports(self, device_type: str) -> Dict[int, Any]:
+        """Load a summary file without allowing one malformed JSON to abort a run."""
+        if not hasattr(self, "_cluster_report_cache"):
+            self._cluster_report_cache = {}
+        if device_type in self._cluster_report_cache:
+            return self._cluster_report_cache[device_type]
+        report_file = os.path.join(
+            self.com_view_path, f"{device_type}_cluster_summaries.json"
+        )
+        reports: Dict[int, Any] = {}
+        if os.path.exists(report_file):
+            try:
+                with open(report_file, "r", encoding="utf-8") as handle:
+                    payload = json.load(handle)
+                if not isinstance(payload, list):
+                    raise ValueError("cluster summary root must be a list")
+                for report in payload:
+                    if not isinstance(report, dict):
+                        continue
+                    cluster_id = report.get("cluster_id")
+                    if str(cluster_id).lstrip("-").isdigit():
+                        reports[int(cluster_id)] = report.get("analysis")
+            except (OSError, UnicodeError, ValueError, json.JSONDecodeError) as exc:
+                logging.error(
+                    "Invalid cluster summary for %s at %s: %s",
+                    device_type, report_file, exc,
+                )
+        self._cluster_report_cache[device_type] = reports
+        return reports
+
+    def _build_statistical_cluster_report(self, device_type: str,
+                                          cluster_id: int) -> Optional[Dict[str, Any]]:
+        """Build an evidence-backed report when an LLM-written summary is absent."""
+        key = (device_type, int(cluster_id))
+        if key in self._statistical_report_cache:
+            return self._statistical_report_cache[key]
+        cluster_ips = set(self._comprehensive_cluster_ips(device_type, cluster_id))
+        if len(cluster_ips) < MIN_REASONING_CLUSTER_SIZE:
+            self._statistical_report_cache[key] = None
+            return None
+
+        raw_path = next((path for path in (
+            os.path.join(CSV_DATA_DIR, "all", f"ipraw_{device_type}.csv"),
+            os.path.join(CSV_DATA_DIR, "rag", f"ipraw_{device_type}.csv"),
+        ) if os.path.exists(path)), None)
+        if raw_path is None:
+            self._statistical_report_cache[key] = None
+            return None
+
+        header = pd.read_csv(raw_path, nrows=0).columns
+        feature_cols = []
+        for perspective in self.retrieval_perspective_names:
+            feature_cols.extend(self.perspective_info_config[perspective]["cols"])
+        usecols = ["ip"] + [col for col in dict.fromkeys(feature_cols) if col in header]
+        raw = pd.read_csv(raw_path, usecols=usecols, low_memory=False)
+        raw["ip"] = raw["ip"].astype(str)
+        members = raw[raw["ip"].isin(cluster_ips)]
+        if len(members) < MIN_REASONING_CLUSTER_SIZE:
+            self._statistical_report_cache[key] = None
+            return None
+
+        patterns = {}
+        for col in usecols[1:]:
+            values = members[col].dropna().astype(str).str.strip()
+            values = values[~values.str.casefold().isin({"", "none", "nan", "unknown"})]
+            if values.empty:
+                continue
+            top = values.value_counts().head(3)
+            patterns[col] = [
+                {"value": str(value)[:300], "count": int(count)}
+                for value, count in top.items()
+            ]
+        report = {
+            "method": "deterministic_frequency_summary",
+            "sample_size": int(len(members)),
+            "common_patterns": patterns,
+        } if patterns else None
+        self._statistical_report_cache[key] = report
+        return report
+
+    def _load_single_assignments(self, device_type: str,
+                                 perspective: str) -> Optional[pd.DataFrame]:
+        key = (device_type, perspective)
+        if key in self._single_assignment_cache:
+            return self._single_assignment_cache[key]
+        path = os.path.join(
+            self.single_view_path,
+            f"embedding_{perspective}",
+            f"ipraw_{device_type}_embedding_{perspective}_pca.csv",
+        )
+        if not os.path.exists(path):
+            self._single_assignment_cache[key] = None
+            return None
+        frame = pd.read_csv(path, usecols=["ip", "cluster"], low_memory=False)
+        frame["ip"] = frame["ip"].astype(str)
+        self._single_assignment_cache[key] = frame
+        return frame
+
+    def _load_single_summaries(self, device_type: str,
+                               perspective: str) -> Dict[int, Dict[str, Any]]:
+        key = (device_type, perspective)
+        if key in self._single_summary_cache:
+            return self._single_summary_cache[key]
+        path = os.path.join(
+            self.single_view_path,
+            f"embedding_{perspective}",
+            f"{device_type}_cluster_summaries.json",
+        )
+        summaries = {}
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as handle:
+                for row in json.load(handle):
+                    try:
+                        summaries[int(row["cluster_id"])] = row
+                    except (KeyError, TypeError, ValueError):
+                        continue
+        self._single_summary_cache[key] = summaries
+        return summaries
+
+    def _validate_raw_vector_file(self, path: str, embeddings: np.ndarray) -> None:
+        """Reject stale weighted/global-normalized indexes with incompatible semantics."""
+        if path in self._validated_vector_files or len(embeddings) == 0:
+            return
+        if embeddings.shape[1] != self.embedding_overall_dim:
+            raise ValueError(
+                f"Vector dimension mismatch in {path}: {embeddings.shape[1]} "
+                f"!= {self.embedding_overall_dim}"
+            )
+        sample = np.asarray(embeddings[:min(32, len(embeddings))], dtype=np.float32)
+        blocks = sample.reshape(len(sample), len(self.retrieval_perspective_names), self.embedding_dim)
+        norms = np.linalg.norm(blocks, axis=2)
+        nonzero = norms > 1e-6
+        if np.any(nonzero) and not np.allclose(norms[nonzero], 1.0, atol=2e-3):
+            raise ValueError(
+                f"Incompatible local vector format in {path}; expected unit norm "
+                "for every non-empty perspective. Rebuild with vector_store_embedding()."
+            )
+        self._validated_vector_files.add(path)
     
     def initialize_embedding_model(self):
         """
@@ -199,6 +500,8 @@ class MultiLevelRetrieval:
             logging.info(f"Collection already exists: {col_name}")
             return col_name
 
+        from pymilvus import DataType  # __init__'s import is method-local
+
         schema = self.milvus_client.create_schema(auto_id=True, enable_dynamic_field=False)
         schema.add_field("id", DataType.INT64, is_primary=True)
         schema.add_field("ip", DataType.VARCHAR, max_length=self.max_ip_length)
@@ -232,7 +535,7 @@ class MultiLevelRetrieval:
             index_params=index_params,
         )
 
-        logging.info(f"Created collection: {col_name} (dim={EMBEDDING_DIM})")
+        logging.info(f"Created collection: {col_name} (dim={embedding_dim})")
         return col_name
 
     def insert_csv_to_collection(self, col_name: str, device: str, filepath: str):
@@ -325,7 +628,7 @@ class MultiLevelRetrieval:
 
     def insert_csv_to_local_npz(self, device: str, filepath: str) -> int:
         """
-        读取 CSV 文件, 对各 perspective 加权 + L2 归一化后, 保存为 numpy npz 文件.
+        读取 CSV 文件, 保存每个 perspective 的单位向量。
         替代 Milvus Lite 存储, 避免高维向量导致嵌入式服务器崩溃.
         每个 device 保存为 local_npz/{device}.npz, 包含 embeddings, ips 两个数组.
         """
@@ -347,19 +650,16 @@ class MultiLevelRetrieval:
             embeddings = chunk_df[ordered_cols].values  # (batch, overall_dim)
 
             num_perspectives = len(self.retrieval_perspective_names)
-            weights = np.array(self.perspective_weights)  # (num_perspectives,)
 
-            # reshape -> (batch, num_perspectives, 1024), 逐 perspective 乘权重
+            # Keep the index weight-free. Query-side linear weights then compute
+            # sum_i(w_i * cosine_i), avoiding the accidental w_i**2 contribution
+            # caused by weighting both index and query vectors.
             emb_reshaped = embeddings.reshape(
                 embeddings.shape[0], num_perspectives, self.embedding_dim
             )
-            weighted = emb_reshaped * weights.reshape(1, -1, 1)
-
-            # 展平回 (batch, overall_dim) 并 L2 归一化
-            weighted_flat = weighted.reshape(embeddings.shape[0], -1)
-            norms = np.linalg.norm(weighted_flat, axis=1, keepdims=True)
+            norms = np.linalg.norm(emb_reshaped, axis=2, keepdims=True)
             norms = np.where(norms == 0, 1.0, norms)
-            normalized = weighted_flat / norms
+            normalized = (emb_reshaped / norms).reshape(embeddings.shape[0], -1)
 
             all_embeddings.append(normalized.astype(np.float32))
             all_ips.extend(ip_list)
@@ -385,15 +685,18 @@ class MultiLevelRetrieval:
         self._local_vectors_cache = None
         return total_rows
 
-    def _search_local_vectors(self, query_vec: np.ndarray, top_k: int = 10):
+    def _search_local_vectors(self, query_vec: np.ndarray, top_k: int = 10,
+                              exclude_ips: Optional[set] = None):
         """
         逐文件流式搜索 local npy, 使用 mmap 避免将整个数组加载到 RAM, 防止 OOM.
-        返回 list of {ip, device_type, score}, 按 score 降序, 长度 <= top_k.
+        返回全局 Top-K、实际比较数、以及每个设备类型的最佳候选。
         """
         # 用 min-heap 维护 top_k (score, idx) — heapq 是最小堆, 堆顶是最小值
         heap = []  # elements: (score, global_counter, ip, device_type)
+        device_best = []
         counter = 0
         total_compared = 0
+        exclude_ips = {str(ip) for ip in (exclude_ips or set())}
 
         # 扫描 {device}_embeddings.npy 文件
         emb_files = sorted(
@@ -401,7 +704,7 @@ class MultiLevelRetrieval:
             if f.endswith("_embeddings.npy")
         )
         if not emb_files:
-            return [], 0
+            return [], 0, []
 
         for emb_fname in emb_files:
             device = emb_fname.replace("_embeddings.npy", "")
@@ -411,10 +714,33 @@ class MultiLevelRetrieval:
             # mmap_mode='r': 内存映射只读, OS 按需分页, 不占用物理 RAM
             emb = np.load(emb_path, mmap_mode='r')  # (n, dim), float32
             ips = np.load(ips_path, allow_pickle=True)  # (n,)
+            self._validate_raw_vector_file(emb_path, emb)
 
             # 批量计算 IP scores
-            scores = emb @ query_vec  # (n,)
+            if emb.ndim != 2 or emb.shape[1] != query_vec.shape[0]:
+                raise ValueError(
+                    f"Local vector shape mismatch for {emb_fname}: "
+                    f"index={emb.shape}, query={query_vec.shape}"
+                )
+            scores = np.clip(emb @ query_vec, -1.0, 1.0)  # weighted cosine in [-1, 1]
             total_compared += len(scores)
+
+            if exclude_ips:
+                excluded = np.fromiter(
+                    (str(ip) in exclude_ips for ip in ips),
+                    dtype=bool,
+                    count=len(ips),
+                )
+                scores[excluded] = -np.inf
+
+            best_index = int(np.argmax(scores)) if len(scores) else -1
+            if best_index >= 0 and np.isfinite(scores[best_index]):
+                device_best.append({
+                    "ip": str(ips[best_index]),
+                    "device_type": device,
+                    "similarity_score": float(scores[best_index]),
+                    "source": "per_type_vector_candidate",
+                })
 
             # 取当前文件的 top_k 候选, 减少 heap 操作
             if len(scores) > top_k:
@@ -424,6 +750,8 @@ class MultiLevelRetrieval:
 
             for i in part_idx:
                 s = float(scores[i])
+                if not np.isfinite(s):
+                    continue
                 if len(heap) < top_k:
                     heapq.heappush(heap, (s, counter, str(ips[i]), device))
                     counter += 1
@@ -435,10 +763,13 @@ class MultiLevelRetrieval:
 
         # 从 heap 中提取结果, 按 score 降序
         results = sorted(heap, key=lambda x: x[0], reverse=True)
-        return [
+        top_results = [
             {"ip": r[2], "device_type": r[3], "similarity_score": r[0]}
             for r in results
-        ], total_compared
+        ]
+        return top_results, total_compared, sorted(
+            device_best, key=lambda item: item["similarity_score"], reverse=True
+        )
 
     def check_existing_count(self, col_name: str, device: str) -> int:
         """检查 collection 中某个 device 已有的记录数"""
@@ -846,33 +1177,46 @@ class MultiLevelRetrieval:
                 # P_confidence = (W_A)^alpha  (公式 2 置信度因子 / confidence factor in Eq. 2)
                 confidence = float(W_A ** alpha)
 
-            # 将缺失 perspective 的 embedding 置零, 再按有效权重缩放
-            # Zero out missing perspective embeddings, then scale by effective weights
-            query_embedding = query_embedding * masks.reshape(-1, 1)  # (num_perspectives, 1024)
+            # Normalize every perspective independently and apply weights only on
+            # the query side. The raw index stores one unit vector per perspective,
+            # so the dot product is the intended linear weighted cosine sum.
+            query_embedding = query_embedding * masks.reshape(-1, 1)
+            perspective_norms = np.linalg.norm(query_embedding, axis=1, keepdims=True)
+            perspective_norms = np.where(perspective_norms == 0, 1.0, perspective_norms)
+            query_embedding = query_embedding / perspective_norms
             weighted_embedding = query_embedding * effective_weights.reshape(-1, 1)
             weighted_flat = weighted_embedding.flatten().astype(np.float32)
-            norm = np.linalg.norm(weighted_flat)
-            if norm > 0:
-                weighted_flat = weighted_flat / norm
 
             # 逐文件流式搜索, 每次只加载一个设备的 npy, 避免 OOM
             t_search_start = time.time()
-            search_limit = max(top_k, 10)
-            all_similarities, total_compared = self._search_local_vectors(
-                weighted_flat, top_k=search_limit
+            search_limit = max(top_k, 1)
+            query_ip = query_fingerprint.get("ip")
+            all_similarities, total_compared, device_best = self._search_local_vectors(
+                weighted_flat,
+                top_k=search_limit,
+                exclude_ips={str(query_ip)} if query_ip is not None else None,
             )
             t_search = time.time()
 
-            # 3. 应用置信度衰减因子 (W_A)^alpha 到所有相似度分数 (公式 2)
-            # 3. Apply confidence decay factor (W_A)^alpha to all similarity scores (Eq. 2)
-            if confidence != 1.0:
-                for item in all_similarities:
-                    item["similarity_score"] *= confidence
+            # Keep semantic similarity and evidence coverage separate. Multiplying
+            # them made the prompt compare an attenuated value against cosine
+            # thresholds and hid the reason for a low score.
+            for item in all_similarities:
+                item["confidence_adjusted_score"] = float(
+                    item["similarity_score"] * confidence
+                )
 
             if not all_similarities:
                 logging.warning("Local vectors not found (no npz files)")
-                return {"query_fingerprint": query_fingerprint, "top_k": top_k,
-                        "similar_devices": [], "total_compared": 0}
+                return {
+                    "query_fingerprint": query_fingerprint,
+                    "top_k": top_k,
+                    "similar_devices": [],
+                    "total_compared": total_compared,
+                    "confidence_score": round(confidence, 6),
+                    "missing_perspectives": missing_perspectives,
+                    "cache_metadata": build_cache_metadata(query_fingerprint, top_k),
+                }
 
             hit_count = len(all_similarities)
             print(f"  search返回 {hit_count} 个候选 (共比较 {total_compared} 条)")
@@ -885,18 +1229,32 @@ class MultiLevelRetrieval:
             for d in top_devices:
                 d.setdefault("source", "vector_search")
 
+            # Community retrieval receives the global Top-K plus the best hit from
+            # every indexed device type. This removes the Top-K candidate bottleneck
+            # while keeping the user-facing local ranking unchanged.
+            community_candidates = []
+            seen_candidate_ips = set()
+            for candidate in top_devices + device_best:
+                candidate_ip = str(candidate.get("ip"))
+                if candidate_ip in seen_candidate_ips:
+                    continue
+                seen_candidate_ips.add(candidate_ip)
+                community_candidates.append(candidate)
+
             # 5. 图邻居扩展: 在第一层设备实体图中查找邻居节点, 合并后总数不超过 2K
             # 5. Graph neighbor expansion: find Layer-1 entity graph neighbors, total ≤ 2K
             if graph_neighbor and top_devices:
                 top_ips = [d["ip"] for d in top_devices]
                 neighbors = self._get_graph_neighbors(top_ips, top_k=top_k, q=neighbor_q)
+                if query_ip is not None:
+                    neighbors = [n for n in neighbors if str(n.get("ip")) != str(query_ip)]
                 top_devices = top_devices + neighbors  # total ≤ 2K (top_k vector + top_k graph)
                 print(f"  graph_neighbor: 合并后共 {len(top_devices)} 个设备 "
                       f"(向量检索={len(top_ips)}, 图邻居={len(neighbors)})")
                 logging.info(f"graph_neighbor扩展: 向量检索={len(top_ips)}, "
                              f"图邻居={len(neighbors)}, 合并={len(top_devices)}")
 
-            print(f"总共比较了 {len(all_similarities)} 个候选设备")
+            print(f"总共比较了 {total_compared} 个候选设备")
 
             t_end = time.time()
             timing = {
@@ -911,11 +1269,13 @@ class MultiLevelRetrieval:
                 "query_fingerprint": query_fingerprint,
                 "top_k": top_k,
                 "similar_devices": top_devices,
-                "total_compared": len(all_similarities),
+                "community_candidates": community_candidates,
+                "total_compared": total_compared,
                 "timing": timing,
                 "confidence_score": round(confidence, 6),
                 "missing_perspectives": missing_perspectives,
                 "graph_neighbor": graph_neighbor,
+                "cache_metadata": build_cache_metadata(query_fingerprint, top_k),
             }
 
             self.retrieval_history.append({
@@ -926,7 +1286,7 @@ class MultiLevelRetrieval:
 
             print(f"=== 局部检索完成, 找到 {len(top_devices)} 个相似设备 ===\n")
             logging.info(f"=== 局部检索完成, 找到 {len(top_devices)} 个相似设备 ===\n")
-            logging.info(f"总共比较了 {len(all_similarities)} 个设备")
+            logging.info(f"总共比较了 {total_compared} 个设备")
 
             return result
 
@@ -1130,7 +1490,10 @@ class MultiLevelRetrieval:
             Similarity score (between 0-1)
         """
         # 获取共同的特征键
-        common_keys = set(fingerprint1.keys()) & set(fingerprint2.keys())
+        common_keys = {
+            key for key in set(fingerprint1.keys()) & set(fingerprint2.keys())
+            if str(key).lower() != "ip"
+        }
         
         if not common_keys:
             return 0.0
@@ -1138,8 +1501,6 @@ class MultiLevelRetrieval:
         # 计算匹配的特征数量
         matches = 0
         for key in common_keys:
-            if key.lower() == 'ip':
-                continue
             if fingerprint1[key] == fingerprint2[key]:
                 matches += 1
         
@@ -1147,7 +1508,8 @@ class MultiLevelRetrieval:
     
     def community_retrieval(self, query_fingerprint: Dict[str, Any], 
                            similar_ips: List[Dict[str, Any]],
-                           langchain_version: str = "1.2") -> Dict[str, Any]:
+                           langchain_version: str = "1.2",
+                           cache_metadata: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """
         综合视角全局检索: 基于相似设备IP找到所属cluster, 并匹配cluster报告
         Comprehensive global retrieval: find clusters based on similar device IPs and match cluster reports
@@ -1173,6 +1535,7 @@ class MultiLevelRetrieval:
             # 找到相似IP对应的cluster
             # Find clusters corresponding to similar IPs
             cluster_matches = {}
+            unavailable_clusters = []
             
             for similar_device in similar_ips:
                 device_type = similar_device.get("device_type")
@@ -1182,32 +1545,36 @@ class MultiLevelRetrieval:
                     print(f"警告: 设备缺少device_type或ip信息, 跳过")
                     continue
                 
-                # 读取对应device_type的cluster文件
-                # Read cluster file for corresponding device_type
-                cluster_file = os.path.join(
-                    self.com_view_path,
-                    f"ipraw_{device_type}_embedding_overall_pca.csv"
-                )
-                
-                if not os.path.exists(cluster_file):
-                    print(f"警告: Cluster文件不存在 {cluster_file}, 跳过")
+                cluster_df = self._load_comprehensive_assignments(device_type)
+                if cluster_df is None:
+                    unavailable_clusters.append({
+                        "device_type": device_type,
+                        "reason": self._cluster_assignment_errors.get(
+                            device_type, "cluster_assignments_missing"
+                        ),
+                        "related_ips": [str(ip)],
+                    })
                     continue
-                
-                # 读取cluster数据
-                # Read cluster data 
-                cluster_df = pd.read_csv(cluster_file, low_memory=False)
-                
-                print("cluster数据读取完毕")
 
                 # 根据IP定位到该IP所属的cluster
                 # Locate the cluster for this IP using IP address
-                ip_rows = cluster_df[cluster_df['ip'] == ip]
+                ip_rows = cluster_df[cluster_df['ip'] == str(ip)]
                 if ip_rows.empty:
                     print(f"警告: IP {ip} 在cluster文件中未找到, 跳过")
                     continue
                 
                 cluster_id = ip_rows.iloc[0].get('cluster', -1)
                 print(f"相似设备 {ip} {device_type} 所属cluster: {cluster_id}")
+
+                # -1 is a density-clustering noise label, not a semantic community.
+                if pd.isna(cluster_id) or int(cluster_id) < 0:
+                    unavailable_clusters.append({
+                        "device_type": device_type,
+                        "cluster_id": -1,
+                        "reason": "noise_cluster",
+                        "related_ips": [str(ip)],
+                    })
+                    continue
                 
                 # 使用(dev, cluster_id)作为唯一键, 避免重复
                 # Use (dev, cluster_id) as unique key to avoid duplicates
@@ -1216,31 +1583,35 @@ class MultiLevelRetrieval:
                 if key not in cluster_matches:
                     # 读取cluster报告 (只在第一次遇到该device_type时读取)
                     # Read cluster report (only when first encountering this device_type)
-                    report_file = os.path.join(
-                        self.com_view_path,
-                        f"{device_type}_cluster_summaries.json"
-                    )
-                    
-                    if os.path.exists(report_file):
-                        with open(report_file, 'r', encoding='utf-8') as f:
-                            cluster_reports = json.load(f)
-                        
-                        # 创建cluster报告字典
-                        # Create cluster report dictionary
-                        report_dict = {
-                            report["cluster_id"]: report["analysis"] 
-                            for report in cluster_reports
-                        }
-                        report = report_dict.get(int(cluster_id), "No report available")
+                    report_dict = self._load_cluster_reports(device_type)
+                    if report_dict:
+                        report = report_dict.get(int(cluster_id))
+                        report_source = "cluster_summary" if report is not None else "missing"
                     else:
-                        print(f"警告: 报告文件不存在 {report_file}")
-                        report = "No report available"
+                        report = None
+                        report_source = "missing"
                     
+                    if report is None:
+                        report = self._build_statistical_cluster_report(
+                            device_type, int(cluster_id)
+                        )
+                        report_source = "deterministic_frequency_summary"
+                        if report is None:
+                            unavailable_clusters.append({
+                                "device_type": device_type,
+                                "cluster_id": int(cluster_id),
+                                "reason": "cluster_report_missing",
+                                "related_ips": [str(ip)],
+                            })
+                            continue
+
                     cluster_matches[key] = {
                         "device_type": device_type,
                         "cluster_id": int(cluster_id),
-                        "ips": [ip],
-                        "report": report
+                        "ips": [str(ip)],
+                        "cluster_size": len(self._comprehensive_cluster_ips(device_type, int(cluster_id))),
+                        "report": report,
+                        "report_source": report_source,
                     }
                 else:
                     cluster_matches[key]["ips"].append(ip)
@@ -1263,15 +1634,26 @@ class MultiLevelRetrieval:
                     cluster_info["report"],
                     langchain_version
                 )
+
+                if not match_result.get("available", True):
+                    unavailable_clusters.append({
+                        "device_type": cluster_info["device_type"],
+                        "cluster_id": cluster_info["cluster_id"],
+                        "reason": match_result.get("error", "llm_match_failed"),
+                        "related_ips": cluster_info["ips"],
+                    })
+                    continue
                 
                 matched_clusters.append({
                     "device_type": cluster_info["device_type"],
                     "cluster_id": cluster_info["cluster_id"],
                     "similarity_score": match_result["similarity_score"],
                     "report": cluster_info["report"],
+                    "report_source": cluster_info["report_source"],
                     "matched_features": match_result["matched_features"],
                     "unmatched_features": match_result["unmatched_features"],
-                    "related_ips": cluster_info["ips"]
+                    "related_ips": cluster_info["ips"],
+                    "cluster_size": cluster_info["cluster_size"],
                 })
             
             # 按相似度排序
@@ -1288,10 +1670,13 @@ class MultiLevelRetrieval:
 
             result = {
                 "query_fingerprint": query_fingerprint,
-                "device_type": device_type,
                 "total_clusters": len(matched_clusters),
                 "matched_clusters": matched_clusters,
-                "timing": timing
+                "unavailable_clusters": unavailable_clusters,
+                "timing": timing,
+                "cache_metadata": cache_metadata or build_cache_metadata(
+                    query_fingerprint, len(similar_ips)
+                ),
             }
             
             # 记录检索历史
@@ -1381,12 +1766,18 @@ class MultiLevelRetrieval:
                     ]
             analysis_json = self.llm.chat_with_llm(self.used_llm_model, messages, whether_json=True)
 
-            matched_features = analysis_json.get("matched_features", "")
-            unmatched_features = analysis_json.get("unmatched_features", "")
+            matched_features = analysis_json.get("matched_features")
+            unmatched_features = analysis_json.get("unmatched_features")
 
-            if not matched_features or not unmatched_features:
+            if not isinstance(matched_features, list) or not isinstance(unmatched_features, list):
                 logging.error(f"{self.used_llm_model} Failed to generate result in correct format!")
                 raise ValueError(f"LLM错误生成结果: {analysis_json}")
+
+            score = float(analysis_json.get("similarity_score"))
+            if not np.isfinite(score) or not 0.0 <= score <= 1.0:
+                raise ValueError(f"LLM similarity_score out of range: {score}")
+            analysis_json["similarity_score"] = score
+            analysis_json["available"] = True
 
             # if langchain_version != "1.2":
             #     # 使用Langchain Agent v0.3.27
@@ -1480,9 +1871,11 @@ class MultiLevelRetrieval:
             # 降级方案
             # Fallback solution
             return {
-                "similarity_score": 0.5,
-                "matched_features": ["Unable to analyze with LLM"],
-                "unmatched_features": []
+                "available": False,
+                "error": f"llm_match_failed: {type(e).__name__}",
+                "similarity_score": None,
+                "matched_features": [],
+                "unmatched_features": [],
             }
     
     def _extract_cluster_value_text(self, analysis: Any, feature_name: str = "") -> str:
@@ -1574,126 +1967,61 @@ class MultiLevelRetrieval:
         ]
 
         result = self.llm.chat_with_llm(self.used_llm_model, messages, whether_json=True)
-        return float(result.get('similarity', 0.0))
+        similarity = float(result.get('similarity'))
+        if not np.isfinite(similarity) or not 0.0 <= similarity <= 1.0:
+            raise ValueError(f"LLM similarity out of range: {similarity}")
+        return similarity
 
     def calculate_importance(self, matched_clusters: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """
-        计算特征重要性：分析综合视角cluster中的设备在单特征聚类下的聚集程度
-        Calculate feature importance: analyze how devices in comprehensive clusters 
-        aggregate in single-feature clustering
-        
-        Args:
-            matched_clusters: 社区检索返回的匹配cluster列表
-                            List of matched clusters from community retrieval
-        
-        Returns:
-            特征重要性分析结果
-            Feature importance analysis results
-        """
+        """Calculate entropy importance from the *complete* community membership."""
         print("=== 开始计算特征重要性 ===")
-        
         importance_results = {}
-        
-        # 对每个matched cluster进行分析
-        # Analyze each matched cluster
+
         for cluster_info in matched_clusters:
-            cluster_key = f"{cluster_info['device_type']}_{cluster_info['cluster_id']}"
-            cluster_ips = set(cluster_info.get('related_ips', []))
-            
+            device_type = cluster_info.get("device_type")
+            cluster_id = int(cluster_info.get("cluster_id", -1))
+            if not device_type or cluster_id < 0:
+                continue
+            cluster_key = f"{device_type}_{cluster_id}"
+            cluster_ips = set(self._comprehensive_cluster_ips(device_type, cluster_id))
             print(f"\n分析cluster: {cluster_key}, 包含 {len(cluster_ips)} 个IP")
-            
+            if len(cluster_ips) < MIN_REASONING_CLUSTER_SIZE:
+                logging.info(
+                    "Skip reasoning cluster %s: support=%d < %d",
+                    cluster_key, len(cluster_ips), MIN_REASONING_CLUSTER_SIZE,
+                )
+                continue
+
             feature_importance = {}
-            
-            # 遍历每个单特征perspective
-            # Iterate through each single-feature perspective
             for perspective_name in self.retrieval_perspective_names:
                 try:
-                    # 读取单特征聚类文件
-                    # Read single-feature clustering file
-                    single_feature_file = os.path.join(
-                        self.single_view_path,
-                        f"embedding_{perspective_name}",
-                        f"ipraw_{cluster_info['device_type']}_embedding_{perspective_name}_pca.csv"
-                    )
-                    
-                    if not os.path.exists(single_feature_file):
-                        print(f"  警告: 文件不存在 {single_feature_file}")
+                    df = self._load_single_assignments(device_type, perspective_name)
+                    if df is None:
                         continue
-                    
-                    # 读取cluster分配
-                    # Read cluster assignments
-                    df = pd.read_csv(single_feature_file, usecols=['ip', 'cluster'], low_memory=False)
-                    
-                    # 在single-perspective cluster中筛选出综合视角cluster中的IP
-                    # Filter IPs of comprehensive cluster in single-perspective cluster
                     df_filtered = df[df['ip'].isin(cluster_ips)]
-                    
-                    if len(df_filtered) == 0:
+                    df_filtered = df_filtered[df_filtered['cluster'] >= 0]
+                    if len(df_filtered) < MIN_REASONING_CLUSTER_SIZE:
                         continue
-                    
-                    # 统计comprehensive-view cluster中的IP 在 single-perspective cluster中的分布 {cluster_id: count}
-                    # Count distribution of these IPs in single-feature clusters
                     cluster_counts = df_filtered['cluster'].value_counts().to_dict()
-                    
-                    # 移除噪声点 (cluster = -1)
-                    # Remove noise points (cluster = -1)
-                    if -1 in cluster_counts:
-                        del cluster_counts[-1]
-                    
                     if len(cluster_counts) == 0:
                         continue
-                    
-                    # 计算Shannon Entropy
-                    # Calculate Shannon Entropy
-                    M = df['cluster'].nunique()  # 单特征cluster的unique数量,也就是总数
-                    total_count = sum(cluster_counts.values())  # comprehensive-view cluster中的IP总数
-                    
-                    # 计算 cluster i(cid)的权重分数 w_i
-                    # Calculate probability distribution w_i
+
+                    total_count = int(sum(cluster_counts.values()))
                     cluster_weight = {cid: count / total_count for cid, count in cluster_counts.items()}
-
-                    #  # 对 cluster_weight 进行 Softmax 归一化
-                    # # Softmax normalization for cluster_weight
-                    # cw_arr = np.array(list(cluster_weight.values()))
-                    # cw_exp = np.exp(cw_arr - np.max(cw_arr))  # 减去最大值保证数值稳定
-                    # cw_softmax = cw_exp / cw_exp.sum()
-                    # cluster_weight = {cid: float(sw) for cid, sw in zip(cluster_weight.keys(), cw_softmax)}
-
-                    # 计算归一化Shannon熵 S_f
-                    # Calculate normalized Shannon entropy S_f
-                    entropy = 0.0
-                    for w_i in cluster_weight.values():
-                        if w_i > 0:
-                            entropy -= w_i * np.log(w_i)
-                    
-                    if M > 1:
-                        normalized_entropy = entropy / np.log(M)
-                    else:
-                        normalized_entropy = 0.0
-                    
-                    important_score = 1 - normalized_entropy
-                    
-                    print(f"  特征 {perspective_name}: 未归一化重要性分数={important_score:.4f}, 归一化熵={normalized_entropy:.4f}, cluster总数={M}")
-
-                    # 读取single-perspective cluster报告以提取特征值
-                    # Read single-perspective cluster reports to extract feature values
-                    summary_file = os.path.join(
-                        self.single_view_path,
-                        f"embedding_{perspective_name}",
-                        f"{cluster_info['device_type']}_cluster_summaries.json"
+                    entropy = -sum(w * np.log(w) for w in cluster_weight.values() if w > 0)
+                    non_noise_cluster_count = int(df.loc[df['cluster'] >= 0, 'cluster'].nunique())
+                    max_bins = min(non_noise_cluster_count, total_count)
+                    normalized_entropy = (
+                        float(entropy / np.log(max_bins)) if max_bins > 1 else 0.0
                     )
-                    
+                    normalized_entropy = float(np.clip(normalized_entropy, 0.0, 1.0))
+                    raw_importance = 1.0 - normalized_entropy
+
                     feature_values = []
-                    if os.path.exists(summary_file):
-                        with open(summary_file, 'r', encoding='utf-8') as f:
-                            summaries = json.load(f)
-                        
-                        # 为每个cluster提取特征值
-                        # Extract feature values for each cluster
+                    summaries = self._load_single_summaries(device_type, perspective_name)
+                    if summaries:
                         for cid, count in sorted(cluster_counts.items(), key=lambda x: x[1], reverse=True):
-                            # 找到对应的cluster summary
-                            # Find corresponding cluster summary
-                            cluster_summary = next((s for s in summaries if s['cluster_id'] == cid), None)
+                            cluster_summary = summaries.get(int(cid))
                             if cluster_summary:
                                 feature_values.append({
                                     "cluster_id": cid,
@@ -1701,44 +2029,48 @@ class MultiLevelRetrieval:
                                     "device_count": count,
                                     "analysis": cluster_summary.get('analysis', '')
                                 })
-                    
-                    # 保存特征重要性信息
-                    # Save feature importance information
+
                     feature_importance[perspective_name] = {
-                        "importance_score": important_score,  # 重要性分数，越高越重要
-                        "is_important": normalized_entropy < 0.1,  # 阈值0.1，低于此值认为重要
-                        "num_clusters": M,  # 该 single-perspective有多少个clusters
-                        "cluster_distribution": cluster_counts, # IP分布于各个cluster中的数量
-                        "cluster_weight": cluster_weight,  # cluster counts中每个该single-perspective cluster的权重
-                        "feature_values": feature_values  # cluster代表的特征值，由该single-perspective cluster的report体现
+                        "raw_importance_score": raw_importance,
+                        "importance_score": 0.0,
+                        "is_important": normalized_entropy < 0.1,
+                        "normalized_entropy": normalized_entropy,
+                        "num_clusters": non_noise_cluster_count,
+                        "support": total_count,
+                        "support_coverage": total_count / len(cluster_ips),
+                        "cluster_distribution": cluster_counts,
+                        "cluster_weight": cluster_weight,
+                        "feature_values": feature_values,
                     }
-                    
                 except Exception as e:
                     print(f"  处理特征 {perspective_name} 时出错: {e}")
                     continue
-            
-            # 对 importance_score 进行 L1 归一化（使所有 perspective 的重要性分数之和为 1）
-            # L1 normalization for importance_score (make all perspective importance scores sum to 1)
-            raw_scores = {name: info['importance_score'] for name, info in feature_importance.items()}
-            total_score = sum(raw_scores.values())
-            if total_score > 0:
-                for name in feature_importance:
-                    feature_importance[name]['importance_score'] = raw_scores[name] / total_score
-                    # print(f"  特征 {name}: 重要性分数={feature_importance[name]['importance_score']:.4f}, M={feature_importance[name]['num_clusters']}")
 
-            # 按重要性分数排序
-            # Sort by importance score
+            important_names = [
+                name for name, info in feature_importance.items()
+                if info['is_important'] and info['feature_values']
+            ]
+            total_score = sum(
+                feature_importance[name]['raw_importance_score'] for name in important_names
+            )
+            if total_score > 0:
+                for name in important_names:
+                    feature_importance[name]['importance_score'] = (
+                        feature_importance[name]['raw_importance_score'] / total_score
+                    )
+
             sorted_features = sorted(
                 feature_importance.items(),
-                key=lambda x: x[1]['importance_score']
+                key=lambda x: x[1]['importance_score'],
+                reverse=True,
             )
-            
             importance_results[cluster_key] = {
                 "cluster_info": cluster_info,
+                "cluster_size": len(cluster_ips),
                 "feature_importance": dict(sorted_features),
-                "important_features": [f for f, info in sorted_features if info['is_important']]
+                "important_features": important_names,
             }
-        
+
         print("\n=== 特征重要性计算完成 ===")
         return importance_results
     
@@ -1768,7 +2100,17 @@ class MultiLevelRetrieval:
             matched_clusters = community_result.get('matched_clusters', [])
             
             if not matched_clusters:
-                return {"error": "缺少必要的输入数据"}
+                return {
+                    "query_fingerprint": query_fingerprint,
+                    "path_matching_results": [],
+                    "summary": {
+                        "total_clusters_analyzed": 0,
+                        "top_cluster": None,
+                        "status": "unavailable",
+                        "reason": "no_reliable_community_clusters",
+                    },
+                    "cache_metadata": local_result.get("cache_metadata"),
+                }
             
             # 1. 计算特征重要性
             # 1. Calculate feature importance
@@ -1794,6 +2136,7 @@ class MultiLevelRetrieval:
                 # 计算路径匹配分数
                 # Calculate path matching score
                 path_score = 0.0
+                evidence_coverage = 0.0
                 feature_matching_details = []
                 
                 # 根据每个关键特征角度(perspective) （符号表示: f(a) ∈ A'， A'是关键特征角度集合）,
@@ -1814,11 +2157,17 @@ class MultiLevelRetrieval:
                     # Get feature value from query_fingerprint
                     feature_cols = self.perspective_info_config[feature_name]["cols"]
                     
-                    query_feature = {
-                        col: str(query_fingerprint.get(col, ""))
-                        for col in feature_cols
-                        if col in query_fingerprint and str(query_fingerprint.get(col, "")) != ""
-                    }
+                    query_feature = {}
+                    for col in feature_cols:
+                        if col not in query_fingerprint:
+                            continue
+                        value = query_fingerprint.get(col)
+                        try:
+                            missing = value is None or pd.isna(value) or str(value).strip() == ""
+                        except (TypeError, ValueError):
+                            missing = False
+                        if not missing:
+                            query_feature[col] = str(value)
 
                     # 构建 query 特征文本：逐字段 "col: value" 格式，与 common_patterns 结构对齐
                     # Build query feature text: "col: value" per field, aligned with common_patterns structure
@@ -1889,6 +2238,8 @@ class MultiLevelRetrieval:
                     # 特征角度级别的匹配分数 B
                     # Feature pespective-level matching score B  某个singe-perspective 的所有cluster和待查询设备的相似度总和
                     feature_matching_score = weighted_similarity_sum
+                    if value_similarities:
+                        evidence_coverage += S_f
                     
                     # 乘以特征重要性分数
                     # Multiply by feature importance score
@@ -1912,7 +2263,8 @@ class MultiLevelRetrieval:
                 path_matching_results.append({
                     "cluster_key": cluster_key,
                     "cluster_info": cluster_info,
-                    "path_matching_score": float(path_score),
+                    "path_matching_score": float(np.clip(path_score, 0.0, 1.0)),
+                    "evidence_coverage": float(np.clip(evidence_coverage, 0.0, 1.0)),
                     "important_features": [
                         {
                             "feature_name": f,
@@ -1923,7 +2275,8 @@ class MultiLevelRetrieval:
                     ],
                     "feature_matching_details": sorted(
                         feature_matching_details,
-                        key=lambda x: x['importance_score']
+                        key=lambda x: x['importance_score'],
+                        reverse=True,
                     )
                 })
             
@@ -1936,8 +2289,10 @@ class MultiLevelRetrieval:
                 "path_matching_results": path_matching_results,
                 "summary": {
                     "total_clusters_analyzed": len(path_matching_results),
-                    "top_cluster": path_matching_results[0] if path_matching_results else None
-                }
+                    "top_cluster": path_matching_results[0] if path_matching_results else None,
+                    "status": "available" if path_matching_results else "unavailable",
+                },
+                "cache_metadata": local_result.get("cache_metadata"),
             }
             
             # 记录到历史
@@ -2043,15 +2398,18 @@ class MultiLevelRetrieval:
             else:
                 old_data = []
             
-            # result_data可以是单条记录或列表
-            # result_data can be a single record or a list
-            if isinstance(result_data, list):
-                old_data.extend(result_data)
-            else:
-                old_data.append(result_data)
-            
-            with open(filepath, "w", encoding='utf-8') as f:
-                json.dump(old_data, f, indent=4, ensure_ascii=False)
+            new_items = result_data if isinstance(result_data, list) else [result_data]
+            # One authoritative record per query IP. Re-running a fingerprint
+            # replaces legacy/stale records instead of accumulating duplicates.
+            for item in new_items:
+                query_ip = str(item.get("query_fingerprint", {}).get("ip", ""))
+                old_data = [
+                    old for old in old_data
+                    if str(old.get("query_fingerprint", {}).get("ip", "")) != query_ip
+                ]
+                old_data.append(item)
+
+            _atomic_json_dump(filepath, old_data, indent=4)
             
             logging.info(f"已保存 {type_name} 检索结果到 {filepath}")
 
@@ -2078,7 +2436,9 @@ class MultiLevelRetrieval:
         with open(filepath, "r", encoding='utf-8') as f:
             return json.load(f)
 
-    def load_retrieval_result_by_type(self, ip: str, device_name: str):
+    def load_retrieval_result_by_type(self, ip: str, device_name: str,
+                                      query_fingerprint: Optional[Dict[str, Any]] = None,
+                                      top_k: Optional[int] = None):
         """
         从分类保存的文件中根据IP加载各类型检索结果
         Load retrieval results by IP from categorized files
@@ -2102,7 +2462,10 @@ class MultiLevelRetrieval:
                 continue
             for record in records:
                 fp = record.get("query_fingerprint", {})
-                if isinstance(fp, dict) and fp.get("ip") == ip:
+                if isinstance(fp, dict) and str(fp.get("ip")) == str(ip):
+                    if query_fingerprint is not None and top_k is not None:
+                        if not cache_record_matches(record, query_fingerprint, top_k):
+                            continue
                     if rtype == "local":
                         local_result = record
                     elif rtype == "community":
@@ -2245,16 +2608,21 @@ class MultiLevelRetrieval:
             community_result = None
 
             if local_result and local_result.get('similar_devices'):
+                community_candidates = local_result.get(
+                    'community_candidates', local_result['similar_devices']
+                )
                 if llm_type == "deepseek":
                     community_result = self.community_retrieval(
                         test_fingerprint,
-                        local_result['similar_devices'],
-                        langchain_version="0.3.27"
+                        community_candidates,
+                        langchain_version="0.3.27",
+                        cache_metadata=local_result.get("cache_metadata"),
                     )
                 else:
                     community_result = self.community_retrieval(
                         test_fingerprint,
-                        local_result['similar_devices']
+                        community_candidates,
+                        cache_metadata=local_result.get("cache_metadata"),
                     )
             
             if community_result:
@@ -2269,7 +2637,7 @@ class MultiLevelRetrieval:
             print("=== 推理路径检索(Reasoning Path Retrieval)开始 ===")
             logging.info("推理路径检索(Reasoning Path Retrieval)开始")
 
-            if community_result and community_result.get('matched_clusters'):
+            if community_result:
                 reasoning_result = self.reasoning_path_retrieval(
                     local_result,
                     community_result
@@ -2319,7 +2687,8 @@ class MultiLevelRetrieval:
 # 单查询入口 / Single-query entry point (供 agent/app.py /api/retrieve 调用)
 # ═════════════════════════════════════════════════════════════════════════════
 
-def _lookup_cached_retrieval(ip) -> Optional[Dict[str, Any]]:
+def _lookup_cached_retrieval(ip, query_fingerprint: Dict[str, Any],
+                             top_k: int) -> Optional[Dict[str, Any]]:
     """
     在 query_db/{local,community,reasoning}/ 下扫描所有设备的结果文件,
     返回该IP已有的三级检索结果 (缺失的层级为None), 全部缺失则返回None
@@ -2350,7 +2719,9 @@ def _lookup_cached_retrieval(ip) -> Optional[Dict[str, Any]]:
                 continue
             for rec in records if isinstance(records, list) else []:
                 fp = rec.get("query_fingerprint", {}) if isinstance(rec, dict) else {}
-                if isinstance(fp, dict) and str(fp.get("ip", "")) == ip:
+                if (isinstance(fp, dict)
+                        and str(fp.get("ip", "")) == ip
+                        and cache_record_matches(rec, query_fingerprint, top_k)):
                     cached[key] = rec
                     break
             if cached[key] is not None:
@@ -2448,7 +2819,10 @@ def main(test_queries, query_fingerprint: Optional[Dict[str, Any]] = None, top_k
 
     # ── Step 2: 缓存查询 / Cache lookup by IP ──
     ip = query_fingerprint.get("ip")
-    cached = _lookup_cached_retrieval(ip) if (use_cache and ip) else None
+    cached = (
+        _lookup_cached_retrieval(ip, query_fingerprint, top_k)
+        if (use_cache and ip) else None
+    )
     local_result = cached["local_result"] if cached else None
     community_result = cached["community_result"] if cached else None
     reasoning_result = cached["reasoning_result"] if cached else None

@@ -17,6 +17,7 @@ from threading import RLock
 from typing import Any, Dict, List, Optional
 
 import pandas as pd
+import numpy as np
 
 # ── project root on path ──────────────────────────────────────────────────────
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -68,7 +69,11 @@ def _lookup_qdb(sub: str, ip: str) -> Dict:
     query_fingerprint.ip matches *ip*.  Returns the raw entry on hit.
     """
     db_dir = os.path.join(_QDB_PATH, sub)
-    for dev in _dev_labels:
+    runtime = globals().get("_retrieval_runtime")
+    context = runtime._context.get(str(ip), {}) if runtime is not None else {}
+    context_device = context.get("device_name")
+    devices = [context_device] if context_device else list(_dev_labels)
+    for dev in devices:
         fp = os.path.join(db_dir, f"{dev}_{sub}.json")
         if not os.path.exists(fp):
             continue
@@ -76,7 +81,13 @@ def _lookup_qdb(sub: str, ip: str) -> Dict:
             entries = json.load(fh)
         for entry in entries:
             if str(entry.get("query_fingerprint", {}).get("ip", "")) == str(ip):
-                return {"status": "found", "candidate_dev": dev, "entry": entry}
+                if context:
+                    from retrieval import cache_record_matches
+                    if not cache_record_matches(
+                        entry, context.get("fingerprint", {}), runtime.top_k
+                    ):
+                        continue
+                return {"status": "found", "entry": entry}
     return {"status": "not_found", "ip": ip}
 
 
@@ -94,9 +105,11 @@ def _local_section(ip: str) -> Dict:
     entry = hit["entry"]
     return {
         "status": "found",
-        "candidate_dev": hit["candidate_dev"],
         "top_k": entry.get("top_k", 5),
         "similar_devices": entry.get("similar_devices", []),
+        "confidence_score": entry.get("confidence_score"),
+        "missing_perspectives": entry.get("missing_perspectives", []),
+        "total_compared": entry.get("total_compared", 0),
     }
 
 
@@ -146,6 +159,7 @@ def _community_section(ip: str) -> Dict:
                 "device_type":       c.get("device_type"),
                 "cluster_id":        c.get("cluster_id"),
                 "similarity_score":  c.get("similarity_score"),
+                "report_source":     c.get("report_source"),
                 "common_patterns":   patterns,
                 "matched_features":  c.get("matched_features", [])[:3],
                 "unmatched_features": c.get("unmatched_features", [])[:3],
@@ -156,6 +170,7 @@ def _community_section(ip: str) -> Dict:
         "status":         "found",
         "total_clusters": entry.get("total_clusters", len(matched)),
         "matched_clusters": trimmed,
+        "unavailable_clusters": entry.get("unavailable_clusters", [])[:5],
     }
 
 
@@ -200,6 +215,7 @@ def _reasoning_section(ip: str) -> Dict:
                 "cluster_key":        pr.get("cluster_key"),
                 "device_type":        ci.get("device_type"),
                 "path_matching_score": pr.get("path_matching_score"),
+                "evidence_coverage": pr.get("evidence_coverage"),
                 "important_features": pr.get("important_features", [])[:5],
                 "top_feature_scores": [
                     {
@@ -296,7 +312,9 @@ class RetrievalToolRuntime:
         device_name = ctx["device_name"]
         fingerprint = ctx["fingerprint"]
         existing_local, existing_community, existing_reasoning = (
-            self.retrieval_agent.load_retrieval_result_by_type(ip, device_name)
+            self.retrieval_agent.load_retrieval_result_by_type(
+                ip, device_name, query_fingerprint=fingerprint, top_k=self.top_k
+            )
         )
         need_local = self.whether_local and existing_local is None
         need_community = self.whether_community and existing_community is None
@@ -401,7 +419,17 @@ def normalize_decision(parsed: Dict[str, Any], llm_name: str, raw_output: str) -
     parsed.setdefault("device_type_reason", "")
     parsed.setdefault("vendor", "Unknown")
     parsed.setdefault("vendor_reason", "")
-    parsed["confidence"] = float(parsed.get("confidence", 0.0))
+    def bounded(value: Any) -> float:
+        try:
+            number = float(value)
+        except (TypeError, ValueError):
+            return 0.0
+        return float(np.clip(number, 0.0, 1.0)) if np.isfinite(number) else 0.0
+
+    legacy_confidence = bounded(parsed.get("confidence", 0.0))
+    parsed["type_confidence"] = bounded(parsed.get("type_confidence", legacy_confidence))
+    parsed["vendor_confidence"] = bounded(parsed.get("vendor_confidence", legacy_confidence))
+    parsed["confidence"] = parsed["type_confidence"]  # backward-compatible alias
     parsed["device_type"] = str(parsed["device_type"]).upper().strip()
     parsed["vendor"] = str(parsed.get("vendor", "Unknown"))
     parsed["device_type_reason"] = str(parsed.get("device_type_reason", ""))
@@ -420,13 +448,35 @@ def joint_vote(gemini: Dict[str, Any], claude: Dict[str, Any]) -> Dict[str, Any]
 # §2  Prompt Templates
 # ═════════════════════════════════════════════════════════════════════════════
 
+def _candidate_device_types() -> str:
+    """Candidate types for the decision prompt, from config/rag_devices.json.
+
+    The list used to be hardcoded to 9 types, which silently excluded ALARM
+    and CONTROLLER — the LLM could then never classify them correctly no
+    matter how strong the retrieval evidence was.
+    """
+    cfg_path = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "config", "rag_devices.json",
+    )
+    try:
+        with open(cfg_path) as fh:
+            types = json.load(fh)["IoT"]
+    except (OSError, ValueError, KeyError):
+        types = [
+            "ALARM", "BUILDING_AUTOMATION", "CAMERA", "CONTROLLER", "MEDICAL",
+            "NAS", "NVR", "POWER_METER", "PRINTER", "ROUTER", "SCADA",
+        ]
+    return " | ".join(types)
+
+
 _AGENT_SYSTEM = """\
 You are an expert IoT network device classifier with deep knowledge of network
 traffic fingerprinting. Your mission is to identify the **device type** and
 **manufacturer/vendor** of an unknown IoT device.
 
 ## Candidate Device Types
-CAMERA | NVR | ROUTER | NAS | PRINTER | MEDICAL | SCADA | BUILDING_AUTOMATION | POWER_METER
+{candidate_types}
 
 ## Your Workflow
 Depending on the runtime configuration, you either have ONE unified retrieval
@@ -456,6 +506,10 @@ Examine service-distribution (open ports). Characteristic patterns:
   - SCADA        → Modbus-502, DNP3-20000, BACnet-47808
   - Medical      → HL7/DICOM, HTTP-8080
   - Power Meter  → DLMS/COSEM, IEC 61850
+  - Alarm        → intrusion/burglar-alarm panels (Bosch, Honeywell, DMP,
+                   Axis, Intruder), embedded web UI on 80/443/8080
+  - Controller   → PLC / building controllers / I/O units (BACnet, KNX,
+                   Niagara, Tridium), vendor firmware web frontends
 
 **[Step 3] TLS / Certificate Evidence**
 Analyse cert-subjects, cert-issuers, tls-versions.
@@ -471,19 +525,24 @@ Consumer ISP → likely endpoint device; Cloud ASN → possible scanner/honeypot
 
 **[Step 6] Local Retrieval Evidence**
 Review top-k similar devices. Dominant device type? Similarity scores?
-(>0.85 = very strong, 0.70–0.85 = moderate, <0.70 = weak)
+`similarity_score` is a linear weighted average of per-perspective cosine
+similarities and is always in [-1, 1]. Also inspect `confidence_score` and
+`missing_perspectives`; sparse evidence must reduce confidence, not be treated as
+semantic contradiction. (>0.85 = very strong, 0.70–0.85 = moderate, <0.70 = weak)
 
 **[Step 7] Community Cluster Evidence**
 Review matched clusters: similarity scores, common patterns, matched/unmatched
-features. Do they corroborate the fingerprint analysis?
+features. Entries listed under `unavailable_clusters` are explicitly NOT
+evidence and must not affect the classification.
 
 **[Step 8] Reasoning Path Evidence**
 Review path matching scores and feature importance. Which features are most
-discriminative and do they align with the query device?
+discriminative and do they align with the query device? Reduce confidence when
+`evidence_coverage` is low.
 
 **[Step 9] Synthesis & Confidence**
 Weigh all evidence. Assign confidence:
-  0.90–1.00 – overwhelming, consistent evidence across all sources
+  0.90–1.00 – reserved for independently calibrated, overwhelming evidence
   0.75–0.89 – strong evidence with minor gaps
   0.60–0.74 – moderate evidence, some conflicting signals
   0.40–0.59 – weak evidence, notable uncertainty
@@ -506,7 +565,8 @@ After your chain-of-thought, output a **single JSON block** (no trailing text):
   "device_type_reason":  "<Concise explanation of the key evidence that led to this device type decision>",
   "vendor":              "<manufacturer name or 'Unknown'>",
   "vendor_reason":       "<Concise explanation of the key evidence that identified this specific vendor>",
-  "confidence":          0.0
+  "type_confidence":     0.0,
+  "vendor_confidence":   0.0
 }
 ```
 """
@@ -717,34 +777,69 @@ class DecisionAgent:
     @staticmethod
     def _joint_vote(gemini: Dict, claude: Dict) -> Dict:
         """
-        Select the result with the higher confidence score.
-        When both LLMs agree on device_type, boost the final confidence slightly
-        (average of both + 0.05, capped at 1.0).
+        Select the higher-confidence result while applying a conservative policy.
+
+        LLM self-reported confidence is not calibrated. Agreement therefore does
+        not receive an artificial boost, and disagreement cannot be presented as
+        high-confidence evidence.
         """
-        g_conf = float(gemini.get("confidence", 0.0))
-        c_conf = float(claude.get("confidence", 0.0))
+        g_conf = float(np.clip(float(gemini.get("type_confidence", gemini.get("confidence", 0.0))), 0.0, 1.0))
+        c_conf = float(np.clip(float(claude.get("type_confidence", claude.get("confidence", 0.0))), 0.0, 1.0))
 
         winner, loser = (gemini, claude) if g_conf >= c_conf else (claude, gemini)
         agree = winner.get("device_type") == loser.get("device_type")
 
-        final_conf = winner["confidence"]
         if agree:
-            final_conf = min(1.0, round((g_conf + c_conf) / 2 + 0.05, 4))
+            agreement_cap = 0.35 if winner.get("device_type") == "UNKNOWN" else 0.89
+            final_conf = min(agreement_cap, (g_conf + c_conf) / 2)
+            confidence_policy = "agreement_mean_capped"
+        else:
+            final_conf = min(0.69, max(g_conf, c_conf))
+            confidence_policy = "disagreement_capped"
+
+        g_vendor_conf = float(np.clip(float(gemini.get("vendor_confidence", g_conf)), 0.0, 1.0))
+        c_vendor_conf = float(np.clip(float(claude.get("vendor_confidence", c_conf)), 0.0, 1.0))
+        vendor_winner, vendor_loser = (
+            (gemini, claude) if g_vendor_conf >= c_vendor_conf else (claude, gemini)
+        )
+        vendor_agree = (
+            str(vendor_winner.get("vendor", "")).strip().casefold()
+            == str(vendor_loser.get("vendor", "")).strip().casefold()
+        )
+        if vendor_agree:
+            vendor_cap = (
+                0.35
+                if str(vendor_winner.get("vendor", "")).strip().casefold()
+                in {"", "unknown"}
+                else 0.89
+            )
+            final_vendor_conf = min(vendor_cap, (g_vendor_conf + c_vendor_conf) / 2)
+            vendor_confidence_policy = "agreement_mean_capped"
+        else:
+            final_vendor_conf = min(0.69, max(g_vendor_conf, c_vendor_conf))
+            vendor_confidence_policy = "disagreement_capped"
 
         return {
             "final_device_type":        winner["device_type"],
             "final_device_type_reason": winner.get("device_type_reason", ""),
-            "final_vendor":             winner["vendor"],
-            "final_vendor_reason":      winner.get("vendor_reason", ""),
+            "final_vendor":             vendor_winner["vendor"],
+            "final_vendor_reason":      vendor_winner.get("vendor_reason", ""),
             "final_confidence":         round(final_conf, 4),
+            "final_vendor_confidence":  round(final_vendor_conf, 4),
             "winning_llm":              winner["llm"],
             "llm_agreement":            agree,
+            "confidence_policy":        confidence_policy,
+            "winning_vendor_llm":       vendor_winner["llm"],
+            "vendor_llm_agreement":     vendor_agree,
+            "vendor_confidence_policy": vendor_confidence_policy,
             "gemini": {
                 "device_type":        gemini.get("device_type"),
                 "device_type_reason": gemini.get("device_type_reason", ""),
                 "vendor":             gemini.get("vendor"),
                 "vendor_reason":      gemini.get("vendor_reason", ""),
                 "confidence":         g_conf,
+                "type_confidence":    g_conf,
+                "vendor_confidence":  g_vendor_conf,
                 "synthesis":          gemini.get("step9_synthesis", ""),
             },
             "claude": {
@@ -753,6 +848,8 @@ class DecisionAgent:
                 "vendor":             claude.get("vendor"),
                 "vendor_reason":      claude.get("vendor_reason", ""),
                 "confidence":         c_conf,
+                "type_confidence":    c_conf,
+                "vendor_confidence":  c_vendor_conf,
                 "synthesis":          claude.get("step9_synthesis", ""),
             },
         }
@@ -803,8 +900,13 @@ class DecisionAgent:
             "predicted_vendor":          voting["final_vendor"],
             "vendor_reason":             voting["final_vendor_reason"],
             "final_confidence":          voting["final_confidence"],
+            "final_vendor_confidence":   voting["final_vendor_confidence"],
             "winning_llm":               voting["winning_llm"],
             "llm_agreement":             voting["llm_agreement"],
+            "confidence_policy":         voting.get("confidence_policy"),
+            "winning_vendor_llm":        voting.get("winning_vendor_llm"),
+            "vendor_llm_agreement":      voting.get("vendor_llm_agreement"),
+            "vendor_confidence_policy":  voting.get("vendor_confidence_policy"),
             "gemini":                    voting["gemini"],
             "claude":                    voting["claude"],
             "elapsed_sec":               round(time.time() - t0, 2),

@@ -52,10 +52,16 @@ DRIFT_OUTPUT_DIR = os.path.join(ROOT_DIR, "drift_data", "autoencoder_drift")
 HGT_INPUT_EMBEDDING_DIR = os.path.join(RAG_DATA_DIR, "embedding_local")
 
 # Agent and evaluation output
-QUERY_DB_DIR = os.path.join(AGENT_DIR, "query_db")
+QUERY_DB_DIR = os.path.abspath(os.environ.get(
+    "IOTPROBER_QUERY_DB_DIR", os.path.join(AGENT_DIR, "query_db")
+))
 EVALUATION_DIR = os.path.join(ROOT_DIR, "evaluation")
-VALIDATION_DIR = os.path.join(EVALUATION_DIR, "validation")
-PREDICTION_DIR = os.path.join(EVALUATION_DIR, "predict")
+VALIDATION_DIR = os.path.abspath(os.environ.get(
+    "IOTPROBER_VALIDATION_DIR", os.path.join(EVALUATION_DIR, "validation")
+))
+PREDICTION_DIR = os.path.abspath(os.environ.get(
+    "IOTPROBER_PREDICTION_DIR", os.path.join(EVALUATION_DIR, "predict")
+))
 PREDICTION_RESULT_DIR = os.path.join(PREDICTION_DIR, "result")
 TYPE_PREDICTION_DIR = os.path.join(
     VALIDATION_DIR, "type", "predict", "IoTProber"
