@@ -3,7 +3,6 @@ import re
 import os
 import sys
 import time
-from tkinter import N
 import csv
 import pandas as pd
 from typing import Dict, List, Any
@@ -15,7 +14,7 @@ import logging
 import requests
 from requests.auth import HTTPBasicAuth
 from util import *
-from censys_platform import SDK, Port
+from censys_platform import SDK
 import shodan
 
 logging.basicConfig(

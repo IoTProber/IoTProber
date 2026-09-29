@@ -46,6 +46,9 @@ CUDA_VISIBLE_DEVICES=0 $EL demo/run_fullflow_demo.py --showcase-only
 # Discard generated retrieval/prediction caches for the requested types.
 CUDA_VISIBLE_DEVICES=0 $EL demo/run_fullflow_demo.py --fresh --types CAMERA NAS
 
+# Override the default DEEPSEEK relay model used for cluster matching.
+CUDA_VISIBLE_DEVICES=0 $EL demo/run_fullflow_demo.py --retrieval-llm OPENAI --types CAMERA
+
 # Compute final accuracy, per-layer retrieval accuracy/availability, Recall@K,
 # self-match/range integrity checks, high-confidence errors, and 10-bin ECE.
 $EL demo/evaluate_fullflow.py

@@ -1,82 +1,73 @@
-# ──────────────────────────────────────────────────────────────────────────────
-# IoTProber — Minimal verified environment (agent control plane)
+# IoTProber runtime and training environment
+# Verified target: Python 3.11 on Linux. Install everything in one command:
+#   python -m pip install -r requirements.txt
 #
-# Verified on: Python 3.11, Linux + CUDA (H800), elastic_slm environment.
-# Scope: agent control plane (decomposition, multi-level retrieval, LangGraph
-# decision, Flask REST API) + graph-construction pipeline (graph/).
-#
-# NOT included (install separately if needed):
-#   - torch / CUDA wheels — install BEFORE this file:
-#       pip install torch==2.9.1 --index-url https://download.pytorch.org/whl/cu128
-#   - RAPIDS cuml (graph/cluster_cuml.py GPU variant)
-#   - unseen-detector training extras (datasets, trl, bitsandbytes)
-#
-# External services:
-#   - Neo4j 4.4 (community) — hierarchical community graph storage, required by
-#     graph/* and the graph_neighbor feature of agent/retrieval.py (lazy,
-#     fail-safe). Run on neo4j://localhost:7687, auth neo4j/avs01046. On JDK 17
-#     add dbms.jvm.additional=--add-opens=java.base/java.nio=ALL-UNNAMED (plus
-#     sun.nio.ch / java.lang / java.util / java.lang.reflect) to conf/neo4j.conf.
-#     graph/update_graph.py::run_test_update optionally uses a second instance
-#     on port 7688 (neo4j_updated).
-#   - Milvus — NO server needed: all code paths use embedded Milvus Lite
-#     (local milvus.db files under platform_data/.../vectorDB/).
-#
-# NOTE on langgraph: langchain==1.1.0 declares langgraph<1.1.0, but the
-# decision graph requires langgraph>=1.1 (add_node(defer=) and
-# langgraph.runtime.ExecutionInfo, absent in 1.0.x). A single
-# `pip install -r requirements.txt` therefore fails with ResolutionImpossible.
-# Install in two steps:
-#   grep -v '^langgraph' requirements.txt | grep -v '^#' > /tmp/req-nolanggraph.txt
-#   pip install -r /tmp/req-nolanggraph.txt
-#   pip install langgraph==1.2.11
-# ──────────────────────────────────────────────────────────────────────────────
+# PyTorch's PyPI wheel selects the platform-appropriate build. For a specific
+# CUDA wheel (for example cu128), follow the PyTorch selector first, then run
+# this file; pip will keep the already-satisfied torch version.
 
-# ── LangChain 1.x control plane ──────────────────────────────────────────────
-langchain==1.1.0
-langchain-core==1.6.3
+# Core tensor / QLoRA stack
+torch==2.9.1
+torchvision==0.24.1
+bitsandbytes==0.46.0; platform_system == "Linux"
+transformers==4.57.6
+sentence-transformers==5.1.2
+peft==0.19.1
+accelerate==1.13.0
+datasets==4.8.4
+trl==0.23.1
+safetensors==0.7.0
+
+# LangChain / LangGraph control plane. These versions share the LangGraph 1.2
+# dependency line and can be resolved by one pip invocation.
+langchain==1.4.3
+langchain-core==1.6.4
 langchain-community==0.4.1
 langchain-classic==1.0.0
+langchain-anthropic==1.7.4
 langchain-deepseek==1.0.1
 langchain-google-genai==3.2.0
-langchain-openai==1.1.0
 langchain-huggingface==1.1.0
-langgraph==1.2.11
+langchain-openai==1.1.0
+langgraph==1.2.12
 
-# ── LLM SDKs ──────────────────────────────────────────────────────────────────
-anthropic==0.86.0
+# LLM and search clients
+anthropic==1.8.0
 openai==2.8.1
 google-genai==1.53.0
 tiktoken==0.12.0
-
-# ── Web server (agent/app.py REST API) ────────────────────────────────────────
-flask==3.1.3
-flask-cors==6.0.5
 tavily-python==0.8.4
 
-# ── Data & ML ──────────────────────────────────────────────────────────────────
+# Web API
+flask==3.1.3
+flask-cors==6.0.5
+
+# Notebook showcase
+jupyterlab==4.6.4
+ipykernel==7.3.0
+
+# Data, statistics, and graph learning
 numpy==1.26.4
 pandas==3.0.2
 scikit-learn==1.7.2
 scipy==1.15.3
 joblib==1.5.2
-
-# ── Embedding / unseen detector (requires torch, see header) ─────────────────
-sentence-transformers==5.1.2
-transformers==4.57.6
-peft==0.19.1
-accelerate==1.13.0
-
-# ── Graph-construction pipeline (graph/) ──────────────────────────────────────
+matplotlib==3.10.9
 hdbscan==0.8.40
 geopy==2.4.1
 torch-geometric==2.7.0
 
-# ── Vector / graph DB clients ─────────────────────────────────────────────────
+# Embedded vector store and graph database client
 pymilvus==2.5.18
-milvus-lite==3.2.1
+milvus-lite==3.2.1; sys_platform != "win32"
 py2neo==2021.2.4
 
-# ── Misc ───────────────────────────────────────────────────────────────────────
+# Fingerprint acquisition clients
+censys-platform==0.16.1
+shodan==1.31.0
+requests==2.34.2
+
+# Configuration and serialization
 python-dotenv==1.2.1
 pydantic==2.12.5
+PyYAML==6.0.3

@@ -50,28 +50,32 @@ All Python dependencies are listed in **`requirements.txt`**.
 
 ### Create environment
 
-Either conda **or** a lightweight `venv`/`uv` environment works. The environment is
-named `iotprober` to keep it separate from `base`.
+Python 3.11 on Linux is the verified target. Either conda or a lightweight
+`venv`/`uv` environment works; install the complete runtime and training stack
+with the same `requirements.txt` file.
 
 ```bash
 # Option A — conda
-conda create -n iotprober python=3.10
+conda create -n iotprober python=3.11
 conda activate iotprober
-grep -v '^langgraph' requirements.txt | grep -v '^#' | pip install -r /dev/stdin
-pip install langgraph==1.2.11
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 
 # Option B — venv / uv (isolated, no conda needed)
-uv venv --python 3.10 --seed .venv-iotprober
-grep -v '^langgraph' requirements.txt | grep -v '^#' | .venv-iotprober/bin/pip install -r /dev/stdin
-.venv-iotprober/bin/pip install langgraph==1.2.11
+uv venv --python 3.11 --seed .venv-iotprober
+.venv-iotprober/bin/python -m pip install -r requirements.txt
 ```
 
-> **LangChain is pinned to the 1.x line** (`requirements.txt`: `langchain==1.1.0`, `langgraph==1.2.11` (>=1.1: `add_node(defer=)` and `langchain.agents` require `langgraph.runtime.ExecutionInfo`, absent in 1.0.4)). The control-plane decision workflow (`agent/agent.py::IoTDecisionGraph`) is built on `langgraph.graph.StateGraph`; the legacy `AgentExecutor` / `create_openai_tools_agent` API still used by `agent/decision.py::DecisionAgent` is restored via the `langchain-classic==1.0.0` compatibility package, which must be installed alongside `langchain` 1.x.
+> **LangChain is pinned to a mutually compatible 1.x stack** (`langchain==1.4.3`,
+> `langchain-core==1.6.4`, and `langgraph==1.2.12`), so a single pip invocation
+> resolves the control plane. The legacy APIs used by `agent/decision.py` are
+> provided by `langchain-classic==1.0.0`.
 
-> **GPU-only extras** (`bitsandbytes`, RAPIDS `cuml`) are intentionally excluded from
-> `requirements.txt` — enable them on a CUDA Linux host as needed. Without
-> `bitsandbytes`, run the unseen LLaMA detector in full/half precision
-> (`load_in_4bit=False`).
+> PyTorch, `bitsandbytes`, the fine-tuning stack (`datasets`, `trl`, `peft`) and
+> all runtime SDKs are included. RAPIDS `cuml` remains optional because its wheel
+> must match the host CUDA version; `graph/cluster.py` provides the portable CPU
+> path. For a CUDA-specific PyTorch wheel, install it using the official PyTorch
+> selector before running the requirements command.
 
 ### Local services
 
@@ -178,21 +182,28 @@ Lists the 2 new IoT device types that the system aims to identify:
 ## Quick Start
 
 ```bash
-# 1. Activate the environment
-conda activate iotprober          # or: source .venv-iotprober/bin/activate
+# 1. Clone and install
+git clone https://github.com/IoTProber/IoTProber.git
+cd IoTProber
+python3.11 -m venv .venv-iotprober
+source .venv-iotprober/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 
-# 2. Configure LLM API keys in the ignored local override
+# 2. Configure LLM API keys in the ignored local override.
+#    DeepSeek is the default retrieval/decomposition LLM for the full flow.
 cp config/llm_config.json config/llm_config.local.json
 vi config/llm_config.local.json
 
-# 3. Acquire fingerprint data from Censys (requires Censys credentials)
+# 3. Acquire fingerprint data from Censys (optional if using the published data)
 python acquire_data.py --collect -collect_new --filter_new --filter_old --convert --org_id <Your Org ID> --token <Your Token>
 python acquire_data.py --drift
 ```
 
-**Or You Can Download Dataset from Our Huggging Face Repository including many large dataset that put under the folder **evaluation, platform_data, drift_data**.**
-
-https://huggingface.co/datasets/IoTProber
+Alternatively, download the prepared dataset from the
+[IoTProber Hugging Face repository](https://huggingface.co/datasets/IoTProber)
+and place its large assets under `evaluation/`, `platform_data/`, and
+`drift_data/`.
 
 ```bash
 # 4. Build the RAG hierarchical graph + vector store (Data Plane).
@@ -204,7 +215,14 @@ python graph/construction.py --all --gpu 0
 # 5. Run the identification pipeline (Control Plane):
 #    retrieval (local + community + reasoning) → LangGraph decision
 #    (unseen ⇄ Tavily → gate → drift → prepare → gemini/claude ReAct → finish)
-python agent/agent.py --decompose --local --community --reasoning --decision
+python agent/agent.py --decompose --local --community --reasoning --decision --llm DEEPSEEK
+
+# Or run the reproducible full-flow demo. DeepSeek is the default; use
+# --retrieval-llm only when you intentionally want another configured backend.
+CUDA_VISIBLE_DEVICES=0 python demo/run_fullflow_demo.py --types CAMERA
+
+# Open the English-language interactive showcase.
+jupyter lab demo/demo_showcase.ipynb
 ```
 
 ## Memory & Speed Optimizations

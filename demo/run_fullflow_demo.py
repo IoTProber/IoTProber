@@ -141,7 +141,7 @@ def restore_test_csv(t):
         shutil.move(backup, path)
 
 
-def run_type(t, showcase_only=False, fresh=False):
+def run_type(t, showcase_only=False, fresh=False, retrieval_llm="DEEPSEEK"):
     from agent import IdentificationAgent
     case_name = "cases.json" if showcase_only else "validation_cases.json"
     case_path = os.path.join(DEMO, t, case_name)
@@ -157,7 +157,7 @@ def run_type(t, showcase_only=False, fresh=False):
         clear_caches(t)
     t0 = time.time()
     try:
-        agent = IdentificationAgent(llm="DEEPSEEK", gpu=0)
+        agent = IdentificationAgent(llm=retrieval_llm, gpu=0)
         agent.run_retrieval(whether_decompose=True, whether_local=True,
                             whether_community=True, whether_reasoning=True,
                             devices=[t], top_k=5, quick_resume=True)
@@ -267,13 +267,24 @@ if __name__ == "__main__":
                    help="Run curated UI cases instead of the random validation set")
     p.add_argument("--fresh", action="store_true",
                    help="Delete this type's generated retrieval/prediction cache before running")
+    p.add_argument(
+        "--retrieval-llm",
+        choices=["CLAUDE", "DEEPSEEK", "GEMINI", "OPENAI"],
+        default=os.environ.get("IOTPROBER_FULLFLOW_RETRIEVAL_LLM", "DEEPSEEK"),
+        help="LLM used for cluster matching (default: DEEPSEEK via llm_config.local.json)",
+    )
     a = p.parse_args()
     todo = a.types or TYPES
     run_status = {}
     run_counts = {}
     for t in todo:
         try:
-            run_counts[t] = run_type(t, showcase_only=a.showcase_only, fresh=a.fresh)
+            run_counts[t] = run_type(
+                t,
+                showcase_only=a.showcase_only,
+                fresh=a.fresh,
+                retrieval_llm=a.retrieval_llm,
+            )
             run_status[t] = "completed"
         except Exception as exc:  # noqa: BLE001 — keep the sweep going
             print(f"[{t}] FAILED: {type(exc).__name__}: {str(exc)[:180]}", flush=True)
@@ -285,6 +296,7 @@ if __name__ == "__main__":
                 value == "completed" for value in run_status.values()
             ) else "partial",
             "source": "cases.json" if a.showcase_only else "validation_cases.json",
+            "retrieval_llm": a.retrieval_llm,
             "requested_types": todo,
             "type_status": run_status,
             "type_counts": run_counts,

@@ -80,7 +80,7 @@ class IdentificationAgent:
            Results saved to evaluation/predict/result/
     """
 
-    def __init__(self, llm: str = "CLAUDE", gpu: int = -1):
+    def __init__(self, llm: str = "DEEPSEEK", gpu: int = -1):
         """
         初始化IdentificationAgent
         Initialize IdentificationAgent
@@ -778,7 +778,7 @@ class IoTDecisionGraph:
         whether_community: bool = True,
         whether_reasoning: bool = True,
         top_k: int = 5,
-        llm_type: str = "CLAUDE",
+        llm_type: str = "DEEPSEEK",
         enable_first_stage: bool = True,
         unseen_model_path: Optional[str] = None,
         unseen_adapter_path: Optional[str] = None,
@@ -1324,7 +1324,8 @@ def main():
     parser.add_argument('--device', type=str, nargs='+', default=None,
                         help='指定设备类型 (如 CAMERA NAS)，默认处理全部')
     parser.add_argument(
-        "--llm", type=str, default="CLAUDE", choices=["GEMINI", "DEEPSEEK", "OPENAI"],
+        "--llm", type=str, default="DEEPSEEK",
+        choices=["CLAUDE", "GEMINI", "DEEPSEEK", "OPENAI"],
         help="LLM类型 / LLM type (default: DEEPSEEK)"
     )
     parser.add_argument(
