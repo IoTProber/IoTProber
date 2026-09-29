@@ -478,6 +478,25 @@ traffic fingerprinting. Your mission is to identify the **device type** and
 ## Candidate Device Types
 {candidate_types}
 
+## Confusable Pairs — discriminative cues
+Some type pairs have highly homogeneous fingerprints. Before answering, check
+them explicitly:
+- CAMERA vs NVR: a CAMERA is a single-channel capture endpoint (ONVIF/RTSP
+  single stream, camera-vendor firmware web UI). An NVR is a multi-channel
+  recording/storage host (channel management pages, storage services, web
+  pages mentioning NVR/Recorder/Channels; vendor lines like Hikvision/Dahua/
+  UniFi recorders).
+- SCADA vs CONTROLLER: SCADA devices are supervisory/gateway nodes
+  (node-red, lighttpd, grafana, OPC-UA gateways); CONTROLLER devices are
+  field PLCs/IO units (BACnet MS/TP, Niagara/Tridium, Modbus RTU firmware).
+- MEDICAL vs BUILDING_AUTOMATION / ROUTER: medical devices run dedicated
+  embedded stacks from medical vendors (DICOM/HL7 hints, medical regulatory
+  text); when the vendor line is a building/network vendor (Siemens building
+  products, Honeywell, Cisco) prefer BUILDING_AUTOMATION / ROUTER.
+- PRINTER vs ROUTER: printers expose JetDirect 9100 / IPP 631 / LPD 515 and
+  printer vendors (HP/Canon/Epson/Brother/Kyocera); routers expose NAT/
+  routing admin pages from network vendors.
+
 ## Your Workflow
 Depending on the runtime configuration, you either have ONE unified retrieval
 tool (configurable_multi_level_retrieval) that returns all enabled retrieval

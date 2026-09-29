@@ -153,7 +153,16 @@ def tavily_web_search(query: str) -> str:
     -------
     str — Formatted search results containing titles, links, and summaries.
     """
-    return search_web_formatted(query=query, max_results=5)
+    try:
+        return search_web_formatted(query=query, max_results=5)
+    except EnvironmentError as exc:
+        # The unseen ReAct loop routes here when the detector wants web
+        # evidence; an unconfigured key must degrade to a textual "no result"
+        # so the decision graph can continue (route back to the unseen node,
+        # which proceeds without web evidence) instead of crashing the run.
+        return (f"Web search unavailable: {exc} "
+                "Continue with the evidence already available; do not call "
+                "this tool again.")
 
 
 TAVILY_TOOLS = [tavily_web_search]

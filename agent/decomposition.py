@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 from langchain_deepseek import ChatDeepSeek
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
-from config import GEMINI_API_KEY, DEEPSEEK_API_KEY, OPENAI_API_KEY
+from config import LLM_CONFIG
 from path_config import QUERY_DB_DIR
 
 warnings.filterwarnings("ignore")
@@ -73,33 +73,30 @@ class DecompositionAgent:
             os.environ["HTTP_PROXY"] = _proxy
             os.environ["HTTPS_PROXY"] = _proxy
 
-        if llm == "gemini":
-            print("Loading Gemini 3 pro Model...")
-            os.environ["GOOGLE_API_KEY"] = GEMINI_API_KEY
-            load_dotenv()
-            self.llm = ChatGoogleGenerativeAI(
-                model="gemini-3-pro-preview",
-                temperature=1.0,  # Gemini 3.0+ defaults to 1.0
-                max_tokens=None,
-                timeout=None
-            )
-            print("Gemini 3 pro Model loaded.")
-
-        elif llm == "deepseek":
-            print("Loading DeepSeek-V3.2 Model...")
-            os.environ["DEEPSEEK_API_KEY"] = DEEPSEEK_API_KEY
-            load_dotenv()
-            self.llm = ChatDeepSeek(model="deepseek-chat", temperature=1.3)
-            print("DeepSeek Model loaded.")
-
-        elif llm == "openai":
-            print("Loading ChatGPT 4 Model...")
-            os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
-            load_dotenv()
-            self.llm = ChatOpenAI(model="gpt-4o", temperature=1.0)
-            print("ChatGPT 4 Model loaded.")
-        else:
+        provider = str(llm).upper()
+        if provider not in {"GEMINI", "DEEPSEEK", "OPENAI"}:
             raise ValueError("Invalid LLM type")
+
+        # All three configured providers may be routed through an
+        # OpenAI-compatible relay.  Respect the central config's endpoint and
+        # model instead of silently bypassing it with an official Google or
+        # DeepSeek SDK default endpoint.
+        entry = LLM_CONFIG[provider]
+        base_url = entry["BASE_URL"].rstrip("/")
+        if not base_url.endswith("/v1"):
+            base_url += "/v1"
+        print(f"Loading decomposition model {entry['MODEL']} via {base_url}...")
+        load_dotenv()
+        self.llm = ChatOpenAI(
+            api_key=entry["API_KEY"],
+            base_url=base_url,
+            model=entry["MODEL"],
+            temperature=1.0,
+            max_tokens=512,
+            timeout=60,
+            max_retries=2,
+        )
+        print("Decomposition model loaded.")
         
         print("=== 初始化LLM完成 === \n")
         
@@ -500,6 +497,7 @@ class DecompositionAgent:
         self.decomposition_history.clear()
 
     def save_history(self, filename: str = "decomposition_history.json"):
+        os.makedirs(self.query_path, exist_ok=True)
         with open(os.path.join(self.query_path, filename), "w") as f:
             json.dump(self.decomposition_history, f, indent=4)
 
@@ -508,8 +506,9 @@ class DecompositionAgent:
             self.decomposition_history = json.load(f)
 
 def main(test_queries):
-    # choose_llm = "gemini"
-    choose_llm = "deepseek"
+    # Honour the shared relay config and keep DeepSeek as the full-pipeline
+    # default. Callers can override it without editing source.
+    choose_llm = os.environ.get("IOTPROBER_DECOMPOSITION_LLM", "deepseek").lower()
     agent = DecompositionAgent(llm=choose_llm)
     
     print("=== 测试问题分解 ===")

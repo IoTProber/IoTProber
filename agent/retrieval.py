@@ -1393,10 +1393,10 @@ class MultiLevelRetrieval:
                 Please calculate the similarity score between two device fingerprints.
                 
                 Fingerprint 1:
-                {json.dumps(fingerprint1, indent=2, ensure_ascii=False)}
+                {json.dumps(truncate_fingerprint_for_llm(fingerprint1), indent=2, ensure_ascii=False)}
                 
                 Fingerprint 2:
-                {json.dumps(fingerprint2, indent=2, ensure_ascii=False)}
+                {json.dumps(truncate_fingerprint_for_llm(fingerprint2), indent=2, ensure_ascii=False)}
                 
                 Please return ONLY a similarity score between 0 and 1, where:
                 - 1.0 means identical fingerprints
@@ -1438,10 +1438,10 @@ class MultiLevelRetrieval:
                 Calculate the similarity score between two IoT device fingerprints.
                 
                 Fingerprint 1:
-                {json.dumps(fingerprint1, indent=2, ensure_ascii=False)}
+                {json.dumps(truncate_fingerprint_for_llm(fingerprint1), indent=2, ensure_ascii=False)}
                 
                 Fingerprint 2:
-                {json.dumps(fingerprint2, indent=2, ensure_ascii=False)}
+                {json.dumps(truncate_fingerprint_for_llm(fingerprint2), indent=2, ensure_ascii=False)}
                 
                 Return a similarity score between 0 and 1.
                 Consider all features except IP address.
@@ -1723,8 +1723,27 @@ class MultiLevelRetrieval:
                 k: v for k, v in query_fingerprint.items()
                 if k.lower() != 'ip'
             }
-            fingerprint_str = json.dumps(filtered_fingerprint, indent=2, ensure_ascii=False)
-            report_str = cluster_report if cluster_report else "No report available"
+            # Community summaries can themselves be very large (some legacy
+            # reports exceed 100 KB).  Bounding only the fingerprint still
+            # produced 20K+ token requests per candidate cluster.  Give both
+            # sides an explicit, independently configurable character budget.
+            fingerprint_limit = int(os.environ.get(
+                "IOTPROBER_COMMUNITY_FINGERPRINT_CHARS", "8000"
+            ))
+            report_limit = int(os.environ.get(
+                "IOTPROBER_COMMUNITY_REPORT_CHARS", "8000"
+            ))
+            fingerprint_str = json.dumps(
+                truncate_fingerprint_for_llm(
+                    filtered_fingerprint,
+                    total_value_limit=fingerprint_limit,
+                ),
+                indent=2,
+                ensure_ascii=False,
+            )
+            report_str = truncate_text_for_llm(
+                cluster_report or "No report available", report_limit
+            )
 
             # system 角色提示词: 定义专家身份、评分标准和分析维度
             # system role prompt: define expert identity, scoring criteria, and analysis dimensions
@@ -1764,7 +1783,12 @@ class MultiLevelRetrieval:
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ]
-            analysis_json = self.llm.chat_with_llm(self.used_llm_model, messages, whether_json=True)
+            analysis_json = self.llm.chat_with_llm(
+                self.used_llm_model,
+                messages,
+                whether_json=True,
+                max_tokens=512,
+            )
 
             matched_features = analysis_json.get("matched_features")
             unmatched_features = analysis_json.get("unmatched_features")
@@ -1966,7 +1990,12 @@ class MultiLevelRetrieval:
             {"role": "user", "content": user_prompt}
         ]
 
-        result = self.llm.chat_with_llm(self.used_llm_model, messages, whether_json=True)
+        result = self.llm.chat_with_llm(
+            self.used_llm_model,
+            messages,
+            whether_json=True,
+            max_tokens=128,
+        )
         similarity = float(result.get('similarity'))
         if not np.isfinite(similarity) or not 0.0 <= similarity <= 1.0:
             raise ValueError(f"LLM similarity out of range: {similarity}")

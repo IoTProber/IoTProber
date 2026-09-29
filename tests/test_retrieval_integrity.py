@@ -18,6 +18,7 @@ for path in (ROOT, AGENT):
 import retrieval  # noqa: E402
 import decision  # noqa: E402
 import agent as agent_module  # noqa: E402
+import util  # noqa: E402
 
 
 def bare_retriever(directory, perspectives=("p1", "p2"), embedding_dim=2):
@@ -38,6 +39,25 @@ def bare_retriever(directory, perspectives=("p1", "p2"), embedding_dim=2):
 
 
 class RetrievalIntegrityTests(unittest.TestCase):
+    def test_llm_fingerprint_payload_is_bounded_without_mutating_source(self):
+        fingerprint = {
+            "ip": "1.2.3.4",
+            "http-bodys": "A" * 50_000,
+            "cert-info": "B" * 12_000,
+            "sw-info": "C" * 12_000,
+        }
+
+        trimmed = util.truncate_fingerprint_for_llm(
+            fingerprint, total_value_limit=4_000
+        )
+
+        self.assertEqual(len(fingerprint["http-bodys"]), 50_000)
+        self.assertLessEqual(
+            sum(len(str(value)) for value in trimmed.values()), 4_000
+        )
+        self.assertIn("truncated", trimmed["http-bodys"])
+        self.assertEqual(trimmed["ip"], "1.2.3.4")
+
     def test_empty_local_index_preserves_search_return_contract(self):
         with tempfile.TemporaryDirectory() as directory:
             obj = bare_retriever(directory)

@@ -155,6 +155,118 @@ UNSEEN_VENDOR_SUFFIXES = {
 }
 
 
+# ── LLM 喂入截断（token 经济学）─────────────────────────────────────────────
+# 指纹里的 blob 字段（尤其 http-bodys）单条可达数百 KB，是决策/检索 prompt
+# 冲到 3-7 万 token 的主因。所有把指纹序列化进 LLM prompt 的环节都应先过
+# truncate_fingerprint_for_llm。注意：unseen 适配器的 prompt 有训练期契约
+# （summarizer），不走此函数。
+LLM_FIELD_CHAR_LIMITS = {
+    "http-bodys": 2000,      # HTML 全文，信息密度低，截最狠
+    "http-info": 3000,
+    "http-part-info": 3000,
+    "sw-info": 3000,
+    "as-info": 2000,
+    "whois-info": 2000,
+    "loc-info": 1500,
+    "cert-info": 3000,
+    "service-distribution": 2000,
+}
+LLM_DEFAULT_FIELD_CHAR_LIMIT = 4000
+LLM_TOTAL_VALUE_CHAR_LIMIT = 8000
+
+
+def _truncate_llm_value(value, limit):
+    """Truncate one value while making the omitted size explicit to the LLM."""
+    text = str(value)
+    limit = max(0, int(limit))
+    if len(text) <= limit:
+        return value
+    if limit == 0:
+        return ""
+    marker = f" ...[truncated {len(text)} chars]"
+    if len(marker) >= limit:
+        return marker[:limit]
+    keep = max(0, limit - len(marker))
+    marker = f" ...[truncated {len(text) - keep} chars]"
+    keep = max(0, limit - len(marker))
+    return (text[:keep] + marker)[:limit]
+
+
+def truncate_text_for_llm(value, limit):
+    """Return a text value bounded to ``limit`` characters with an audit marker."""
+    if value is None:
+        return ""
+    return str(_truncate_llm_value(value, max(0, int(limit))))
+
+
+def truncate_fingerprint_for_llm(
+    fp, *, http_bodys_limit=None, total_value_limit=None
+):
+    """返回截断后的指纹副本，供任何将指纹喂给 LLM 的环节使用。
+
+    超限字段保留前 N 字符并追加截断标记，模型仍能看到字段存在与开头
+    内容。http_bodys_limit 可通过环境变量 IOTPROBER_HTTP_BODYS_LIMIT 覆盖。
+    total_value_limit 可供 community matching 等更严格的调用点覆盖总预算；
+    未指定时使用 IOTPROBER_TOTAL_FINGERPRINT_CHARS 或全局默认值。
+    """
+    import os as _os
+    limits = dict(LLM_FIELD_CHAR_LIMITS)
+    if http_bodys_limit is not None:
+        limits["http-bodys"] = http_bodys_limit
+    elif _os.environ.get("IOTPROBER_HTTP_BODYS_LIMIT"):
+        limits["http-bodys"] = int(_os.environ["IOTPROBER_HTTP_BODYS_LIMIT"])
+    if total_value_limit is None:
+        total_limit = int(
+            _os.environ.get(
+                "IOTPROBER_TOTAL_FINGERPRINT_CHARS", LLM_TOTAL_VALUE_CHAR_LIMIT
+            )
+        )
+    else:
+        total_limit = max(0, int(total_value_limit))
+    out = {}
+    for k, v in (fp or {}).items():
+        if v is None:
+            out[k] = v
+            continue
+        s = str(v)
+        lim = limits.get(k, LLM_DEFAULT_FIELD_CHAR_LIMIT)
+        out[k] = _truncate_llm_value(v, lim)
+
+    # A per-field limit alone still permits a fingerprint with many populated
+    # fields to exceed the remote decision models' practical context/economy
+    # budget. Reduce the least information-dense blobs first, then the largest
+    # remaining values, until the aggregate value payload is bounded. This cap
+    # applies only to the Gemini/Claude decision prompt; the fine-tuned unseen
+    # adapter keeps its separate training-time summarizer contract.
+    def payload_size():
+        return sum(len(str(value)) for value in out.values() if value is not None)
+
+    low_priority = [
+        "http-bodys", "http-info", "http-part-info", "sw-info",
+        "cert-info", "whois-info", "as-info", "loc-info",
+        "service-distribution",
+    ]
+    candidates = low_priority + [
+        key
+        for key, _ in sorted(
+            out.items(), key=lambda item: len(str(item[1])), reverse=True
+        )
+        if key not in low_priority and key != "ip"
+    ]
+    for floor in (256, 64):
+        for key in candidates:
+            excess = payload_size() - total_limit
+            if excess <= 0:
+                break
+            if key not in out or out[key] is None:
+                continue
+            current = str(out[key])
+            target = max(floor, len(current) - excess)
+            if target < len(current):
+                out[key] = _truncate_llm_value(current, target)
+    return out
+
+
 def build_fingerprint_info_text(values):
     """Render the per-perspective info columns as ``col: value`` lines.
 

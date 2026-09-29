@@ -121,7 +121,8 @@ class LLM:
 
         return all_response_content
 
-    def chat_with_llm(self, llm, messages, whether_json: bool = False, return_usage: bool = False):
+    def chat_with_llm(self, llm, messages, whether_json: bool = False,
+                      return_usage: bool = False, max_tokens: int = 1024):
         """
         1. 使用Anthropic SDK调用Claude Sonnet 4.5进行问答
         
@@ -144,6 +145,7 @@ class LLM:
                 model=model,
                 messages=messages,
                 temperature=1.0,
+                max_tokens=max_tokens,
                 # extra_body={"thinking": {"type": "enabled"}},
                 response_format={"type": "json_object"} if whether_json else None
             )
@@ -159,6 +161,9 @@ class LLM:
                 model=model,
                 messages=messages,
                 temperature=1.0,
+                # GPT-5-class relays may ignore the legacy max_tokens field
+                # and reserve a large default reasoning/output window.
+                max_completion_tokens=max_tokens,
                 response_format={"type": "json_object"} if whether_json else None
             )
 
@@ -173,7 +178,7 @@ class LLM:
             response = client.messages.create(
                 model=model,
                 messages=messages,
-                max_tokens=1024
+                max_tokens=max_tokens
             )
             
             usage = {"prompt_tokens": response.usage.input_tokens, "completion_tokens": response.usage.output_tokens}
@@ -201,7 +206,8 @@ class LLM:
             # 使用中转站
             response = client.chat.completions.create(
                 model=model, 
-                messages=messages
+                messages=messages,
+                max_tokens=max_tokens,
             )
             if whether_json:
                 result = convert_json_from_str(response.choices[0].message.content)

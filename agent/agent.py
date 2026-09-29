@@ -731,7 +731,12 @@ class IdentificationAgent:
                     continue
 
                 fp = fp_map[ip]
-                predicted_type = rec.get("predicted_device_type", device_name)
+                predicted_type = rec.get("predicted_device_type") or device_name
+                if not predicted_type:
+                    # decision produced no verdict — inserting a Device node with
+                    # a null type would fail the Neo4j MERGE (null property)
+                    logging.warning("[GraphUpdate] IP %s 无预测类型, 跳过图更新", ip)
+                    continue
 
                 # 使用retrieval_agent计算各perspective的embedding
                 try:
@@ -896,20 +901,53 @@ class IoTDecisionGraph:
         # ── LLM clients (OpenAI-compatible endpoints) bound with the retrieval tool ──
         with open(LLM_CONFIG_FILE, "r") as fh:
             cfg = json.load(fh)
+
+        def _openai_base(entry):
+            # ChatOpenAI needs the /v1 suffix; llm.py's anthropic client needs it
+            # absent (it appends /v1/messages itself). Normalise here so a single
+            # config entry serves both SDKs.
+            base = entry["BASE_URL"].rstrip("/")
+            return base if base.endswith("/v1") else base + "/v1"
+
+        decision_max_tokens = int(os.environ.get(
+            "IOTPROBER_DECISION_MAX_TOKENS", "1024"
+        ))
+
         self._gemini_llm = ChatOpenAI(
             api_key=cfg["GEMINI"]["API_KEY"],
-            base_url=cfg["GEMINI"]["BASE_URL"],
+            base_url=_openai_base(cfg["GEMINI"]),
             model=cfg["GEMINI"]["MODEL"],
             temperature=0.3,
-            max_tokens=4096,
+            max_tokens=decision_max_tokens,
+            max_retries=5,  # transient 429/5xx from the relay
         ).bind_tools([self._retrieval_tool])
-        self._claude_llm = ChatOpenAI(
-            api_key=cfg["CLAUDE"]["API_KEY"],
-            base_url=cfg["CLAUDE"]["BASE_URL"],
-            model=cfg["CLAUDE"]["MODEL"],
-            temperature=0.3,
-            max_tokens=4096,
-        ).bind_tools([self._retrieval_tool])
+        # Claude branch: the relay's OpenAI-compatible endpoint passes requests
+        # through to the Anthropic API without translating OpenAI-style tool
+        # schemas (400 "Input tag 'function' ... does not match"), so use the
+        # native Anthropic protocol when langchain_anthropic is available and
+        # only fall back to ChatOpenAI otherwise.
+        try:
+            from langchain_anthropic import ChatAnthropic
+            if cfg["CLAUDE"].get("PROTOCOL") == "openai":
+                # local OpenAI-compatible server (e.g. vLLM) as the second
+                # branch when no anthropic-protocol endpoint is available
+                raise ImportError("PROTOCOL=openai requested")
+            self._claude_llm = ChatAnthropic(
+                api_key=cfg["CLAUDE"]["API_KEY"],
+                base_url=cfg["CLAUDE"]["BASE_URL"],
+                model=cfg["CLAUDE"]["MODEL"],
+                temperature=0.3,
+                max_tokens=decision_max_tokens,
+                max_retries=5,  # BigModel/relay 429s under bursty load
+            ).bind_tools([self._retrieval_tool])
+        except ImportError:
+            self._claude_llm = ChatOpenAI(
+                api_key=cfg["CLAUDE"]["API_KEY"],
+                base_url=_openai_base(cfg["CLAUDE"]),
+                model=cfg["CLAUDE"]["MODEL"],
+                temperature=0.3,
+                max_tokens=decision_max_tokens,
+            ).bind_tools([self._retrieval_tool])
 
         # ── build state schema + graph ──
         GraphState = TypedDict(
@@ -1200,9 +1238,12 @@ class IoTDecisionGraph:
 
     @staticmethod
     def _fmt_fp(fp: dict) -> str:
+        # token 经济学: blob 字段(尤其 http-bodys)截断后再进决策 prompt,
+        # 否则单指纹可达数百 KB,把每次决策推到 3-7 万 token
+        trimmed = truncate_fingerprint_for_llm(fp)
         display = {
             k: v
-            for k, v in fp.items()
+            for k, v in trimmed.items()
             if k != "ip" and v is not None and str(v) not in ("nan", "None", "")
         }
         return json.dumps(display, indent=2, ensure_ascii=False)
@@ -1216,11 +1257,20 @@ class IoTDecisionGraph:
         return {"gemini_messages": list(base), "claude_messages": list(base)}
 
     def _gemini_agent_node(self, state: dict) -> dict:
-        resp = self._gemini_llm.invoke(state["gemini_messages"])
+        try:
+            resp = self._gemini_llm.invoke(state["gemini_messages"])
+        except Exception as exc:  # noqa: BLE001 — one branch failing (quota,
+            # rate limit, parse) must abstain, not kill the whole graph
+            logging.error("gemini branch failed, abstaining: %s", str(exc)[:200])
+            resp = self._AIMessage(content=f"(branch unavailable: {str(exc)[:120]})")
         return {"gemini_messages": [resp]}
 
     def _claude_agent_node(self, state: dict) -> dict:
-        resp = self._claude_llm.invoke(state["claude_messages"])
+        try:
+            resp = self._claude_llm.invoke(state["claude_messages"])
+        except Exception as exc:  # noqa: BLE001
+            logging.error("claude branch failed, abstaining: %s", str(exc)[:200])
+            resp = self._AIMessage(content=f"(branch unavailable: {str(exc)[:120]})")
         return {"claude_messages": [resp]}
 
     def _route_branch(self, messages: list) -> str:

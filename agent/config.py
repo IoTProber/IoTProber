@@ -17,6 +17,7 @@ from path_config import LLM_CONFIG_FILE
 with open(LLM_CONFIG_FILE, "r", encoding="utf-8") as _f:
     _cfg = json.load(_f)
 
+LLM_CONFIG = _cfg
 GEMINI_API_KEY = _cfg["GEMINI"]["API_KEY"]
 DEEPSEEK_API_KEY = _cfg["DEEPSEEK"]["API_KEY"]
 OPENAI_API_KEY = _cfg["OPENAI"]["API_KEY"]
