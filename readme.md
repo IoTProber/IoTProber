@@ -484,7 +484,7 @@ End-to-end latency was measured on the full production dataset: a one-time graph
 | Stage | Devices | Total Time | Avg. Time per Query |
 |---|---|---|---|
 | Graph construction (one-time) | 421,759 | 148.25 h | — |
-| End-to-end query (retrieval + decision) | 76,319 | 58.02 h | 2.73 s |
+| End-to-end query (retrieval + decision) | 76,319 | 58.02 h | 2.73 s - 39.05 s |
 
 Graph construction is a one-time, offline cost amortized across all future queries, while the per-query latency reflects the online cost of identifying a single device at inference time. The graph-construction time covers the full offline pipeline: (1) per-perspective embedding computation over all fingerprints (`graph/cluster.py`, local Qwen3-Embedding-0.6B), (2) embedding clustering — HDBSCAN/KMeans per perspective plus the comprehensive-view clustering over HGT embeddings, (3) vector-database storage and `.npz`/`.npy` embedding-file generation (`graph/vector.py` Milvus Lite ingestion and the memory-mapped local embedding files consumed by retrieval), and (4) Neo4j hierarchical graph database construction — building Layer-1 entity nodes/relationships and Layer-2/Layer-3 community nodes/relationships (`graph/build.py` / `graph/build_neo4j.py`).
 
