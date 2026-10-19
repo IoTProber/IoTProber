@@ -40,14 +40,24 @@ The graph workflow itself (`graph/cluster.py`, `construction.py`, `build.py`,
 `regen_overall_summaries.py`, `repair_overall_community.py`) was already
 tracked and unchanged; the gap was confined to `evaluation/`.
 
-### 1.2 Invalidated full-pipeline (fullflow) records
+### 1.2 Full-pipeline (fullflow) records and validity gating
 
-Pre-`2026-09-25-v3` fullflow runs are explicitly invalid as measurements
-(self-retrieval, filename-label leakage, >1 "similarities"); they must not be
-quoted as accuracy — that marking is intentional, not a lost result. The
-**valid reference run** is published: `demo/fullflow/` with
-`manifest.json` (`schema_version 2026-09-25-v3`, CAMERA completed, completion
-rate 1.0, `self_match_violations 0`) and `evaluation_report.json`.
+Only records with retrieval schema `2026-09-25-v3` are valid measurements:
+earlier runs could retrieve the query IP itself, exposed the true-type
+filename to the decision tool, read scores greater than one as cosine
+similarities, and treated missing community reports as a synthetic 0.5
+match. Validity is enforced **in code, not by convention** —
+`demo/evaluate_fullflow.py` refuses any manifest or record row whose schema
+version differs (`SCHEMA_VERSION`, lines 141/153), and
+`demo/run_fullflow_demo.py` resumes only records stamped with the current
+`PIPELINE_VERSION` (lines 42/84), so legacy rows can neither enter a metric
+nor silently mix into a new run. Every record and manifest is stamped with
+its `schema_version` at write time.
+
+The **valid reference run** is published on the dataset mirror at
+`evaluation/demo/fullflow/`: `manifest.json` (`schema_version
+2026-09-25-v3`, CAMERA completed) and `evaluation_report.json` (completion
+rate 1.0, zero self-match and score-range violations).
 
 Regeneration (from `demo/fullflow/README.md`, verbatim):
 
