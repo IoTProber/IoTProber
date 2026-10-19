@@ -120,8 +120,8 @@ This recording demonstrates an ALARM device example with [`unseen_detector_demo.
 
 **[Watch or download the demo video](unseen-demo.mov)** (MOV, approximately 79 seconds). Click the preview above to open the recording.
 
-To run the same example from the repository root with the model and adapter described in the script:
+To reproduce the recorded run in `/home/nfs/iotprober` using the `elastic_slm` environment on GPU 0 and save the combined output to a timestamped log:
 
 ```bash
-python demo/unseen_detector_demo.py
+cd /home/nfs/iotprober && CUDA_VISIBLE_DEVICES=0 TRANSFORMERS_VERBOSITY=error TQDM_DISABLE=1 PYTHONUNBUFFERED=1 /root/anaconda3/envs/elastic_slm/bin/python demo/unseen_detector_demo.py 2>&1 | tee demo_unseen_detector_ALARM_$(date +%Y%m%d_%H%M%S).log
 ```
