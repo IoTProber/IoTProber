@@ -111,3 +111,17 @@ c = json.load(open('demo/CAMERA/cases.json'))[0]
 print(c['ip'], c['result']['classified_type'], c['result']['classified_vendor'], c['result']['type_confidence'])
 PY
 ```
+
+## Unseen Device Detection: ALARM Case Study
+
+This recording demonstrates an ALARM device example with [`unseen_detector_demo.py`](unseen_detector_demo.py), including LOCAL, COMMUNITY, and REASONING-path retrieval evidence, live `UnseenDeviceDetector` inference, and ranked top-3 vendor predictions. The recorded run classifies the device as ALARM and predicts Bosch as the top-ranked vendor, matching the demo's reference vendor label.
+
+[![Unseen device detection demo: ALARM case study](unseen-demo-preview.png)](unseen-demo.mov)
+
+**[Watch or download the demo video](unseen-demo.mov)** (MOV, approximately 79 seconds). Click the preview above to open the recording.
+
+To run the same example from the repository root with the model and adapter described in the script:
+
+```bash
+python demo/unseen_detector_demo.py
+```
