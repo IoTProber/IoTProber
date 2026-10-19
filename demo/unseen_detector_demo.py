@@ -23,7 +23,7 @@ Usage (from the repository root):
   python demo/unseen_detector_demo.py --skip-model             # no GPU needed
   python demo/unseen_detector_demo.py --true-vendor Bosch      # override label
 
-Expected resources (see evaluation/REBUTTAL_ADDENDUM.md §1.3):
+Expected resources (see evaluation/REBUTTAL_ADDENDUM.md §1.3 on the dataset mirror):
   demo/evidence/ALARM_{local,community,reasoning}.json  (v3 evidence cache, shipped)
   demo/evidence/known_vendors.json                      (vendor lexicon, shipped)
   demo/ALARM/validation_cases.json                      (fixed-seed pool, shipped)
