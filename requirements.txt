@@ -48,6 +48,11 @@ ipykernel==7.3.0
 
 # Data, statistics, and graph learning
 numpy==1.26.4
+# pyarrow (a hard dependency of datasets==4.8.4) must be pinned alongside
+# numpy<2: the latest 26.0.0 requires NumPy>=2 and fails to import against
+# the pinned numpy 1.26.4. 23.0.1 is the validated version; 21.0.0 also
+# verified working (compatible range: >=21.0.0,<24).
+pyarrow==23.0.1
 pandas==3.0.2
 scikit-learn==1.7.2
 scipy==1.15.3
