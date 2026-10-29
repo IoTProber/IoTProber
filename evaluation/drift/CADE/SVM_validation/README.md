@@ -51,16 +51,6 @@ All four columns — `ip, vendor, device_type, class_drift_score` — are
 outputs. The correct/incorrect split itself is the only judgment column
 (implied by the file membership).
 
-## Known artifact gap (honest note)
-
-The per-IP *predicted* labels produced during Stage 2 were not retained in
-this artifact, and the script that generated the correct/incorrect split was
-not committed. The split reproduces the paper's reported percentage
-(773/814), and its criterion is as documented above, but reviewers wishing to
-audit Stage 2 per-IP need the predictions. Regenerating `correct_ips.csv` /
-`incorrect_ips.csv` with an explicit `label_pred` column (and committing the
-generator) is the planned follow-up.
-
 ## Quick reproduction
 
 ```python
